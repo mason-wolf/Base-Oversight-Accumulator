@@ -20,6 +20,7 @@ namespace Base_Oversight_Accumulator
         private string user;
         private string password;
         public string selectedID { get; set; }
+        public string ec { get; private set; }
 
         public AssetDetailView()
         {
@@ -98,17 +99,9 @@ namespace Base_Oversight_Accumulator
             ModelField.BackColor = Color.White;
             ModelField.BorderStyle = BorderStyle.FixedSingle;
 
-            AccountField.ReadOnly = false;
-            AccountField.BackColor = Color.White;
-            AccountField.BorderStyle = BorderStyle.FixedSingle;
-
             OrganizationField.ReadOnly = false;
             OrganizationField.BackColor = Color.White;
             OrganizationField.BorderStyle = BorderStyle.FixedSingle;
-
-            ECField.ReadOnly = false;
-            ECField.BackColor = Color.White;
-            ECField.BorderStyle = BorderStyle.FixedSingle;
 
             BuildingField.ReadOnly = false;
             BuildingField.BackColor = Color.White;
@@ -138,17 +131,17 @@ namespace Base_Oversight_Accumulator
             string Model = ModelField.Text;
             string AccountNumber = AccountField.Text;
             string Organization = OrganizationField.Text;
-            string EC = ECField.Text;
             string Building = BuildingField.Text;
             string Room = RoomField.Text;
             string Value = ValueField.Text;
             string Notes = AssetNotes.Text;
             string ID = AssetID.Text;
-            string query = "UPDATE assets SET item='" + AssetType + "', serialnumber='" + SerialNumber + "', manufacturer='" +
-                Manufacturer + "', model='" + Model + "', accountnumber='" + AccountNumber + "', organization='" + Organization +
-                "', ec='" + EC + "', building='" + Building + "', room='" + Room + "',value='" + Value + "', notes='" + Notes + "' where id='" + ID + "'";
 
-            mysql.insert(query);
+                string query = "UPDATE assets SET item='" + AssetType + "', serialnumber='" + SerialNumber + "', manufacturer='" +
+                    Manufacturer + "', model='" + Model + "', accountnumber='" + AccountNumber + "', organization='" + Organization +
+                    "', ec='" + ec + "', building='" + Building + "', room='" + Room + "',value='" + Value + "', notes='" + Notes + "' where id='" + ID + "'";
+                mysql.insert(query);
+
             this.Close();
         }
 

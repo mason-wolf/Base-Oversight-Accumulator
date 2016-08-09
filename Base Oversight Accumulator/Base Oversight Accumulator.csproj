@@ -62,6 +62,18 @@
     <Compile Include="CustodianSelection.Designer.cs">
       <DependentUpon>CustodianSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustodianDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustodianDetailView.Designer.cs">
+      <DependentUpon>CustodianDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transfer.Designer.cs">
+      <DependentUpon>Transfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustodianSelection.resx">
       <DependentUpon>CustodianSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustodianDetailView.resx">
+      <DependentUpon>CustodianDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transfer.resx">
+      <DependentUpon>Transfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewAccount.resx">
       <DependentUpon>NewAccount.cs</DependentUpon>

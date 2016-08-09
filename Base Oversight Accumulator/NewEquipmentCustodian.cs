@@ -42,11 +42,19 @@ namespace Base_Oversight_Accumulator
             {
                 dbconnect mysql = new dbconnect();
 
-                string query = "INSERT INTO ec(lastname, firstname, rank, org, email, dsn, account, location) VALUES ('" +
+                string NewECQuery = "INSERT INTO ec(lastname, firstname, rank, org, email, dsn, account, location) VALUES ('" +
                     lastname + "','" + firstname + "','" + rank + "','" + org + "','" + email + "','" +
                     dsn + "','" + account + "','" + location + "')";
 
-                mysql.insert(query);
+                string AccountUpdateQuery = "UPDATE itam SET ec='" + rank.ToUpper() + " " + lastname.ToUpper() + "," + firstname.ToUpper() +
+                    "' where account='" + account + "'";
+
+                string AssetUpdateQuery = "UPDATE assets SET ec='" + rank.ToUpper() + " " + lastname.ToUpper() + "," + firstname.ToUpper() +
+                   "' where account='" + account + "'";
+
+                mysql.insert(NewECQuery);
+                mysql.insert(AccountUpdateQuery);
+                mysql.insert(AssetUpdateQuery);
                 this.Close();
             }
             catch (MySqlException ex)

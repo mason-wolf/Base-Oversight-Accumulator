@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ActionReportDataView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StatusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.AssetDataView = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssetType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,51 +45,77 @@
             this.EstimatedValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ECDataView = new System.Windows.Forms.DataGridView();
-            this.ECLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECOrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECDSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECAccountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TransferDataView = new System.Windows.Forms.TabPage();
+            this.AccountDataView = new System.Windows.Forms.DataGridView();
+            this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssignedEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Org = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InventoryDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransfersDataView = new System.Windows.Forms.TabPage();
+            this.TemporaryIssueDataView = new System.Windows.Forms.TabPage();
             this.DRMODataView = new System.Windows.Forms.TabPage();
-            this.ActionReportTab = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ROSDataView = new System.Windows.Forms.TabPage();
+            this.ActionLogDataView = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.assetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.equipmentCustodianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.organizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.equipmentCustodiansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.organizationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEquipmentCustodianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addITAMAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transferAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.initiateReportOfSurveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assetDispositionbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.manageProfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.equipmentCustodiansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transfersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dispositionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rOSReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assetsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.benchstockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.equipmentCustodiansToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.transfersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dRMOReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rOSReportsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.NewAssetButton = new System.Windows.Forms.ToolStripButton();
             this.NewECButton = new System.Windows.Forms.ToolStripButton();
             this.NewAccountButton = new System.Windows.Forms.ToolStripButton();
+            this.TransferButton = new System.Windows.Forms.ToolStripButton();
+            this.TempIssueButton = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EquipmentCustodianID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECAccountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECOrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECDSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActionReportDataView.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ECDataView)).BeginInit();
+            this.TransferDataView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountDataView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ActionReportDataView
@@ -102,44 +126,28 @@
             this.ActionReportDataView.Controls.Add(this.tabPage1);
             this.ActionReportDataView.Controls.Add(this.tabPage2);
             this.ActionReportDataView.Controls.Add(this.TransferDataView);
+            this.ActionReportDataView.Controls.Add(this.TransfersDataView);
+            this.ActionReportDataView.Controls.Add(this.TemporaryIssueDataView);
             this.ActionReportDataView.Controls.Add(this.DRMODataView);
-            this.ActionReportDataView.Controls.Add(this.ActionReportTab);
-            this.ActionReportDataView.Controls.Add(this.tabPage3);
+            this.ActionReportDataView.Controls.Add(this.ROSDataView);
+            this.ActionReportDataView.Controls.Add(this.ActionLogDataView);
             this.ActionReportDataView.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ActionReportDataView.Location = new System.Drawing.Point(12, 149);
             this.ActionReportDataView.Name = "ActionReportDataView";
             this.ActionReportDataView.SelectedIndex = 0;
-            this.ActionReportDataView.Size = new System.Drawing.Size(1817, 1394);
+            this.ActionReportDataView.Size = new System.Drawing.Size(1817, 1381);
             this.ActionReportDataView.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.statusStrip1);
             this.tabPage1.Controls.Add(this.AssetDataView);
             this.tabPage1.Location = new System.Drawing.Point(10, 48);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1797, 1336);
+            this.tabPage1.Size = new System.Drawing.Size(1797, 1323);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Assets";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusBar});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 1311);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1791, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
-            // 
-            // StatusBar
-            // 
-            this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(0, 17);
             // 
             // AssetDataView
             // 
@@ -164,16 +172,15 @@
             this.Building,
             this.Room,
             this.EstimatedValue});
-            this.AssetDataView.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.AssetDataView.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.AssetDataView.Location = new System.Drawing.Point(7, 7);
             this.AssetDataView.Name = "AssetDataView";
             this.AssetDataView.ReadOnly = true;
             this.AssetDataView.RowHeadersVisible = false;
             this.AssetDataView.RowHeadersWidth = 100;
             this.AssetDataView.RowTemplate.Height = 40;
-            this.AssetDataView.Size = new System.Drawing.Size(1784, 1247);
+            this.AssetDataView.Size = new System.Drawing.Size(1784, 1316);
             this.AssetDataView.TabIndex = 1;
-            this.AssetDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDataView_CellContentClick);
             this.AssetDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDataView_CellDoubleClick);
             // 
             // ID
@@ -249,7 +256,7 @@
             this.tabPage2.Location = new System.Drawing.Point(10, 48);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1797, 1336);
+            this.tabPage2.Size = new System.Drawing.Size(1797, 1323);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Equipment Custodians";
             // 
@@ -265,262 +272,369 @@
             this.ECDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ECDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ECDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EquipmentCustodianID,
             this.ECLastName,
             this.ECFirstName,
             this.ECRank,
+            this.ECAccountNum,
             this.ECOrg,
             this.ECEmail,
             this.ECDSN,
-            this.ECAccountNum,
             this.ECLocation});
-            this.ECDataView.Location = new System.Drawing.Point(7, 7);
+            this.ECDataView.Location = new System.Drawing.Point(0, 0);
             this.ECDataView.Name = "ECDataView";
             this.ECDataView.ReadOnly = true;
             this.ECDataView.RowHeadersVisible = false;
             this.ECDataView.RowHeadersWidth = 100;
             this.ECDataView.RowTemplate.Height = 40;
-            this.ECDataView.Size = new System.Drawing.Size(1787, 1330);
+            this.ECDataView.Size = new System.Drawing.Size(1787, 1317);
             this.ECDataView.TabIndex = 0;
             this.ECDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellContentClick);
-            // 
-            // ECLastName
-            // 
-            this.ECLastName.HeaderText = "Last Name";
-            this.ECLastName.Name = "ECLastName";
-            this.ECLastName.ReadOnly = true;
-            // 
-            // ECFirstName
-            // 
-            this.ECFirstName.HeaderText = "First Name";
-            this.ECFirstName.Name = "ECFirstName";
-            this.ECFirstName.ReadOnly = true;
-            // 
-            // ECRank
-            // 
-            this.ECRank.HeaderText = "Rank";
-            this.ECRank.Name = "ECRank";
-            this.ECRank.ReadOnly = true;
-            // 
-            // ECOrg
-            // 
-            this.ECOrg.HeaderText = "Org";
-            this.ECOrg.Name = "ECOrg";
-            this.ECOrg.ReadOnly = true;
-            // 
-            // ECEmail
-            // 
-            this.ECEmail.HeaderText = "Email";
-            this.ECEmail.Name = "ECEmail";
-            this.ECEmail.ReadOnly = true;
-            // 
-            // ECDSN
-            // 
-            this.ECDSN.HeaderText = "DSN";
-            this.ECDSN.Name = "ECDSN";
-            this.ECDSN.ReadOnly = true;
-            // 
-            // ECAccountNum
-            // 
-            this.ECAccountNum.HeaderText = "Acct#";
-            this.ECAccountNum.Name = "ECAccountNum";
-            this.ECAccountNum.ReadOnly = true;
-            // 
-            // ECLocation
-            // 
-            this.ECLocation.HeaderText = "Location";
-            this.ECLocation.Name = "ECLocation";
-            this.ECLocation.ReadOnly = true;
+            this.ECDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellDoubleClick);
             // 
             // TransferDataView
             // 
+            this.TransferDataView.Controls.Add(this.AccountDataView);
             this.TransferDataView.Location = new System.Drawing.Point(10, 48);
             this.TransferDataView.Name = "TransferDataView";
             this.TransferDataView.Padding = new System.Windows.Forms.Padding(3);
-            this.TransferDataView.Size = new System.Drawing.Size(1797, 1336);
+            this.TransferDataView.Size = new System.Drawing.Size(1797, 1323);
             this.TransferDataView.TabIndex = 2;
             this.TransferDataView.Text = "Accounts";
             this.TransferDataView.UseVisualStyleBackColor = true;
+            // 
+            // AccountDataView
+            // 
+            this.AccountDataView.AllowUserToAddRows = false;
+            this.AccountDataView.AllowUserToDeleteRows = false;
+            this.AccountDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AccountDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AccountDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.AccountDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.AccountDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AccountDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AccountID,
+            this.Account,
+            this.AssignedEC,
+            this.dra,
+            this.Org,
+            this.LastInventory,
+            this.InventoryDue,
+            this.Location});
+            this.AccountDataView.Location = new System.Drawing.Point(0, 0);
+            this.AccountDataView.Name = "AccountDataView";
+            this.AccountDataView.ReadOnly = true;
+            this.AccountDataView.RowHeadersVisible = false;
+            this.AccountDataView.RowHeadersWidth = 100;
+            this.AccountDataView.RowTemplate.Height = 40;
+            this.AccountDataView.Size = new System.Drawing.Size(1787, 1317);
+            this.AccountDataView.TabIndex = 1;
+            // 
+            // AccountID
+            // 
+            this.AccountID.HeaderText = "ID";
+            this.AccountID.Name = "AccountID";
+            this.AccountID.ReadOnly = true;
+            // 
+            // Account
+            // 
+            this.Account.HeaderText = "Acct#";
+            this.Account.Name = "Account";
+            this.Account.ReadOnly = true;
+            // 
+            // AssignedEC
+            // 
+            this.AssignedEC.HeaderText = "Equipment Custodian";
+            this.AssignedEC.Name = "AssignedEC";
+            this.AssignedEC.ReadOnly = true;
+            // 
+            // dra
+            // 
+            this.dra.HeaderText = "DRA";
+            this.dra.Name = "dra";
+            this.dra.ReadOnly = true;
+            // 
+            // Org
+            // 
+            this.Org.HeaderText = "Org";
+            this.Org.Name = "Org";
+            this.Org.ReadOnly = true;
+            // 
+            // LastInventory
+            // 
+            this.LastInventory.HeaderText = "Last Inventory";
+            this.LastInventory.Name = "LastInventory";
+            this.LastInventory.ReadOnly = true;
+            // 
+            // InventoryDue
+            // 
+            this.InventoryDue.HeaderText = "Inventory Due";
+            this.InventoryDue.Name = "InventoryDue";
+            this.InventoryDue.ReadOnly = true;
+            // 
+            // Location
+            // 
+            this.Location.HeaderText = "Location";
+            this.Location.Name = "Location";
+            this.Location.ReadOnly = true;
+            // 
+            // TransfersDataView
+            // 
+            this.TransfersDataView.Location = new System.Drawing.Point(10, 48);
+            this.TransfersDataView.Name = "TransfersDataView";
+            this.TransfersDataView.Padding = new System.Windows.Forms.Padding(3);
+            this.TransfersDataView.Size = new System.Drawing.Size(1797, 1323);
+            this.TransfersDataView.TabIndex = 3;
+            this.TransfersDataView.Text = "Transfers";
+            this.TransfersDataView.UseVisualStyleBackColor = true;
+            // 
+            // TemporaryIssueDataView
+            // 
+            this.TemporaryIssueDataView.Location = new System.Drawing.Point(10, 48);
+            this.TemporaryIssueDataView.Name = "TemporaryIssueDataView";
+            this.TemporaryIssueDataView.Padding = new System.Windows.Forms.Padding(3);
+            this.TemporaryIssueDataView.Size = new System.Drawing.Size(1797, 1323);
+            this.TemporaryIssueDataView.TabIndex = 4;
+            this.TemporaryIssueDataView.Text = "Issued Items";
+            this.TemporaryIssueDataView.UseVisualStyleBackColor = true;
             // 
             // DRMODataView
             // 
             this.DRMODataView.Location = new System.Drawing.Point(10, 48);
             this.DRMODataView.Name = "DRMODataView";
             this.DRMODataView.Padding = new System.Windows.Forms.Padding(3);
-            this.DRMODataView.Size = new System.Drawing.Size(1797, 1336);
-            this.DRMODataView.TabIndex = 3;
-            this.DRMODataView.Text = "Transfers";
+            this.DRMODataView.Size = new System.Drawing.Size(1797, 1323);
+            this.DRMODataView.TabIndex = 5;
+            this.DRMODataView.Text = "DRMO";
             this.DRMODataView.UseVisualStyleBackColor = true;
             // 
-            // ActionReportTab
+            // ROSDataView
             // 
-            this.ActionReportTab.Location = new System.Drawing.Point(10, 48);
-            this.ActionReportTab.Name = "ActionReportTab";
-            this.ActionReportTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ActionReportTab.Size = new System.Drawing.Size(1797, 1336);
-            this.ActionReportTab.TabIndex = 4;
-            this.ActionReportTab.Text = "DRMO";
-            this.ActionReportTab.UseVisualStyleBackColor = true;
+            this.ROSDataView.Location = new System.Drawing.Point(10, 48);
+            this.ROSDataView.Name = "ROSDataView";
+            this.ROSDataView.Padding = new System.Windows.Forms.Padding(3);
+            this.ROSDataView.Size = new System.Drawing.Size(1797, 1323);
+            this.ROSDataView.TabIndex = 6;
+            this.ROSDataView.Text = "ROS";
+            this.ROSDataView.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // ActionLogDataView
             // 
-            this.tabPage3.Location = new System.Drawing.Point(10, 48);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1797, 1336);
-            this.tabPage3.TabIndex = 5;
-            this.tabPage3.Text = "Action Report";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.ActionLogDataView.Location = new System.Drawing.Point(10, 48);
+            this.ActionLogDataView.Name = "ActionLogDataView";
+            this.ActionLogDataView.Padding = new System.Windows.Forms.Padding(3);
+            this.ActionLogDataView.Size = new System.Drawing.Size(1797, 1323);
+            this.ActionLogDataView.TabIndex = 7;
+            this.ActionLogDataView.Text = "Action Log";
+            this.ActionLogDataView.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
             this.toolsToolStripMenuItem,
             this.reportsToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.helpToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1841, 49);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem1,
-            this.saveAsToolStripMenuItem,
-            this.printToolStripMenuItem,
-            this.optionToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(75, 45);
-            this.toolStripMenuItem1.Text = "File";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.assetToolStripMenuItem,
-            this.equipmentCustodianToolStripMenuItem,
-            this.organizationToolStripMenuItem,
-            this.transferToolStripMenuItem});
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(327, 46);
-            this.toolStripMenuItem2.Text = "New";
-            // 
-            // assetToolStripMenuItem
-            // 
-            this.assetToolStripMenuItem.Name = "assetToolStripMenuItem";
-            this.assetToolStripMenuItem.Size = new System.Drawing.Size(419, 46);
-            this.assetToolStripMenuItem.Text = "Asset";
-            this.assetToolStripMenuItem.Click += new System.EventHandler(this.assetToolStripMenuItem_Click);
-            // 
-            // equipmentCustodianToolStripMenuItem
-            // 
-            this.equipmentCustodianToolStripMenuItem.Name = "equipmentCustodianToolStripMenuItem";
-            this.equipmentCustodianToolStripMenuItem.Size = new System.Drawing.Size(419, 46);
-            this.equipmentCustodianToolStripMenuItem.Text = "Equipment Custodian";
-            this.equipmentCustodianToolStripMenuItem.Click += new System.EventHandler(this.equipmentCustodianToolStripMenuItem_Click);
-            // 
-            // organizationToolStripMenuItem
-            // 
-            this.organizationToolStripMenuItem.Name = "organizationToolStripMenuItem";
-            this.organizationToolStripMenuItem.Size = new System.Drawing.Size(419, 46);
-            this.organizationToolStripMenuItem.Text = "ITAM Account";
-            this.organizationToolStripMenuItem.Click += new System.EventHandler(this.organizationToolStripMenuItem_Click);
-            // 
-            // transferToolStripMenuItem
-            // 
-            this.transferToolStripMenuItem.Name = "transferToolStripMenuItem";
-            this.transferToolStripMenuItem.Size = new System.Drawing.Size(419, 46);
-            this.transferToolStripMenuItem.Text = "Transfer";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(327, 46);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // saveToolStripMenuItem1
-            // 
-            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(327, 46);
-            this.saveToolStripMenuItem1.Text = "Save Inventory";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(327, 46);
-            this.saveAsToolStripMenuItem.Text = "Save As..";
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(327, 46);
-            this.printToolStripMenuItem.Text = "Print";
-            // 
-            // optionToolStripMenuItem
-            // 
-            this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(327, 46);
-            this.optionToolStripMenuItem.Text = "Options";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(327, 46);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accountsToolStripMenuItem});
+            this.addAssetToolStripMenuItem,
+            this.addEquipmentCustodianToolStripMenuItem,
+            this.addITAMAccountToolStripMenuItem,
+            this.transferAssetToolStripMenuItem,
+            this.initiateReportOfSurveryToolStripMenuItem,
+            this.assetDispositionbToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.manageProfilesToolStripMenuItem,
+            this.refreshDatabaseToolStripMenuItem,
+            this.eitToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 45);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
-            // accountsToolStripMenuItem
+            // addAssetToolStripMenuItem
             // 
-            this.accountsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usersToolStripMenuItem,
+            this.addAssetToolStripMenuItem.Name = "addAssetToolStripMenuItem";
+            this.addAssetToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.addAssetToolStripMenuItem.Text = "Add Asset";
+            this.addAssetToolStripMenuItem.Click += new System.EventHandler(this.addAssetToolStripMenuItem_Click);
+            // 
+            // addEquipmentCustodianToolStripMenuItem
+            // 
+            this.addEquipmentCustodianToolStripMenuItem.Name = "addEquipmentCustodianToolStripMenuItem";
+            this.addEquipmentCustodianToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.addEquipmentCustodianToolStripMenuItem.Text = "Add Equipment Custodian";
+            this.addEquipmentCustodianToolStripMenuItem.Click += new System.EventHandler(this.addEquipmentCustodianToolStripMenuItem_Click);
+            // 
+            // addITAMAccountToolStripMenuItem
+            // 
+            this.addITAMAccountToolStripMenuItem.Name = "addITAMAccountToolStripMenuItem";
+            this.addITAMAccountToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.addITAMAccountToolStripMenuItem.Text = "Add ITAM Account";
+            this.addITAMAccountToolStripMenuItem.Click += new System.EventHandler(this.addITAMAccountToolStripMenuItem_Click);
+            // 
+            // transferAssetToolStripMenuItem
+            // 
+            this.transferAssetToolStripMenuItem.Name = "transferAssetToolStripMenuItem";
+            this.transferAssetToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.transferAssetToolStripMenuItem.Text = "Transfer Asset";
+            // 
+            // initiateReportOfSurveryToolStripMenuItem
+            // 
+            this.initiateReportOfSurveryToolStripMenuItem.Name = "initiateReportOfSurveryToolStripMenuItem";
+            this.initiateReportOfSurveryToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.initiateReportOfSurveryToolStripMenuItem.Text = "Report of Survey";
+            this.initiateReportOfSurveryToolStripMenuItem.Click += new System.EventHandler(this.initiateReportOfSurveryToolStripMenuItem_Click);
+            // 
+            // assetDispositionbToolStripMenuItem
+            // 
+            this.assetDispositionbToolStripMenuItem.Name = "assetDispositionbToolStripMenuItem";
+            this.assetDispositionbToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.assetDispositionbToolStripMenuItem.Text = "Asset Disposition";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(479, 6);
+            // 
+            // manageProfilesToolStripMenuItem
+            // 
+            this.manageProfilesToolStripMenuItem.Name = "manageProfilesToolStripMenuItem";
+            this.manageProfilesToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.manageProfilesToolStripMenuItem.Text = "Manage Profiles";
+            // 
+            // refreshDatabaseToolStripMenuItem
+            // 
+            this.refreshDatabaseToolStripMenuItem.Name = "refreshDatabaseToolStripMenuItem";
+            this.refreshDatabaseToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.refreshDatabaseToolStripMenuItem.Text = "Refresh Database";
+            // 
+            // eitToolStripMenuItem
+            // 
+            this.eitToolStripMenuItem.Name = "eitToolStripMenuItem";
+            this.eitToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.eitToolStripMenuItem.Text = "Exit";
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.assetsToolStripMenuItem,
             this.equipmentCustodiansToolStripMenuItem,
-            this.organizationsToolStripMenuItem});
-            this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(255, 46);
-            this.accountsToolStripMenuItem.Text = "Accounts";
+            this.accountsToolStripMenuItem,
+            this.transfersToolStripMenuItem,
+            this.dispositionsToolStripMenuItem,
+            this.rOSReportsToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 45);
+            this.reportsToolStripMenuItem.Text = "Search";
+            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
-            // usersToolStripMenuItem
+            // assetsToolStripMenuItem
             // 
-            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
-            this.usersToolStripMenuItem.Text = "Users";
+            this.assetsToolStripMenuItem.Name = "assetsToolStripMenuItem";
+            this.assetsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.assetsToolStripMenuItem.Text = "Assets";
             // 
             // equipmentCustodiansToolStripMenuItem
             // 
             this.equipmentCustodiansToolStripMenuItem.Name = "equipmentCustodiansToolStripMenuItem";
             this.equipmentCustodiansToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
-            this.equipmentCustodiansToolStripMenuItem.Text = "Equipment Custodians";
+            this.equipmentCustodiansToolStripMenuItem.Text = "Accounts";
             // 
-            // organizationsToolStripMenuItem
+            // accountsToolStripMenuItem
             // 
-            this.organizationsToolStripMenuItem.Name = "organizationsToolStripMenuItem";
-            this.organizationsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
-            this.organizationsToolStripMenuItem.Text = "Organizations";
+            this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.accountsToolStripMenuItem.Text = "Equipment Custodians";
             // 
-            // reportsToolStripMenuItem
+            // transfersToolStripMenuItem
             // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(132, 45);
-            this.reportsToolStripMenuItem.Text = "Reports";
+            this.transfersToolStripMenuItem.Name = "transfersToolStripMenuItem";
+            this.transfersToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.transfersToolStripMenuItem.Text = "Transfers";
+            // 
+            // dispositionsToolStripMenuItem
+            // 
+            this.dispositionsToolStripMenuItem.Name = "dispositionsToolStripMenuItem";
+            this.dispositionsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.dispositionsToolStripMenuItem.Text = "DRMO Records";
+            // 
+            // rOSReportsToolStripMenuItem
+            // 
+            this.rOSReportsToolStripMenuItem.Name = "rOSReportsToolStripMenuItem";
+            this.rOSReportsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.rOSReportsToolStripMenuItem.Text = "ROS Records";
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.assetsToolStripMenuItem1,
+            this.benchstockToolStripMenuItem,
+            this.accountsToolStripMenuItem1,
+            this.equipmentCustodiansToolStripMenuItem1,
+            this.transfersToolStripMenuItem1,
+            this.dRMOReportsToolStripMenuItem,
+            this.rOSReportsToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(92, 45);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(132, 45);
+            this.helpToolStripMenuItem.Text = "Reports";
+            // 
+            // assetsToolStripMenuItem1
+            // 
+            this.assetsToolStripMenuItem1.Name = "assetsToolStripMenuItem1";
+            this.assetsToolStripMenuItem1.Size = new System.Drawing.Size(432, 46);
+            this.assetsToolStripMenuItem1.Text = "Inventories";
+            // 
+            // benchstockToolStripMenuItem
+            // 
+            this.benchstockToolStripMenuItem.Name = "benchstockToolStripMenuItem";
+            this.benchstockToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.benchstockToolStripMenuItem.Text = "Benchstock";
+            // 
+            // accountsToolStripMenuItem1
+            // 
+            this.accountsToolStripMenuItem1.Name = "accountsToolStripMenuItem1";
+            this.accountsToolStripMenuItem1.Size = new System.Drawing.Size(432, 46);
+            this.accountsToolStripMenuItem1.Text = "Accounts";
+            // 
+            // equipmentCustodiansToolStripMenuItem1
+            // 
+            this.equipmentCustodiansToolStripMenuItem1.Name = "equipmentCustodiansToolStripMenuItem1";
+            this.equipmentCustodiansToolStripMenuItem1.Size = new System.Drawing.Size(432, 46);
+            this.equipmentCustodiansToolStripMenuItem1.Text = "Equipment Custodians";
+            // 
+            // transfersToolStripMenuItem1
+            // 
+            this.transfersToolStripMenuItem1.Name = "transfersToolStripMenuItem1";
+            this.transfersToolStripMenuItem1.Size = new System.Drawing.Size(432, 46);
+            this.transfersToolStripMenuItem1.Text = "Transfers";
+            // 
+            // dRMOReportsToolStripMenuItem
+            // 
+            this.dRMOReportsToolStripMenuItem.Name = "dRMOReportsToolStripMenuItem";
+            this.dRMOReportsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.dRMOReportsToolStripMenuItem.Text = "Disposed Items";
+            // 
+            // rOSReportsToolStripMenuItem1
+            // 
+            this.rOSReportsToolStripMenuItem1.Name = "rOSReportsToolStripMenuItem1";
+            this.rOSReportsToolStripMenuItem1.Size = new System.Drawing.Size(432, 46);
+            this.rOSReportsToolStripMenuItem1.Text = "Missing Items";
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 45);
+            this.helpToolStripMenuItem1.Text = "Help";
             // 
             // toolStrip1
             // 
@@ -529,7 +643,9 @@
             this.RefreshButton,
             this.NewAssetButton,
             this.NewECButton,
-            this.NewAccountButton});
+            this.NewAccountButton,
+            this.TransferButton,
+            this.TempIssueButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 49);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1841, 39);
@@ -583,11 +699,105 @@
             this.NewAccountButton.ToolTipText = "Create a new ITAM account.\r\n";
             this.NewAccountButton.Click += new System.EventHandler(this.NewAccountButton_Click);
             // 
+            // TransferButton
+            // 
+            this.TransferButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TransferButton.Image = ((System.Drawing.Image)(resources.GetObject("TransferButton.Image")));
+            this.TransferButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.TransferButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TransferButton.Name = "TransferButton";
+            this.TransferButton.Size = new System.Drawing.Size(23, 36);
+            this.TransferButton.Text = "Transfer";
+            this.TransferButton.ToolTipText = "Transfer asset from one account to another.\r\n\r\n";
+            this.TransferButton.Click += new System.EventHandler(this.TransferButton_Click);
+            // 
+            // TempIssueButton
+            // 
+            this.TempIssueButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TempIssueButton.Image = ((System.Drawing.Image)(resources.GetObject("TempIssueButton.Image")));
+            this.TempIssueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.TempIssueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TempIssueButton.Name = "TempIssueButton";
+            this.TempIssueButton.Size = new System.Drawing.Size(23, 36);
+            this.TempIssueButton.Text = "TempIssueButton";
+            this.TempIssueButton.ToolTipText = "Temporarily issue item.\r\n";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusBar});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1533);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1841, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusBar
+            // 
+            this.StatusBar.Name = "StatusBar";
+            this.StatusBar.Size = new System.Drawing.Size(0, 17);
+            // 
+            // EquipmentCustodianID
+            // 
+            this.EquipmentCustodianID.HeaderText = "ID";
+            this.EquipmentCustodianID.Name = "EquipmentCustodianID";
+            this.EquipmentCustodianID.ReadOnly = true;
+            // 
+            // ECLastName
+            // 
+            this.ECLastName.HeaderText = "Last Name";
+            this.ECLastName.Name = "ECLastName";
+            this.ECLastName.ReadOnly = true;
+            // 
+            // ECFirstName
+            // 
+            this.ECFirstName.HeaderText = "First Name";
+            this.ECFirstName.Name = "ECFirstName";
+            this.ECFirstName.ReadOnly = true;
+            // 
+            // ECRank
+            // 
+            this.ECRank.HeaderText = "Rank";
+            this.ECRank.Name = "ECRank";
+            this.ECRank.ReadOnly = true;
+            // 
+            // ECAccountNum
+            // 
+            this.ECAccountNum.HeaderText = "Acct#";
+            this.ECAccountNum.Name = "ECAccountNum";
+            this.ECAccountNum.ReadOnly = true;
+            // 
+            // ECOrg
+            // 
+            this.ECOrg.HeaderText = "Org";
+            this.ECOrg.Name = "ECOrg";
+            this.ECOrg.ReadOnly = true;
+            // 
+            // ECEmail
+            // 
+            this.ECEmail.HeaderText = "Email";
+            this.ECEmail.Name = "ECEmail";
+            this.ECEmail.ReadOnly = true;
+            // 
+            // ECDSN
+            // 
+            this.ECDSN.HeaderText = "DSN";
+            this.ECDSN.Name = "ECDSN";
+            this.ECDSN.ReadOnly = true;
+            // 
+            // ECLocation
+            // 
+            this.ECLocation.HeaderText = "Location";
+            this.ECLocation.Name = "ECLocation";
+            this.ECLocation.ReadOnly = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1841, 1555);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ActionReportDataView);
             this.Controls.Add(this.menuStrip1);
@@ -597,16 +807,17 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ActionReportDataView.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ECDataView)).EndInit();
+            this.TransferDataView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AccountDataView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,47 +829,21 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.TabPage TransferDataView;
-        private System.Windows.Forms.TabPage DRMODataView;
+        private System.Windows.Forms.TabPage TransfersDataView;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         public System.Windows.Forms.DataGridView AssetDataView;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem equipmentCustodiansToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem organizationsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem assetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem equipmentCustodianToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem organizationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transferToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.TabPage ActionReportTab;
+        private System.Windows.Forms.TabPage TemporaryIssueDataView;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton RefreshButton;
         private System.Windows.Forms.ToolStripButton NewAssetButton;
         private System.Windows.Forms.ToolStripButton NewECButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECRank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECOrg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECDSN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECAccountNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECLocation;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel StatusBar;
         private System.Windows.Forms.DataGridView ECDataView;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage DRMODataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn AssetType;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
@@ -671,6 +856,54 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Room;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstimatedValue;
         private System.Windows.Forms.ToolStripButton NewAccountButton;
+        private System.Windows.Forms.DataGridView AccountDataView;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusBar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Account;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssignedEC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Org;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastInventory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryDue;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Location;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addAssetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEquipmentCustodianToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addITAMAccountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transferAssetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem initiateReportOfSurveryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assetDispositionbToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assetsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem equipmentCustodiansToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transfersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dispositionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rOSReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assetsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem accountsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem equipmentCustodiansToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem transfersToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dRMOReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rOSReportsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem manageProfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem benchstockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton TransferButton;
+        private System.Windows.Forms.TabPage ROSDataView;
+        private System.Windows.Forms.TabPage ActionLogDataView;
+        private System.Windows.Forms.ToolStripButton TempIssueButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EquipmentCustodianID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECRank;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECAccountNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECOrg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECDSN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECLocation;
     }
 }
 

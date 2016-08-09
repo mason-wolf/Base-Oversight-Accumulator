@@ -19,7 +19,6 @@ namespace Base_Oversight_Accumulator
         private string database;
         private string user;
         private string password;
-   
 
         public CustodianSelection()
         {
@@ -35,7 +34,6 @@ namespace Base_Oversight_Accumulator
         {
             string GridID = ECDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
             NewAssetWindow NewAssetWindow = new NewAssetWindow();
-
             connection.Open();
             MySqlCommand ECQuery = connection.CreateCommand();
             ECQuery.CommandText = "SELECT * FROM ec WHERE id=" + GridID;
@@ -51,10 +49,13 @@ namespace Base_Oversight_Accumulator
                 string ECLastName = Convert.ToString(ECQueryResult["lastname"]);
                 string ECFirstName = Convert.ToString(ECQueryResult["firstname"]);
                 string ECRank = Convert.ToString(ECQueryResult["rank"]);
-                NewAssetWindow.NewEC.Text = ECRank.ToUpper() + " " + ECLastName.ToUpper() + ", " + ECFirstName.ToUpper();
+                    NewAssetWindow.NewEC.Text = ECRank.ToUpper() + " " + ECLastName.ToUpper() + ", " + ECFirstName.ToUpper();
+                    NewAssetWindow.Show();
+
             }
+
             connection.Close();
-            NewAssetWindow.Show();
+           
             this.Close();
         }
 
@@ -107,6 +108,10 @@ namespace Base_Oversight_Accumulator
             ECDataView.DataSource = bs;
         }
 
+        private void ECDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

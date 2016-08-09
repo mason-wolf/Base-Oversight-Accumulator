@@ -53,6 +53,7 @@
             this.ECDataView.RowTemplate.Height = 40;
             this.ECDataView.Size = new System.Drawing.Size(1915, 1053);
             this.ECDataView.TabIndex = 1;
+            this.ECDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellContentClick);
             this.ECDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellDoubleClick);
             // 
             // label1

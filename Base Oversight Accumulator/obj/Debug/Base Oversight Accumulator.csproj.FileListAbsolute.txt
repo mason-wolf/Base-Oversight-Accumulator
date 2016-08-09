@@ -15,3 +15,5 @@ C:\Users\Mason\Documents\Visual Studio 2015\Projects\Base Oversight Accumulator\
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.AssetDetailView.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.CustodianSelection.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewAccount.resources
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.CustodianDetailView.resources
+C:\Users\Mason\Documents\Visual Studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.Transfer.resources
