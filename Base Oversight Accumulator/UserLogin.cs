@@ -71,6 +71,7 @@ namespace Base_Oversight_Accumulator
                     else
                     {
                         var t = new Thread(() => Application.Run(new MainWindow(BOAUser.ToUpper())));
+                        t.SetApartmentState(ApartmentState.STA);
                         t.Start();
                         this.Close();
                     }

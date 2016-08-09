@@ -228,6 +228,7 @@
             this.DeleteAccountButton.TabIndex = 7;
             this.DeleteAccountButton.Text = "Delete";
             this.DeleteAccountButton.UseVisualStyleBackColor = true;
+            this.DeleteAccountButton.Click += new System.EventHandler(this.DeleteAccountButton_Click);
             // 
             // NoteBox
             // 

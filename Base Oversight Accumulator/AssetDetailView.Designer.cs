@@ -96,6 +96,7 @@
             // 
             this.ValueField.BackColor = System.Drawing.SystemColors.Control;
             this.ValueField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ValueField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ValueField.Location = new System.Drawing.Point(297, 625);
             this.ValueField.Name = "ValueField";
             this.ValueField.ReadOnly = true;
@@ -106,6 +107,7 @@
             // 
             this.RoomField.BackColor = System.Drawing.SystemColors.Control;
             this.RoomField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RoomField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.RoomField.Location = new System.Drawing.Point(297, 562);
             this.RoomField.Name = "RoomField";
             this.RoomField.ReadOnly = true;
@@ -116,6 +118,7 @@
             // 
             this.BuildingField.BackColor = System.Drawing.SystemColors.Control;
             this.BuildingField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BuildingField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.BuildingField.Location = new System.Drawing.Point(297, 504);
             this.BuildingField.Name = "BuildingField";
             this.BuildingField.ReadOnly = true;
@@ -126,6 +129,7 @@
             // 
             this.ECField.BackColor = System.Drawing.SystemColors.Control;
             this.ECField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ECField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ECField.Location = new System.Drawing.Point(297, 448);
             this.ECField.Name = "ECField";
             this.ECField.ReadOnly = true;
@@ -136,16 +140,18 @@
             // 
             this.OrganizationField.BackColor = System.Drawing.SystemColors.Control;
             this.OrganizationField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OrganizationField.Location = new System.Drawing.Point(297, 384);
+            this.OrganizationField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.OrganizationField.Location = new System.Drawing.Point(297, 394);
             this.OrganizationField.Name = "OrganizationField";
             this.OrganizationField.ReadOnly = true;
-            this.OrganizationField.Size = new System.Drawing.Size(200, 31);
+            this.OrganizationField.Size = new System.Drawing.Size(275, 31);
             this.OrganizationField.TabIndex = 17;
             // 
             // AccountField
             // 
             this.AccountField.BackColor = System.Drawing.SystemColors.Control;
             this.AccountField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AccountField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AccountField.Location = new System.Drawing.Point(297, 328);
             this.AccountField.Name = "AccountField";
             this.AccountField.ReadOnly = true;
@@ -156,6 +162,7 @@
             // 
             this.ModelField.BackColor = System.Drawing.SystemColors.Control;
             this.ModelField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ModelField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ModelField.Location = new System.Drawing.Point(297, 268);
             this.ModelField.Name = "ModelField";
             this.ModelField.ReadOnly = true;
@@ -166,6 +173,7 @@
             // 
             this.ManufacturerField.BackColor = System.Drawing.SystemColors.Control;
             this.ManufacturerField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ManufacturerField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ManufacturerField.Location = new System.Drawing.Point(297, 205);
             this.ManufacturerField.Name = "ManufacturerField";
             this.ManufacturerField.ReadOnly = true;
@@ -176,6 +184,7 @@
             // 
             this.SerialNumberField.BackColor = System.Drawing.SystemColors.Control;
             this.SerialNumberField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SerialNumberField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.SerialNumberField.Location = new System.Drawing.Point(297, 138);
             this.SerialNumberField.Name = "SerialNumberField";
             this.SerialNumberField.ReadOnly = true;
@@ -186,6 +195,7 @@
             // 
             this.AssetTypeField.BackColor = System.Drawing.SystemColors.Control;
             this.AssetTypeField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AssetTypeField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AssetTypeField.Location = new System.Drawing.Point(297, 65);
             this.AssetTypeField.Name = "AssetTypeField";
             this.AssetTypeField.ReadOnly = true;
@@ -231,7 +241,7 @@
             // Organization
             // 
             this.Organization.AutoSize = true;
-            this.Organization.Location = new System.Drawing.Point(75, 383);
+            this.Organization.Location = new System.Drawing.Point(75, 393);
             this.Organization.Name = "Organization";
             this.Organization.Size = new System.Drawing.Size(186, 32);
             this.Organization.TabIndex = 5;

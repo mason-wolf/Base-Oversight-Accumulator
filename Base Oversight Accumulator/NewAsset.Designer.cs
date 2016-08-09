@@ -54,13 +54,15 @@
             this.ECSelectionButton = new System.Windows.Forms.Button();
             this.NotesLabel = new System.Windows.Forms.Label();
             this.NewAssetNotes = new System.Windows.Forms.RichTextBox();
+            this.AddBatchButton = new System.Windows.Forms.Button();
+            this.AssetBatchCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // Item
             // 
             this.Item.AutoSize = true;
-            this.Item.Location = new System.Drawing.Point(140, 56);
+            this.Item.Location = new System.Drawing.Point(140, 128);
             this.Item.Name = "Item";
             this.Item.Size = new System.Drawing.Size(77, 32);
             this.Item.TabIndex = 0;
@@ -75,14 +77,14 @@
             "Laptop",
             "Printer",
             "Scanner",
+            "Projector",
+            "VOIP",
             "Phone",
-            "Keyboard",
-            "Mouse",
-            "CAC Reader",
-            "UPS",
+            "LMR",
+            "Switch",
             "KVM Switch",
             "Other"});
-            this.NewItemType.Location = new System.Drawing.Point(274, 49);
+            this.NewItemType.Location = new System.Drawing.Point(274, 128);
             this.NewItemType.Name = "NewItemType";
             this.NewItemType.Size = new System.Drawing.Size(200, 39);
             this.NewItemType.TabIndex = 1;
@@ -90,10 +92,11 @@
             // 
             // NewItemManufacturer
             // 
+            this.NewItemManufacturer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewItemManufacturer.Location = new System.Drawing.Point(274, 465);
             this.NewItemManufacturer.Name = "NewItemManufacturer";
             this.NewItemManufacturer.Size = new System.Drawing.Size(250, 38);
-            this.NewItemManufacturer.TabIndex = 4;
+            this.NewItemManufacturer.TabIndex = 7;
             // 
             // Manufacturer
             // 
@@ -115,10 +118,11 @@
             // 
             // NewItemSerialNumber
             // 
+            this.NewItemSerialNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewItemSerialNumber.Location = new System.Drawing.Point(274, 258);
             this.NewItemSerialNumber.Name = "NewItemSerialNumber";
             this.NewItemSerialNumber.Size = new System.Drawing.Size(275, 38);
-            this.NewItemSerialNumber.TabIndex = 7;
+            this.NewItemSerialNumber.TabIndex = 4;
             // 
             // AccountNumber
             // 
@@ -132,7 +136,7 @@
             // Model
             // 
             this.Model.AutoSize = true;
-            this.Model.Location = new System.Drawing.Point(116, 188);
+            this.Model.Location = new System.Drawing.Point(116, 200);
             this.Model.Name = "Model";
             this.Model.Size = new System.Drawing.Size(101, 32);
             this.Model.TabIndex = 10;
@@ -140,10 +144,11 @@
             // 
             // NewItemModel
             // 
-            this.NewItemModel.Location = new System.Drawing.Point(274, 188);
+            this.NewItemModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.NewItemModel.Location = new System.Drawing.Point(274, 194);
             this.NewItemModel.Name = "NewItemModel";
             this.NewItemModel.Size = new System.Drawing.Size(250, 38);
-            this.NewItemModel.TabIndex = 11;
+            this.NewItemModel.TabIndex = 3;
             // 
             // Organization
             // 
@@ -166,22 +171,24 @@
             // 
             // NewItemOwner
             // 
+            this.NewItemOwner.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewItemOwner.Location = new System.Drawing.Point(274, 322);
             this.NewItemOwner.Name = "NewItemOwner";
             this.NewItemOwner.Size = new System.Drawing.Size(100, 38);
-            this.NewItemOwner.TabIndex = 17;
+            this.NewItemOwner.TabIndex = 5;
             // 
             // NewItemOrganization
             // 
+            this.NewItemOrganization.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewItemOrganization.Location = new System.Drawing.Point(274, 390);
             this.NewItemOrganization.Name = "NewItemOrganization";
-            this.NewItemOrganization.Size = new System.Drawing.Size(200, 38);
-            this.NewItemOrganization.TabIndex = 18;
+            this.NewItemOrganization.Size = new System.Drawing.Size(500, 38);
+            this.NewItemOrganization.TabIndex = 6;
             // 
             // EC
             // 
             this.EC.AutoSize = true;
-            this.EC.Location = new System.Drawing.Point(143, 128);
+            this.EC.Location = new System.Drawing.Point(155, 74);
             this.EC.Name = "EC";
             this.EC.Size = new System.Drawing.Size(62, 32);
             this.EC.TabIndex = 19;
@@ -190,11 +197,12 @@
             // NewEC
             // 
             this.NewEC.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NewEC.Location = new System.Drawing.Point(274, 122);
+            this.NewEC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.NewEC.Location = new System.Drawing.Point(274, 68);
             this.NewEC.Name = "NewEC";
             this.NewEC.ReadOnly = true;
             this.NewEC.Size = new System.Drawing.Size(350, 38);
-            this.NewEC.TabIndex = 20;
+            this.NewEC.TabIndex = 2;
             // 
             // Building
             // 
@@ -216,17 +224,19 @@
             // 
             // NewBuilding
             // 
+            this.NewBuilding.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewBuilding.Location = new System.Drawing.Point(274, 536);
             this.NewBuilding.Name = "NewBuilding";
             this.NewBuilding.Size = new System.Drawing.Size(100, 38);
-            this.NewBuilding.TabIndex = 23;
+            this.NewBuilding.TabIndex = 8;
             // 
             // NewRoom
             // 
+            this.NewRoom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewRoom.Location = new System.Drawing.Point(274, 607);
             this.NewRoom.Name = "NewRoom";
             this.NewRoom.Size = new System.Drawing.Size(100, 38);
-            this.NewRoom.TabIndex = 24;
+            this.NewRoom.TabIndex = 9;
             // 
             // EstimatedValue
             // 
@@ -239,14 +249,15 @@
             // 
             // NewEstimatedValue
             // 
+            this.NewEstimatedValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewEstimatedValue.Location = new System.Drawing.Point(274, 686);
             this.NewEstimatedValue.Name = "NewEstimatedValue";
             this.NewEstimatedValue.Size = new System.Drawing.Size(100, 38);
-            this.NewEstimatedValue.TabIndex = 26;
+            this.NewEstimatedValue.TabIndex = 10;
             // 
             // ECSelectionButton
             // 
-            this.ECSelectionButton.Location = new System.Drawing.Point(642, 117);
+            this.ECSelectionButton.Location = new System.Drawing.Point(640, 68);
             this.ECSelectionButton.Name = "ECSelectionButton";
             this.ECSelectionButton.Size = new System.Drawing.Size(150, 52);
             this.ECSelectionButton.TabIndex = 27;
@@ -271,11 +282,35 @@
             this.NewAssetNotes.TabIndex = 29;
             this.NewAssetNotes.Text = "";
             // 
+            // AddBatchButton
+            // 
+            this.AddBatchButton.Enabled = false;
+            this.AddBatchButton.Location = new System.Drawing.Point(457, 762);
+            this.AddBatchButton.Name = "AddBatchButton";
+            this.AddBatchButton.Size = new System.Drawing.Size(213, 52);
+            this.AddBatchButton.TabIndex = 30;
+            this.AddBatchButton.Text = "Add Batch";
+            this.AddBatchButton.UseVisualStyleBackColor = true;
+            this.AddBatchButton.Click += new System.EventHandler(this.AddBatchButton_Click);
+            // 
+            // AssetBatchCheckBox
+            // 
+            this.AssetBatchCheckBox.AutoSize = true;
+            this.AssetBatchCheckBox.Location = new System.Drawing.Point(573, 260);
+            this.AssetBatchCheckBox.Name = "AssetBatchCheckBox";
+            this.AssetBatchCheckBox.Size = new System.Drawing.Size(183, 36);
+            this.AssetBatchCheckBox.TabIndex = 31;
+            this.AssetBatchCheckBox.Text = "Use Batch";
+            this.AssetBatchCheckBox.UseVisualStyleBackColor = true;
+            this.AssetBatchCheckBox.CheckedChanged += new System.EventHandler(this.AssetBatchCheckBox_CheckedChanged);
+            // 
             // NewAssetWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1498, 902);
+            this.Controls.Add(this.AssetBatchCheckBox);
+            this.Controls.Add(this.AddBatchButton);
             this.Controls.Add(this.NewAssetNotes);
             this.Controls.Add(this.NotesLabel);
             this.Controls.Add(this.ECSelectionButton);
@@ -338,5 +373,7 @@
         public System.Windows.Forms.TextBox NewEC;
         private System.Windows.Forms.Label NotesLabel;
         private System.Windows.Forms.RichTextBox NewAssetNotes;
+        private System.Windows.Forms.Button AddBatchButton;
+        private System.Windows.Forms.CheckBox AssetBatchCheckBox;
     }
 }

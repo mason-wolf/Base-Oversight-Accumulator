@@ -22,3 +22,4 @@ C:\Users\Mason\Desktop\boa-master\boa-master\Base Oversight Accumulator\obj\Debu
 C:\Users\Mason\Desktop\boa-master\boa-master\Base Oversight Accumulator\obj\Debug\Base Oversight Accumulator.pdb
 C:\Users\Mason\Documents\Visual Studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.AccountDetailView.resources
 C:\Users\Mason\Documents\Visual Studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.UserLogin.resources
+C:\Users\Mason\Documents\Visual Studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewAssetBatch.resources

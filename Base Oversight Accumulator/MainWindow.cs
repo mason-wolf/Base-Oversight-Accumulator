@@ -37,13 +37,16 @@ namespace Base_Oversight_Accumulator
             {
               
                 AssetDataView.Rows.Clear();
-                AssetDataView.RowTemplate.Height = 15;
+                AssetDataView.RowTemplate.Height = 20;
 
                 ECDataView.Rows.Clear();
-                ECDataView.RowTemplate.Height = 15;
+                ECDataView.RowTemplate.Height = 20;
 
                 AccountDataView.Rows.Clear();
-                AccountDataView.RowTemplate.Height = 15;
+                AccountDataView.RowTemplate.Height = 20;
+
+                TransferDataView.Rows.Clear();
+                TransferDataView.RowTemplate.Height = 20;
 
                 server = "localhost";
                 database = "boa";
@@ -85,6 +88,8 @@ namespace Base_Oversight_Accumulator
                 }
 
                 StatusBar.Text = "Connected: " + server;
+
+
                 connection.Close();
                 /*
                 DataGridViewColumn IDColumn = AssetDataView.Columns[0];
@@ -148,7 +153,7 @@ namespace Base_Oversight_Accumulator
                     string AccountEC = Convert.ToString(AccountQueryResult["ec"]);
                     string AccountNumber = Convert.ToString(AccountQueryResult["account"]);
 
-                    AccountDataView.Rows.Add(AccountID, AccountNumber, AccountEC, AccountOrg, AccountLastInventoryDate, AccountInventoryDue, AccountLocation);
+                    AccountDataView.Rows.Add(AccountID, AccountNumber, AccountEC, AccountDRA, AccountOrg, AccountLastInventoryDate, AccountInventoryDue, AccountLocation);
                     AccountCount++;
                     if(AccountCount == 1000)
                     {
@@ -157,7 +162,39 @@ namespace Base_Oversight_Accumulator
             }
 
             connection.Close();
-        }
+
+                // populate transfers
+                connection.Open();
+                MySqlCommand TransferQuery = connection.CreateCommand();
+                TransferQuery.CommandText = "SELECT * FROM transfers ORDER BY id DESC";
+                TransferQuery.Connection = connection;
+                MySqlDataReader TransferQueryResult = TransferQuery.ExecuteReader();
+                int TransferCount = 0;
+                while (TransferQueryResult.Read())
+                {
+                    string TransferID = Convert.ToString(TransferQueryResult["id"]);
+                    string TransferItem = Convert.ToString(TransferQueryResult["item"]);
+                    string TransferTo = Convert.ToString(TransferQueryResult["transferto"]);
+                    string TransferFrom = Convert.ToString(TransferQueryResult["transferfrom"]);
+                    string TransferDate = Convert.ToString(TransferQueryResult["transferdate"]);
+                    string TransferSN = Convert.ToString(TransferQueryResult["serialnumber"]);
+                    string TransferLosing = Convert.ToString(TransferQueryResult["losingaccount"]);
+                    string TransferGaining = Convert.ToString(TransferQueryResult["gainingaccount"]);
+                    string TransferBy = Convert.ToString(TransferQueryResult["transferby"]);
+                    string TransferNotes = Convert.ToString(TransferQueryResult["notes"]);
+
+
+                    TransferDataView.Rows.Add(TransferID, TransferItem, TransferTo, TransferFrom,
+                        TransferDate, TransferSN, TransferLosing, TransferGaining, TransferBy, TransferNotes);
+                    TransferCount++;
+                    if (TransferCount == 1000)
+                    {
+                        break;
+                    }
+                }
+
+                connection.Close();
+            }
 
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
@@ -247,10 +284,14 @@ namespace Base_Oversight_Accumulator
 
         private void ECDataView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string GridID = ECDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            CustodianDetailView CustodianDetailView = new CustodianDetailView();
-            CustodianDetailView.selectedID = GridID;
-            CustodianDetailView.Show();
+            try
+            {
+                string GridID = ECDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                CustodianDetailView CustodianDetailView = new CustodianDetailView();
+                CustodianDetailView.selectedID = GridID;
+                CustodianDetailView.Show();
+            }
+            catch { }
         }
 
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -279,22 +320,42 @@ namespace Base_Oversight_Accumulator
         private void TransferButton_Click(object sender, EventArgs e)
         {
             Transfer Transfer = new Transfer();
+            Transfer.TransferedBy = BOAUser;
             Transfer.Show();
         }
 
         private void AccountDataView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string GridID = AccountDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            AccountDetailView AccountDetailView = new AccountDetailView();
-            AccountDetailView.gridid = GridID;
-            AccountDetailView.Show();
+            try
+            {
+                string GridID = AccountDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                AccountDetailView AccountDetailView = new AccountDetailView();
+                AccountDetailView.gridid = GridID;
+                AccountDetailView.Show();
+            }
+            catch { }
         }
 
         private void transferAssetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Transfer Transfer = new Transfer();
+            Transfer.TransferedBy = BOAUser;
             Transfer.Show();
         }
 
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void AssetDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

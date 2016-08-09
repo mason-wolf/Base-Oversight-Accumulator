@@ -139,7 +139,7 @@ namespace Base_Oversight_Accumulator
 
                 string query = "UPDATE assets SET item='" + AssetType + "', serialnumber='" + SerialNumber + "', manufacturer='" +
                     Manufacturer + "', model='" + Model + "', accountnumber='" + AccountNumber + "', organization='" + Organization +
-                    "', ec='" + ec + "', building='" + Building + "', room='" + Room + "',value='" + Value + "', notes='" + Notes + "' where id='" + ID + "'";
+                    "', building='" + Building + "', room='" + Room + "',value='" + Value + "', notes='" + Notes + "' where id='" + ID + "'";
                 mysql.insert(query);
 
             this.Close();

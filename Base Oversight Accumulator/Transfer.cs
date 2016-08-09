@@ -20,6 +20,8 @@ namespace Base_Oversight_Accumulator
         private string user;
         private string password;
 
+        public string TransferedBy { get;  set; }
+
         public Transfer()
         {
             InitializeComponent();
@@ -131,12 +133,12 @@ namespace Base_Oversight_Accumulator
                 string serialnumber = SerialNumberDetail.Text;
                 string losingaccount = LosingAccountField.Text;
                 string gainingaccount = GainingAccountField.Text;
-                // transfered by
-                string TransferHistory = "INSERT INTO transfers (item, transferto, transferfrom, transferdate, serialnumber, losingaccount, gainingaccount, transferedby, notes) VALUES ('" +
-                    item + "','" + transferto + "','" + transferfrom + "','" + transferdate + "','" + serialnumber + "','" +
-                    losingaccount + "','" + gainingaccount + "','" + notes + "')";
 
-              //  mysql.insert(TransferHistory);
+                string TransferHistory = "INSERT INTO transfers (item, transferto, transferfrom, transferdate, serialnumber, losingaccount, gainingaccount, transferby, notes) VALUES ('" +
+                    item + "','" + transferto + "','" + transferfrom + "','" + transferdate + "','" + serialnumber + "','" +
+                    losingaccount + "','" + gainingaccount + "','" + TransferedBy+ "','" + notes + "')";
+
+                mysql.insert(TransferHistory);
                 MessageBox.Show("Transfer complete.");
                 this.Close();
             }

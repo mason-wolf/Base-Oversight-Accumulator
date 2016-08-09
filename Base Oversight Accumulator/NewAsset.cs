@@ -15,7 +15,6 @@ namespace Base_Oversight_Accumulator
         public NewAssetWindow()
         {
             InitializeComponent();
-            NewItemType.Text = "Desktop";
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,7 +39,7 @@ namespace Base_Oversight_Accumulator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string newAsset_itemType = NewItemType.Text;
+            string newAsset_itemType = NewItemType.SelectedItem.ToString();
             string newAsset_itemManufacturer = NewItemManufacturer.Text;
             string newAsset_itemModel = NewItemModel.Text;
             string newAsset_itemSerialNumber = NewItemSerialNumber.Text;
@@ -75,6 +74,44 @@ namespace Base_Oversight_Accumulator
             CustodianSelection CustodianSelection = new CustodianSelection();
             CustodianSelection.Show();
             this.Close();
+        }
+
+        private void AddBatchButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NewAssetBatch NewAssetBatch = new NewAssetBatch();
+                NewAssetBatch.item = NewItemType.SelectedItem.ToString();
+                NewAssetBatch.manufacturer = NewItemManufacturer.Text;
+                NewAssetBatch.model = NewItemModel.Text;
+                NewAssetBatch.serialnumber = NewItemSerialNumber.Text;
+                NewAssetBatch.owner = NewItemOwner.Text;
+                NewAssetBatch.org = NewItemOrganization.Text;
+                NewAssetBatch.ec = NewEC.Text;
+                NewAssetBatch.bldg = NewBuilding.Text;
+                NewAssetBatch.room = NewRoom.Text;
+                NewAssetBatch.value = NewEstimatedValue.Text;
+                NewAssetBatch.notes = NewAssetNotes + "# asset added " + DateTime.Now;
+                NewAssetBatch.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill out the form prior to adding batch of serial numbers for the assets.");
+            }
+        }
+
+        private void AssetBatchCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AssetBatchCheckBox.Checked == false)
+            {
+                NewItemSerialNumber.Enabled = true;
+                AddBatchButton.Enabled = false;
+            }
+            else
+            {
+                NewItemSerialNumber.Enabled = false;
+                AddBatchButton.Enabled = true;
+            }
         }
     }
 }

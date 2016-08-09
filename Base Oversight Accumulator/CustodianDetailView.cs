@@ -44,8 +44,8 @@ namespace Base_Oversight_Accumulator
             while (ECQueryResult.Read())
             {
                 string id = Convert.ToString(ECQueryResult["id"]);
-                string firstname = Convert.ToString(ECQueryResult["lastname"]);
-                string lastname = Convert.ToString(ECQueryResult["firstname"]);
+                string lastname = Convert.ToString(ECQueryResult["lastname"]);
+                string firstname = Convert.ToString(ECQueryResult["firstname"]);
                 string rank = Convert.ToString(ECQueryResult["rank"]);
                 string org = Convert.ToString(ECQueryResult["org"]);
                 string email = Convert.ToString(ECQueryResult["email"]);
@@ -129,7 +129,7 @@ namespace Base_Oversight_Accumulator
             string location = ECLocationField.Text;
             string lastinventorydate = LastInventoryDate.Value.ToString();
             string inventoryduedate = InventoryDueDate.Value.ToString();
-       
+   
             string AccountUpdateQuery = "UPDATE ec SET lastname='" + lastname + "', firstname='" + firstname + "', rank='" +
                 rank + "', org='" + org + "', email='" + email + "', dsn='" + dsn + "', account='" + account + "', location='" +
                 location + "', lastinventorydate='" + lastinventorydate + "', inventoryduedate='" + inventoryduedate + "' WHERE id='" + id + "'";

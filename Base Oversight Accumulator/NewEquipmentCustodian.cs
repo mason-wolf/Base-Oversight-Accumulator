@@ -57,9 +57,9 @@ namespace Base_Oversight_Accumulator
                 mysql.insert(AssetUpdateQuery);
                 this.Close();
             }
-            catch (MySqlException ex)
+            catch (MySqlException)
             {
-                MessageBox.Show(ex.Message);
+                this.Close();
             }
 
         }
