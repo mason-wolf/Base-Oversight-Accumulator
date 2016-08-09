@@ -159,7 +159,7 @@
             this.ModelField.Location = new System.Drawing.Point(297, 268);
             this.ModelField.Name = "ModelField";
             this.ModelField.ReadOnly = true;
-            this.ModelField.Size = new System.Drawing.Size(400, 31);
+            this.ModelField.Size = new System.Drawing.Size(200, 31);
             this.ModelField.TabIndex = 14;
             // 
             // ManufacturerField
@@ -290,7 +290,7 @@
             this.Notes.Size = new System.Drawing.Size(527, 698);
             this.Notes.TabIndex = 1;
             this.Notes.TabStop = false;
-            this.Notes.Text = "Log";
+            this.Notes.Text = "Notes";
             // 
             // AssetNotes
             // 

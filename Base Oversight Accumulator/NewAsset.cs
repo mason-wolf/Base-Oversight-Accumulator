@@ -40,6 +40,7 @@ namespace Base_Oversight_Accumulator
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string newAsset_itemType = NewItemType.Text;
             string newAsset_itemManufacturer = NewItemManufacturer.Text;
             string newAsset_itemModel = NewItemModel.Text;
@@ -50,7 +51,7 @@ namespace Base_Oversight_Accumulator
             string newAsset_NewBuilding = NewBuilding.Text;
             string newAsset_NewRoom = NewRoom.Text;
             string newAsset_NewValue = NewEstimatedValue.Text;
-            string newAsset_Notes = NewAssetNotes.Text + "# asset added " + DateTime.Now;
+            string newAsset_Notes = NewAssetNotes.Text;
 
             dbconnect mysql = new dbconnect();
 

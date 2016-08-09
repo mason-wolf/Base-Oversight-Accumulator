@@ -246,7 +246,7 @@
             // 
             // ECSelectionButton
             // 
-            this.ECSelectionButton.Location = new System.Drawing.Point(642, 117);
+            this.ECSelectionButton.Location = new System.Drawing.Point(647, 114);
             this.ECSelectionButton.Name = "ECSelectionButton";
             this.ECSelectionButton.Size = new System.Drawing.Size(150, 52);
             this.ECSelectionButton.TabIndex = 27;
