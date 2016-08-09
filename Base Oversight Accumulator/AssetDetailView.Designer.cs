@@ -96,7 +96,7 @@
             // 
             this.ValueField.BackColor = System.Drawing.SystemColors.Control;
             this.ValueField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ValueField.Location = new System.Drawing.Point(297, 608);
+            this.ValueField.Location = new System.Drawing.Point(297, 625);
             this.ValueField.Name = "ValueField";
             this.ValueField.ReadOnly = true;
             this.ValueField.Size = new System.Drawing.Size(200, 31);
@@ -106,7 +106,7 @@
             // 
             this.RoomField.BackColor = System.Drawing.SystemColors.Control;
             this.RoomField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RoomField.Location = new System.Drawing.Point(297, 549);
+            this.RoomField.Location = new System.Drawing.Point(297, 562);
             this.RoomField.Name = "RoomField";
             this.RoomField.ReadOnly = true;
             this.RoomField.Size = new System.Drawing.Size(200, 31);
@@ -116,7 +116,7 @@
             // 
             this.BuildingField.BackColor = System.Drawing.SystemColors.Control;
             this.BuildingField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.BuildingField.Location = new System.Drawing.Point(297, 493);
+            this.BuildingField.Location = new System.Drawing.Point(297, 504);
             this.BuildingField.Name = "BuildingField";
             this.BuildingField.ReadOnly = true;
             this.BuildingField.Size = new System.Drawing.Size(200, 31);
@@ -126,7 +126,7 @@
             // 
             this.ECField.BackColor = System.Drawing.SystemColors.Control;
             this.ECField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ECField.Location = new System.Drawing.Point(297, 438);
+            this.ECField.Location = new System.Drawing.Point(297, 448);
             this.ECField.Name = "ECField";
             this.ECField.ReadOnly = true;
             this.ECField.Size = new System.Drawing.Size(350, 31);
@@ -136,7 +136,7 @@
             // 
             this.OrganizationField.BackColor = System.Drawing.SystemColors.Control;
             this.OrganizationField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OrganizationField.Location = new System.Drawing.Point(297, 383);
+            this.OrganizationField.Location = new System.Drawing.Point(297, 384);
             this.OrganizationField.Name = "OrganizationField";
             this.OrganizationField.ReadOnly = true;
             this.OrganizationField.Size = new System.Drawing.Size(200, 31);
@@ -159,7 +159,7 @@
             this.ModelField.Location = new System.Drawing.Point(297, 268);
             this.ModelField.Name = "ModelField";
             this.ModelField.ReadOnly = true;
-            this.ModelField.Size = new System.Drawing.Size(200, 31);
+            this.ModelField.Size = new System.Drawing.Size(400, 31);
             this.ModelField.TabIndex = 14;
             // 
             // ManufacturerField
@@ -195,7 +195,7 @@
             // EstimatedValue
             // 
             this.EstimatedValue.AutoSize = true;
-            this.EstimatedValue.Location = new System.Drawing.Point(30, 608);
+            this.EstimatedValue.Location = new System.Drawing.Point(30, 625);
             this.EstimatedValue.Name = "EstimatedValue";
             this.EstimatedValue.Size = new System.Drawing.Size(231, 32);
             this.EstimatedValue.TabIndex = 9;
@@ -204,7 +204,7 @@
             // Room
             // 
             this.Room.AutoSize = true;
-            this.Room.Location = new System.Drawing.Point(163, 549);
+            this.Room.Location = new System.Drawing.Point(163, 562);
             this.Room.Name = "Room";
             this.Room.Size = new System.Drawing.Size(98, 32);
             this.Room.TabIndex = 8;
@@ -213,7 +213,7 @@
             // Building
             // 
             this.Building.AutoSize = true;
-            this.Building.Location = new System.Drawing.Point(134, 492);
+            this.Building.Location = new System.Drawing.Point(134, 504);
             this.Building.Name = "Building";
             this.Building.Size = new System.Drawing.Size(127, 32);
             this.Building.TabIndex = 7;
@@ -222,7 +222,7 @@
             // EC
             // 
             this.EC.AutoSize = true;
-            this.EC.Location = new System.Drawing.Point(199, 437);
+            this.EC.Location = new System.Drawing.Point(199, 447);
             this.EC.Name = "EC";
             this.EC.Size = new System.Drawing.Size(62, 32);
             this.EC.TabIndex = 6;
@@ -231,7 +231,7 @@
             // Organization
             // 
             this.Organization.AutoSize = true;
-            this.Organization.Location = new System.Drawing.Point(75, 382);
+            this.Organization.Location = new System.Drawing.Point(75, 383);
             this.Organization.Name = "Organization";
             this.Organization.Size = new System.Drawing.Size(186, 32);
             this.Organization.TabIndex = 5;
@@ -290,7 +290,7 @@
             this.Notes.Size = new System.Drawing.Size(527, 698);
             this.Notes.TabIndex = 1;
             this.Notes.TabStop = false;
-            this.Notes.Text = "Notes";
+            this.Notes.Text = "Log";
             // 
             // AssetNotes
             // 
@@ -330,6 +330,7 @@
             this.Transfer.TabIndex = 4;
             this.Transfer.Text = "Transfer";
             this.Transfer.UseVisualStyleBackColor = true;
+            this.Transfer.Click += new System.EventHandler(this.Transfer_Click);
             // 
             // ROS
             // 

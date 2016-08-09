@@ -49,7 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLogin.Designer.cs">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserLogin.resx">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <Compile Include="AccountDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountDetailView.Designer.cs">
+      <DependentUpon>AccountDetailView.cs</DependentUpon>
+    </Compile>
     <Compile Include="AssetDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +76,18 @@
     </Compile>
     <Compile Include="CustodianSelection.Designer.cs">
       <DependentUpon>CustodianSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustodianDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustodianDetailView.Designer.cs">
+      <DependentUpon>CustodianDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transfer.Designer.cs">
+      <DependentUpon>Transfer.cs</DependentUpon>
     </Compile>
     <Compile Include="NewAccount.cs">
       <SubType>Form</SubType>
@@ -89,11 +116,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AccountDetailView.resx">
+      <DependentUpon>AccountDetailView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AssetDetailView.resx">
       <DependentUpon>AssetDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustodianSelection.resx">
       <DependentUpon>CustodianSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustodianDetailView.resx">
+      <DependentUpon>CustodianDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transfer.resx">
+      <DependentUpon>Transfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewAccount.resx">
       <DependentUpon>NewAccount.cs</DependentUpon>
