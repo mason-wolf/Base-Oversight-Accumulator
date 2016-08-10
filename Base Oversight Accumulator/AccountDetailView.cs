@@ -7,20 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 using System.Globalization;
 
 namespace Base_Oversight_Accumulator
 {
     public partial class AccountDetailView : Form
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
-
         public string gridid { get; set; }
         public string AssetAccountNumber { get; set; }
         public string AssetEquipmentCustodian { get; set; }
@@ -32,79 +24,49 @@ namespace Base_Oversight_Accumulator
 
         private void AccountDetailView_Load(object sender, EventArgs e)
         {
-            server = "localhost";
-            database = "boa";
-            user = "root";
-            password = "root";
-            string connectionstring = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
-            connection = new MySqlConnection(connectionstring);
-
-            connection.Open();
-            
-            // account id
-            MySqlCommand AssetIDQuery = connection.CreateCommand();
-            AssetIDQuery.CommandText = "SELECT * FROM itam where id=" + gridid;
-            AssetIDQuery.Connection = connection;
-            MySqlDataReader AssetIDResult = AssetIDQuery.ExecuteReader();
-            while (AssetIDResult.Read())
+            // accounts
+            dbconnect mysql = new dbconnect();
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * FROM itam where id=" + gridid);
+            while (mysql.Result.Read())
             {
-                AssetAccountNumber = Convert.ToString(AssetIDResult["account"]);
+                AssetAccountNumber = mysql.Reader("account");
             }
-            connection.Close();
+            mysql.CloseConnection();
 
-            // total assets
-            connection.Open();
-            int count;
-            string TotalAssetsQuery = "SELECT Count(*) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'";
-            MySqlCommand TotalAssetCmd= new MySqlCommand(TotalAssetsQuery, connection);
-            count = int.Parse(TotalAssetCmd.ExecuteScalar().ToString());
-            TotalAssetsField.Text = count.ToString();
-            connection.Close();
+           // total assets
+            string TotalAssets = mysql.CountQuery("SELECT COUNT(*) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
+            TotalAssetsField.Text = TotalAssets;
+
 
             // total asset value
-            connection.Open();
-
-            try
-            {
-                string AssetValueQuery = "SELECT SUM(value) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'";
-                MySqlCommand AssetValueCmd = new MySqlCommand(AssetValueQuery, connection);
-                TotalValueField.Text = "$" + double.Parse(AssetValueCmd.ExecuteScalar().ToString()).ToString("N0");
-            }
-            catch { }
-            connection.Close();
+            string TotalAssetValue = mysql.SumCurrencyQuery("SELECT SUM(value) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
+            TotalAssetsField.Text = TotalAssetValue;
 
             // equipment custodian
-            connection.Open();
-            MySqlCommand AssetECQuery = connection.CreateCommand();
-            AssetECQuery.CommandText = "SELECT * FROM itam WHERE account='" + AssetAccountNumber + "'";
-            AssetECQuery.Connection = connection;
-            MySqlDataReader AssetECQueryResult = AssetECQuery.ExecuteReader();
-            while (AssetECQueryResult.Read())
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * FROM itam WHERE account='" + AssetAccountNumber + "'");
+            while (mysql.Result.Read())
             {
-                AssetEquipmentCustodian = Convert.ToString(AssetECQueryResult["ec"]);
-                string InventoryDate = Convert.ToString(AssetECQueryResult["lastinventory"]);
-                string InventoryDueDate = Convert.ToString(AssetECQueryResult["inventorydue"]);
+                AssetEquipmentCustodian = mysql.Reader("ec");
+                string InventoryDate = mysql.Reader("lastinventory");
+                string InventoryDueDate = mysql.Reader("inventorydue");
                 LastInventoryField.Text = InventoryDate;
                 InventoryDueField.Text = InventoryDueDate;
             }
-            connection.Close();
-            ECField.Text = AssetEquipmentCustodian;
+            mysql.CloseConnection();
 
             // assets 
-            connection.Open();
-            MySqlCommand AssetListQuery = connection.CreateCommand();
-            AssetListQuery.CommandText = "SELECT * from assets where accountnumber='" + AssetAccountNumber + "'";
-            AssetListQuery.Connection = connection;
-            MySqlDataReader AssetListQueryResult = AssetListQuery.ExecuteReader();
-            while (AssetListQueryResult.Read())
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * from assets where accountnumber='" + AssetAccountNumber + "'");
+            while (mysql.Result.Read())
             {
-
-                string manufacturer = Convert.ToString(AssetListQueryResult["manufacturer"]);
-                string model = Convert.ToString(AssetListQueryResult["model"]);
-                string serial = Convert.ToString(AssetListQueryResult["serialnumber"]);
-                AccountAssets.Items.Add(manufacturer + " " + model + " " +serial);
+                string manufacturer = mysql.Reader("manufacturer");
+                string model = mysql.Reader("model");
+                string serial = mysql.Reader("serialnumber");
+                AccountAssets.Items.Add(manufacturer + " " + model + " " + serial);
             }
-            connection.Close();
+            mysql.CloseConnection();
 
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,8 +80,8 @@ namespace Base_Oversight_Accumulator
 "Confirm Deletion", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 dbconnect mysql = new dbconnect();
-                string query = "DELETE from itam WHERE id=" + gridid;
-                mysql.insert(query);
+                string DeleteAccount = "DELETE from itam WHERE id=" + gridid;
+                mysql.InsertQuery(DeleteAccount);
                 this.Close();
             }
         }

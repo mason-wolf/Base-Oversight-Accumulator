@@ -7,18 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+
 
 namespace Base_Oversight_Accumulator
 {
     public partial class AssetDetailView : Form
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
+
         public string selectedID { get; set; }
         public string ec { get; private set; }
 
@@ -29,36 +24,26 @@ namespace Base_Oversight_Accumulator
         }
 
         private void AssetDetailView_Load(object sender, EventArgs e)
-        { 
+        {
 
-            server = "localhost";
-            database = "boa";
-            user = "root";
-            password = "root";
-            string connectionstring = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
-            connection = new MySqlConnection(connectionstring);
 
-            connection.Open();
-            MySqlCommand AssetIDQuery = connection.CreateCommand();
-            AssetIDQuery.CommandText = "SELECT * FROM assets where id=" + selectedID;
-            AssetIDQuery.Connection = connection;
-            MySqlDataReader AssetIDResult = AssetIDQuery.ExecuteReader();
-            while (AssetIDResult.Read())
+            dbconnect mysql = new dbconnect();
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * FROM assets where id=" + selectedID);
+            while (mysql.Result.Read())
             {
-                string id = Convert.ToString(AssetIDResult["id"]);
-                string item = Convert.ToString(AssetIDResult["item"]);
-                string serialnumber = Convert.ToString(AssetIDResult["serialnumber"]);
-                string manufacturer = Convert.ToString(AssetIDResult["manufacturer"]);
-                string model = Convert.ToString(AssetIDResult["model"]);
-                string account = Convert.ToString(AssetIDResult["accountnumber"]);
-                string organization = Convert.ToString(AssetIDResult["organization"]);
-                string ec = Convert.ToString(AssetIDResult["ec"]);
-                string building = Convert.ToString(AssetIDResult["building"]);
-                string room = Convert.ToString(AssetIDResult["room"]);
-                string value = Convert.ToString(AssetIDResult["value"]);
-                string notes = Convert.ToString(AssetIDResult["notes"]);
-
- 
+                string id = mysql.Reader("id");
+                string item = mysql.Reader("item");
+                string serialnumber = mysql.Reader("serialnumber");
+                string manufacturer = mysql.Reader("manufacturer");
+                string model = mysql.Reader("model");
+                string account = mysql.Reader("accountnumber");
+                string organization = mysql.Reader("organization");
+                string ec = mysql.Reader("ec");
+                string building = mysql.Reader("building");
+                string room = mysql.Reader("room");
+                string value = mysql.Reader("value");
+                string notes = mysql.Reader("notes");
                 this.Text = manufacturer.ToUpper() + " " + model.ToUpper();
                 AssetTypeField.Text = item.ToUpper();
                 SerialNumberField.Text = serialnumber.ToUpper();
@@ -73,7 +58,7 @@ namespace Base_Oversight_Accumulator
                 AssetNotes.Text = notes;
                 AssetID.Text = id;
             }
-            connection.Close();
+            mysql.CloseConnection();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -137,10 +122,10 @@ namespace Base_Oversight_Accumulator
             string Notes = AssetNotes.Text;
             string ID = AssetID.Text;
 
-                string query = "UPDATE assets SET item='" + AssetType + "', serialnumber='" + SerialNumber + "', manufacturer='" +
+                string UpdateAssets = "UPDATE assets SET item='" + AssetType + "', serialnumber='" + SerialNumber + "', manufacturer='" +
                     Manufacturer + "', model='" + Model + "', accountnumber='" + AccountNumber + "', organization='" + Organization +
                     "', building='" + Building + "', room='" + Room + "',value='" + Value + "', notes='" + Notes + "' where id='" + ID + "'";
-                mysql.insert(query);
+            mysql.InsertQuery(UpdateAssets);
 
             this.Close();
         }
@@ -160,8 +145,8 @@ namespace Base_Oversight_Accumulator
                 {
                     dbconnect mysql = new dbconnect();
                     string ID = AssetID.Text;
-                    string query = "DELETE from assets WHERE id=" + ID;
-                    mysql.insert(query);
+                    string DeleteAsset = "DELETE from assets WHERE id=" + ID;
+                    mysql.InsertQuery(DeleteAsset);
                     this.Close();
                 }
                 catch

@@ -72,6 +72,7 @@
             this.Name = "NewAssetBatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enter Serial Numbers:";
+            this.Load += new System.EventHandler(this.NewAssetBatch_Load);
             this.ResumeLayout(false);
 
         }

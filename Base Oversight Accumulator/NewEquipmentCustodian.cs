@@ -41,7 +41,17 @@ namespace Base_Oversight_Accumulator
             try
             {
                 dbconnect mysql = new dbconnect();
+                string AccountCheckQuery = "SELECT * from itam where account='" + account + "'";
+                mysql.InsertQuery(AccountCheckQuery);
+            }
+            catch(MySqlException)
+            {
+                MessageBox.Show("Account not found.");
+            }
 
+            try
+            {
+                dbconnect mysql = new dbconnect();
                 string NewECQuery = "INSERT INTO ec(lastname, firstname, rank, org, email, dsn, account, location) VALUES ('" +
                     lastname + "','" + firstname + "','" + rank + "','" + org + "','" + email + "','" +
                     dsn + "','" + account + "','" + location + "')";
@@ -52,9 +62,9 @@ namespace Base_Oversight_Accumulator
                 string AssetUpdateQuery = "UPDATE assets SET ec='" + rank.ToUpper() + " " + lastname.ToUpper() + "," + firstname.ToUpper() +
                    "' where account='" + account + "'";
 
-                mysql.insert(NewECQuery);
-                mysql.insert(AccountUpdateQuery);
-                mysql.insert(AssetUpdateQuery);
+                mysql.InsertQuery(NewECQuery);
+                mysql.InsertQuery(AccountUpdateQuery);
+                mysql.InsertQuery(AssetUpdateQuery);
                 this.Close();
             }
             catch (MySqlException)

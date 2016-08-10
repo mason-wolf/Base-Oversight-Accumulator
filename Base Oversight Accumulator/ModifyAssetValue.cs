@@ -24,13 +24,18 @@ namespace Base_Oversight_Accumulator
             string value = ValueField.Text;
 
             dbconnect mysql = new dbconnect();
-            string query = "UPDATE assets SET value='" + value + "' WHERE model='" + model + "'";
+            string ModifyAssets = "UPDATE assets SET value='" + value + "' WHERE model='" + model + "'";
             try
             {
-                mysql.insert(query);
+                mysql.InsertQuery(ModifyAssets);
                 this.Close();
             }
             catch { }
+        }
+
+        private void ModifyAssetValue_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

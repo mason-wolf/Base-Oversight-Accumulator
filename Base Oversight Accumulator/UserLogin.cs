@@ -7,19 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 using System.Threading;
 
 namespace Base_Oversight_Accumulator
 {
     public partial class UserLogin : Form
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string dbpassword;
 
         public UserLogin()
         {
@@ -28,40 +21,30 @@ namespace Base_Oversight_Accumulator
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            server = "localhost";
-            database = "boa";
-            user = "root";
-            dbpassword = "root";
-            string connectionstring = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + dbpassword + ";";
-            connection = new MySqlConnection(connectionstring);
 
             string username = UsernameField.Text;
-
             string password = PasswordField.Text;
 
-            MySqlCommand UserQuery = connection.CreateCommand();
-            UserQuery.CommandText = "SELECT * FROM users where username='" + username + "'";
-            UserQuery.Connection = connection;
-            connection.Open();
-            MySqlDataReader UserQueryResult = UserQuery.ExecuteReader();
-            if(UserQueryResult.Read() == false)
+            dbconnect mysql = new dbconnect();
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * FROM users where username='" + username + "'");
+
+            if(mysql.Result.Read() == false)
             {
                 FailedLoginLabel.Visible = true;
             }
             else
             {
-                connection.Close();
-                connection.Open();
-                MySqlCommand PasswordQuery = connection.CreateCommand();
-                PasswordQuery.CommandText = "SELECT * FROM users where username='" + username + "'";
-                PasswordQuery.Connection = connection;
-                MySqlDataReader PasswordQueryResult = PasswordQuery.ExecuteReader();
-                while(PasswordQueryResult.Read())
+                mysql.CloseConnection();
+                mysql.OpenConnection();
+                mysql.SelectQuery("SELECT * FROM users where username='" + username + "'");
+
+                while(mysql.Result.Read())
                 {
-                    string userPassword = Convert.ToString(PasswordQueryResult["password"]);
-                    string UserRank = Convert.ToString(PasswordQueryResult["rank"]);
-                    string UserLastName = Convert.ToString(PasswordQueryResult["lastname"]);
-                    string UserFirstNamae = Convert.ToString(PasswordQueryResult["firstname"]);
+                    string userPassword = mysql.Reader("password");
+                    string UserRank = mysql.Reader("rank");
+                    string UserLastName = mysql.Reader("lastname");
+                    string UserFirstNamae = mysql.Reader("firstname");
                     string BOAUser = UserRank + " " + UserLastName + ", " + UserFirstNamae;
 
                     if (password != userPassword)
@@ -77,6 +60,11 @@ namespace Base_Oversight_Accumulator
                     }
                 }
             }
+        }
+
+        private void UserLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

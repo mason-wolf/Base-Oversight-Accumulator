@@ -27,7 +27,7 @@ namespace Base_Oversight_Accumulator
 
             string query = "INSERT INTO itam(dra, account, org) VALUES ('" + newAccountDRA + "','" + newAccount +
                 "','" + newAccountOrg + "')";
-            mysql.insert(query);
+            mysql.InsertQuery(query);
             this.Close();
         }
 

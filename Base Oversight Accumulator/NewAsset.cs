@@ -63,7 +63,7 @@ namespace Base_Oversight_Accumulator
                                 newAsset_itemModel + "','" + newAsset_itemSerialNumber + "','" + newAsset_itemOwner + "','" + newAsset_itemOrganization + "','" +
                                 newAsset_EC + "','" + newAsset_NewBuilding + "','" + newAsset_NewRoom + "','" + newAsset_NewValue + "','" + newAsset_Notes + "')";
 
-                mysql.insert(query);
+                mysql.InsertQuery(query);
                 this.Close();
             }
           

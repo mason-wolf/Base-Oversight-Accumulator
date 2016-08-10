@@ -7,23 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+
 
 namespace Base_Oversight_Accumulator
 {
     public partial class CustodianSelection : Form
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
+
 
         public CustodianSelection()
         {
             InitializeComponent();
-            this.ActiveControl = ECKeyWords;
         }
 
         public void CustodianSelection_Load(object sender, EventArgs e)
@@ -34,48 +28,39 @@ namespace Base_Oversight_Accumulator
         {
             string GridID = ECDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
             NewAssetWindow NewAssetWindow = new NewAssetWindow();
-            connection.Open();
-            MySqlCommand ECQuery = connection.CreateCommand();
-            ECQuery.CommandText = "SELECT * FROM ec WHERE id=" + GridID;
-            ECQuery.Connection = connection;
-            MySqlDataReader ECQueryResult = ECQuery.ExecuteReader();
+
+            dbconnect mysql = new dbconnect();
+            mysql.SelectQuery("SELECT * FROM ec WHERE id=" + GridID);
+
             DataTable ECDataTable = new DataTable();
+
             ECDataTable.Columns.Add("Last Name", typeof(String));
             ECDataTable.Columns.Add("First Name", typeof(String));
             ECDataTable.Columns.Add("Rank", typeof(String));
 
-            while (ECQueryResult.Read())
+            while (mysql.Result.Read())
             {
-                string ECLastName = Convert.ToString(ECQueryResult["lastname"]);
-                string ECFirstName = Convert.ToString(ECQueryResult["firstname"]);
-                string ECRank = Convert.ToString(ECQueryResult["rank"]);
+                string ECLastName = mysql.Reader("lastname");
+                string ECFirstName = mysql.Reader("firstname");
+                string ECRank = mysql.Reader("rank");
                 NewAssetWindow.NewEC.Text = ECLastName.ToUpper() + ", " + ECFirstName.ToUpper() + " " + ECRank.ToUpper();
                     NewAssetWindow.Show();
 
             }
 
-            connection.Close();
+            mysql.CloseConnection();
            
             this.Close();
         }
 
         public void ECKeyWords_TextChanged(object sender, EventArgs e)
         {
-            ECDataView.RowTemplate.Height = 15;
-            server = "localhost";
-            database = "boa";
-            user = "root";
-            password = "root";
-            string connectionstring = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
-            connection = new MySqlConnection(connectionstring);
+            dbconnect mysql = new dbconnect();
+            mysql.SelectQuery("SELECT * from ec");
 
-            connection.Open();
-            MySqlCommand ECQuery = connection.CreateCommand();
-            ECQuery.CommandText = "SELECT * FROM ec";
-            ECQuery.Connection = connection;
-            MySqlDataReader ECQueryResult = ECQuery.ExecuteReader();
             DataTable ECDataTable = new DataTable();
             ECDataTable.Columns.Add("ID", typeof(String));
+
             ECDataTable.Columns.Add("Last Name", typeof(String));
             ECDataTable.Columns.Add("First Name", typeof(String));
             ECDataTable.Columns.Add("Rank", typeof(String));
@@ -84,23 +69,24 @@ namespace Base_Oversight_Accumulator
             ECDataTable.Columns.Add("DSN", typeof(String));
             ECDataTable.Columns.Add("Acct#", typeof(String));
 
-            while (ECQueryResult.Read())
+            while (mysql.Result.Read())
             {
-                string ECID = Convert.ToString(ECQueryResult["id"]);
-                string ECLastName = Convert.ToString(ECQueryResult["lastname"]);
-                string ECFirstName = Convert.ToString(ECQueryResult["firstname"]);
-                string ECRank = Convert.ToString(ECQueryResult["rank"]);
-                string ECOrg = Convert.ToString(ECQueryResult["org"]);
-                string ECEmail = Convert.ToString(ECQueryResult["email"]);
-                string ECDSN = Convert.ToString(ECQueryResult["dsn"]);
-                string ECAccount = Convert.ToString(ECQueryResult["account"]);
-                string ECLocation = Convert.ToString(ECQueryResult["location"]);
-      
+                string ECID = mysql.Reader("id");
+                string ECLastName = mysql.Reader("lastname");
+                string ECFirstName = mysql.Reader("firstname");
+                string ECRank = mysql.Reader("rank");
+                string ECOrg = mysql.Reader("org");
+                string ECEmail = mysql.Reader("email");
+                string ECDSN = mysql.Reader("dsn");
+                string ECAccount = mysql.Reader("account");
+                string ECLocation = mysql.Reader("location");
+
+
                 ECDataTable.Rows.Add(ECID, ECLastName, ECFirstName, ECRank, ECOrg, ECEmail, ECDSN, ECAccount);
                 
             }
             ECDataView.DataSource = ECDataTable;
-            connection.Close();
+            mysql.CloseConnection();
 
             BindingSource bs = new BindingSource();
             bs.DataSource = ECDataView.DataSource;

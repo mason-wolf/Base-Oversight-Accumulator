@@ -46,7 +46,7 @@ namespace Base_Oversight_Accumulator
                                 model + "','" + batch + "','" + owner + "','" + org + "','" +
                                 ec + "','" + bldg + "','" + room+ "','" + value + "','" + notes + "')";
 
-                mysql.insert(query);
+                mysql.InsertQuery(query);
                 this.Close();
             }
         }
@@ -67,6 +67,11 @@ namespace Base_Oversight_Accumulator
                 }
             }
             return sb.ToString();
+        }
+
+        private void NewAssetBatch_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

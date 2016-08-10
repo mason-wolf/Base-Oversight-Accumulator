@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 using System.Threading;
 using System.Diagnostics;
 using System.IO;
@@ -18,11 +16,7 @@ namespace Base_Oversight_Accumulator
 {
     public partial class MainWindow : Form
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
+
         public string BOAUser { get; set; }
 
         public MainWindow(string username)
@@ -49,36 +43,27 @@ namespace Base_Oversight_Accumulator
                 TransferDataView.Rows.Clear();
                 TransferDataView.RowTemplate.Height = 20;
 
-                server = "localhost";
-                database = "boa";
-                user = "root";
-                password = "root";
-                string connectionstring = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
-                connection = new MySqlConnection(connectionstring);
-                connection.Open();
-                
-                // populate assets
+                dbconnect mysql = new dbconnect();
+                mysql.OpenConnection();
 
-                MySqlCommand AssetQuery = connection.CreateCommand();
-                AssetQuery.CommandText = "SELECT * FROM assets ORDER BY id DESC";
-                AssetQuery.Connection = connection;
-                MySqlDataReader AssetQueryResult = AssetQuery.ExecuteReader();
+                // populate assets
+                mysql.SelectQuery("SELECT * FROM assets ORDER BY id DESC");
 
                 int assetCount = 0;
 
-                while (AssetQueryResult.Read())
+                while (mysql.Result.Read())
                 {
-                    string id = Convert.ToString(AssetQueryResult["id"]);
-                    string item = Convert.ToString(AssetQueryResult["item"]);
-                    string serialnumber = Convert.ToString(AssetQueryResult["serialnumber"]);
-                    string manufacturer = Convert.ToString(AssetQueryResult["manufacturer"]);
-                    string model = Convert.ToString(AssetQueryResult["model"]);
-                    string account = Convert.ToString(AssetQueryResult["accountnumber"]);
-                    string organization = Convert.ToString(AssetQueryResult["organization"]);
-                    string ec = Convert.ToString(AssetQueryResult["ec"]);
-                    string building = Convert.ToString(AssetQueryResult["building"]);
-                    string room = Convert.ToString(AssetQueryResult["room"]);
-                    int ValueFromInt = Int32.Parse(Convert.ToString(AssetQueryResult["value"]));
+                    string id = mysql.Reader("id");
+                    string item = mysql.Reader("item");
+                    string serialnumber = mysql.Reader("serialnumber");
+                    string manufacturer = mysql.Reader("manufacturer");
+                    string model = mysql.Reader("model");
+                    string account = mysql.Reader("accountnumber");
+                    string organization = mysql.Reader("organization");
+                    string ec = mysql.Reader("ec");
+                    string building = mysql.Reader("building");
+                    string room = mysql.Reader("room");
+                    int ValueFromInt = Int32.Parse(Convert.ToString(mysql.Reader("value")));
                     string value = "$" + ValueFromInt.ToString("N0");
                     AssetDataView.Rows.Add(id, item, serialnumber, manufacturer, model, account, organization, ec, building, room, value);
                     assetCount++;
@@ -88,10 +73,10 @@ namespace Base_Oversight_Accumulator
                     }
                 }
 
-                StatusBar.Text = "Connected: " + server;
+                //       StatusBar.Text = "Connected: " + server; 
 
 
-                connection.Close();
+                mysql.CloseConnection();
                 /*
                 DataGridViewColumn IDColumn = AssetDataView.Columns[0];
                 IDColumn.Width = 25;
@@ -102,25 +87,22 @@ namespace Base_Oversight_Accumulator
                 */
 
                 // populate equipment custodians
-                connection.Open();
-                MySqlCommand ECQuery = connection.CreateCommand();
-                ECQuery.CommandText = "SELECT * FROM ec ORDER BY id DESC";
-                ECQuery.Connection = connection;
-                MySqlDataReader ECQueryResult = ECQuery.ExecuteReader();
+                mysql.OpenConnection();
+                mysql.SelectQuery("SELECT * FROM ec ORDER BY id DESC");
 
                 int CustodianCount = 0;
 
-                while (ECQueryResult.Read())
+                while (mysql.Result.Read())
                 {
-                    string ECID = Convert.ToString(ECQueryResult["id"]);
-                    string ECLastName = Convert.ToString(ECQueryResult["lastname"]);
-                    string ECFirstName = Convert.ToString(ECQueryResult["firstname"]);
-                    string ECRank = Convert.ToString(ECQueryResult["rank"]);
-                    string ECOrg = Convert.ToString(ECQueryResult["org"]);
-                    string ECEmail = Convert.ToString(ECQueryResult["email"]);
-                    string ECDSN = Convert.ToString(ECQueryResult["dsn"]);
-                    string ECAccount = Convert.ToString(ECQueryResult["account"]);
-                    string ECLocation = Convert.ToString(ECQueryResult["location"]);
+                    string ECID = mysql.Reader("id");
+                    string ECLastName = mysql.Reader("lastname");
+                    string ECFirstName = mysql.Reader("firstname");
+                    string ECRank = mysql.Reader("rank");
+                    string ECOrg = mysql.Reader("org");
+                    string ECEmail = mysql.Reader("email");
+                    string ECDSN = mysql.Reader("dsn");
+                    string ECAccount = mysql.Reader("account");
+                    string ECLocation = mysql.Reader("location");
 
                     ECDataView.Rows.Add(ECID ,ECLastName, ECFirstName, ECRank, ECAccount, ECEmail, ECDSN, ECOrg, ECLocation);
                     CustodianCount++;
@@ -131,27 +113,25 @@ namespace Base_Oversight_Accumulator
                     }
                 }
 
-                connection.Close();
-            
+                mysql.CloseConnection();
 
-             
+
+
                 // populate accounts
-            connection.Open();
-            MySqlCommand AccountQuery= connection.CreateCommand();
-            ECQuery.CommandText = "SELECT * FROM itam ORDER BY id DESC";
-            ECQuery.Connection = connection;
-            MySqlDataReader AccountQueryResult = ECQuery.ExecuteReader();
+                mysql.OpenConnection();
+                mysql.SelectQuery("SELECT * FROM itam ORDER BY id DESC");
+
                 int AccountCount = 0;
-            while (AccountQueryResult.Read())
+            while (mysql.Result.Read())
             {
-                    string AccountID = Convert.ToString(AccountQueryResult["id"]);
-                    string AccountDRA = Convert.ToString(AccountQueryResult["dra"]);
-                    string AccountOrg = Convert.ToString(AccountQueryResult["org"]);
-                    string AccountLastInventoryDate = Convert.ToString(AccountQueryResult["lastinventory"]);
-                    string AccountInventoryDue = Convert.ToString(AccountQueryResult["inventorydue"]);
-                    string AccountNotes = Convert.ToString(AccountQueryResult["notes"]);
-                    string AccountEC = Convert.ToString(AccountQueryResult["ec"]);
-                    string AccountNumber = Convert.ToString(AccountQueryResult["account"]);
+                    string AccountID = mysql.Reader("id");
+                    string AccountDRA = mysql.Reader("dra");
+                    string AccountOrg = mysql.Reader("org");
+                    string AccountLastInventoryDate = mysql.Reader("lastinventory");
+                    string AccountInventoryDue = mysql.Reader("inventorydue");
+                    string AccountNotes = mysql.Reader("notes");
+                    string AccountEC = mysql.Reader("ec");
+                    string AccountNumber = mysql.Reader("account");
 
                     AccountDataView.Rows.Add(AccountID, AccountNumber, AccountEC, AccountDRA, AccountOrg, AccountLastInventoryDate, AccountInventoryDue, AccountNotes);
                     AccountCount++;
@@ -161,27 +141,25 @@ namespace Base_Oversight_Accumulator
                     }
             }
 
-            connection.Close();
+                mysql.CloseConnection();
 
                 // populate transfers
-                connection.Open();
-                MySqlCommand TransferQuery = connection.CreateCommand();
-                TransferQuery.CommandText = "SELECT * FROM transfers ORDER BY id DESC";
-                TransferQuery.Connection = connection;
-                MySqlDataReader TransferQueryResult = TransferQuery.ExecuteReader();
+                mysql.OpenConnection();
+                mysql.SelectQuery("SELECT * FROM transfers ORDER BY id DESC");
                 int TransferCount = 0;
-                while (TransferQueryResult.Read())
+
+                while (mysql.Result.Read())
                 {
-                    string TransferID = Convert.ToString(TransferQueryResult["id"]);
-                    string TransferItem = Convert.ToString(TransferQueryResult["item"]);
-                    string TransferTo = Convert.ToString(TransferQueryResult["transferto"]);
-                    string TransferFrom = Convert.ToString(TransferQueryResult["transferfrom"]);
-                    string TransferDate = Convert.ToString(TransferQueryResult["transferdate"]);
-                    string TransferSN = Convert.ToString(TransferQueryResult["serialnumber"]);
-                    string TransferLosing = Convert.ToString(TransferQueryResult["losingaccount"]);
-                    string TransferGaining = Convert.ToString(TransferQueryResult["gainingaccount"]);
-                    string TransferBy = Convert.ToString(TransferQueryResult["transferby"]);
-                    string TransferNotes = Convert.ToString(TransferQueryResult["notes"]);
+                    string TransferID = mysql.Reader("id");
+                    string TransferItem = mysql.Reader("item");
+                    string TransferTo = mysql.Reader("transferto");
+                    string TransferFrom = mysql.Reader("transferfrom");
+                    string TransferDate = mysql.Reader("transferdate");
+                    string TransferSN = mysql.Reader("serialnumber");
+                    string TransferLosing = mysql.Reader("losingaccount");
+                    string TransferGaining = mysql.Reader("gainingaccount");
+                    string TransferBy = mysql.Reader("transferby");
+                    string TransferNotes = mysql.Reader("notes");
 
 
                     TransferDataView.Rows.Add(TransferID, TransferItem, TransferTo, TransferFrom,
@@ -193,7 +171,7 @@ namespace Base_Oversight_Accumulator
                     }
                 }
 
-                connection.Close();
+                mysql.CloseConnection();
             }
 
             catch (MySql.Data.MySqlClient.MySqlException ex)

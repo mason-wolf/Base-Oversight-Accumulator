@@ -122,6 +122,7 @@
             this.Controls.Add(this.ManufacturerLabel);
             this.Name = "ModifyAssetValue";
             this.Text = "Asset Value";
+            this.Load += new System.EventHandler(this.ModifyAssetValue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

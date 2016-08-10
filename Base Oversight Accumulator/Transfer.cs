@@ -7,18 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 
 namespace Base_Oversight_Accumulator
 {
     public partial class Transfer : Form
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
+
 
         public string TransferedBy { get;  set; }
 
@@ -29,75 +23,66 @@ namespace Base_Oversight_Accumulator
 
         private void TransferAssetButton_Click(object sender, EventArgs e)
         {
-            server = "localhost";
-            database = "boa";
-            user = "root";
-            password = "root";
-            string connectionstring = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + password + ";";
-            connection = new MySqlConnection(connectionstring);
 
        
             // retrieve losing account details
 
             string LosingAccount = LosingAccountField.Text;
 
-                connection.Open();
-                MySqlCommand LosingAccountQuery = connection.CreateCommand();
-                 LosingAccountQuery.CommandText = "SELECT * FROM itam where account='" + LosingAccount +"'";
-                 LosingAccountQuery.Connection = connection;
-                MySqlDataReader LosingAccountQueryResults = LosingAccountQuery.ExecuteReader();
-                while (LosingAccountQueryResults.Read())
+            dbconnect mysql = new dbconnect();
+            mysql.SelectQuery("SELECT * FROM itam where account='" + LosingAccount + "'");
+
+
+                while (mysql.Result.Read())
                 {
-                    string account = Convert.ToString(LosingAccountQueryResults["account"]);
-                    string org = Convert.ToString(LosingAccountQueryResults["org"]);
-                    string ec = Convert.ToString(LosingAccountQueryResults["ec"]);
+                string account = mysql.Reader("account");
+                string org = mysql.Reader("org");
+                string ec = mysql.Reader("ec");
+
                     LosingAccountDetail.Text = account.ToUpper();
                     LosingOrgDetail.Text = org.ToUpper();
                     LosingECDetail.Text = ec.ToUpper();
             }
-            connection.Close();
+            mysql.CloseConnection();
 
             // gaining account details
             string GainingAccount = GainingAccountField.Text;
 
-            connection.Open();
-            MySqlCommand GainingAccountQuery = connection.CreateCommand();
-            GainingAccountQuery.CommandText = "SELECT * FROM itam where account='" + GainingAccount + "'";
-            GainingAccountQuery.Connection = connection;
-            MySqlDataReader GainingAccountQueryResults = GainingAccountQuery.ExecuteReader();
-            while (GainingAccountQueryResults.Read())
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * FROM itam where account='" + GainingAccount + "'");
+
+            while (mysql.Result.Read())
             {
-                string account = Convert.ToString(GainingAccountQueryResults["account"]);
-                string org = Convert.ToString(GainingAccountQueryResults["org"]);
-                string ec = Convert.ToString(GainingAccountQueryResults["ec"]);
+                string account = mysql.Reader("account");
+                string org = mysql.Reader("org");
+                string ec = mysql.Reader("ec");
                 GainingAccountDetail.Text = account.ToUpper();
                 GainingOrganizationDetail.Text = org.ToUpper();
                 GainingECDetail.Text = ec.ToUpper();
 
             }
-            connection.Close();
+            mysql.CloseConnection();
 
             //asset details
 
             string SerialNumberTransfer = SerialNumberField.Text;
 
-            connection.Open();
-            MySqlCommand AssetQuery = connection.CreateCommand();
-            AssetQuery.CommandText = "SELECT * FROM assets where serialnumber='" + SerialNumberTransfer + "'";
-            AssetQuery.Connection = connection;
-            MySqlDataReader AssetQueryResults = AssetQuery.ExecuteReader();
-            while (AssetQueryResults.Read())
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * FROM assets where serialnumber='" + SerialNumberTransfer + "'");
+
+            while (mysql.Result.Read())
             {
-                string item = Convert.ToString(AssetQueryResults["item"]);
-                string manufacturer = Convert.ToString(AssetQueryResults["manufacturer"]);
-                string model = Convert.ToString(AssetQueryResults["model"]);
-                string serialnumber = Convert.ToString(AssetQueryResults["serialnumber"]);
+                string item = mysql.Reader("item");
+                string manufacturer = mysql.Reader("manufacturer");
+                string model = mysql.Reader("model");
+                string serialnumber = mysql.Reader("serialnumber");
 
                 AssetDetail.Text = item.ToUpper() + " " + manufacturer.ToUpper() + " " + model.ToUpper();
                 SerialNumberDetail.Text = serialnumber.ToUpper();
 
             }
-            connection.Close();
+
+            mysql.CloseConnection();
 
             if(!String.IsNullOrEmpty(LosingAccountDetail.Text))
             {
@@ -124,7 +109,7 @@ namespace Base_Oversight_Accumulator
                    dbconnect mysql = new dbconnect();
                 string TransferQuery = "UPDATE assets SET accountnumber='" + GainingAccountField.Text.ToUpper() + 
                     "', ec='" + GainingECDetail.Text.ToUpper() +"', notes='" + notes + "' WHERE serialnumber='" + SerialNumberDetail.Text.ToUpper() + "'";
-                mysql.insert(TransferQuery);
+                mysql.InsertQuery(TransferQuery);
 
                 string item = AssetDetail.Text;
                 string transferto = GainingECDetail.Text;
@@ -138,7 +123,7 @@ namespace Base_Oversight_Accumulator
                     item + "','" + transferto + "','" + transferfrom + "','" + transferdate + "','" + serialnumber + "','" +
                     losingaccount + "','" + gainingaccount + "','" + TransferedBy+ "','" + notes + "')";
 
-                mysql.insert(TransferHistory);
+                mysql.InsertQuery(TransferHistory);
                 MessageBox.Show("Transfer complete.");
                 this.Close();
             }

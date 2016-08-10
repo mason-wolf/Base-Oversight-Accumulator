@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dbconnect.cs" />
     <Compile Include="ModifyAssetValue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,7 +120,6 @@
     <Compile Include="NewEquipmentCustodian.Designer.cs">
       <DependentUpon>NewEquipmentCustodian.cs</DependentUpon>
     </Compile>
-    <Compile Include="MySQLConnector.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
