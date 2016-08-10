@@ -53,7 +53,6 @@
             this.ECDataView.RowTemplate.Height = 40;
             this.ECDataView.Size = new System.Drawing.Size(1915, 1053);
             this.ECDataView.TabIndex = 1;
-            this.ECDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellContentClick);
             this.ECDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellDoubleClick);
             // 
             // label1
@@ -81,6 +80,7 @@
             this.Controls.Add(this.ECKeyWords);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ECDataView);
+            this.KeyPreview = true;
             this.Name = "CustodianSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Custodian..";

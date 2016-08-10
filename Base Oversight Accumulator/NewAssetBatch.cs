@@ -48,7 +48,6 @@ namespace Base_Oversight_Accumulator
 
                 mysql.insert(query);
                 this.Close();
-                
             }
         }
 

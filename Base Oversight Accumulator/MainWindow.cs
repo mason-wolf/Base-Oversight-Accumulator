@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 using System.Threading;
 using System.Diagnostics;
 using System.IO;
+using System.Globalization;
 
 namespace Base_Oversight_Accumulator
 {
@@ -77,8 +78,8 @@ namespace Base_Oversight_Accumulator
                     string ec = Convert.ToString(AssetQueryResult["ec"]);
                     string building = Convert.ToString(AssetQueryResult["building"]);
                     string room = Convert.ToString(AssetQueryResult["room"]);
-                    string value = Convert.ToString(AssetQueryResult["value"]);
-
+                    int ValueFromInt = Int32.Parse(Convert.ToString(AssetQueryResult["value"]));
+                    string value = "$" + ValueFromInt.ToString("N0");
                     AssetDataView.Rows.Add(id, item, serialnumber, manufacturer, model, account, organization, ec, building, room, value);
                     assetCount++;
                     if(assetCount == 1000)
@@ -148,12 +149,11 @@ namespace Base_Oversight_Accumulator
                     string AccountOrg = Convert.ToString(AccountQueryResult["org"]);
                     string AccountLastInventoryDate = Convert.ToString(AccountQueryResult["lastinventory"]);
                     string AccountInventoryDue = Convert.ToString(AccountQueryResult["inventorydue"]);
-                    string AccountLocation = Convert.ToString(AccountQueryResult["location"]);
                     string AccountNotes = Convert.ToString(AccountQueryResult["notes"]);
                     string AccountEC = Convert.ToString(AccountQueryResult["ec"]);
                     string AccountNumber = Convert.ToString(AccountQueryResult["account"]);
 
-                    AccountDataView.Rows.Add(AccountID, AccountNumber, AccountEC, AccountDRA, AccountOrg, AccountLastInventoryDate, AccountInventoryDue, AccountLocation);
+                    AccountDataView.Rows.Add(AccountID, AccountNumber, AccountEC, AccountDRA, AccountOrg, AccountLastInventoryDate, AccountInventoryDue, AccountNotes);
                     AccountCount++;
                     if(AccountCount == 1000)
                     {
@@ -356,6 +356,12 @@ namespace Base_Oversight_Accumulator
         private void AssetDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void ModifyAssetValueButton_Click(object sender, EventArgs e)
+        {
+            ModifyAssetValue ModifyAssetValue = new ModifyAssetValue();
+            ModifyAssetValue.Show();
         }
     }
 }

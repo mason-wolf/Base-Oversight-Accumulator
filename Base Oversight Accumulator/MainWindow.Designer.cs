@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ActionReportDataView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -45,15 +48,6 @@
             this.EstimatedValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ECDataView = new System.Windows.Forms.DataGridView();
-            this.EquipmentCustodianID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECAccountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECOrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECDSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccountsTab = new System.Windows.Forms.TabPage();
             this.AccountDataView = new System.Windows.Forms.DataGridView();
             this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +81,7 @@
             this.addITAMAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.initiateReportOfSurveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.assetDispositionbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.manageProfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,10 +110,18 @@
             this.NewAccountButton = new System.Windows.Forms.ToolStripButton();
             this.TransferButton = new System.Windows.Forms.ToolStripButton();
             this.TempIssueButton = new System.Windows.Forms.ToolStripButton();
+            this.ModifyAssetValueButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ModifyAssetValueButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.EquipmentCustodianID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECAccountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECDSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECOrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActionReportDataView.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
@@ -293,9 +296,9 @@
             this.ECFirstName,
             this.ECRank,
             this.ECAccountNum,
-            this.ECOrg,
             this.ECEmail,
             this.ECDSN,
+            this.ECOrg,
             this.ECLocation});
             this.ECDataView.Location = new System.Drawing.Point(-10, 0);
             this.ECDataView.Name = "ECDataView";
@@ -306,60 +309,6 @@
             this.ECDataView.Size = new System.Drawing.Size(1787, 1317);
             this.ECDataView.TabIndex = 0;
             this.ECDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellDoubleClick);
-            // 
-            // EquipmentCustodianID
-            // 
-            this.EquipmentCustodianID.HeaderText = "ID";
-            this.EquipmentCustodianID.Name = "EquipmentCustodianID";
-            this.EquipmentCustodianID.ReadOnly = true;
-            // 
-            // ECLastName
-            // 
-            this.ECLastName.HeaderText = "Last Name";
-            this.ECLastName.Name = "ECLastName";
-            this.ECLastName.ReadOnly = true;
-            // 
-            // ECFirstName
-            // 
-            this.ECFirstName.HeaderText = "First Name";
-            this.ECFirstName.Name = "ECFirstName";
-            this.ECFirstName.ReadOnly = true;
-            // 
-            // ECRank
-            // 
-            this.ECRank.HeaderText = "Rank";
-            this.ECRank.Name = "ECRank";
-            this.ECRank.ReadOnly = true;
-            // 
-            // ECAccountNum
-            // 
-            this.ECAccountNum.HeaderText = "Acct#";
-            this.ECAccountNum.Name = "ECAccountNum";
-            this.ECAccountNum.ReadOnly = true;
-            // 
-            // ECOrg
-            // 
-            this.ECOrg.HeaderText = "Org";
-            this.ECOrg.Name = "ECOrg";
-            this.ECOrg.ReadOnly = true;
-            // 
-            // ECEmail
-            // 
-            this.ECEmail.HeaderText = "Email";
-            this.ECEmail.Name = "ECEmail";
-            this.ECEmail.ReadOnly = true;
-            // 
-            // ECDSN
-            // 
-            this.ECDSN.HeaderText = "DSN";
-            this.ECDSN.Name = "ECDSN";
-            this.ECDSN.ReadOnly = true;
-            // 
-            // ECLocation
-            // 
-            this.ECLocation.HeaderText = "Location";
-            this.ECLocation.Name = "ECLocation";
-            this.ECLocation.ReadOnly = true;
             // 
             // AccountsTab
             // 
@@ -382,6 +331,14 @@
             this.AccountDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.AccountDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.AccountDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AccountDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccountDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AccountID,
@@ -392,9 +349,25 @@
             this.LastInventory,
             this.InventoryDue,
             this.Location});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle2;
             this.AccountDataView.Location = new System.Drawing.Point(-10, 0);
             this.AccountDataView.Name = "AccountDataView";
             this.AccountDataView.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.AccountDataView.RowHeadersVisible = false;
             this.AccountDataView.RowHeadersWidth = 100;
             this.AccountDataView.RowTemplate.Height = 40;
@@ -446,7 +419,7 @@
             // 
             // Location
             // 
-            this.Location.HeaderText = "Location";
+            this.Location.HeaderText = "Notes";
             this.Location.Name = "Location";
             this.Location.ReadOnly = true;
             // 
@@ -660,6 +633,12 @@
             this.initiateReportOfSurveryToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.initiateReportOfSurveryToolStripMenuItem.Text = "Report of Survey";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(482, 46);
+            this.toolStripMenuItem1.Text = "Modify Cost of Asset";
+            // 
             // assetDispositionbToolStripMenuItem
             // 
             this.assetDispositionbToolStripMenuItem.Name = "assetDispositionbToolStripMenuItem";
@@ -838,7 +817,7 @@
             this.NewAssetButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewAssetButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewAssetButton.Name = "NewAssetButton";
-            this.NewAssetButton.Size = new System.Drawing.Size(23, 45);
+            this.NewAssetButton.Size = new System.Drawing.Size(23, 36);
             this.NewAssetButton.Text = "NewAssetButton";
             this.NewAssetButton.ToolTipText = "Add a new asset.\r\n";
             this.NewAssetButton.Click += new System.EventHandler(this.NewAssetButton_Click);
@@ -850,7 +829,7 @@
             this.NewECButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewECButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewECButton.Name = "NewECButton";
-            this.NewECButton.Size = new System.Drawing.Size(36, 45);
+            this.NewECButton.Size = new System.Drawing.Size(36, 36);
             this.NewECButton.ToolTipText = "Add a new equipment custodian.\r\n";
             this.NewECButton.Click += new System.EventHandler(this.NewECButton_Click);
             // 
@@ -861,7 +840,7 @@
             this.NewAccountButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewAccountButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewAccountButton.Name = "NewAccountButton";
-            this.NewAccountButton.Size = new System.Drawing.Size(23, 45);
+            this.NewAccountButton.Size = new System.Drawing.Size(23, 36);
             this.NewAccountButton.ToolTipText = "Create a new ITAM account.\r\n";
             this.NewAccountButton.Click += new System.EventHandler(this.NewAccountButton_Click);
             // 
@@ -872,7 +851,7 @@
             this.TransferButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TransferButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TransferButton.Name = "TransferButton";
-            this.TransferButton.Size = new System.Drawing.Size(23, 45);
+            this.TransferButton.Size = new System.Drawing.Size(23, 36);
             this.TransferButton.Text = "Transfer";
             this.TransferButton.ToolTipText = "Transfer asset from one account to another.\r\n\r\n";
             this.TransferButton.Click += new System.EventHandler(this.TransferButton_Click);
@@ -884,9 +863,20 @@
             this.TempIssueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TempIssueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TempIssueButton.Name = "TempIssueButton";
-            this.TempIssueButton.Size = new System.Drawing.Size(23, 45);
+            this.TempIssueButton.Size = new System.Drawing.Size(23, 36);
             this.TempIssueButton.Text = "TempIssueButton";
             this.TempIssueButton.ToolTipText = "Temporarily issue item.\r\n";
+            // 
+            // ModifyAssetValueButton
+            // 
+            this.ModifyAssetValueButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ModifyAssetValueButton.Image = ((System.Drawing.Image)(resources.GetObject("ModifyAssetValueButton.Image")));
+            this.ModifyAssetValueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ModifyAssetValueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ModifyAssetValueButton.Name = "ModifyAssetValueButton";
+            this.ModifyAssetValueButton.Size = new System.Drawing.Size(36, 36);
+            this.ModifyAssetValueButton.Text = "Modify cost of assets based on make and model.";
+            this.ModifyAssetValueButton.Click += new System.EventHandler(this.ModifyAssetValueButton_Click);
             // 
             // statusStrip1
             // 
@@ -904,21 +894,59 @@
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // ModifyAssetValueButton
+            // EquipmentCustodianID
             // 
-            this.ModifyAssetValueButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ModifyAssetValueButton.Image = ((System.Drawing.Image)(resources.GetObject("ModifyAssetValueButton.Image")));
-            this.ModifyAssetValueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ModifyAssetValueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ModifyAssetValueButton.Name = "ModifyAssetValueButton";
-            this.ModifyAssetValueButton.Size = new System.Drawing.Size(36, 36);
-            this.ModifyAssetValueButton.Text = "Modify cost of assets based on make and model.";
+            this.EquipmentCustodianID.HeaderText = "ID";
+            this.EquipmentCustodianID.Name = "EquipmentCustodianID";
+            this.EquipmentCustodianID.ReadOnly = true;
             // 
-            // toolStripMenuItem1
+            // ECLastName
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(482, 46);
-            this.toolStripMenuItem1.Text = "Modify Cost of Asset";
+            this.ECLastName.HeaderText = "Last Name";
+            this.ECLastName.Name = "ECLastName";
+            this.ECLastName.ReadOnly = true;
+            // 
+            // ECFirstName
+            // 
+            this.ECFirstName.HeaderText = "First Name";
+            this.ECFirstName.Name = "ECFirstName";
+            this.ECFirstName.ReadOnly = true;
+            // 
+            // ECRank
+            // 
+            this.ECRank.HeaderText = "Rank";
+            this.ECRank.Name = "ECRank";
+            this.ECRank.ReadOnly = true;
+            // 
+            // ECAccountNum
+            // 
+            this.ECAccountNum.HeaderText = "Acct#";
+            this.ECAccountNum.Name = "ECAccountNum";
+            this.ECAccountNum.ReadOnly = true;
+            // 
+            // ECEmail
+            // 
+            this.ECEmail.HeaderText = "Email";
+            this.ECEmail.Name = "ECEmail";
+            this.ECEmail.ReadOnly = true;
+            // 
+            // ECDSN
+            // 
+            this.ECDSN.HeaderText = "DSN";
+            this.ECDSN.Name = "ECDSN";
+            this.ECDSN.ReadOnly = true;
+            // 
+            // ECOrg
+            // 
+            this.ECOrg.HeaderText = "Org";
+            this.ECOrg.Name = "ECOrg";
+            this.ECOrg.ReadOnly = true;
+            // 
+            // ECLocation
+            // 
+            this.ECLocation.HeaderText = "Location";
+            this.ECLocation.Name = "ECLocation";
+            this.ECLocation.ReadOnly = true;
             // 
             // MainWindow
             // 
@@ -990,14 +1018,6 @@
         private System.Windows.Forms.DataGridView AccountDataView;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StatusBar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Account;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AssignedEC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Org;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryDue;
-        private new System.Windows.Forms.DataGridViewTextBoxColumn Location;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addAssetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addEquipmentCustodianToolStripMenuItem;
@@ -1026,15 +1046,6 @@
         private System.Windows.Forms.TabPage ROSDataView;
         private System.Windows.Forms.TabPage ActionLogDataView;
         private System.Windows.Forms.ToolStripButton TempIssueButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EquipmentCustodianID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECLastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECRank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECAccountNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECOrg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECDSN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ECLocation;
         public System.Windows.Forms.DataGridView TransferDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn TransferID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TransferItem;
@@ -1048,6 +1059,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
         private System.Windows.Forms.ToolStripButton ModifyAssetValueButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Account;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssignedEC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Org;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastInventory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryDue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EquipmentCustodianID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECRank;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECAccountNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECDSN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECOrg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECLocation;
     }
 }
 

@@ -49,7 +49,7 @@ namespace Base_Oversight_Accumulator
                 string ECLastName = Convert.ToString(ECQueryResult["lastname"]);
                 string ECFirstName = Convert.ToString(ECQueryResult["firstname"]);
                 string ECRank = Convert.ToString(ECQueryResult["rank"]);
-                    NewAssetWindow.NewEC.Text = ECRank.ToUpper() + " " + ECLastName.ToUpper() + ", " + ECFirstName.ToUpper();
+                NewAssetWindow.NewEC.Text = ECLastName.ToUpper() + ", " + ECFirstName.ToUpper() + " " + ECRank.ToUpper();
                     NewAssetWindow.Show();
 
             }
@@ -108,10 +108,6 @@ namespace Base_Oversight_Accumulator
             ECDataView.DataSource = bs;
         }
 
-        private void ECDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
 

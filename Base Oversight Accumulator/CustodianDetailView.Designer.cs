@@ -55,6 +55,7 @@
             this.SaveChangesButton = new System.Windows.Forms.Button();
             this.ECID = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ECLastName
@@ -144,7 +145,7 @@
             this.ECLastNameField.Location = new System.Drawing.Point(311, 52);
             this.ECLastNameField.Name = "ECLastNameField";
             this.ECLastNameField.ReadOnly = true;
-            this.ECLastNameField.Size = new System.Drawing.Size(300, 31);
+            this.ECLastNameField.Size = new System.Drawing.Size(500, 31);
             this.ECLastNameField.TabIndex = 10;
             // 
             // ECFirstNameField
@@ -153,7 +154,7 @@
             this.ECFirstNameField.Location = new System.Drawing.Point(311, 124);
             this.ECFirstNameField.Name = "ECFirstNameField";
             this.ECFirstNameField.ReadOnly = true;
-            this.ECFirstNameField.Size = new System.Drawing.Size(300, 31);
+            this.ECFirstNameField.Size = new System.Drawing.Size(500, 31);
             this.ECFirstNameField.TabIndex = 11;
             // 
             // ECRankField
@@ -162,7 +163,7 @@
             this.ECRankField.Location = new System.Drawing.Point(311, 192);
             this.ECRankField.Name = "ECRankField";
             this.ECRankField.ReadOnly = true;
-            this.ECRankField.Size = new System.Drawing.Size(300, 31);
+            this.ECRankField.Size = new System.Drawing.Size(500, 31);
             this.ECRankField.TabIndex = 12;
             // 
             // ECOrgField
@@ -171,7 +172,7 @@
             this.ECOrgField.Location = new System.Drawing.Point(311, 252);
             this.ECOrgField.Name = "ECOrgField";
             this.ECOrgField.ReadOnly = true;
-            this.ECOrgField.Size = new System.Drawing.Size(300, 31);
+            this.ECOrgField.Size = new System.Drawing.Size(500, 31);
             this.ECOrgField.TabIndex = 13;
             // 
             // ECEmailField
@@ -180,7 +181,7 @@
             this.ECEmailField.Location = new System.Drawing.Point(311, 315);
             this.ECEmailField.Name = "ECEmailField";
             this.ECEmailField.ReadOnly = true;
-            this.ECEmailField.Size = new System.Drawing.Size(300, 31);
+            this.ECEmailField.Size = new System.Drawing.Size(500, 31);
             this.ECEmailField.TabIndex = 14;
             // 
             // ECDSNField
@@ -189,7 +190,7 @@
             this.ECDSNField.Location = new System.Drawing.Point(311, 378);
             this.ECDSNField.Name = "ECDSNField";
             this.ECDSNField.ReadOnly = true;
-            this.ECDSNField.Size = new System.Drawing.Size(300, 31);
+            this.ECDSNField.Size = new System.Drawing.Size(500, 31);
             this.ECDSNField.TabIndex = 15;
             // 
             // ECAccountField
@@ -198,7 +199,7 @@
             this.ECAccountField.Location = new System.Drawing.Point(311, 445);
             this.ECAccountField.Name = "ECAccountField";
             this.ECAccountField.ReadOnly = true;
-            this.ECAccountField.Size = new System.Drawing.Size(300, 31);
+            this.ECAccountField.Size = new System.Drawing.Size(500, 31);
             this.ECAccountField.TabIndex = 16;
             // 
             // ECLocationField
@@ -207,7 +208,7 @@
             this.ECLocationField.Location = new System.Drawing.Point(311, 509);
             this.ECLocationField.Name = "ECLocationField";
             this.ECLocationField.ReadOnly = true;
-            this.ECLocationField.Size = new System.Drawing.Size(300, 31);
+            this.ECLocationField.Size = new System.Drawing.Size(500, 31);
             this.ECLocationField.TabIndex = 17;
             // 
             // ECInventoryDueField
@@ -221,7 +222,7 @@
             // 
             // ECEditButton
             // 
-            this.ECEditButton.Location = new System.Drawing.Point(127, 744);
+            this.ECEditButton.Location = new System.Drawing.Point(55, 744);
             this.ECEditButton.Name = "ECEditButton";
             this.ECEditButton.Size = new System.Drawing.Size(150, 50);
             this.ECEditButton.TabIndex = 20;
@@ -231,7 +232,7 @@
             // 
             // ECDeleteButton
             // 
-            this.ECDeleteButton.Location = new System.Drawing.Point(327, 744);
+            this.ECDeleteButton.Location = new System.Drawing.Point(249, 744);
             this.ECDeleteButton.Name = "ECDeleteButton";
             this.ECDeleteButton.Size = new System.Drawing.Size(150, 50);
             this.ECDeleteButton.TabIndex = 21;
@@ -275,7 +276,7 @@
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(535, 744);
+            this.SaveChangesButton.Location = new System.Drawing.Point(448, 744);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(231, 50);
             this.SaveChangesButton.TabIndex = 25;
@@ -301,12 +302,23 @@
             this.linkLabel1.Size = new System.Drawing.Size(100, 23);
             this.linkLabel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(717, 744);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 50);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CustodianDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(968, 852);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.ECID);
             this.Controls.Add(this.SaveChangesButton);
@@ -372,5 +384,6 @@
         private System.Windows.Forms.Button SaveChangesButton;
         private System.Windows.Forms.Label ECID;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button1;
     }
 }

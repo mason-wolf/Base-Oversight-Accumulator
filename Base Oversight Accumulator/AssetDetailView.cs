@@ -156,11 +156,19 @@ namespace Base_Oversight_Accumulator
        "Confirm Deletion", MessageBoxButtons.YesNo) == DialogResult.Yes)
 
             {
-                dbconnect mysql = new dbconnect();
-                string ID = AssetID.Text;
-                string query = "DELETE from assets WHERE id=" + ID;
-                mysql.insert(query);
-                this.Close();
+                try
+                {
+                    dbconnect mysql = new dbconnect();
+                    string ID = AssetID.Text;
+                    string query = "DELETE from assets WHERE id=" + ID;
+                    mysql.insert(query);
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Asset has already been removed from database. Refresh view to see changes.");
+                    this.Close();
+                }
             }
        
         }

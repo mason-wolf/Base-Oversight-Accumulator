@@ -29,35 +29,39 @@
         private void InitializeComponent()
         {
             this.AccountDetailsBox = new System.Windows.Forms.GroupBox();
-            this.TotalAssetsLabel = new System.Windows.Forms.Label();
-            this.TotalAssetsField = new System.Windows.Forms.TextBox();
-            this.TotalValueLabel = new System.Windows.Forms.Label();
-            this.TotalValueField = new System.Windows.Forms.TextBox();
-            this.AccountAssets = new System.Windows.Forms.ListBox();
-            this.EquipmentCustodianLabel = new System.Windows.Forms.Label();
+            this.OrganizationField = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.AccountNumberField = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.NumROSItems = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.NumDRMOItems = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.ECField = new System.Windows.Forms.TextBox();
+            this.EquipmentCustodianLabel = new System.Windows.Forms.Label();
+            this.TotalValueField = new System.Windows.Forms.TextBox();
+            this.TotalValueLabel = new System.Windows.Forms.Label();
+            this.TotalAssetsField = new System.Windows.Forms.TextBox();
+            this.TotalAssetsLabel = new System.Windows.Forms.Label();
+            this.AccountAssets = new System.Windows.Forms.ListBox();
             this.AccountDRMO = new System.Windows.Forms.ListBox();
             this.AccountROS = new System.Windows.Forms.ListBox();
             this.AccountActionLog = new System.Windows.Forms.ListBox();
             this.AccountActionsBox = new System.Windows.Forms.GroupBox();
-            this.GenerateReportButton = new System.Windows.Forms.Button();
-            this.AddNoteButton = new System.Windows.Forms.Button();
-            this.FreezeAccountButton = new System.Windows.Forms.Button();
             this.DeleteAccountButton = new System.Windows.Forms.Button();
+            this.FreezeAccountButton = new System.Windows.Forms.Button();
+            this.AddNoteButton = new System.Windows.Forms.Button();
+            this.GenerateReportButton = new System.Windows.Forms.Button();
             this.NoteBox = new System.Windows.Forms.GroupBox();
             this.AccountNotesField = new System.Windows.Forms.RichTextBox();
             this.AccountAssetsLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.NumDRMOItems = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.NumROSItems = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.AccountNumberField = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.OrganizationField = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.LastInventoryField = new System.Windows.Forms.TextBox();
+            this.InventoryDueField = new System.Windows.Forms.TextBox();
             this.AccountDetailsBox.SuspendLayout();
             this.AccountActionsBox.SuspendLayout();
             this.NoteBox.SuspendLayout();
@@ -65,6 +69,10 @@
             // 
             // AccountDetailsBox
             // 
+            this.AccountDetailsBox.Controls.Add(this.InventoryDueField);
+            this.AccountDetailsBox.Controls.Add(this.LastInventoryField);
+            this.AccountDetailsBox.Controls.Add(this.label9);
+            this.AccountDetailsBox.Controls.Add(this.label8);
             this.AccountDetailsBox.Controls.Add(this.OrganizationField);
             this.AccountDetailsBox.Controls.Add(this.label7);
             this.AccountDetailsBox.Controls.Add(this.AccountNumberField);
@@ -85,15 +93,122 @@
             this.AccountDetailsBox.TabIndex = 0;
             this.AccountDetailsBox.TabStop = false;
             this.AccountDetailsBox.Text = "Account Details";
+            this.AccountDetailsBox.Enter += new System.EventHandler(this.AccountDetailsBox_Enter);
             // 
-            // TotalAssetsLabel
+            // OrganizationField
             // 
-            this.TotalAssetsLabel.AutoSize = true;
-            this.TotalAssetsLabel.Location = new System.Drawing.Point(160, 111);
-            this.TotalAssetsLabel.Name = "TotalAssetsLabel";
-            this.TotalAssetsLabel.Size = new System.Drawing.Size(179, 32);
-            this.TotalAssetsLabel.TabIndex = 0;
-            this.TotalAssetsLabel.Text = "Total Assets:";
+            this.OrganizationField.BackColor = System.Drawing.SystemColors.Control;
+            this.OrganizationField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OrganizationField.Location = new System.Drawing.Point(379, 568);
+            this.OrganizationField.Name = "OrganizationField";
+            this.OrganizationField.ReadOnly = true;
+            this.OrganizationField.Size = new System.Drawing.Size(400, 31);
+            this.OrganizationField.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(154, 567);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(186, 32);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Organization:";
+            // 
+            // AccountNumberField
+            // 
+            this.AccountNumberField.BackColor = System.Drawing.SystemColors.Control;
+            this.AccountNumberField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AccountNumberField.Location = new System.Drawing.Point(379, 494);
+            this.AccountNumberField.Name = "AccountNumberField";
+            this.AccountNumberField.ReadOnly = true;
+            this.AccountNumberField.Size = new System.Drawing.Size(400, 31);
+            this.AccountNumberField.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(246, 494);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 32);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Acct#:";
+            // 
+            // NumROSItems
+            // 
+            this.NumROSItems.BackColor = System.Drawing.SystemColors.Control;
+            this.NumROSItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NumROSItems.Location = new System.Drawing.Point(379, 416);
+            this.NumROSItems.Name = "NumROSItems";
+            this.NumROSItems.ReadOnly = true;
+            this.NumROSItems.Size = new System.Drawing.Size(400, 31);
+            this.NumROSItems.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(42, 416);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(297, 32);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Number of ROS Items:";
+            // 
+            // NumDRMOItems
+            // 
+            this.NumDRMOItems.BackColor = System.Drawing.SystemColors.Control;
+            this.NumDRMOItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NumDRMOItems.Location = new System.Drawing.Point(379, 343);
+            this.NumDRMOItems.Name = "NumDRMOItems";
+            this.NumDRMOItems.ReadOnly = true;
+            this.NumDRMOItems.Size = new System.Drawing.Size(400, 31);
+            this.NumDRMOItems.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 342);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(321, 32);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Number of DRMO Items:";
+            // 
+            // ECField
+            // 
+            this.ECField.BackColor = System.Drawing.SystemColors.Control;
+            this.ECField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ECField.Location = new System.Drawing.Point(379, 267);
+            this.ECField.Name = "ECField";
+            this.ECField.ReadOnly = true;
+            this.ECField.Size = new System.Drawing.Size(400, 31);
+            this.ECField.TabIndex = 5;
+            this.ECField.TextChanged += new System.EventHandler(this.ECField_TextChanged);
+            // 
+            // EquipmentCustodianLabel
+            // 
+            this.EquipmentCustodianLabel.AutoSize = true;
+            this.EquipmentCustodianLabel.Location = new System.Drawing.Point(43, 266);
+            this.EquipmentCustodianLabel.Name = "EquipmentCustodianLabel";
+            this.EquipmentCustodianLabel.Size = new System.Drawing.Size(296, 32);
+            this.EquipmentCustodianLabel.TabIndex = 4;
+            this.EquipmentCustodianLabel.Text = "Equipment Custodian:";
+            // 
+            // TotalValueField
+            // 
+            this.TotalValueField.BackColor = System.Drawing.SystemColors.Control;
+            this.TotalValueField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TotalValueField.Location = new System.Drawing.Point(379, 186);
+            this.TotalValueField.Name = "TotalValueField";
+            this.TotalValueField.ReadOnly = true;
+            this.TotalValueField.Size = new System.Drawing.Size(400, 31);
+            this.TotalValueField.TabIndex = 3;
+            // 
+            // TotalValueLabel
+            // 
+            this.TotalValueLabel.AutoSize = true;
+            this.TotalValueLabel.Location = new System.Drawing.Point(23, 186);
+            this.TotalValueLabel.Name = "TotalValueLabel";
+            this.TotalValueLabel.Size = new System.Drawing.Size(317, 32);
+            this.TotalValueLabel.TabIndex = 2;
+            this.TotalValueLabel.Text = "Total Value (estimated):";
             // 
             // TotalAssetsField
             // 
@@ -105,24 +220,14 @@
             this.TotalAssetsField.Size = new System.Drawing.Size(400, 31);
             this.TotalAssetsField.TabIndex = 1;
             // 
-            // TotalValueLabel
+            // TotalAssetsLabel
             // 
-            this.TotalValueLabel.AutoSize = true;
-            this.TotalValueLabel.Location = new System.Drawing.Point(23, 204);
-            this.TotalValueLabel.Name = "TotalValueLabel";
-            this.TotalValueLabel.Size = new System.Drawing.Size(317, 32);
-            this.TotalValueLabel.TabIndex = 2;
-            this.TotalValueLabel.Text = "Total Value (estimated):";
-            // 
-            // TotalValueField
-            // 
-            this.TotalValueField.BackColor = System.Drawing.SystemColors.Control;
-            this.TotalValueField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TotalValueField.Location = new System.Drawing.Point(379, 204);
-            this.TotalValueField.Name = "TotalValueField";
-            this.TotalValueField.ReadOnly = true;
-            this.TotalValueField.Size = new System.Drawing.Size(400, 31);
-            this.TotalValueField.TabIndex = 3;
+            this.TotalAssetsLabel.AutoSize = true;
+            this.TotalAssetsLabel.Location = new System.Drawing.Point(160, 111);
+            this.TotalAssetsLabel.Name = "TotalAssetsLabel";
+            this.TotalAssetsLabel.Size = new System.Drawing.Size(179, 32);
+            this.TotalAssetsLabel.TabIndex = 0;
+            this.TotalAssetsLabel.Text = "Total Assets:";
             // 
             // AccountAssets
             // 
@@ -132,25 +237,6 @@
             this.AccountAssets.Name = "AccountAssets";
             this.AccountAssets.Size = new System.Drawing.Size(700, 779);
             this.AccountAssets.TabIndex = 1;
-            // 
-            // EquipmentCustodianLabel
-            // 
-            this.EquipmentCustodianLabel.AutoSize = true;
-            this.EquipmentCustodianLabel.Location = new System.Drawing.Point(43, 295);
-            this.EquipmentCustodianLabel.Name = "EquipmentCustodianLabel";
-            this.EquipmentCustodianLabel.Size = new System.Drawing.Size(296, 32);
-            this.EquipmentCustodianLabel.TabIndex = 4;
-            this.EquipmentCustodianLabel.Text = "Equipment Custodian:";
-            // 
-            // ECField
-            // 
-            this.ECField.BackColor = System.Drawing.SystemColors.Control;
-            this.ECField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ECField.Location = new System.Drawing.Point(379, 296);
-            this.ECField.Name = "ECField";
-            this.ECField.ReadOnly = true;
-            this.ECField.Size = new System.Drawing.Size(400, 31);
-            this.ECField.TabIndex = 5;
             // 
             // AccountDRMO
             // 
@@ -193,23 +279,15 @@
             this.AccountActionsBox.TabStop = false;
             this.AccountActionsBox.Text = "Account Actions";
             // 
-            // GenerateReportButton
+            // DeleteAccountButton
             // 
-            this.GenerateReportButton.Location = new System.Drawing.Point(113, 94);
-            this.GenerateReportButton.Name = "GenerateReportButton";
-            this.GenerateReportButton.Size = new System.Drawing.Size(698, 93);
-            this.GenerateReportButton.TabIndex = 0;
-            this.GenerateReportButton.Text = "Generate Report";
-            this.GenerateReportButton.UseVisualStyleBackColor = true;
-            // 
-            // AddNoteButton
-            // 
-            this.AddNoteButton.Location = new System.Drawing.Point(113, 281);
-            this.AddNoteButton.Name = "AddNoteButton";
-            this.AddNoteButton.Size = new System.Drawing.Size(698, 93);
-            this.AddNoteButton.TabIndex = 1;
-            this.AddNoteButton.Text = "Add Note";
-            this.AddNoteButton.UseVisualStyleBackColor = true;
+            this.DeleteAccountButton.Location = new System.Drawing.Point(113, 657);
+            this.DeleteAccountButton.Name = "DeleteAccountButton";
+            this.DeleteAccountButton.Size = new System.Drawing.Size(698, 93);
+            this.DeleteAccountButton.TabIndex = 7;
+            this.DeleteAccountButton.Text = "Delete";
+            this.DeleteAccountButton.UseVisualStyleBackColor = true;
+            this.DeleteAccountButton.Click += new System.EventHandler(this.DeleteAccountButton_Click);
             // 
             // FreezeAccountButton
             // 
@@ -220,15 +298,23 @@
             this.FreezeAccountButton.Text = "Freeze";
             this.FreezeAccountButton.UseVisualStyleBackColor = true;
             // 
-            // DeleteAccountButton
+            // AddNoteButton
             // 
-            this.DeleteAccountButton.Location = new System.Drawing.Point(113, 657);
-            this.DeleteAccountButton.Name = "DeleteAccountButton";
-            this.DeleteAccountButton.Size = new System.Drawing.Size(698, 93);
-            this.DeleteAccountButton.TabIndex = 7;
-            this.DeleteAccountButton.Text = "Delete";
-            this.DeleteAccountButton.UseVisualStyleBackColor = true;
-            this.DeleteAccountButton.Click += new System.EventHandler(this.DeleteAccountButton_Click);
+            this.AddNoteButton.Location = new System.Drawing.Point(113, 281);
+            this.AddNoteButton.Name = "AddNoteButton";
+            this.AddNoteButton.Size = new System.Drawing.Size(698, 93);
+            this.AddNoteButton.TabIndex = 1;
+            this.AddNoteButton.Text = "Add Note";
+            this.AddNoteButton.UseVisualStyleBackColor = true;
+            // 
+            // GenerateReportButton
+            // 
+            this.GenerateReportButton.Location = new System.Drawing.Point(113, 94);
+            this.GenerateReportButton.Name = "GenerateReportButton";
+            this.GenerateReportButton.Size = new System.Drawing.Size(698, 93);
+            this.GenerateReportButton.TabIndex = 0;
+            this.GenerateReportButton.Text = "Generate Report";
+            this.GenerateReportButton.UseVisualStyleBackColor = true;
             // 
             // NoteBox
             // 
@@ -284,81 +370,44 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Action Log:";
             // 
-            // label4
+            // label8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 381);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(321, 32);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Number of DRMO Items:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(139, 639);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(200, 32);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Last Inventory:";
             // 
-            // NumDRMOItems
+            // label9
             // 
-            this.NumDRMOItems.BackColor = System.Drawing.SystemColors.Control;
-            this.NumDRMOItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NumDRMOItems.Location = new System.Drawing.Point(379, 382);
-            this.NumDRMOItems.Name = "NumDRMOItems";
-            this.NumDRMOItems.ReadOnly = true;
-            this.NumDRMOItems.Size = new System.Drawing.Size(400, 31);
-            this.NumDRMOItems.TabIndex = 7;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(139, 718);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(198, 32);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Inventory Due:";
             // 
-            // label5
+            // LastInventoryField
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(43, 463);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(297, 32);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Number of ROS Items:";
+            this.LastInventoryField.BackColor = System.Drawing.SystemColors.Control;
+            this.LastInventoryField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LastInventoryField.Location = new System.Drawing.Point(379, 639);
+            this.LastInventoryField.Name = "LastInventoryField";
+            this.LastInventoryField.ReadOnly = true;
+            this.LastInventoryField.Size = new System.Drawing.Size(400, 31);
+            this.LastInventoryField.TabIndex = 16;
             // 
-            // NumROSItems
+            // InventoryDueField
             // 
-            this.NumROSItems.BackColor = System.Drawing.SystemColors.Control;
-            this.NumROSItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NumROSItems.Location = new System.Drawing.Point(379, 464);
-            this.NumROSItems.Name = "NumROSItems";
-            this.NumROSItems.ReadOnly = true;
-            this.NumROSItems.Size = new System.Drawing.Size(400, 31);
-            this.NumROSItems.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(246, 546);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 32);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Acct#:";
-            // 
-            // AccountNumberField
-            // 
-            this.AccountNumberField.BackColor = System.Drawing.SystemColors.Control;
-            this.AccountNumberField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AccountNumberField.Location = new System.Drawing.Point(379, 547);
-            this.AccountNumberField.Name = "AccountNumberField";
-            this.AccountNumberField.ReadOnly = true;
-            this.AccountNumberField.Size = new System.Drawing.Size(400, 31);
-            this.AccountNumberField.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(153, 627);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(186, 32);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Organization:";
-            // 
-            // OrganizationField
-            // 
-            this.OrganizationField.BackColor = System.Drawing.SystemColors.Control;
-            this.OrganizationField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OrganizationField.Location = new System.Drawing.Point(379, 627);
-            this.OrganizationField.Name = "OrganizationField";
-            this.OrganizationField.ReadOnly = true;
-            this.OrganizationField.Size = new System.Drawing.Size(400, 31);
-            this.OrganizationField.TabIndex = 13;
+            this.InventoryDueField.BackColor = System.Drawing.SystemColors.Control;
+            this.InventoryDueField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InventoryDueField.Location = new System.Drawing.Point(379, 718);
+            this.InventoryDueField.Name = "InventoryDueField";
+            this.InventoryDueField.ReadOnly = true;
+            this.InventoryDueField.Size = new System.Drawing.Size(400, 31);
+            this.InventoryDueField.TabIndex = 17;
+            this.InventoryDueField.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // AccountDetailView
             // 
@@ -422,5 +471,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox AccountNumberField;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox InventoryDueField;
+        private System.Windows.Forms.TextBox LastInventoryField;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

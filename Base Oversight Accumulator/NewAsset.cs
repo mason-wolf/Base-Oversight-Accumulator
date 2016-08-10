@@ -91,7 +91,8 @@ namespace Base_Oversight_Accumulator
                 NewAssetBatch.bldg = NewBuilding.Text;
                 NewAssetBatch.room = NewRoom.Text;
                 NewAssetBatch.value = NewEstimatedValue.Text;
-                NewAssetBatch.notes = NewAssetNotes + "# asset added " + DateTime.Now;
+                NewAssetBatch.notes = NewAssetNotes.Text + "# asset added " + DateTime.Now;
+                this.Close();
                 NewAssetBatch.Show();
             }
             catch (Exception)

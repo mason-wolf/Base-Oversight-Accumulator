@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace Base_Oversight_Accumulator
 {
@@ -62,26 +63,29 @@ namespace Base_Oversight_Accumulator
 
             // total asset value
             connection.Open();
+
             try
             {
-                int AssetValue;
                 string AssetValueQuery = "SELECT SUM(value) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'";
                 MySqlCommand AssetValueCmd = new MySqlCommand(AssetValueQuery, connection);
-                AssetValue = int.Parse(AssetValueCmd.ExecuteScalar().ToString());
-                TotalValueField.Text = AssetValue.ToString();
+                TotalValueField.Text = "$" + double.Parse(AssetValueCmd.ExecuteScalar().ToString()).ToString("N0");
             }
-            catch (Exception) { }
+            catch { }
             connection.Close();
 
             // equipment custodian
             connection.Open();
             MySqlCommand AssetECQuery = connection.CreateCommand();
-            AssetECQuery.CommandText = "SELECT ec FROM itam WHERE account='" + AssetAccountNumber + "'";
+            AssetECQuery.CommandText = "SELECT * FROM itam WHERE account='" + AssetAccountNumber + "'";
             AssetECQuery.Connection = connection;
             MySqlDataReader AssetECQueryResult = AssetECQuery.ExecuteReader();
             while (AssetECQueryResult.Read())
             {
                 AssetEquipmentCustodian = Convert.ToString(AssetECQueryResult["ec"]);
+                string InventoryDate = Convert.ToString(AssetECQueryResult["lastinventory"]);
+                string InventoryDueDate = Convert.ToString(AssetECQueryResult["inventorydue"]);
+                LastInventoryField.Text = InventoryDate;
+                InventoryDueField.Text = InventoryDueDate;
             }
             connection.Close();
             ECField.Text = AssetEquipmentCustodian;
@@ -118,6 +122,21 @@ namespace Base_Oversight_Accumulator
                 mysql.insert(query);
                 this.Close();
             }
+        }
+
+        private void AccountDetailsBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ECField_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

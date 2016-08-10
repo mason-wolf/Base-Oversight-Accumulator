@@ -134,17 +134,24 @@ namespace Base_Oversight_Accumulator
                 rank + "', org='" + org + "', email='" + email + "', dsn='" + dsn + "', account='" + account + "', location='" +
                 location + "', lastinventorydate='" + lastinventorydate + "', inventoryduedate='" + inventoryduedate + "' WHERE id='" + id + "'";
 
-            string AccountIDUpdateQuery = "UPDATE itam SET ec='" + rank.ToUpper() + " " + lastname.ToUpper() + ", " + firstname.ToUpper() +
-      "' where account='" + account + "'";
+            string AccountIDUpdateQuery = "UPDATE itam SET ec='"+ lastname.ToUpper() + ", " + firstname.ToUpper() + " " + rank.ToUpper() +
+      "', lastinventory='" + lastinventorydate + "', inventorydue='" + inventoryduedate + "' where account='" + account + "'";
 
-            string AssetUpdateQuery = "UPDATE assets SET ec='" + rank.ToUpper() + " " + lastname.ToUpper() + ", " + firstname.ToUpper() +
+            string AssetUpdateQuery = "UPDATE assets SET ec='" + lastname.ToUpper() + ", " + firstname.ToUpper() + " " + rank.ToUpper() +
 "' where accountnumber='" + account + "'";
 
+            if (MessageBox.Show("Making changes to the user's inventory status updates their account. Continue?",
+                "Confirm Changes", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                mysql.insert(AccountUpdateQuery);
+                mysql.insert(AccountIDUpdateQuery);
+                mysql.insert(AssetUpdateQuery);
+                this.Close();
+            }
+            else
+            {
 
-            mysql.insert(AccountUpdateQuery);
-            mysql.insert(AccountIDUpdateQuery);
-            mysql.insert(AssetUpdateQuery);
-            this.Close();
+            }
         }
 
         private void ECDeleteButton_Click(object sender, EventArgs e)
@@ -153,12 +160,25 @@ namespace Base_Oversight_Accumulator
 "Confirm Deletion", MessageBoxButtons.YesNo) == DialogResult.Yes)
 
             {
-                dbconnect mysql = new dbconnect();
-                string ID = ECID.Text;
-                string query = "DELETE from ec WHERE id=" + ID;
-                mysql.insert(query);
-                this.Close();
+                try
+                {
+                    dbconnect mysql = new dbconnect();
+                    string ID = ECID.Text;
+                    string query = "DELETE from ec WHERE id=" + ID;
+                    mysql.insert(query);
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Equipment custodian has already been removed. Refresh database view to see changes.");
+                    this.Close();
+                }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
