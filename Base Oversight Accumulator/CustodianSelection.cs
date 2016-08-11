@@ -13,7 +13,7 @@ namespace Base_Oversight_Accumulator
 {
     public partial class CustodianSelection : Form
     {
-
+        public string UserSelectingCustodian { get; set; }
 
         public CustodianSelection()
         {
@@ -44,7 +44,8 @@ namespace Base_Oversight_Accumulator
                 string ECFirstName = mysql.Reader("firstname");
                 string ECRank = mysql.Reader("rank");
                 NewAssetWindow.NewEC.Text = ECLastName.ToUpper() + ", " + ECFirstName.ToUpper() + " " + ECRank.ToUpper();
-                    NewAssetWindow.Show();
+                NewAssetWindow.UserCreatingAsset = UserSelectingCustodian;
+                NewAssetWindow.Show();
 
             }
 

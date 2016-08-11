@@ -260,8 +260,9 @@ namespace Base_Oversight_Accumulator
 
         private void NewAssetButton_Click(object sender, EventArgs e)
         {
-            NewAssetWindow NewAssetWindow = new NewAssetWindow();
-            NewAssetWindow.Show();
+            NewAssetWindow NewAsset = new NewAssetWindow();
+            NewAsset.UserCreatingAsset = BOAUser;
+            NewAsset.Show();
         }
 
         private void equipmentCustodianToolStripMenuItem_Click(object sender, EventArgs e)
@@ -402,6 +403,30 @@ namespace Base_Oversight_Accumulator
         {
             PropertyDisposal PropertyDisposal = new PropertyDisposal();
             PropertyDisposal.Show();
+        }
+
+        private void assetDispositionbToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PropertyDisposal PropertyDisposal = new PropertyDisposal();
+            PropertyDisposal.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ModifyAssetValue ModifyAssetValue = new ModifyAssetValue();
+            ModifyAssetValue.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ROSWindow ros = new ROSWindow();
+            ros.Show();
+        }
+
+        private void initiateReportOfSurveryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ROSWindow ros = new ROSWindow();
+            ros.Show();
         }
     }
 }

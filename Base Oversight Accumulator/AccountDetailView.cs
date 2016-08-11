@@ -82,6 +82,18 @@ namespace Base_Oversight_Accumulator
                 AccountDRMO.Items.Add("# " + date + " " + item);
             }
             mysql.CloseConnection();
+
+            // ros
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * from ros where account='" + AssetAccountNumber + "'");
+            while (mysql.Result.Read())
+            {
+                string item = mysql.Reader("description");
+                string date = mysql.Reader("date");
+                AccountROS.Items.Add("#" + date + " " + item);
+            }
+            mysql.CloseConnection();
+
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

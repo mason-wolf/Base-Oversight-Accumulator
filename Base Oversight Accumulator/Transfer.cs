@@ -19,6 +19,7 @@ namespace Base_Oversight_Accumulator
         public Transfer()
         {
             InitializeComponent();
+            MessageBox.Show(TransferedBy);
         }
 
         private void TransferAssetButton_Click(object sender, EventArgs e)

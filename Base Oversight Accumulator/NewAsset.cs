@@ -12,8 +12,10 @@ namespace Base_Oversight_Accumulator
 {
     public partial class NewAssetWindow : Form
     {
+        string item;
 
-        string newAsset_itemType;
+        public string UserCreatingAsset { get; set; }
+
 
         public NewAssetWindow()
         {
@@ -41,40 +43,43 @@ namespace Base_Oversight_Accumulator
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                newAsset_itemType = NewItemType.SelectedItem.ToString();
+                item = NewItemType.SelectedItem.ToString();
             }
             catch
-            {
-            }
-            string newAsset_itemManufacturer = NewItemManufacturer.Text;
-            string newAsset_itemModel = NewItemModel.Text;
-            string newAsset_itemSerialNumber = NewItemSerialNumber.Text;
-            string newAsset_itemOwner = NewItemOwner.Text;
-            string newAsset_itemOrganization = NewItemOrganization.Text;
-            string newAsset_EC = NewEC.Text;
-            string newAsset_NewBuilding = NewBuilding.Text;
-            string newAsset_NewRoom = NewRoom.Text;
-            string newAsset_NewValue = NewEstimatedValue.Text;
-            string newAsset_Notes = NewAssetNotes.Text + "# asset added " + DateTime.Now;
-
-            if (string.IsNullOrEmpty(newAsset_itemManufacturer ?? newAsset_itemModel ?? newAsset_itemSerialNumber ?? newAsset_itemOwner)) {
+            { }
+            string manufacturer = NewItemManufacturer.Text;
+            string model = NewItemModel.Text;
+            string serialnumber = NewItemSerialNumber.Text;
+            string owner = NewItemOwner.Text;
+            string organization = NewItemOrganization.Text;
+            string ec = NewEC.Text;
+            string building = NewBuilding.Text;
+            string room = NewRoom.Text;
+            string value = NewEstimatedValue.Text;
+            string notes = NewAssetNotes.Text + "# asset added " + DateTime.Now;
+            string NewAssetLog = "INSERT INTO log (date, who, action) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserCreatingAsset + "','CREATED NEW ASSET " + manufacturer.ToUpper() + " " + model.ToUpper() +
+                " WITH SERIAL NUMBER " + serialnumber + " FOR ACCOUNT " + owner + " ASSIGNED TO " + ec + "')";
+            dbconnect mysql = new dbconnect();
+            mysql.InsertQuery(NewAssetLog);
+            if (string.IsNullOrEmpty(manufacturer ?? model ?? serialnumber ?? owner ?? organization ?? ec ?? building ?? room ?? value ?? notes)) {
                 MessageBox.Show("Please finish completing the form.", "New Asset", MessageBoxButtons.OK,MessageBoxIcon.Exclamation,
       MessageBoxDefaultButton.Button1);
             }
             else {
-                dbconnect mysql = new dbconnect();
 
-                string query = "INSERT INTO assets(item, manufacturer, model, serialnumber, accountnumber, organization, ec, building, room, value, notes) VALUES ('" +
-                                newAsset_itemType + "','" + newAsset_itemManufacturer + "','" +
-                                newAsset_itemModel + "','" + newAsset_itemSerialNumber + "','" + newAsset_itemOwner + "','" + newAsset_itemOrganization + "','" +
-                                newAsset_EC + "','" + newAsset_NewBuilding + "','" + newAsset_NewRoom + "','" + newAsset_NewValue + "','" + newAsset_Notes + "')";
+                string NewAssetQuery = "INSERT INTO assets(item, manufacturer, model, serialnumber, accountnumber, organization, ec, building, room, value, notes) VALUES ('" +
+                                item + "','" + manufacturer + "','" +
+                                model + "','" + serialnumber + "','" + owner + "','" + organization + "','" +
+                                ec + "','" + building + "','" + room + "','" + value + "','" + notes + "')";
 
-                mysql.InsertQuery(query);
+                mysql.InsertQuery(NewAssetQuery);
+               
                 this.Close();
+                
             }
           
         }
@@ -82,6 +87,7 @@ namespace Base_Oversight_Accumulator
         private void ECSelectionButton_Click(object sender, EventArgs e)
         {
             CustodianSelection CustodianSelection = new CustodianSelection();
+            CustodianSelection.UserSelectingCustodian = this.UserCreatingAsset;
             CustodianSelection.Show();
             this.Close();
         }

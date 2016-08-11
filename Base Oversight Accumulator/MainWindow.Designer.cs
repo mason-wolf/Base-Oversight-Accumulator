@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ActionReportDataView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -96,8 +96,8 @@
             this.addEquipmentCustodianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addITAMAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.initiateReportOfSurveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.initiateReportOfSurveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assetDispositionbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.manageProfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -127,9 +127,10 @@
             this.TransferButton = new System.Windows.Forms.ToolStripButton();
             this.TempIssueButton = new System.Windows.Forms.ToolStripButton();
             this.ModifyAssetValueButton = new System.Windows.Forms.ToolStripButton();
+            this.DRMOButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DRMOButton = new System.Windows.Forms.ToolStripButton();
             this.ActionReportDataView.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
@@ -393,14 +394,14 @@
             this.AccountDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.AccountDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.AccountDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AccountDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccountDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AccountID,
@@ -411,25 +412,25 @@
             this.LastInventory,
             this.InventoryDue,
             this.Location});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle2;
             this.AccountDataView.Location = new System.Drawing.Point(-10, 0);
             this.AccountDataView.Name = "AccountDataView";
             this.AccountDataView.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.AccountDataView.RowHeadersVisible = false;
             this.AccountDataView.RowHeadersWidth = 100;
             this.AccountDataView.RowTemplate.Height = 40;
@@ -699,7 +700,7 @@
             this.helpToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1841, 49);
+            this.menuStrip1.Size = new System.Drawing.Size(1841, 52);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -711,15 +712,15 @@
             this.addEquipmentCustodianToolStripMenuItem,
             this.addITAMAccountToolStripMenuItem,
             this.transferAssetToolStripMenuItem,
-            this.initiateReportOfSurveryToolStripMenuItem,
             this.toolStripMenuItem1,
+            this.initiateReportOfSurveryToolStripMenuItem,
             this.assetDispositionbToolStripMenuItem,
             this.toolStripSeparator1,
             this.manageProfilesToolStripMenuItem,
             this.refreshDatabaseToolStripMenuItem,
             this.eitToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 45);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 48);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // addAssetToolStripMenuItem
@@ -750,23 +751,26 @@
             this.transferAssetToolStripMenuItem.Text = "Transfer Asset";
             this.transferAssetToolStripMenuItem.Click += new System.EventHandler(this.transferAssetToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(482, 46);
+            this.toolStripMenuItem1.Text = "Modify Costs";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // initiateReportOfSurveryToolStripMenuItem
             // 
             this.initiateReportOfSurveryToolStripMenuItem.Name = "initiateReportOfSurveryToolStripMenuItem";
             this.initiateReportOfSurveryToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.initiateReportOfSurveryToolStripMenuItem.Text = "Report of Survey";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(482, 46);
-            this.toolStripMenuItem1.Text = "Modify Cost of Asset";
+            this.initiateReportOfSurveryToolStripMenuItem.Click += new System.EventHandler(this.initiateReportOfSurveryToolStripMenuItem_Click);
             // 
             // assetDispositionbToolStripMenuItem
             // 
             this.assetDispositionbToolStripMenuItem.Name = "assetDispositionbToolStripMenuItem";
             this.assetDispositionbToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.assetDispositionbToolStripMenuItem.Text = "Asset Disposition";
+            this.assetDispositionbToolStripMenuItem.Click += new System.EventHandler(this.assetDispositionbToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -801,7 +805,7 @@
             this.dispositionsToolStripMenuItem,
             this.rOSReportsToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 45);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 48);
             this.reportsToolStripMenuItem.Text = "Search";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
@@ -852,7 +856,7 @@
             this.dRMOReportsToolStripMenuItem,
             this.rOSReportsToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(132, 45);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(132, 48);
             this.helpToolStripMenuItem.Text = "Reports";
             // 
             // assetsToolStripMenuItem1
@@ -900,7 +904,7 @@
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 45);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 48);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // toolStrip1
@@ -914,10 +918,11 @@
             this.TransferButton,
             this.TempIssueButton,
             this.ModifyAssetValueButton,
-            this.DRMOButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 49);
+            this.DRMOButton,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 52);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1841, 48);
+            this.toolStrip1.Size = new System.Drawing.Size(1841, 39);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolBar_Click);
@@ -929,7 +934,7 @@
             this.RefreshButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(23, 45);
+            this.RefreshButton.Size = new System.Drawing.Size(23, 36);
             this.RefreshButton.Text = "RefreshButton";
             this.RefreshButton.ToolTipText = "Refresh";
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
@@ -941,7 +946,7 @@
             this.NewAssetButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewAssetButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewAssetButton.Name = "NewAssetButton";
-            this.NewAssetButton.Size = new System.Drawing.Size(23, 45);
+            this.NewAssetButton.Size = new System.Drawing.Size(23, 36);
             this.NewAssetButton.Text = "NewAssetButton";
             this.NewAssetButton.ToolTipText = "Add a new asset.\r\n";
             this.NewAssetButton.Click += new System.EventHandler(this.NewAssetButton_Click);
@@ -953,7 +958,7 @@
             this.NewECButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewECButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewECButton.Name = "NewECButton";
-            this.NewECButton.Size = new System.Drawing.Size(36, 45);
+            this.NewECButton.Size = new System.Drawing.Size(36, 36);
             this.NewECButton.ToolTipText = "Add a new equipment custodian.\r\n";
             this.NewECButton.Click += new System.EventHandler(this.NewECButton_Click);
             // 
@@ -964,7 +969,7 @@
             this.NewAccountButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewAccountButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewAccountButton.Name = "NewAccountButton";
-            this.NewAccountButton.Size = new System.Drawing.Size(23, 45);
+            this.NewAccountButton.Size = new System.Drawing.Size(23, 36);
             this.NewAccountButton.ToolTipText = "Create a new ITAM account.\r\n";
             this.NewAccountButton.Click += new System.EventHandler(this.NewAccountButton_Click);
             // 
@@ -975,7 +980,7 @@
             this.TransferButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TransferButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TransferButton.Name = "TransferButton";
-            this.TransferButton.Size = new System.Drawing.Size(23, 45);
+            this.TransferButton.Size = new System.Drawing.Size(23, 36);
             this.TransferButton.Text = "Transfer";
             this.TransferButton.ToolTipText = "Transfer asset from one account to another.\r\n\r\n";
             this.TransferButton.Click += new System.EventHandler(this.TransferButton_Click);
@@ -987,7 +992,7 @@
             this.TempIssueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TempIssueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TempIssueButton.Name = "TempIssueButton";
-            this.TempIssueButton.Size = new System.Drawing.Size(23, 45);
+            this.TempIssueButton.Size = new System.Drawing.Size(23, 36);
             this.TempIssueButton.Text = "TempIssueButton";
             this.TempIssueButton.ToolTipText = "Temporarily issue item.\r\n";
             this.TempIssueButton.Click += new System.EventHandler(this.TempIssueButton_Click);
@@ -999,9 +1004,32 @@
             this.ModifyAssetValueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ModifyAssetValueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ModifyAssetValueButton.Name = "ModifyAssetValueButton";
-            this.ModifyAssetValueButton.Size = new System.Drawing.Size(36, 45);
+            this.ModifyAssetValueButton.Size = new System.Drawing.Size(36, 36);
             this.ModifyAssetValueButton.Text = "Modify cost of assets based on make and model.";
             this.ModifyAssetValueButton.Click += new System.EventHandler(this.ModifyAssetValueButton_Click);
+            // 
+            // DRMOButton
+            // 
+            this.DRMOButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.DRMOButton.Image = ((System.Drawing.Image)(resources.GetObject("DRMOButton.Image")));
+            this.DRMOButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DRMOButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DRMOButton.Name = "DRMOButton";
+            this.DRMOButton.Size = new System.Drawing.Size(23, 36);
+            this.DRMOButton.Text = "Initiate asset disposition or disposal for Defense Reutilization and Marketing Of" +
+    "fice Reports.";
+            this.DRMOButton.Click += new System.EventHandler(this.DRMOButton_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 36);
+            this.toolStripButton1.Text = "Initiate Report of Survey for missing assets.";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // statusStrip1
             // 
@@ -1018,18 +1046,6 @@
             // 
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(0, 17);
-            // 
-            // DRMOButton
-            // 
-            this.DRMOButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.DRMOButton.Image = ((System.Drawing.Image)(resources.GetObject("DRMOButton.Image")));
-            this.DRMOButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.DRMOButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DRMOButton.Name = "DRMOButton";
-            this.DRMOButton.Size = new System.Drawing.Size(23, 45);
-            this.DRMOButton.Text = "Initiate asset disposition or disposal for Defense Reutilization and Marketing Of" +
-    "fice Reports.";
-            this.DRMOButton.Click += new System.EventHandler(this.DRMOButton_Click);
             // 
             // MainWindow
             // 
@@ -1170,6 +1186,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.ToolStripButton DRMOButton;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

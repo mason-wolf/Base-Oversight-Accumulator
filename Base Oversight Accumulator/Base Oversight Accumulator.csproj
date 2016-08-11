@@ -74,6 +74,12 @@
     <Compile Include="PropertyDisposal.Designer.cs">
       <DependentUpon>PropertyDisposal.cs</DependentUpon>
     </Compile>
+    <Compile Include="ROSWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ROSWindow.Designer.cs">
+      <DependentUpon>ROSWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="TemporaryItemIssue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PropertyDisposal.resx">
       <DependentUpon>PropertyDisposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ROSWindow.resx">
+      <DependentUpon>ROSWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TemporaryItemIssue.resx">
       <DependentUpon>TemporaryItemIssue.cs</DependentUpon>
