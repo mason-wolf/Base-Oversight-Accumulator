@@ -72,6 +72,16 @@ namespace Base_Oversight_Accumulator
             }
             mysql.CloseConnection();
 
+            // drmo 
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * from drmo where account='" + AssetAccountNumber + "'");
+            while (mysql.Result.Read())
+            {
+                string item = mysql.Reader("item");
+                string date = mysql.Reader("date");
+                AccountDRMO.Items.Add("# " + date + " " + item);
+            }
+            mysql.CloseConnection();
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -397,5 +397,11 @@ namespace Base_Oversight_Accumulator
             IssuedItems.ItemID = GridID;
             IssuedItems.Show();
         }
+
+        private void DRMOButton_Click(object sender, EventArgs e)
+        {
+            PropertyDisposal PropertyDisposal = new PropertyDisposal();
+            PropertyDisposal.Show();
+        }
     }
 }

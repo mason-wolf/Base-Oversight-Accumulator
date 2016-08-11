@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ActionReportDataView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -89,8 +89,6 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DRMODataView = new System.Windows.Forms.TabPage();
-            this.ROSDataView = new System.Windows.Forms.TabPage();
             this.ActionLogDataView = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,6 +129,7 @@
             this.ModifyAssetValueButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DRMOButton = new System.Windows.Forms.ToolStripButton();
             this.ActionReportDataView.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
@@ -157,8 +156,6 @@
             this.ActionReportDataView.Controls.Add(this.AccountsTab);
             this.ActionReportDataView.Controls.Add(this.TransferTab);
             this.ActionReportDataView.Controls.Add(this.TemporaryIssueDataView);
-            this.ActionReportDataView.Controls.Add(this.DRMODataView);
-            this.ActionReportDataView.Controls.Add(this.ROSDataView);
             this.ActionReportDataView.Controls.Add(this.ActionLogDataView);
             this.ActionReportDataView.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ActionReportDataView.Location = new System.Drawing.Point(12, 149);
@@ -396,14 +393,14 @@
             this.AccountDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.AccountDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.AccountDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.AccountDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccountDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AccountID,
@@ -414,25 +411,25 @@
             this.LastInventory,
             this.InventoryDue,
             this.Location});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle5;
             this.AccountDataView.Location = new System.Drawing.Point(-10, 0);
             this.AccountDataView.Name = "AccountDataView";
             this.AccountDataView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.AccountDataView.RowHeadersVisible = false;
             this.AccountDataView.RowHeadersWidth = 100;
             this.AccountDataView.RowTemplate.Height = 40;
@@ -682,26 +679,6 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
-            // DRMODataView
-            // 
-            this.DRMODataView.Location = new System.Drawing.Point(10, 48);
-            this.DRMODataView.Name = "DRMODataView";
-            this.DRMODataView.Padding = new System.Windows.Forms.Padding(3);
-            this.DRMODataView.Size = new System.Drawing.Size(1797, 1323);
-            this.DRMODataView.TabIndex = 5;
-            this.DRMODataView.Text = "DRMO";
-            this.DRMODataView.UseVisualStyleBackColor = true;
-            // 
-            // ROSDataView
-            // 
-            this.ROSDataView.Location = new System.Drawing.Point(10, 48);
-            this.ROSDataView.Name = "ROSDataView";
-            this.ROSDataView.Padding = new System.Windows.Forms.Padding(3);
-            this.ROSDataView.Size = new System.Drawing.Size(1797, 1323);
-            this.ROSDataView.TabIndex = 6;
-            this.ROSDataView.Text = "ROS";
-            this.ROSDataView.UseVisualStyleBackColor = true;
-            // 
             // ActionLogDataView
             // 
             this.ActionLogDataView.Location = new System.Drawing.Point(10, 48);
@@ -936,10 +913,11 @@
             this.NewAccountButton,
             this.TransferButton,
             this.TempIssueButton,
-            this.ModifyAssetValueButton});
+            this.ModifyAssetValueButton,
+            this.DRMOButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 49);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1841, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1841, 48);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolBar_Click);
@@ -951,7 +929,7 @@
             this.RefreshButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(23, 36);
+            this.RefreshButton.Size = new System.Drawing.Size(23, 45);
             this.RefreshButton.Text = "RefreshButton";
             this.RefreshButton.ToolTipText = "Refresh";
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
@@ -963,7 +941,7 @@
             this.NewAssetButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewAssetButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewAssetButton.Name = "NewAssetButton";
-            this.NewAssetButton.Size = new System.Drawing.Size(23, 36);
+            this.NewAssetButton.Size = new System.Drawing.Size(23, 45);
             this.NewAssetButton.Text = "NewAssetButton";
             this.NewAssetButton.ToolTipText = "Add a new asset.\r\n";
             this.NewAssetButton.Click += new System.EventHandler(this.NewAssetButton_Click);
@@ -975,7 +953,7 @@
             this.NewECButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewECButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewECButton.Name = "NewECButton";
-            this.NewECButton.Size = new System.Drawing.Size(36, 36);
+            this.NewECButton.Size = new System.Drawing.Size(36, 45);
             this.NewECButton.ToolTipText = "Add a new equipment custodian.\r\n";
             this.NewECButton.Click += new System.EventHandler(this.NewECButton_Click);
             // 
@@ -986,7 +964,7 @@
             this.NewAccountButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewAccountButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewAccountButton.Name = "NewAccountButton";
-            this.NewAccountButton.Size = new System.Drawing.Size(23, 36);
+            this.NewAccountButton.Size = new System.Drawing.Size(23, 45);
             this.NewAccountButton.ToolTipText = "Create a new ITAM account.\r\n";
             this.NewAccountButton.Click += new System.EventHandler(this.NewAccountButton_Click);
             // 
@@ -997,7 +975,7 @@
             this.TransferButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TransferButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TransferButton.Name = "TransferButton";
-            this.TransferButton.Size = new System.Drawing.Size(23, 36);
+            this.TransferButton.Size = new System.Drawing.Size(23, 45);
             this.TransferButton.Text = "Transfer";
             this.TransferButton.ToolTipText = "Transfer asset from one account to another.\r\n\r\n";
             this.TransferButton.Click += new System.EventHandler(this.TransferButton_Click);
@@ -1009,7 +987,7 @@
             this.TempIssueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TempIssueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TempIssueButton.Name = "TempIssueButton";
-            this.TempIssueButton.Size = new System.Drawing.Size(23, 36);
+            this.TempIssueButton.Size = new System.Drawing.Size(23, 45);
             this.TempIssueButton.Text = "TempIssueButton";
             this.TempIssueButton.ToolTipText = "Temporarily issue item.\r\n";
             this.TempIssueButton.Click += new System.EventHandler(this.TempIssueButton_Click);
@@ -1021,7 +999,7 @@
             this.ModifyAssetValueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ModifyAssetValueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ModifyAssetValueButton.Name = "ModifyAssetValueButton";
-            this.ModifyAssetValueButton.Size = new System.Drawing.Size(36, 36);
+            this.ModifyAssetValueButton.Size = new System.Drawing.Size(36, 45);
             this.ModifyAssetValueButton.Text = "Modify cost of assets based on make and model.";
             this.ModifyAssetValueButton.Click += new System.EventHandler(this.ModifyAssetValueButton_Click);
             // 
@@ -1040,6 +1018,18 @@
             // 
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(0, 17);
+            // 
+            // DRMOButton
+            // 
+            this.DRMOButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.DRMOButton.Image = ((System.Drawing.Image)(resources.GetObject("DRMOButton.Image")));
+            this.DRMOButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DRMOButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DRMOButton.Name = "DRMOButton";
+            this.DRMOButton.Size = new System.Drawing.Size(23, 45);
+            this.DRMOButton.Text = "Initiate asset disposition or disposal for Defense Reutilization and Marketing Of" +
+    "fice Reports.";
+            this.DRMOButton.Click += new System.EventHandler(this.DRMOButton_Click);
             // 
             // MainWindow
             // 
@@ -1098,7 +1088,6 @@
         private System.Windows.Forms.ToolStripButton NewAssetButton;
         private System.Windows.Forms.ToolStripButton NewECButton;
         private System.Windows.Forms.DataGridView ECDataView;
-        private System.Windows.Forms.TabPage DRMODataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn AssetType;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
@@ -1139,7 +1128,6 @@
         private System.Windows.Forms.ToolStripMenuItem eitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem benchstockToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton TransferButton;
-        private System.Windows.Forms.TabPage ROSDataView;
         private System.Windows.Forms.TabPage ActionLogDataView;
         private System.Windows.Forms.ToolStripButton TempIssueButton;
         public System.Windows.Forms.DataGridView TransferDataView;
@@ -1181,6 +1169,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.ToolStripButton DRMOButton;
     }
 }
 
