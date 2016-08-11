@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewAssetBatch));
             this.AssetBatchInput = new System.Windows.Forms.RichTextBox();
             this.AddBatchButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
@@ -69,9 +70,10 @@
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AddBatchButton);
             this.Controls.Add(this.AssetBatchInput);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewAssetBatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Enter Serial Numbers:";
+            this.Text = " Enter Serial Numbers:";
             this.Load += new System.EventHandler(this.NewAssetBatch_Load);
             this.ResumeLayout(false);
 
@@ -81,6 +83,6 @@
 
         private System.Windows.Forms.RichTextBox AssetBatchInput;
         private System.Windows.Forms.Button AddBatchButton;
-        private System.Windows.Forms.Button CancelButton;
+        private new System.Windows.Forms.Button CancelButton;
     }
 }

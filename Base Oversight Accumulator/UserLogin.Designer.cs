@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserLogin));
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameField = new System.Windows.Forms.TextBox();
@@ -101,9 +102,10 @@
             this.Controls.Add(this.UsernameField);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Base Oversight Accumulator";
+            this.Text = " BOA Version 0.4 Beta";
             this.Load += new System.EventHandler(this.UserLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

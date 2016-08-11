@@ -43,6 +43,9 @@ namespace Base_Oversight_Accumulator
                 TransferDataView.Rows.Clear();
                 TransferDataView.RowTemplate.Height = 20;
 
+                IssuedDataView.Rows.Clear();
+                IssuedDataView.RowTemplate.Height = 20;
+
                 dbconnect mysql = new dbconnect();
                 mysql.OpenConnection();
 
@@ -77,14 +80,17 @@ namespace Base_Oversight_Accumulator
 
 
                 mysql.CloseConnection();
-                /*
-                DataGridViewColumn IDColumn = AssetDataView.Columns[0];
-                IDColumn.Width = 25;
+                DataGridViewColumn Tab1ID= AssetDataView.Columns[0];
+                Tab1ID.Width = 20;
+                DataGridViewColumn Tab2ID = ECDataView.Columns[0];
+                Tab2ID.Width = 20;
+                DataGridViewColumn Tab3ID = AccountDataView.Columns[0];
+                Tab3ID.Width = 20;
+                DataGridViewColumn Tab4ID = TransferDataView.Columns[0];
+                Tab4ID.Width = 20;
+                DataGridViewColumn Tab5ID = IssuedDataView.Columns[0];
+                Tab5ID.Width = 20;
 
-                DataGridViewColumn ItemColumn = AssetDataView.Columns[1];
-                ItemColumn.Width = 75;
-               
-                */
 
                 // populate equipment custodians
                 mysql.OpenConnection();
@@ -166,6 +172,33 @@ namespace Base_Oversight_Accumulator
                         TransferDate, TransferSN, TransferLosing, TransferGaining, TransferBy, TransferNotes);
                     TransferCount++;
                     if (TransferCount == 1000)
+                    {
+                        break;
+                    }
+                }
+
+                // populate temporary issued items
+                mysql.OpenConnection();
+                mysql.SelectQuery("SELECT * FROM issued ORDER BY id DESC");
+                int ItemCount = 0;
+
+                while (mysql.Result.Read())
+                {
+                    string ItemID = mysql.Reader("id");
+                    string IssuedTo = mysql.Reader("issuedto");
+                    string IssuedBy = mysql.Reader("issuedby");
+                    string Account = mysql.Reader("account");
+                    string dsn = mysql.Reader("dsn");
+                    string dateofissue = mysql.Reader("dateofissue");
+                    string dateofreturn = mysql.Reader("dateofreturn");
+                    string items = mysql.Reader("items");
+                    string notes = mysql.Reader("notes");
+
+
+                    IssuedDataView.Rows.Add(ItemID, IssuedTo, IssuedBy, Account, dsn, dateofissue, dateofreturn, items, notes);
+
+                    ItemCount++;
+                    if (ItemCount== 1000)
                     {
                         break;
                     }
@@ -340,6 +373,29 @@ namespace Base_Oversight_Accumulator
         {
             ModifyAssetValue ModifyAssetValue = new ModifyAssetValue();
             ModifyAssetValue.Show();
+        }
+
+        private void TempIssueButton_Click(object sender, EventArgs e)
+        {
+            TemporaryItemIssue TemporaryIssueItem = new TemporaryItemIssue();
+            TemporaryIssueItem.IssuedBy = BOAUser;
+            TemporaryIssueItem.Show();
+        }
+
+        private void TransferDataView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string GridID = TransferDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            TransferDetailView TransferDetailView = new TransferDetailView();
+            TransferDetailView.TransferID = GridID;
+            TransferDetailView.Show();
+        }
+
+        private void IssuedDataView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string GridID = IssuedDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            IssuedItemsView IssuedItems = new IssuedItemsView();
+            IssuedItems.ItemID = GridID;
+            IssuedItems.Show();
         }
     }
 }

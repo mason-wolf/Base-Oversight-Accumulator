@@ -31,6 +31,7 @@ namespace Base_Oversight_Accumulator
             while (mysql.Result.Read())
             {
                 AssetAccountNumber = mysql.Reader("account");
+                AccountNumberField.Text = AssetAccountNumber;
             }
             mysql.CloseConnection();
 
@@ -41,7 +42,7 @@ namespace Base_Oversight_Accumulator
 
             // total asset value
             string TotalAssetValue = mysql.SumCurrencyQuery("SELECT SUM(value) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
-            TotalAssetsField.Text = TotalAssetValue;
+            TotalValueField.Text = TotalAssetValue;
 
             // equipment custodian
             mysql.OpenConnection();
@@ -51,8 +52,11 @@ namespace Base_Oversight_Accumulator
                 AssetEquipmentCustodian = mysql.Reader("ec");
                 string InventoryDate = mysql.Reader("lastinventory");
                 string InventoryDueDate = mysql.Reader("inventorydue");
+                string org = mysql.Reader("org");
+                ECField.Text = AssetEquipmentCustodian;
                 LastInventoryField.Text = InventoryDate;
                 InventoryDueField.Text = InventoryDueDate;
+                OrganizationField.Text = org;
             }
             mysql.CloseConnection();
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewAssetWindow));
             this.Item = new System.Windows.Forms.Label();
             this.NewItemType = new System.Windows.Forms.ComboBox();
             this.NewItemManufacturer = new System.Windows.Forms.TextBox();
@@ -336,9 +337,10 @@
             this.Controls.Add(this.NewItemType);
             this.Controls.Add(this.Item);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewAssetWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "New Asset";
+            this.Text = " New Asset";
             this.Load += new System.EventHandler(this.NewAssetWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);

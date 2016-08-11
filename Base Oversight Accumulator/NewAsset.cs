@@ -12,6 +12,9 @@ namespace Base_Oversight_Accumulator
 {
     public partial class NewAssetWindow : Form
     {
+
+        string newAsset_itemType;
+
         public NewAssetWindow()
         {
             InitializeComponent();
@@ -37,9 +40,16 @@ namespace Base_Oversight_Accumulator
 
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string newAsset_itemType = NewItemType.SelectedItem.ToString();
+            try
+            {
+                newAsset_itemType = NewItemType.SelectedItem.ToString();
+            }
+            catch
+            {
+            }
             string newAsset_itemManufacturer = NewItemManufacturer.Text;
             string newAsset_itemModel = NewItemModel.Text;
             string newAsset_itemSerialNumber = NewItemSerialNumber.Text;
@@ -51,8 +61,8 @@ namespace Base_Oversight_Accumulator
             string newAsset_NewValue = NewEstimatedValue.Text;
             string newAsset_Notes = NewAssetNotes.Text + "# asset added " + DateTime.Now;
 
-            if (string.IsNullOrWhiteSpace(newAsset_itemOwner)) {
-                MessageBox.Show("Please enter item account number.", "New Asset", MessageBoxButtons.OK,MessageBoxIcon.Exclamation,
+            if (string.IsNullOrEmpty(newAsset_itemManufacturer ?? newAsset_itemModel ?? newAsset_itemSerialNumber ?? newAsset_itemOwner)) {
+                MessageBox.Show("Please finish completing the form.", "New Asset", MessageBoxButtons.OK,MessageBoxIcon.Exclamation,
       MessageBoxDefaultButton.Button1);
             }
             else {

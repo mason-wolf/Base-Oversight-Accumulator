@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewAccount));
             this.DRALabel = new System.Windows.Forms.Label();
             this.DRAField = new System.Windows.Forms.TextBox();
             this.AccountNumberLabel = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             // 
             // DRAField
             // 
+            this.DRAField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.DRAField.Location = new System.Drawing.Point(255, 47);
             this.DRAField.Name = "DRAField";
             this.DRAField.Size = new System.Drawing.Size(100, 38);
@@ -64,6 +66,7 @@
             // 
             // AccountNumberField
             // 
+            this.AccountNumberField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AccountNumberField.Location = new System.Drawing.Point(255, 116);
             this.AccountNumberField.Name = "AccountNumberField";
             this.AccountNumberField.Size = new System.Drawing.Size(100, 38);
@@ -80,6 +83,7 @@
             // 
             // OrganizationField
             // 
+            this.OrganizationField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.OrganizationField.Location = new System.Drawing.Point(255, 182);
             this.OrganizationField.Name = "OrganizationField";
             this.OrganizationField.Size = new System.Drawing.Size(300, 38);
@@ -107,9 +111,10 @@
             this.Controls.Add(this.AccountNumberLabel);
             this.Controls.Add(this.DRAField);
             this.Controls.Add(this.DRALabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "New ITAM Account";
+            this.Text = " New ITAM Account";
             this.Load += new System.EventHandler(this.NewAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

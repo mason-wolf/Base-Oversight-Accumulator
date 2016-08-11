@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustodianDetailView));
             this.ECLastName = new System.Windows.Forms.Label();
             this.ECFirstName = new System.Windows.Forms.Label();
             this.ECRank = new System.Windows.Forms.Label();
@@ -347,8 +348,9 @@
             this.Controls.Add(this.ECFirstName);
             this.Controls.Add(this.ECLastName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustodianDetailView";
-            this.Text = "Equipment Custodian View";
+            this.Text = " Equipment Custodian View";
             this.Load += new System.EventHandler(this.CustodianDetailView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

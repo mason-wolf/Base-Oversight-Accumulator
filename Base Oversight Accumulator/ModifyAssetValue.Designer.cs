@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyAssetValue));
             this.ManufacturerLabel = new System.Windows.Forms.Label();
             this.ModelLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -120,8 +121,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ModelLabel);
             this.Controls.Add(this.ManufacturerLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModifyAssetValue";
-            this.Text = "Asset Value";
+            this.Text = " Asset Value";
             this.Load += new System.EventHandler(this.ModifyAssetValue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

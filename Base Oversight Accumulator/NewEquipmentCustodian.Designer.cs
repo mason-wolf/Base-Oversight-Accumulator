@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewECWindow));
             this.label1 = new System.Windows.Forms.Label();
             this.NewECLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             // 
             // NewECLastName
             // 
+            this.NewECLastName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewECLastName.Location = new System.Drawing.Point(288, 52);
             this.NewECLastName.Name = "NewECLastName";
             this.NewECLastName.Size = new System.Drawing.Size(250, 38);
@@ -74,6 +76,7 @@
             // 
             // NewECFirstName
             // 
+            this.NewECFirstName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewECFirstName.Location = new System.Drawing.Point(288, 115);
             this.NewECFirstName.Name = "NewECFirstName";
             this.NewECFirstName.Size = new System.Drawing.Size(250, 38);
@@ -90,6 +93,7 @@
             // 
             // NewECRank
             // 
+            this.NewECRank.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewECRank.Location = new System.Drawing.Point(288, 177);
             this.NewECRank.Name = "NewECRank";
             this.NewECRank.Size = new System.Drawing.Size(150, 38);
@@ -106,6 +110,7 @@
             // 
             // NewECOrg
             // 
+            this.NewECOrg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewECOrg.Location = new System.Drawing.Point(288, 241);
             this.NewECOrg.Name = "NewECOrg";
             this.NewECOrg.Size = new System.Drawing.Size(250, 38);
@@ -122,6 +127,7 @@
             // 
             // NewECEmail
             // 
+            this.NewECEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewECEmail.Location = new System.Drawing.Point(288, 301);
             this.NewECEmail.Name = "NewECEmail";
             this.NewECEmail.Size = new System.Drawing.Size(450, 38);
@@ -138,6 +144,7 @@
             // 
             // NewECDSN
             // 
+            this.NewECDSN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewECDSN.Location = new System.Drawing.Point(288, 366);
             this.NewECDSN.Name = "NewECDSN";
             this.NewECDSN.Size = new System.Drawing.Size(200, 38);
@@ -154,6 +161,7 @@
             // 
             // NewECAcct
             // 
+            this.NewECAcct.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NewECAcct.Location = new System.Drawing.Point(288, 420);
             this.NewECAcct.Name = "NewECAcct";
             this.NewECAcct.Size = new System.Drawing.Size(200, 38);
@@ -162,7 +170,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 484);
+            this.label8.Location = new System.Drawing.Point(23, 490);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(214, 32);
             this.label8.TabIndex = 14;
@@ -170,7 +178,8 @@
             // 
             // NewECLocation
             // 
-            this.NewECLocation.Location = new System.Drawing.Point(288, 478);
+            this.NewECLocation.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.NewECLocation.Location = new System.Drawing.Point(288, 484);
             this.NewECLocation.Name = "NewECLocation";
             this.NewECLocation.Size = new System.Drawing.Size(250, 38);
             this.NewECLocation.TabIndex = 15;
@@ -189,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 667);
+            this.ClientSize = new System.Drawing.Size(839, 724);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.NewECLocation);
             this.Controls.Add(this.label8);
@@ -207,9 +216,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.NewECLastName);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewECWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "New Equipment Custodian";
+            this.Text = " New Equipment Custodian";
             this.Load += new System.EventHandler(this.NewECWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

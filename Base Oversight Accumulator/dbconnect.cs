@@ -37,7 +37,7 @@ namespace Base_Oversight_Accumulator
                 Connection.Open();
                 return true;
             }
-            catch (MySqlException ex)
+            catch (MySqlException)
             {
                 MessageBox.Show("Failed to connect to database server. Incorrect connection credentials.");
                 return false;

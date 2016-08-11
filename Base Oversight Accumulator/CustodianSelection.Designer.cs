@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustodianSelection));
             this.ECDataView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.ECKeyWords = new System.Windows.Forms.TextBox();
@@ -80,10 +81,11 @@
             this.Controls.Add(this.ECKeyWords);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ECDataView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "CustodianSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Select Custodian..";
+            this.Text = " Select Custodian..";
             this.Load += new System.EventHandler(this.CustodianSelection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ECDataView)).EndInit();
             this.ResumeLayout(false);

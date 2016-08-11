@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transfer));
             this.LosingAccount = new System.Windows.Forms.Label();
             this.GainingAccount = new System.Windows.Forms.Label();
             this.SerialNumber = new System.Windows.Forms.Label();
@@ -90,6 +91,7 @@
             // 
             // LosingAccountField
             // 
+            this.LosingAccountField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.LosingAccountField.Location = new System.Drawing.Point(278, 67);
             this.LosingAccountField.Name = "LosingAccountField";
             this.LosingAccountField.Size = new System.Drawing.Size(100, 38);
@@ -97,6 +99,7 @@
             // 
             // GainingAccountField
             // 
+            this.GainingAccountField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.GainingAccountField.Location = new System.Drawing.Point(278, 129);
             this.GainingAccountField.Name = "GainingAccountField";
             this.GainingAccountField.Size = new System.Drawing.Size(100, 38);
@@ -104,6 +107,7 @@
             // 
             // SerialNumberField
             // 
+            this.SerialNumberField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.SerialNumberField.Location = new System.Drawing.Point(278, 191);
             this.SerialNumberField.Name = "SerialNumberField";
             this.SerialNumberField.Size = new System.Drawing.Size(300, 38);
@@ -345,9 +349,10 @@
             this.Controls.Add(this.TransferButton);
             this.Controls.Add(this.TransferDetails);
             this.Controls.Add(this.TransferRequest);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Transfer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Transfer Asset";
+            this.Text = " Transfer Asset";
             this.Load += new System.EventHandler(this.Transfer_Load);
             this.TransferRequest.ResumeLayout(false);
             this.TransferRequest.PerformLayout();

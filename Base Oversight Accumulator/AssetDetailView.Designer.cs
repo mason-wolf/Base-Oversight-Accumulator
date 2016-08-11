@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssetDetailView));
             this.AssetDetailGroup = new System.Windows.Forms.GroupBox();
             this.ValueField = new System.Windows.Forms.TextBox();
             this.RoomField = new System.Windows.Forms.TextBox();
@@ -398,8 +399,9 @@
             this.Controls.Add(this.Notes);
             this.Controls.Add(this.AssetDetailGroup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AssetDetailView";
-            this.Text = "Asset Detail ";
+            this.Text = " Asset Detail ";
             this.Load += new System.EventHandler(this.AssetDetailView_Load);
             this.AssetDetailGroup.ResumeLayout(false);
             this.AssetDetailGroup.PerformLayout();

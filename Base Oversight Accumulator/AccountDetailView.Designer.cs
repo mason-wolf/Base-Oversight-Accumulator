@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountDetailView));
             this.AccountDetailsBox = new System.Windows.Forms.GroupBox();
+            this.InventoryDueField = new System.Windows.Forms.TextBox();
+            this.LastInventoryField = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.OrganizationField = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.AccountNumberField = new System.Windows.Forms.TextBox();
@@ -58,10 +63,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.LastInventoryField = new System.Windows.Forms.TextBox();
-            this.InventoryDueField = new System.Windows.Forms.TextBox();
             this.AccountDetailsBox.SuspendLayout();
             this.AccountActionsBox.SuspendLayout();
             this.NoteBox.SuspendLayout();
@@ -94,6 +95,45 @@
             this.AccountDetailsBox.TabStop = false;
             this.AccountDetailsBox.Text = "Account Details";
             this.AccountDetailsBox.Enter += new System.EventHandler(this.AccountDetailsBox_Enter);
+            // 
+            // InventoryDueField
+            // 
+            this.InventoryDueField.BackColor = System.Drawing.SystemColors.Control;
+            this.InventoryDueField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InventoryDueField.Location = new System.Drawing.Point(379, 718);
+            this.InventoryDueField.Name = "InventoryDueField";
+            this.InventoryDueField.ReadOnly = true;
+            this.InventoryDueField.Size = new System.Drawing.Size(400, 31);
+            this.InventoryDueField.TabIndex = 17;
+            this.InventoryDueField.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // LastInventoryField
+            // 
+            this.LastInventoryField.BackColor = System.Drawing.SystemColors.Control;
+            this.LastInventoryField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LastInventoryField.Location = new System.Drawing.Point(379, 639);
+            this.LastInventoryField.Name = "LastInventoryField";
+            this.LastInventoryField.ReadOnly = true;
+            this.LastInventoryField.Size = new System.Drawing.Size(400, 31);
+            this.LastInventoryField.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(139, 718);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(198, 32);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Inventory Due:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(139, 639);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(200, 32);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Last Inventory:";
             // 
             // OrganizationField
             // 
@@ -370,45 +410,6 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Action Log:";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(139, 639);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(200, 32);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Last Inventory:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(139, 718);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(198, 32);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Inventory Due:";
-            // 
-            // LastInventoryField
-            // 
-            this.LastInventoryField.BackColor = System.Drawing.SystemColors.Control;
-            this.LastInventoryField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LastInventoryField.Location = new System.Drawing.Point(379, 639);
-            this.LastInventoryField.Name = "LastInventoryField";
-            this.LastInventoryField.ReadOnly = true;
-            this.LastInventoryField.Size = new System.Drawing.Size(400, 31);
-            this.LastInventoryField.TabIndex = 16;
-            // 
-            // InventoryDueField
-            // 
-            this.InventoryDueField.BackColor = System.Drawing.SystemColors.Control;
-            this.InventoryDueField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.InventoryDueField.Location = new System.Drawing.Point(379, 718);
-            this.InventoryDueField.Name = "InventoryDueField";
-            this.InventoryDueField.ReadOnly = true;
-            this.InventoryDueField.Size = new System.Drawing.Size(400, 31);
-            this.InventoryDueField.TabIndex = 17;
-            this.InventoryDueField.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // AccountDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -426,8 +427,9 @@
             this.Controls.Add(this.AccountDRMO);
             this.Controls.Add(this.AccountAssets);
             this.Controls.Add(this.AccountDetailsBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AccountDetailView";
-            this.Text = "Account Details";
+            this.Text = " Account Details";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AccountDetailView_Load);
             this.AccountDetailsBox.ResumeLayout(false);

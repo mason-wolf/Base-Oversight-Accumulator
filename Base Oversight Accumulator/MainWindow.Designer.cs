@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ActionReportDataView = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -48,6 +48,15 @@
             this.EstimatedValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ECDataView = new System.Windows.Forms.DataGridView();
+            this.EquipmentCustodianID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECAccountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECDSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECOrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccountsTab = new System.Windows.Forms.TabPage();
             this.AccountDataView = new System.Windows.Forms.DataGridView();
             this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +80,15 @@
             this.TransferedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TemporaryIssueDataView = new System.Windows.Forms.TabPage();
+            this.IssuedDataView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DRMODataView = new System.Windows.Forms.TabPage();
             this.ROSDataView = new System.Windows.Forms.TabPage();
             this.ActionLogDataView = new System.Windows.Forms.TabPage();
@@ -113,15 +131,6 @@
             this.ModifyAssetValueButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.EquipmentCustodianID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECAccountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECDSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECOrg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ECLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActionReportDataView.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
@@ -131,6 +140,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.AccountDataView)).BeginInit();
             this.TransferTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TransferDataView)).BeginInit();
+            this.TemporaryIssueDataView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IssuedDataView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -310,6 +321,60 @@
             this.ECDataView.TabIndex = 0;
             this.ECDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellDoubleClick);
             // 
+            // EquipmentCustodianID
+            // 
+            this.EquipmentCustodianID.HeaderText = "ID";
+            this.EquipmentCustodianID.Name = "EquipmentCustodianID";
+            this.EquipmentCustodianID.ReadOnly = true;
+            // 
+            // ECLastName
+            // 
+            this.ECLastName.HeaderText = "Last Name";
+            this.ECLastName.Name = "ECLastName";
+            this.ECLastName.ReadOnly = true;
+            // 
+            // ECFirstName
+            // 
+            this.ECFirstName.HeaderText = "First Name";
+            this.ECFirstName.Name = "ECFirstName";
+            this.ECFirstName.ReadOnly = true;
+            // 
+            // ECRank
+            // 
+            this.ECRank.HeaderText = "Rank";
+            this.ECRank.Name = "ECRank";
+            this.ECRank.ReadOnly = true;
+            // 
+            // ECAccountNum
+            // 
+            this.ECAccountNum.HeaderText = "Acct#";
+            this.ECAccountNum.Name = "ECAccountNum";
+            this.ECAccountNum.ReadOnly = true;
+            // 
+            // ECEmail
+            // 
+            this.ECEmail.HeaderText = "Email";
+            this.ECEmail.Name = "ECEmail";
+            this.ECEmail.ReadOnly = true;
+            // 
+            // ECDSN
+            // 
+            this.ECDSN.HeaderText = "DSN";
+            this.ECDSN.Name = "ECDSN";
+            this.ECDSN.ReadOnly = true;
+            // 
+            // ECOrg
+            // 
+            this.ECOrg.HeaderText = "Org";
+            this.ECOrg.Name = "ECOrg";
+            this.ECOrg.ReadOnly = true;
+            // 
+            // ECLocation
+            // 
+            this.ECLocation.HeaderText = "Location";
+            this.ECLocation.Name = "ECLocation";
+            this.ECLocation.ReadOnly = true;
+            // 
             // AccountsTab
             // 
             this.AccountsTab.Controls.Add(this.AccountDataView);
@@ -331,14 +396,14 @@
             this.AccountDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.AccountDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.AccountDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.AccountDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccountDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AccountID,
@@ -349,25 +414,25 @@
             this.LastInventory,
             this.InventoryDue,
             this.Location});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle8;
             this.AccountDataView.Location = new System.Drawing.Point(-10, 0);
             this.AccountDataView.Name = "AccountDataView";
             this.AccountDataView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.AccountDataView.RowHeadersVisible = false;
             this.AccountDataView.RowHeadersWidth = 100;
             this.AccountDataView.RowTemplate.Height = 40;
@@ -456,7 +521,7 @@
             this.GainingAccount,
             this.TransferedBy,
             this.Notes});
-            this.TransferDataView.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.TransferDataView.ImeMode = System.Windows.Forms.ImeMode.On;
             this.TransferDataView.Location = new System.Drawing.Point(-10, 0);
             this.TransferDataView.Name = "TransferDataView";
             this.TransferDataView.ReadOnly = true;
@@ -465,6 +530,7 @@
             this.TransferDataView.RowTemplate.Height = 40;
             this.TransferDataView.Size = new System.Drawing.Size(1784, 1316);
             this.TransferDataView.TabIndex = 2;
+            this.TransferDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TransferDataView_CellDoubleClick);
             // 
             // TransferID
             // 
@@ -528,6 +594,7 @@
             // 
             // TemporaryIssueDataView
             // 
+            this.TemporaryIssueDataView.Controls.Add(this.IssuedDataView);
             this.TemporaryIssueDataView.Location = new System.Drawing.Point(10, 48);
             this.TemporaryIssueDataView.Name = "TemporaryIssueDataView";
             this.TemporaryIssueDataView.Padding = new System.Windows.Forms.Padding(3);
@@ -535,6 +602,85 @@
             this.TemporaryIssueDataView.TabIndex = 4;
             this.TemporaryIssueDataView.Text = "Issued Items";
             this.TemporaryIssueDataView.UseVisualStyleBackColor = true;
+            // 
+            // IssuedDataView
+            // 
+            this.IssuedDataView.AllowUserToAddRows = false;
+            this.IssuedDataView.AllowUserToDeleteRows = false;
+            this.IssuedDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.IssuedDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.IssuedDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.IssuedDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.IssuedDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.IssuedDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.IssuedDataView.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.IssuedDataView.Location = new System.Drawing.Point(-10, 0);
+            this.IssuedDataView.Name = "IssuedDataView";
+            this.IssuedDataView.ReadOnly = true;
+            this.IssuedDataView.RowHeadersVisible = false;
+            this.IssuedDataView.RowHeadersWidth = 100;
+            this.IssuedDataView.RowTemplate.Height = 40;
+            this.IssuedDataView.Size = new System.Drawing.Size(1784, 1316);
+            this.IssuedDataView.TabIndex = 3;
+            this.IssuedDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.IssuedDataView_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Issued To";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Issued By";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Acct#";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Duty Phone";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Date of Issue";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Date of Return";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Items";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // DRMODataView
             // 
@@ -866,6 +1012,7 @@
             this.TempIssueButton.Size = new System.Drawing.Size(23, 36);
             this.TempIssueButton.Text = "TempIssueButton";
             this.TempIssueButton.ToolTipText = "Temporarily issue item.\r\n";
+            this.TempIssueButton.Click += new System.EventHandler(this.TempIssueButton_Click);
             // 
             // ModifyAssetValueButton
             // 
@@ -894,60 +1041,6 @@
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(0, 17);
             // 
-            // EquipmentCustodianID
-            // 
-            this.EquipmentCustodianID.HeaderText = "ID";
-            this.EquipmentCustodianID.Name = "EquipmentCustodianID";
-            this.EquipmentCustodianID.ReadOnly = true;
-            // 
-            // ECLastName
-            // 
-            this.ECLastName.HeaderText = "Last Name";
-            this.ECLastName.Name = "ECLastName";
-            this.ECLastName.ReadOnly = true;
-            // 
-            // ECFirstName
-            // 
-            this.ECFirstName.HeaderText = "First Name";
-            this.ECFirstName.Name = "ECFirstName";
-            this.ECFirstName.ReadOnly = true;
-            // 
-            // ECRank
-            // 
-            this.ECRank.HeaderText = "Rank";
-            this.ECRank.Name = "ECRank";
-            this.ECRank.ReadOnly = true;
-            // 
-            // ECAccountNum
-            // 
-            this.ECAccountNum.HeaderText = "Acct#";
-            this.ECAccountNum.Name = "ECAccountNum";
-            this.ECAccountNum.ReadOnly = true;
-            // 
-            // ECEmail
-            // 
-            this.ECEmail.HeaderText = "Email";
-            this.ECEmail.Name = "ECEmail";
-            this.ECEmail.ReadOnly = true;
-            // 
-            // ECDSN
-            // 
-            this.ECDSN.HeaderText = "DSN";
-            this.ECDSN.Name = "ECDSN";
-            this.ECDSN.ReadOnly = true;
-            // 
-            // ECOrg
-            // 
-            this.ECOrg.HeaderText = "Org";
-            this.ECOrg.Name = "ECOrg";
-            this.ECOrg.ReadOnly = true;
-            // 
-            // ECLocation
-            // 
-            this.ECLocation.HeaderText = "Location";
-            this.ECLocation.Name = "ECLocation";
-            this.ECLocation.ReadOnly = true;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -957,9 +1050,10 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ActionReportDataView);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
-            this.Text = "Base Oversight Accumulator";
+            this.Text = " Base Oversight Accumulator";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.ActionReportDataView.ResumeLayout(false);
@@ -971,6 +1065,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.AccountDataView)).EndInit();
             this.TransferTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TransferDataView)).EndInit();
+            this.TemporaryIssueDataView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IssuedDataView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -1066,7 +1162,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Org;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastInventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryDue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Location;
         private System.Windows.Forms.DataGridViewTextBoxColumn EquipmentCustodianID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ECLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ECFirstName;
@@ -1076,6 +1172,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ECDSN;
         private System.Windows.Forms.DataGridViewTextBoxColumn ECOrg;
         private System.Windows.Forms.DataGridViewTextBoxColumn ECLocation;
+        public System.Windows.Forms.DataGridView IssuedDataView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
 

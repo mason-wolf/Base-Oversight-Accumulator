@@ -38,38 +38,38 @@ namespace Base_Oversight_Accumulator
             string account = NewECAcct.Text;
             string location = NewECLocation.Text;
 
-            try
-            {
+
                 dbconnect mysql = new dbconnect();
-                string AccountCheckQuery = "SELECT * from itam where account='" + account + "'";
-                mysql.InsertQuery(AccountCheckQuery);
-            }
-            catch(MySqlException)
+                mysql.OpenConnection();
+                mysql.SelectQuery("SELECT * from itam where account='" + account + "'");
+            if (mysql.Result.Read() == false)
             {
                 MessageBox.Show("Account not found.");
             }
-
-            try
+            else
             {
-                dbconnect mysql = new dbconnect();
-                string NewECQuery = "INSERT INTO ec(lastname, firstname, rank, org, email, dsn, account, location) VALUES ('" +
-                    lastname + "','" + firstname + "','" + rank + "','" + org + "','" + email + "','" +
-                    dsn + "','" + account + "','" + location + "')";
+                try
+                {
 
-                string AccountUpdateQuery = "UPDATE itam SET ec='" + rank.ToUpper() + " " + lastname.ToUpper() + "," + firstname.ToUpper() +
-                    "' where account='" + account + "'";
+                    string NewECQuery = "INSERT INTO ec(lastname, firstname, rank, org, email, dsn, account, location) VALUES ('" +
+                        lastname.ToUpper() + " ','" + firstname.ToUpper() + "','" + rank.ToUpper() + "','" + org.ToUpper() + "','" + email.ToUpper() + "','" +
+                        dsn + "','" + account.ToUpper() + "','" + location.ToUpper() + "')";
 
-                string AssetUpdateQuery = "UPDATE assets SET ec='" + rank.ToUpper() + " " + lastname.ToUpper() + "," + firstname.ToUpper() +
-                   "' where account='" + account + "'";
+                    string AccountUpdateQuery = "UPDATE itam SET ec='" + lastname.ToUpper() + ", " + firstname.ToUpper() + " " + rank.ToUpper() + 
+                        "' where account='" + account + "'";
 
-                mysql.InsertQuery(NewECQuery);
-                mysql.InsertQuery(AccountUpdateQuery);
-                mysql.InsertQuery(AssetUpdateQuery);
-                this.Close();
-            }
-            catch (MySqlException)
-            {
-                this.Close();
+                    string AssetUpdateQuery = "UPDATE assets SET ec='" + lastname.ToUpper() + ", " + firstname.ToUpper() + " " + rank.ToUpper() + 
+                       "' where account='" + account + "'";
+
+                    mysql.InsertQuery(NewECQuery);
+                    mysql.InsertQuery(AccountUpdateQuery);
+                    mysql.InsertQuery(AssetUpdateQuery);
+                    this.Close();
+                }
+                catch (MySqlException)
+                {
+                    this.Close();
+                }
             }
 
         }
