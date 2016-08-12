@@ -206,6 +206,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TemporaryItemIssue";
             this.Text = " Temporarily Issue Item(s)";
+            this.Load += new System.EventHandler(this.TemporaryItemIssue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

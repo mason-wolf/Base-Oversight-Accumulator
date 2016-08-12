@@ -12,6 +12,7 @@ namespace Base_Oversight_Accumulator
 {
     public partial class NewAccount : Form
     {
+        public string UserCreatingAccount { get; set; }
         public NewAccount()
         {
             InitializeComponent();
@@ -27,6 +28,9 @@ namespace Base_Oversight_Accumulator
 
             string query = "INSERT INTO itam(dra, account, org) VALUES ('" + newAccountDRA + "','" + newAccount +
                 "','" + newAccountOrg + "')";
+
+            string NewAccountLog = "INSERT INTO log (date, who, action, account) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserCreatingAccount + "', 'CREATED ACCOUNT " + newAccount + "','" + newAccount + "')";
+            mysql.InsertQuery(NewAccountLog);
             mysql.InsertQuery(query);
             this.Close();
         }

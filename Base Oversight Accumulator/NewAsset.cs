@@ -61,8 +61,8 @@ namespace Base_Oversight_Accumulator
             string room = NewRoom.Text;
             string value = NewEstimatedValue.Text;
             string notes = NewAssetNotes.Text + "# asset added " + DateTime.Now;
-            string NewAssetLog = "INSERT INTO log (date, who, action) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserCreatingAsset + "','CREATED NEW ASSET " + manufacturer.ToUpper() + " " + model.ToUpper() +
-                " WITH SERIAL NUMBER " + serialnumber + " FOR ACCOUNT " + owner + " ASSIGNED TO " + ec + "')";
+            string NewAssetLog = "INSERT INTO log (date, who, action, account) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserCreatingAsset + "','CREATED NEW ASSET " + manufacturer.ToUpper() + " " + model.ToUpper() +
+                " WITH SERIAL NUMBER " + serialnumber + " FOR ACCOUNT " + owner + " ASSIGNED TO " + ec + "', '" + owner + "')";
             dbconnect mysql = new dbconnect();
             mysql.InsertQuery(NewAssetLog);
             if (string.IsNullOrEmpty(manufacturer ?? model ?? serialnumber ?? owner ?? organization ?? ec ?? building ?? room ?? value ?? notes)) {
@@ -97,6 +97,7 @@ namespace Base_Oversight_Accumulator
             try
             {
                 NewAssetBatch NewAssetBatch = new NewAssetBatch();
+                NewAssetBatch.UserAddingAssetBatch = this.UserCreatingAsset;
                 NewAssetBatch.item = NewItemType.SelectedItem.ToString();
                 NewAssetBatch.manufacturer = NewItemManufacturer.Text;
                 NewAssetBatch.model = NewItemModel.Text;

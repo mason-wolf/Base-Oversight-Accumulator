@@ -59,14 +59,6 @@
             this.ECLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccountsTab = new System.Windows.Forms.TabPage();
             this.AccountDataView = new System.Windows.Forms.DataGridView();
-            this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AssignedEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Org = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InventoryDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TransferTab = new System.Windows.Forms.TabPage();
             this.TransferDataView = new System.Windows.Forms.DataGridView();
             this.TransferID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +81,12 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActionLogDataView = new System.Windows.Forms.TabPage();
+            this.ActionLogTab = new System.Windows.Forms.TabPage();
+            this.ActionLogDataView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ECLog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addAssetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,8 +126,18 @@
             this.ModifyAssetValueButton = new System.Windows.Forms.ToolStripButton();
             this.DRMOButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssignedEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Org = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InventoryDue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActionReportDataView.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
@@ -142,6 +149,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TransferDataView)).BeginInit();
             this.TemporaryIssueDataView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IssuedDataView)).BeginInit();
+            this.ActionLogTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ActionLogDataView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -157,7 +166,7 @@
             this.ActionReportDataView.Controls.Add(this.AccountsTab);
             this.ActionReportDataView.Controls.Add(this.TransferTab);
             this.ActionReportDataView.Controls.Add(this.TemporaryIssueDataView);
-            this.ActionReportDataView.Controls.Add(this.ActionLogDataView);
+            this.ActionReportDataView.Controls.Add(this.ActionLogTab);
             this.ActionReportDataView.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ActionReportDataView.Location = new System.Drawing.Point(12, 149);
             this.ActionReportDataView.Name = "ActionReportDataView";
@@ -183,7 +192,7 @@
             this.AssetDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AssetDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AssetDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.AssetDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.AssetDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.AssetDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -216,66 +225,77 @@
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 96;
             // 
             // AssetType
             // 
             this.AssetType.HeaderText = "Item";
             this.AssetType.Name = "AssetType";
             this.AssetType.ReadOnly = true;
+            this.AssetType.Width = 123;
             // 
             // SerialNumber
             // 
             this.SerialNumber.HeaderText = "Serial #";
             this.SerialNumber.Name = "SerialNumber";
             this.SerialNumber.ReadOnly = true;
+            this.SerialNumber.Width = 166;
             // 
             // Manufacturer
             // 
             this.Manufacturer.HeaderText = "Manufacturer";
             this.Manufacturer.Name = "Manufacturer";
             this.Manufacturer.ReadOnly = true;
+            this.Manufacturer.Width = 236;
             // 
             // Model
             // 
             this.Model.HeaderText = "Model";
             this.Model.Name = "Model";
             this.Model.ReadOnly = true;
+            this.Model.Width = 147;
             // 
             // AccountNumber
             // 
             this.AccountNumber.HeaderText = "Acct#";
             this.AccountNumber.Name = "AccountNumber";
             this.AccountNumber.ReadOnly = true;
+            this.AccountNumber.Width = 140;
             // 
             // Organization
             // 
             this.Organization.HeaderText = "Org";
             this.Organization.Name = "Organization";
             this.Organization.ReadOnly = true;
+            this.Organization.Width = 116;
             // 
             // EC
             // 
             this.EC.HeaderText = "ITEC";
             this.EC.Name = "EC";
             this.EC.ReadOnly = true;
+            this.EC.Width = 132;
             // 
             // Building
             // 
             this.Building.HeaderText = "BLDG";
             this.Building.Name = "Building";
             this.Building.ReadOnly = true;
+            this.Building.Width = 146;
             // 
             // Room
             // 
             this.Room.HeaderText = "RM";
             this.Room.Name = "Room";
             this.Room.ReadOnly = true;
+            this.Room.Width = 112;
             // 
             // EstimatedValue
             // 
             this.EstimatedValue.HeaderText = "Est. Value";
             this.EstimatedValue.Name = "EstimatedValue";
             this.EstimatedValue.ReadOnly = true;
+            this.EstimatedValue.Width = 199;
             // 
             // tabPage2
             // 
@@ -295,7 +315,7 @@
             this.ECDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ECDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ECDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ECDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.ECDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ECDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -324,54 +344,63 @@
             this.EquipmentCustodianID.HeaderText = "ID";
             this.EquipmentCustodianID.Name = "EquipmentCustodianID";
             this.EquipmentCustodianID.ReadOnly = true;
+            this.EquipmentCustodianID.Width = 96;
             // 
             // ECLastName
             // 
             this.ECLastName.HeaderText = "Last Name";
             this.ECLastName.Name = "ECLastName";
             this.ECLastName.ReadOnly = true;
+            this.ECLastName.Width = 205;
             // 
             // ECFirstName
             // 
             this.ECFirstName.HeaderText = "First Name";
             this.ECFirstName.Name = "ECFirstName";
             this.ECFirstName.ReadOnly = true;
+            this.ECFirstName.Width = 206;
             // 
             // ECRank
             // 
             this.ECRank.HeaderText = "Rank";
             this.ECRank.Name = "ECRank";
             this.ECRank.ReadOnly = true;
+            this.ECRank.Width = 135;
             // 
             // ECAccountNum
             // 
             this.ECAccountNum.HeaderText = "Acct#";
             this.ECAccountNum.Name = "ECAccountNum";
             this.ECAccountNum.ReadOnly = true;
+            this.ECAccountNum.Width = 140;
             // 
             // ECEmail
             // 
             this.ECEmail.HeaderText = "Email";
             this.ECEmail.Name = "ECEmail";
             this.ECEmail.ReadOnly = true;
+            this.ECEmail.Width = 141;
             // 
             // ECDSN
             // 
             this.ECDSN.HeaderText = "DSN";
             this.ECDSN.Name = "ECDSN";
             this.ECDSN.ReadOnly = true;
+            this.ECDSN.Width = 128;
             // 
             // ECOrg
             // 
             this.ECOrg.HeaderText = "Org";
             this.ECOrg.Name = "ECOrg";
             this.ECOrg.ReadOnly = true;
+            this.ECOrg.Width = 116;
             // 
             // ECLocation
             // 
             this.ECLocation.HeaderText = "Location";
             this.ECLocation.Name = "ECLocation";
             this.ECLocation.ReadOnly = true;
+            this.ECLocation.Width = 178;
             // 
             // AccountsTab
             // 
@@ -391,7 +420,7 @@
             this.AccountDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AccountDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.AccountDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.AccountDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.AccountDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -411,7 +440,8 @@
             this.Org,
             this.LastInventory,
             this.InventoryDue,
-            this.Location});
+            this.Location,
+            this.Column9});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -438,54 +468,6 @@
             this.AccountDataView.TabIndex = 1;
             this.AccountDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountDataView_CellDoubleClick);
             // 
-            // AccountID
-            // 
-            this.AccountID.HeaderText = "ID";
-            this.AccountID.Name = "AccountID";
-            this.AccountID.ReadOnly = true;
-            // 
-            // Account
-            // 
-            this.Account.HeaderText = "Acct#";
-            this.Account.Name = "Account";
-            this.Account.ReadOnly = true;
-            // 
-            // AssignedEC
-            // 
-            this.AssignedEC.HeaderText = "Equipment Custodian";
-            this.AssignedEC.Name = "AssignedEC";
-            this.AssignedEC.ReadOnly = true;
-            // 
-            // dra
-            // 
-            this.dra.HeaderText = "DRA";
-            this.dra.Name = "dra";
-            this.dra.ReadOnly = true;
-            // 
-            // Org
-            // 
-            this.Org.HeaderText = "Org";
-            this.Org.Name = "Org";
-            this.Org.ReadOnly = true;
-            // 
-            // LastInventory
-            // 
-            this.LastInventory.HeaderText = "Last Inventory";
-            this.LastInventory.Name = "LastInventory";
-            this.LastInventory.ReadOnly = true;
-            // 
-            // InventoryDue
-            // 
-            this.InventoryDue.HeaderText = "Inventory Due";
-            this.InventoryDue.Name = "InventoryDue";
-            this.InventoryDue.ReadOnly = true;
-            // 
-            // Location
-            // 
-            this.Location.HeaderText = "Notes";
-            this.Location.Name = "Location";
-            this.Location.ReadOnly = true;
-            // 
             // TransferTab
             // 
             this.TransferTab.Controls.Add(this.TransferDataView);
@@ -504,7 +486,7 @@
             this.TransferDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TransferDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TransferDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.TransferDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.TransferDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.TransferDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -535,60 +517,70 @@
             this.TransferID.HeaderText = "ID";
             this.TransferID.Name = "TransferID";
             this.TransferID.ReadOnly = true;
+            this.TransferID.Width = 96;
             // 
             // TransferItem
             // 
             this.TransferItem.HeaderText = "Item";
             this.TransferItem.Name = "TransferItem";
             this.TransferItem.ReadOnly = true;
+            this.TransferItem.Width = 123;
             // 
             // TransferedTo
             // 
             this.TransferedTo.HeaderText = "Transfered To";
             this.TransferedTo.Name = "TransferedTo";
             this.TransferedTo.ReadOnly = true;
+            this.TransferedTo.Width = 226;
             // 
             // TransferedFrom
             // 
             this.TransferedFrom.HeaderText = "Transfered From";
             this.TransferedFrom.Name = "TransferedFrom";
             this.TransferedFrom.ReadOnly = true;
+            this.TransferedFrom.Width = 255;
             // 
             // TransferDate
             // 
             this.TransferDate.HeaderText = "Date";
             this.TransferDate.Name = "TransferDate";
             this.TransferDate.ReadOnly = true;
+            this.TransferDate.Width = 129;
             // 
             // TransferSN
             // 
             this.TransferSN.HeaderText = "SN";
             this.TransferSN.Name = "TransferSN";
             this.TransferSN.ReadOnly = true;
+            this.TransferSN.Width = 108;
             // 
             // LosingAccount
             // 
             this.LosingAccount.HeaderText = "Losing Acct";
             this.LosingAccount.Name = "LosingAccount";
             this.LosingAccount.ReadOnly = true;
+            this.LosingAccount.Width = 199;
             // 
             // GainingAccount
             // 
             this.GainingAccount.HeaderText = "Gaining Acct";
             this.GainingAccount.Name = "GainingAccount";
             this.GainingAccount.ReadOnly = true;
+            this.GainingAccount.Width = 213;
             // 
             // TransferedBy
             // 
             this.TransferedBy.HeaderText = "Transfered By";
             this.TransferedBy.Name = "TransferedBy";
             this.TransferedBy.ReadOnly = true;
+            this.TransferedBy.Width = 226;
             // 
             // Notes
             // 
             this.Notes.HeaderText = "Notes";
             this.Notes.Name = "Notes";
             this.Notes.ReadOnly = true;
+            this.Notes.Width = 143;
             // 
             // TemporaryIssueDataView
             // 
@@ -608,7 +600,7 @@
             this.IssuedDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.IssuedDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.IssuedDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.IssuedDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.IssuedDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.IssuedDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -637,58 +629,121 @@
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 96;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Issued To";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 178;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Issued By";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 178;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Acct#";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Width = 140;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Duty Phone";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 200;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Date of Issue";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.Width = 215;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Date of Return";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            this.Column7.Width = 232;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Items";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            this.Column8.Width = 137;
+            // 
+            // ActionLogTab
+            // 
+            this.ActionLogTab.Controls.Add(this.ActionLogDataView);
+            this.ActionLogTab.Location = new System.Drawing.Point(10, 48);
+            this.ActionLogTab.Name = "ActionLogTab";
+            this.ActionLogTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ActionLogTab.Size = new System.Drawing.Size(1797, 1323);
+            this.ActionLogTab.TabIndex = 7;
+            this.ActionLogTab.Text = "Action Log";
+            this.ActionLogTab.UseVisualStyleBackColor = true;
             // 
             // ActionLogDataView
             // 
-            this.ActionLogDataView.Location = new System.Drawing.Point(10, 48);
+            this.ActionLogDataView.AllowUserToAddRows = false;
+            this.ActionLogDataView.AllowUserToDeleteRows = false;
+            this.ActionLogDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ActionLogDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.ActionLogDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.ActionLogDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ActionLogDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ActionLogDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Date,
+            this.ECLog,
+            this.Action});
+            this.ActionLogDataView.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.ActionLogDataView.Location = new System.Drawing.Point(-10, 0);
             this.ActionLogDataView.Name = "ActionLogDataView";
-            this.ActionLogDataView.Padding = new System.Windows.Forms.Padding(3);
-            this.ActionLogDataView.Size = new System.Drawing.Size(1797, 1323);
-            this.ActionLogDataView.TabIndex = 7;
-            this.ActionLogDataView.Text = "Action Log";
-            this.ActionLogDataView.UseVisualStyleBackColor = true;
+            this.ActionLogDataView.ReadOnly = true;
+            this.ActionLogDataView.RowHeadersVisible = false;
+            this.ActionLogDataView.RowHeadersWidth = 100;
+            this.ActionLogDataView.RowTemplate.Height = 40;
+            this.ActionLogDataView.Size = new System.Drawing.Size(1784, 1316);
+            this.ActionLogDataView.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 96;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 129;
+            // 
+            // ECLog
+            // 
+            this.ECLog.HeaderText = "EC";
+            this.ECLog.Name = "ECLog";
+            this.ECLog.ReadOnly = true;
+            this.ECLog.Width = 108;
+            // 
+            // Action
+            // 
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.ReadOnly = true;
+            this.Action.Width = 149;
             // 
             // menuStrip1
             // 
@@ -700,7 +755,7 @@
             this.helpToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1841, 52);
+            this.menuStrip1.Size = new System.Drawing.Size(1841, 49);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -720,7 +775,7 @@
             this.refreshDatabaseToolStripMenuItem,
             this.eitToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 48);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 45);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // addAssetToolStripMenuItem
@@ -805,7 +860,7 @@
             this.dispositionsToolStripMenuItem,
             this.rOSReportsToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 48);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 45);
             this.reportsToolStripMenuItem.Text = "Search";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
@@ -856,7 +911,7 @@
             this.dRMOReportsToolStripMenuItem,
             this.rOSReportsToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(132, 48);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(132, 45);
             this.helpToolStripMenuItem.Text = "Reports";
             // 
             // assetsToolStripMenuItem1
@@ -904,7 +959,7 @@
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 48);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 45);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // toolStrip1
@@ -919,8 +974,9 @@
             this.TempIssueButton,
             this.ModifyAssetValueButton,
             this.DRMOButton,
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 52);
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 49);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1841, 39);
             this.toolStrip1.TabIndex = 2;
@@ -1031,6 +1087,17 @@
             this.toolStripButton1.Text = "Initiate Report of Survey for missing assets.";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 36);
+            this.toolStripButton2.Text = "Search";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
@@ -1046,6 +1113,69 @@
             // 
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(0, 17);
+            // 
+            // AccountID
+            // 
+            this.AccountID.HeaderText = "ID";
+            this.AccountID.Name = "AccountID";
+            this.AccountID.ReadOnly = true;
+            this.AccountID.Width = 96;
+            // 
+            // Account
+            // 
+            this.Account.HeaderText = "Acct#";
+            this.Account.Name = "Account";
+            this.Account.ReadOnly = true;
+            this.Account.Width = 140;
+            // 
+            // AssignedEC
+            // 
+            this.AssignedEC.HeaderText = "Equipment Custodian";
+            this.AssignedEC.Name = "AssignedEC";
+            this.AssignedEC.ReadOnly = true;
+            this.AssignedEC.Width = 313;
+            // 
+            // dra
+            // 
+            this.dra.HeaderText = "DRA";
+            this.dra.Name = "dra";
+            this.dra.ReadOnly = true;
+            this.dra.Width = 128;
+            // 
+            // Org
+            // 
+            this.Org.HeaderText = "Org";
+            this.Org.Name = "Org";
+            this.Org.ReadOnly = true;
+            this.Org.Width = 116;
+            // 
+            // LastInventory
+            // 
+            this.LastInventory.HeaderText = "Last Inventory";
+            this.LastInventory.Name = "LastInventory";
+            this.LastInventory.ReadOnly = true;
+            this.LastInventory.Width = 226;
+            // 
+            // InventoryDue
+            // 
+            this.InventoryDue.HeaderText = "Inventory Due";
+            this.InventoryDue.Name = "InventoryDue";
+            this.InventoryDue.ReadOnly = true;
+            this.InventoryDue.Width = 224;
+            // 
+            // Location
+            // 
+            this.Location.HeaderText = "Notes";
+            this.Location.Name = "Location";
+            this.Location.ReadOnly = true;
+            this.Location.Width = 143;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Status";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 150;
             // 
             // MainWindow
             // 
@@ -1073,6 +1203,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TransferDataView)).EndInit();
             this.TemporaryIssueDataView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IssuedDataView)).EndInit();
+            this.ActionLogTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ActionLogDataView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -1144,7 +1276,7 @@
         private System.Windows.Forms.ToolStripMenuItem eitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem benchstockToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton TransferButton;
-        private System.Windows.Forms.TabPage ActionLogDataView;
+        private System.Windows.Forms.TabPage ActionLogTab;
         private System.Windows.Forms.ToolStripButton TempIssueButton;
         public System.Windows.Forms.DataGridView TransferDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn TransferID;
@@ -1159,14 +1291,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
         private System.Windows.Forms.ToolStripButton ModifyAssetValueButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Account;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AssignedEC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Org;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryDue;
-        private new System.Windows.Forms.DataGridViewTextBoxColumn Location;
         private System.Windows.Forms.DataGridViewTextBoxColumn EquipmentCustodianID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ECLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ECFirstName;
@@ -1187,6 +1311,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.ToolStripButton DRMOButton;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        public System.Windows.Forms.DataGridView ActionLogDataView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ECLog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Account;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssignedEC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Org;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastInventory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryDue;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Location;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }
 

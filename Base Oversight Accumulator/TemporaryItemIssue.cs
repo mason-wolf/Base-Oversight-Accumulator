@@ -33,11 +33,18 @@ namespace Base_Oversight_Accumulator
             dbconnect mysql = new dbconnect();
 
                 string query = "INSERT INTO issued (issuedto, issuedby, account, dsn, dateofissue, dateofreturn, items, notes, returned) VALUES ('" + IssuedTo + "','" +
-                    IssuedBy + "','" + FromAccount + "','" + DSN + "','"+ DateOfIssue + "','" + DateOfReturn + "','" + items + "','" + Notes + "','" + Returned + "')";
-                    
-                mysql.InsertQuery(query);
-                this.Close();
+                IssuedBy + "','" + FromAccount + "','" + DSN + "','"+ DateOfIssue + "','" + DateOfReturn + "','" + items + "','" + Notes + "','" + Returned + "')";
+
+            string TransferLog = "INSERT INTO log (date, who, action) VALUES('" + DateTime.Now.ToString() + "','" + IssuedBy + "','TEMPORARILY ISSUED ITEMS TO " + IssuedTo + "')";
+            mysql.InsertQuery(query);
+            mysql.InsertQuery(TransferLog);
+            this.Close();
             
+
+        }
+
+        private void TemporaryItemIssue_Load(object sender, EventArgs e)
+        {
 
         }
     }

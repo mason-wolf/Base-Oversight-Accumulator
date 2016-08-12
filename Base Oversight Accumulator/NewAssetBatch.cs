@@ -12,7 +12,7 @@ namespace Base_Oversight_Accumulator
 {
     public partial class NewAssetBatch : Form
     {
-
+        public string UserAddingAssetBatch { get; set; }
         public string item { get; set; }
         public string manufacturer { get; set; }
         public string model { get; set; }
@@ -24,7 +24,7 @@ namespace Base_Oversight_Accumulator
         public string room { get; set; }
         public string value { get; set; }
         public string notes { get; set; }
-        
+        dbconnect mysql = new dbconnect();
         public NewAssetBatch()
         {
             InitializeComponent();
@@ -39,16 +39,16 @@ namespace Base_Oversight_Accumulator
                 s = str;
                 string batch = RemoveSpecialCharacters(s).ToUpper();
                 //  MessageBox.Show(result);
-                dbconnect mysql = new dbconnect();
 
-                string query = "INSERT INTO assets(item, manufacturer, model, serialnumber, accountnumber, organization, ec, building, room, value, notes) VALUES ('" +
+                string BatchAssets = "INSERT INTO assets(item, manufacturer, model, serialnumber, accountnumber, organization, ec, building, room, value, notes) VALUES ('" +
                                 item + "','" + manufacturer+ "','" +
                                 model + "','" + batch + "','" + owner + "','" + org + "','" +
                                 ec + "','" + bldg + "','" + room+ "','" + value + "','" + notes + "')";
-
-                mysql.InsertQuery(query);
+                mysql.InsertQuery(BatchAssets);
                 this.Close();
             }
+            string NewAssetLog = "INSERT INTO log (date, who, action) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserAddingAssetBatch + "','CREATED NEW ASSETS FOR ACCOUNT " + owner + " ASSIGNED TO " + ec + "')";
+            mysql.InsertQuery(NewAssetLog);
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

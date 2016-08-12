@@ -19,7 +19,6 @@ namespace Base_Oversight_Accumulator
         public Transfer()
         {
             InitializeComponent();
-            MessageBox.Show(TransferedBy);
         }
 
         private void TransferAssetButton_Click(object sender, EventArgs e)
@@ -123,9 +122,10 @@ namespace Base_Oversight_Accumulator
                 string TransferHistory = "INSERT INTO transfers (item, transferto, transferfrom, transferdate, serialnumber, losingaccount, gainingaccount, transferby, notes) VALUES ('" +
                     item + "','" + transferto + "','" + transferfrom + "','" + transferdate + "','" + serialnumber + "','" +
                     losingaccount + "','" + gainingaccount + "','" + TransferedBy+ "','" + notes + "')";
+               string TransferLog = "INSERT INTO log (date, who, action, account) VALUES('" + DateTime.Now.ToString() + "','" + this.TransferedBy + "','TRANSFERED " + item + " " + serialnumber + " FROM " + transferfrom + " TO " + transferto + "','" + gainingaccount + "')";
 
                 mysql.InsertQuery(TransferHistory);
-                MessageBox.Show("Transfer complete.");
+                mysql.InsertQuery(TransferLog);
                 this.Close();
             }
         }

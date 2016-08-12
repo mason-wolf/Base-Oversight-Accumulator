@@ -351,6 +351,7 @@
             this.ROS.TabIndex = 5;
             this.ROS.Text = "ROS";
             this.ROS.UseVisualStyleBackColor = true;
+            this.ROS.Click += new System.EventHandler(this.ROS_Click);
             // 
             // DRMO
             // 
@@ -360,6 +361,7 @@
             this.DRMO.TabIndex = 6;
             this.DRMO.Text = "DRMO";
             this.DRMO.UseVisualStyleBackColor = true;
+            this.DRMO.Click += new System.EventHandler(this.DRMO_Click);
             // 
             // SaveChangesButton
             // 

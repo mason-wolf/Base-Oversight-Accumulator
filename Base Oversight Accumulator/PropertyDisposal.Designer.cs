@@ -82,6 +82,7 @@
             // 
             // AccountField
             // 
+            this.AccountField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AccountField.Location = new System.Drawing.Point(209, 40);
             this.AccountField.Name = "AccountField";
             this.AccountField.Size = new System.Drawing.Size(100, 38);
@@ -119,6 +120,7 @@
             // 
             // ItemField
             // 
+            this.ItemField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ItemField.Location = new System.Drawing.Point(209, 112);
             this.ItemField.Name = "ItemField";
             this.ItemField.Size = new System.Drawing.Size(400, 38);
@@ -164,6 +166,7 @@
             this.Name = "PropertyDisposal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  Property Disposal Report";
+            this.Load += new System.EventHandler(this.PropertyDisposal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AssetsField)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,6 +16,7 @@ namespace Base_Oversight_Accumulator
 
         public string selectedID { get; set; }
         public string ec { get; private set; }
+        public string UserViewingAsset { get; set; }
 
         public AssetDetailView()
         {
@@ -145,8 +146,11 @@ namespace Base_Oversight_Accumulator
                 {
                     dbconnect mysql = new dbconnect();
                     string ID = AssetID.Text;
+                    string asset = ManufacturerField.Text + " " + ModelField.Text + " " + SerialNumberField.Text;
                     string DeleteAsset = "DELETE from assets WHERE id=" + ID;
                     mysql.InsertQuery(DeleteAsset);
+                    mysql.InsertQuery("INSERT INTO log (date, who, action, account) VALUES ('" + DateTime.Now.ToString() + "','" + UserViewingAsset +
+                        "','DELETED ASSET " + asset + " FROM ACCOUNT " + AccountField.Text + "','" + AccountField.Text + "')");
                     this.Close();
                 }
                 catch
@@ -161,10 +165,41 @@ namespace Base_Oversight_Accumulator
         private void Transfer_Click(object sender, EventArgs e)
         {
             Transfer transfer = new Transfer();
+            transfer.TransferedBy = UserViewingAsset;
             transfer.LosingAccountField.Text = AccountField.Text;
             transfer.SerialNumberField.Text = SerialNumberField.Text;
             this.Close();
             transfer.Show();
+        }
+
+        private void ROS_Click(object sender, EventArgs e)
+        {
+            string description = ManufacturerField.Text + " " + ModelField.Text;
+            string account = AccountField.Text;
+            string value = ValueField.Text;
+            string serialnumber = SerialNumberField.Text;
+
+            ROSWindow ros = new ROSWindow();
+            ros.UserCreatingROS = UserViewingAsset;
+            ros.ItemAccount = account;
+            ros.ItemSerialNumber = serialnumber;
+            ros.ItemDescription = description;
+            ros.ItemValue = value;
+            ros.ROSItemSelected = true;
+            ros.Show();
+            this.Close();
+
+        }
+
+        private void DRMO_Click(object sender, EventArgs e)
+        {
+            PropertyDisposal drmo = new PropertyDisposal();
+            drmo.ItemsDisposedBy = UserViewingAsset;
+            drmo.ItemSelected = true;
+            drmo.ItemSerialNumber = SerialNumberField.Text;
+            drmo.ItemAccount = AccountField.Text;
+            drmo.Show();
+            this.Close();
         }
     }
 }

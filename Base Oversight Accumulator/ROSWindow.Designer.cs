@@ -209,6 +209,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ROSWindow";
             this.Text = " Report of Survey";
+            this.Load += new System.EventHandler(this.ROSWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

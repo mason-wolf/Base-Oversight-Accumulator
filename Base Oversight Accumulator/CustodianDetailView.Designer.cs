@@ -157,6 +157,7 @@
             this.ECFirstNameField.ReadOnly = true;
             this.ECFirstNameField.Size = new System.Drawing.Size(500, 31);
             this.ECFirstNameField.TabIndex = 11;
+            this.ECFirstNameField.TextChanged += new System.EventHandler(this.ECFirstNameField_TextChanged);
             // 
             // ECRankField
             // 

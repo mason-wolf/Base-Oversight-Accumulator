@@ -14,6 +14,7 @@ namespace Base_Oversight_Accumulator
     {
 
         public string selectedID { get; set; }
+        public string UserViewingCustodian { get; set; }
 
         public CustodianDetailView()
         {
@@ -149,8 +150,16 @@ namespace Base_Oversight_Accumulator
                 {
                     dbconnect mysql = new dbconnect();
                     string ID = ECID.Text;
+                    string lastname = ECLastNameField.Text;
+                    string firstname = ECFirstNameField.Text;
+                    string rank = ECRankField.Text;
+                    string account = ECAccountField.Text;
+                    string ec = lastname.ToUpper() + ", " + firstname.ToUpper() + " " + rank;
                     string DeleteEC = "DELETE from ec WHERE id=" + ID;
+                    string LogUpdate = "INSERT INTO log (date, who, action) VALUES('" + DateTime.Now.ToString() + "','" + UserViewingCustodian +
+    "','DELETED CUSTODIAN " + ec + " MEMBER OF ACCOUNT " + account +"')";
                     mysql.InsertQuery(DeleteEC);
+                    mysql.InsertQuery(LogUpdate);
                     this.Close();
                 }
                 catch
@@ -164,6 +173,11 @@ namespace Base_Oversight_Accumulator
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ECFirstNameField_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

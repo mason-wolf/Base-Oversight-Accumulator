@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Threading;
 
 namespace Base_Oversight_Accumulator
 {
@@ -16,6 +17,7 @@ namespace Base_Oversight_Accumulator
     {
 
         public string selectedEC { get; set; }
+        public string UserCreatingCustodian { get; set; }
 
         public NewECWindow()
         {
@@ -38,9 +40,12 @@ namespace Base_Oversight_Accumulator
             string account = NewECAcct.Text;
             string location = NewECLocation.Text;
 
-
                 dbconnect mysql = new dbconnect();
-                mysql.OpenConnection();
+            mysql.OpenConnection();
+            string NewECActionLog = "INSERT INTO log (date, who, action,account) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserCreatingCustodian + "','" +
+                       "CREATED CUSTODIAN " + lastname.ToUpper() + ", " + firstname.ToUpper() + " " + rank.ToUpper() + " ASSIGNED TO ACCOUNT " + account.ToUpper() + "','" + account + "')";
+            mysql.InsertQuery(NewECActionLog);
+
                 mysql.SelectQuery("SELECT * from itam where account='" + account + "'");
             if (mysql.Result.Read() == false)
             {
@@ -59,16 +64,16 @@ namespace Base_Oversight_Accumulator
                         "' where account='" + account + "'";
 
                     string AssetUpdateQuery = "UPDATE assets SET ec='" + lastname.ToUpper() + ", " + firstname.ToUpper() + " " + rank.ToUpper() + 
-                       "' where account='" + account + "'";
+                       "' where accountnumber='" + account + "'";
 
                     mysql.InsertQuery(NewECQuery);
                     mysql.InsertQuery(AccountUpdateQuery);
                     mysql.InsertQuery(AssetUpdateQuery);
                     this.Close();
                 }
-                catch (MySqlException)
+                catch (MySqlException SomethingWentWrong)
                 {
-                    this.Close();
+                    MessageBox.Show(SomethingWentWrong.ToString());
                 }
             }
 

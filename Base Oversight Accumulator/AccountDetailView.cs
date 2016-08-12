@@ -15,7 +15,9 @@ namespace Base_Oversight_Accumulator
     {
         public string gridid { get; set; }
         public string AssetAccountNumber { get; set; }
+        public string AccountStatus { get; set; }
         public string AssetEquipmentCustodian { get; set; }
+        public string UserViewingAccount { get; set; }
 
         public AccountDetailView()
         {
@@ -31,7 +33,21 @@ namespace Base_Oversight_Accumulator
             while (mysql.Result.Read())
             {
                 AssetAccountNumber = mysql.Reader("account");
+                AccountStatus = mysql.Reader("status");
                 AccountNumberField.Text = AssetAccountNumber;
+                AccountStatusField.Text = AccountStatus;
+                if(AccountStatusField.Text == "NORMAL")
+                {
+                    AccountStatusField.BackColor = Color.Green;
+                    AccountStatusField.ForeColor = Color.White;
+                }
+                if(AccountStatusField.Text == "FROZEN")
+                {
+                    AccountStatusField.BackColor = Color.Red;
+                    AccountStatusField.ForeColor = Color.White;
+                    UnfreezeAccountButton.Visible = true;
+                    FreezeAccountButton.Enabled = false;
+                }
             }
             mysql.CloseConnection();
 
@@ -52,11 +68,13 @@ namespace Base_Oversight_Accumulator
                 AssetEquipmentCustodian = mysql.Reader("ec");
                 string InventoryDate = mysql.Reader("lastinventory");
                 string InventoryDueDate = mysql.Reader("inventorydue");
+                string Notes = mysql.Reader("notes");
                 string org = mysql.Reader("org");
                 ECField.Text = AssetEquipmentCustodian;
                 LastInventoryField.Text = InventoryDate;
                 InventoryDueField.Text = InventoryDueDate;
                 OrganizationField.Text = org;
+                AccountNotesField.Text = Notes;
             }
             mysql.CloseConnection();
 
@@ -81,6 +99,9 @@ namespace Base_Oversight_Accumulator
                 string date = mysql.Reader("date");
                 AccountDRMO.Items.Add("# " + date + " " + item);
             }
+            int drmoCount = AccountDRMO.Items.Count;
+            NumDRMOItems.Text = drmoCount.ToString();
+
             mysql.CloseConnection();
 
             // ros
@@ -91,6 +112,21 @@ namespace Base_Oversight_Accumulator
                 string item = mysql.Reader("description");
                 string date = mysql.Reader("date");
                 AccountROS.Items.Add("#" + date + " " + item);
+            }
+            int rosCount = AccountROS.Items.Count;
+            NumROSItems.Text = rosCount.ToString();
+
+            mysql.CloseConnection();
+
+            // action log
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * from log where account='" + AssetAccountNumber + "'");
+            while (mysql.Result.Read())
+            {
+                string date = mysql.Reader("date");
+                string who = mysql.Reader("who");
+                string action = mysql.Reader("action");
+                AccountActionLog.Items.Add("#" + date + " " + who + " " + action);
             }
             mysql.CloseConnection();
 
@@ -107,7 +143,10 @@ namespace Base_Oversight_Accumulator
             {
                 dbconnect mysql = new dbconnect();
                 string DeleteAccount = "DELETE from itam WHERE id=" + gridid;
+                string AccountDeletionLog = "INSERT INTO log (date, who, action) VALUES ('" + DateTime.Now.ToString() + "','" +
+                    UserViewingAccount + "','DELETE ACCOUNT " + AssetAccountNumber + "'";
                 mysql.InsertQuery(DeleteAccount);
+                mysql.InsertQuery(AccountDeletionLog);
                 this.Close();
             }
         }
@@ -125,6 +164,51 @@ namespace Base_Oversight_Accumulator
         private void ECField_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FreezeAccountButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to freeze this account?",
+"Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                dbconnect mysql = new dbconnect();
+                string notes = AccountNotesField.Text.ToUpper();
+                string query = "UPDATE itam SET status='FROZEN' WHERE id='" + gridid + "'";
+                string FreezeAccountLog = "INSERT INTO log (date, who, action) VALUES ('" + DateTime.Now.ToString() + "','" +
+    UserViewingAccount + "','FROZE ACCOUNT " + AssetAccountNumber + " " + notes + "')";
+                mysql.InsertQuery(query);
+                mysql.InsertQuery(FreezeAccountLog);
+                UnfreezeAccountButton.Visible = true;
+                FreezeAccountButton.Enabled = false;
+            }
+        }
+
+        private void UnfreezeAccountButton_Click(object sender, EventArgs e)
+        {
+            AccountStatusField.BackColor = Color.Green;
+            AccountStatusField.ForeColor = Color.White;
+            AccountStatusField.Text = "NORMAL";
+            FreezeAccountButton.Enabled = true;
+            UnfreezeAccountButton.Visible = false;
+            dbconnect mysql = new dbconnect();
+            string query = "UPDATE itam SET status='NORMAL' WHERE id='" + gridid + "'";
+            string UnFreezeAccountLog = "INSERT INTO log (date, who, action) VALUES ('" + DateTime.Now.ToString() + "','" +
+UserViewingAccount + "','UNFROZE ACCOUNT " + AssetAccountNumber + " " + AccountNotesField.Text.ToUpper() + "')";
+            mysql.InsertQuery(query);
+            mysql.InsertQuery(UnFreezeAccountLog);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string notes = AccountNotesField.Text;
+            dbconnect mysql = new dbconnect();
+            mysql.InsertQuery("UPDATE itam set notes='" + notes + "'");
+            MessageBox.Show("Account updated.");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

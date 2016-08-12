@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountDetailView));
             this.AccountDetailsBox = new System.Windows.Forms.GroupBox();
+            this.UnfreezeAccountButton = new System.Windows.Forms.Button();
+            this.AccountStatusField = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.InventoryDueField = new System.Windows.Forms.TextBox();
             this.LastInventoryField = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,23 +56,28 @@
             this.AccountROS = new System.Windows.Forms.ListBox();
             this.AccountActionLog = new System.Windows.Forms.ListBox();
             this.AccountActionsBox = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.DeleteAccountButton = new System.Windows.Forms.Button();
             this.FreezeAccountButton = new System.Windows.Forms.Button();
-            this.AddNoteButton = new System.Windows.Forms.Button();
             this.GenerateReportButton = new System.Windows.Forms.Button();
             this.NoteBox = new System.Windows.Forms.GroupBox();
             this.AccountNotesField = new System.Windows.Forms.RichTextBox();
             this.AccountAssetsLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AccountDetailsBox.SuspendLayout();
             this.AccountActionsBox.SuspendLayout();
             this.NoteBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AccountDetailsBox
             // 
+            this.AccountDetailsBox.Controls.Add(this.UnfreezeAccountButton);
+            this.AccountDetailsBox.Controls.Add(this.AccountStatusField);
+            this.AccountDetailsBox.Controls.Add(this.label10);
             this.AccountDetailsBox.Controls.Add(this.InventoryDueField);
             this.AccountDetailsBox.Controls.Add(this.LastInventoryField);
             this.AccountDetailsBox.Controls.Add(this.label9);
@@ -95,6 +103,36 @@
             this.AccountDetailsBox.TabStop = false;
             this.AccountDetailsBox.Text = "Account Details";
             this.AccountDetailsBox.Enter += new System.EventHandler(this.AccountDetailsBox_Enter);
+            // 
+            // UnfreezeAccountButton
+            // 
+            this.UnfreezeAccountButton.Location = new System.Drawing.Point(533, 774);
+            this.UnfreezeAccountButton.Name = "UnfreezeAccountButton";
+            this.UnfreezeAccountButton.Size = new System.Drawing.Size(202, 53);
+            this.UnfreezeAccountButton.TabIndex = 20;
+            this.UnfreezeAccountButton.Text = "Unfreeze";
+            this.UnfreezeAccountButton.UseVisualStyleBackColor = true;
+            this.UnfreezeAccountButton.Visible = false;
+            this.UnfreezeAccountButton.Click += new System.EventHandler(this.UnfreezeAccountButton_Click);
+            // 
+            // AccountStatusField
+            // 
+            this.AccountStatusField.BackColor = System.Drawing.SystemColors.Control;
+            this.AccountStatusField.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AccountStatusField.Location = new System.Drawing.Point(379, 786);
+            this.AccountStatusField.Name = "AccountStatusField";
+            this.AccountStatusField.ReadOnly = true;
+            this.AccountStatusField.Size = new System.Drawing.Size(125, 31);
+            this.AccountStatusField.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(125, 785);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(214, 32);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Account Status:";
             // 
             // InventoryDueField
             // 
@@ -275,25 +313,25 @@
             this.AccountAssets.ItemHeight = 31;
             this.AccountAssets.Location = new System.Drawing.Point(40, 990);
             this.AccountAssets.Name = "AccountAssets";
-            this.AccountAssets.Size = new System.Drawing.Size(700, 779);
+            this.AccountAssets.Size = new System.Drawing.Size(617, 779);
             this.AccountAssets.TabIndex = 1;
             // 
             // AccountDRMO
             // 
             this.AccountDRMO.FormattingEnabled = true;
             this.AccountDRMO.ItemHeight = 31;
-            this.AccountDRMO.Location = new System.Drawing.Point(789, 990);
+            this.AccountDRMO.Location = new System.Drawing.Point(683, 990);
             this.AccountDRMO.Name = "AccountDRMO";
-            this.AccountDRMO.Size = new System.Drawing.Size(700, 779);
+            this.AccountDRMO.Size = new System.Drawing.Size(519, 779);
             this.AccountDRMO.TabIndex = 2;
             // 
             // AccountROS
             // 
             this.AccountROS.FormattingEnabled = true;
             this.AccountROS.ItemHeight = 31;
-            this.AccountROS.Location = new System.Drawing.Point(1537, 990);
+            this.AccountROS.Location = new System.Drawing.Point(1229, 990);
             this.AccountROS.Name = "AccountROS";
-            this.AccountROS.Size = new System.Drawing.Size(700, 779);
+            this.AccountROS.Size = new System.Drawing.Size(879, 779);
             this.AccountROS.TabIndex = 3;
             this.AccountROS.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -301,29 +339,50 @@
             // 
             this.AccountActionLog.FormattingEnabled = true;
             this.AccountActionLog.ItemHeight = 31;
-            this.AccountActionLog.Location = new System.Drawing.Point(2294, 990);
+            this.AccountActionLog.Location = new System.Drawing.Point(20, 37);
             this.AccountActionLog.Name = "AccountActionLog";
-            this.AccountActionLog.Size = new System.Drawing.Size(700, 779);
+            this.AccountActionLog.Size = new System.Drawing.Size(1789, 376);
             this.AccountActionLog.TabIndex = 4;
             // 
             // AccountActionsBox
             // 
+            this.AccountActionsBox.Controls.Add(this.button2);
+            this.AccountActionsBox.Controls.Add(this.button1);
             this.AccountActionsBox.Controls.Add(this.DeleteAccountButton);
             this.AccountActionsBox.Controls.Add(this.FreezeAccountButton);
-            this.AccountActionsBox.Controls.Add(this.AddNoteButton);
             this.AccountActionsBox.Controls.Add(this.GenerateReportButton);
-            this.AccountActionsBox.Location = new System.Drawing.Point(1023, 36);
+            this.AccountActionsBox.Location = new System.Drawing.Point(2138, 973);
             this.AccountActionsBox.Name = "AccountActionsBox";
-            this.AccountActionsBox.Size = new System.Drawing.Size(903, 849);
+            this.AccountActionsBox.Size = new System.Drawing.Size(700, 796);
             this.AccountActionsBox.TabIndex = 5;
             this.AccountActionsBox.TabStop = false;
             this.AccountActionsBox.Text = "Account Actions";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(29, 78);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(630, 77);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Add Note";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(29, 643);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(630, 77);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DeleteAccountButton
             // 
-            this.DeleteAccountButton.Location = new System.Drawing.Point(113, 657);
+            this.DeleteAccountButton.Location = new System.Drawing.Point(29, 497);
             this.DeleteAccountButton.Name = "DeleteAccountButton";
-            this.DeleteAccountButton.Size = new System.Drawing.Size(698, 93);
+            this.DeleteAccountButton.Size = new System.Drawing.Size(630, 77);
             this.DeleteAccountButton.TabIndex = 7;
             this.DeleteAccountButton.Text = "Delete";
             this.DeleteAccountButton.UseVisualStyleBackColor = true;
@@ -331,27 +390,19 @@
             // 
             // FreezeAccountButton
             // 
-            this.FreezeAccountButton.Location = new System.Drawing.Point(113, 463);
+            this.FreezeAccountButton.Location = new System.Drawing.Point(29, 355);
             this.FreezeAccountButton.Name = "FreezeAccountButton";
-            this.FreezeAccountButton.Size = new System.Drawing.Size(698, 93);
+            this.FreezeAccountButton.Size = new System.Drawing.Size(630, 74);
             this.FreezeAccountButton.TabIndex = 6;
             this.FreezeAccountButton.Text = "Freeze";
             this.FreezeAccountButton.UseVisualStyleBackColor = true;
-            // 
-            // AddNoteButton
-            // 
-            this.AddNoteButton.Location = new System.Drawing.Point(113, 281);
-            this.AddNoteButton.Name = "AddNoteButton";
-            this.AddNoteButton.Size = new System.Drawing.Size(698, 93);
-            this.AddNoteButton.TabIndex = 1;
-            this.AddNoteButton.Text = "Add Note";
-            this.AddNoteButton.UseVisualStyleBackColor = true;
+            this.FreezeAccountButton.Click += new System.EventHandler(this.FreezeAccountButton_Click);
             // 
             // GenerateReportButton
             // 
-            this.GenerateReportButton.Location = new System.Drawing.Point(113, 94);
+            this.GenerateReportButton.Location = new System.Drawing.Point(29, 215);
             this.GenerateReportButton.Name = "GenerateReportButton";
-            this.GenerateReportButton.Size = new System.Drawing.Size(698, 93);
+            this.GenerateReportButton.Size = new System.Drawing.Size(630, 71);
             this.GenerateReportButton.TabIndex = 0;
             this.GenerateReportButton.Text = "Generate Report";
             this.GenerateReportButton.UseVisualStyleBackColor = true;
@@ -359,9 +410,9 @@
             // NoteBox
             // 
             this.NoteBox.Controls.Add(this.AccountNotesField);
-            this.NoteBox.Location = new System.Drawing.Point(2017, 36);
+            this.NoteBox.Location = new System.Drawing.Point(997, 489);
             this.NoteBox.Name = "NoteBox";
-            this.NoteBox.Size = new System.Drawing.Size(993, 849);
+            this.NoteBox.Size = new System.Drawing.Size(1841, 448);
             this.NoteBox.TabIndex = 6;
             this.NoteBox.TabStop = false;
             this.NoteBox.Text = "Notes";
@@ -370,14 +421,14 @@
             // 
             this.AccountNotesField.Location = new System.Drawing.Point(26, 38);
             this.AccountNotesField.Name = "AccountNotesField";
-            this.AccountNotesField.Size = new System.Drawing.Size(943, 789);
+            this.AccountNotesField.Size = new System.Drawing.Size(1783, 391);
             this.AccountNotesField.TabIndex = 0;
             this.AccountNotesField.Text = "";
             // 
             // AccountAssetsLabel
             // 
             this.AccountAssetsLabel.AutoSize = true;
-            this.AccountAssetsLabel.Location = new System.Drawing.Point(34, 930);
+            this.AccountAssetsLabel.Location = new System.Drawing.Point(34, 955);
             this.AccountAssetsLabel.Name = "AccountAssetsLabel";
             this.AccountAssetsLabel.Size = new System.Drawing.Size(108, 32);
             this.AccountAssetsLabel.TabIndex = 7;
@@ -386,7 +437,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(789, 930);
+            this.label1.Location = new System.Drawing.Point(677, 955);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 32);
             this.label1.TabIndex = 8;
@@ -395,47 +446,48 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1537, 930);
+            this.label2.Location = new System.Drawing.Point(1223, 955);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 32);
             this.label2.TabIndex = 9;
             this.label2.Text = "ROS:";
             // 
-            // label3
+            // groupBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2294, 930);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 32);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Action Log:";
+            this.groupBox1.Controls.Add(this.AccountActionLog);
+            this.groupBox1.Location = new System.Drawing.Point(997, 36);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1841, 447);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Action Log:";
             // 
             // AccountDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(3286, 1822);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(3213, 1846);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AccountAssetsLabel);
             this.Controls.Add(this.NoteBox);
             this.Controls.Add(this.AccountActionsBox);
-            this.Controls.Add(this.AccountActionLog);
             this.Controls.Add(this.AccountROS);
             this.Controls.Add(this.AccountDRMO);
             this.Controls.Add(this.AccountAssets);
             this.Controls.Add(this.AccountDetailsBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AccountDetailView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = " Account Details";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AccountDetailView_Load);
             this.AccountDetailsBox.ResumeLayout(false);
             this.AccountDetailsBox.PerformLayout();
             this.AccountActionsBox.ResumeLayout(false);
             this.NoteBox.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,14 +509,12 @@
         private System.Windows.Forms.GroupBox AccountActionsBox;
         private System.Windows.Forms.Button DeleteAccountButton;
         private System.Windows.Forms.Button FreezeAccountButton;
-        private System.Windows.Forms.Button AddNoteButton;
         private System.Windows.Forms.Button GenerateReportButton;
         private System.Windows.Forms.GroupBox NoteBox;
         private System.Windows.Forms.RichTextBox AccountNotesField;
         private System.Windows.Forms.Label AccountAssetsLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox NumROSItems;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox NumDRMOItems;
@@ -477,5 +527,11 @@
         private System.Windows.Forms.TextBox LastInventoryField;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox AccountStatusField;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button UnfreezeAccountButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

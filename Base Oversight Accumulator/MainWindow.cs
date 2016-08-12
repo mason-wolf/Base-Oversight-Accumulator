@@ -46,6 +46,9 @@ namespace Base_Oversight_Accumulator
                 IssuedDataView.Rows.Clear();
                 IssuedDataView.RowTemplate.Height = 20;
 
+                ActionLogDataView.Rows.Clear();
+                ActionLogDataView.RowTemplate.Height = 20;
+
                 dbconnect mysql = new dbconnect();
                 mysql.OpenConnection();
 
@@ -78,8 +81,9 @@ namespace Base_Oversight_Accumulator
 
                 //       StatusBar.Text = "Connected: " + server; 
 
-
+                
                 mysql.CloseConnection();
+                /*
                 DataGridViewColumn Tab1ID= AssetDataView.Columns[0];
                 Tab1ID.Width = 20;
                 DataGridViewColumn Tab2ID = ECDataView.Columns[0];
@@ -90,7 +94,7 @@ namespace Base_Oversight_Accumulator
                 Tab4ID.Width = 20;
                 DataGridViewColumn Tab5ID = IssuedDataView.Columns[0];
                 Tab5ID.Width = 20;
-
+                */
 
                 // populate equipment custodians
                 mysql.OpenConnection();
@@ -138,8 +142,9 @@ namespace Base_Oversight_Accumulator
                     string AccountNotes = mysql.Reader("notes");
                     string AccountEC = mysql.Reader("ec");
                     string AccountNumber = mysql.Reader("account");
+                    string AccountStatus = mysql.Reader("status");
 
-                    AccountDataView.Rows.Add(AccountID, AccountNumber, AccountEC, AccountDRA, AccountOrg, AccountLastInventoryDate, AccountInventoryDue, AccountNotes);
+                    AccountDataView.Rows.Add(AccountID, AccountNumber, AccountEC, AccountDRA, AccountOrg, AccountLastInventoryDate, AccountInventoryDue, AccountNotes, AccountStatus);
                     AccountCount++;
                     if(AccountCount == 1000)
                     {
@@ -205,7 +210,28 @@ namespace Base_Oversight_Accumulator
                 }
 
                 mysql.CloseConnection();
+
+                // populate action log
+                mysql.OpenConnection();
+                mysql.SelectQuery("SELECT * from log ORDER BY id DESC");
+                int LogCount = 0;
+                while(mysql.Result.Read())
+                {
+                    string id = mysql.Reader("id");
+                    string date = mysql.Reader("date");
+                    string who = mysql.Reader("who");
+                    string action = mysql.Reader("action");
+                    ActionLogDataView.Rows.Add(id, date, who, action);
+
+                    LogCount++;
+                    if (LogCount == 1000)
+                    {
+                        break;
+                    }
+                }
+                mysql.CloseConnection();
             }
+
 
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
@@ -234,6 +260,7 @@ namespace Base_Oversight_Accumulator
                 string GridID = AssetDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 AssetDetailView AssetDetailView = new AssetDetailView();
                 AssetDetailView.selectedID = GridID;
+                AssetDetailView.UserViewingAsset = BOAUser;
                 AssetDetailView.Show();
             }
             catch (ArgumentOutOfRangeException)
@@ -246,6 +273,7 @@ namespace Base_Oversight_Accumulator
         private void assetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewAssetWindow NewAssetWindow = new NewAssetWindow();
+            NewAssetWindow.UserCreatingAsset = BOAUser;
             NewAssetWindow.Show();
         }
         private void RefreshButton_Click(object sender, EventArgs e)
@@ -268,6 +296,7 @@ namespace Base_Oversight_Accumulator
         private void equipmentCustodianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewECWindow NewECWindow = new NewECWindow();
+            NewECWindow.UserCreatingCustodian = BOAUser;
             NewECWindow.Show();
         }
 
@@ -279,18 +308,21 @@ namespace Base_Oversight_Accumulator
         private void NewECButton_Click(object sender, EventArgs e)
         {
             NewECWindow NewECWindow = new NewECWindow();
+            NewECWindow.UserCreatingCustodian = BOAUser;
             NewECWindow.Show();
         }
 
         private void organizationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewAccount NewAccount = new NewAccount();
+            NewAccount.UserCreatingAccount = BOAUser;
             NewAccount.Show();
         }
 
         private void NewAccountButton_Click(object sender, EventArgs e)
         {
             NewAccount NewAccount = new Base_Oversight_Accumulator.NewAccount();
+            NewAccount.UserCreatingAccount = BOAUser;
             NewAccount.Show();
         }
 
@@ -301,6 +333,7 @@ namespace Base_Oversight_Accumulator
                 string GridID = ECDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 CustodianDetailView CustodianDetailView = new CustodianDetailView();
                 CustodianDetailView.selectedID = GridID;
+                CustodianDetailView.UserViewingCustodian = BOAUser;
                 CustodianDetailView.Show();
             }
             catch { }
@@ -343,6 +376,7 @@ namespace Base_Oversight_Accumulator
                 string GridID = AccountDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 AccountDetailView AccountDetailView = new AccountDetailView();
                 AccountDetailView.gridid = GridID;
+                AccountDetailView.UserViewingAccount = BOAUser;
                 AccountDetailView.Show();
             }
             catch { }
@@ -385,29 +419,39 @@ namespace Base_Oversight_Accumulator
 
         private void TransferDataView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string GridID = TransferDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            TransferDetailView TransferDetailView = new TransferDetailView();
-            TransferDetailView.TransferID = GridID;
-            TransferDetailView.Show();
+            try
+            {
+                string GridID = TransferDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                TransferDetailView TransferDetailView = new TransferDetailView();
+                TransferDetailView.TransferID = GridID;
+                TransferDetailView.Show();
+            }
+            catch { }
         }
 
         private void IssuedDataView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string GridID = IssuedDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            IssuedItemsView IssuedItems = new IssuedItemsView();
-            IssuedItems.ItemID = GridID;
-            IssuedItems.Show();
+            try
+            {
+                string GridID = IssuedDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                IssuedItemsView IssuedItems = new IssuedItemsView();
+                IssuedItems.ItemID = GridID;
+                IssuedItems.Show();
+            }
+            catch { }
         }
 
         private void DRMOButton_Click(object sender, EventArgs e)
         {
             PropertyDisposal PropertyDisposal = new PropertyDisposal();
+            PropertyDisposal.ItemsDisposedBy = BOAUser;
             PropertyDisposal.Show();
         }
 
         private void assetDispositionbToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PropertyDisposal PropertyDisposal = new PropertyDisposal();
+            PropertyDisposal.ItemsDisposedBy = BOAUser;
             PropertyDisposal.Show();
         }
 
@@ -420,13 +464,22 @@ namespace Base_Oversight_Accumulator
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             ROSWindow ros = new ROSWindow();
+            ros.UserCreatingROS = BOAUser;
             ros.Show();
         }
 
         private void initiateReportOfSurveryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ROSWindow ros = new ROSWindow();
+            ros.UserCreatingROS = BOAUser;
             ros.Show();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            SearchBOA s = new SearchBOA();
+            s.Show();
+        }
+
     }
 }
