@@ -36,3 +36,4 @@ C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.TransferWindow.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.IssuedItemsWindow.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.ActionLogWindow.resources
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.SaveDataGridView.resources

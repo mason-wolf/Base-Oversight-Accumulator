@@ -18,6 +18,9 @@ namespace Base_Oversight_Accumulator
     {
 
         public string BOAUser { get; set; }
+        public bool FileSaved { get; set; }
+        public string FileName { get; set; }
+        public DataGridView WorkingGrid { get; set; }
 
         public MainWindow(string username)
         {
@@ -526,5 +529,28 @@ namespace Base_Oversight_Accumulator
             ActionLogWindow ActionLogWindow = new ActionLogWindow();
             ActionLogWindow.Show();
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveDataGridView SaveDataGridView = new SaveDataGridView();
+            SaveDataGridView.Show();
+            }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+
+                SaveDataGridView SaveDataGridView = new SaveDataGridView();
+                SaveDataGridView.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Exit BOA?",
+"Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
-}
+    }
+
