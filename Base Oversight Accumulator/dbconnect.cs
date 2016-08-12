@@ -80,7 +80,6 @@ namespace Base_Oversight_Accumulator
 
         public string CountQuery(string query)
         {
-            Connection.Open();
             int c;
             MySqlCommand CountQuery = new MySqlCommand(query, Connection);
             c = int.Parse(CountQuery.ExecuteScalar().ToString());

@@ -71,7 +71,7 @@
             this.TransferToField.Location = new System.Drawing.Point(373, 148);
             this.TransferToField.Name = "TransferToField";
             this.TransferToField.ReadOnly = true;
-            this.TransferToField.Size = new System.Drawing.Size(300, 31);
+            this.TransferToField.Size = new System.Drawing.Size(550, 31);
             this.TransferToField.TabIndex = 1;
             // 
             // label2
@@ -127,7 +127,7 @@
             this.TransferFromField.Location = new System.Drawing.Point(373, 231);
             this.TransferFromField.Name = "TransferFromField";
             this.TransferFromField.ReadOnly = true;
-            this.TransferFromField.Size = new System.Drawing.Size(300, 31);
+            this.TransferFromField.Size = new System.Drawing.Size(550, 31);
             this.TransferFromField.TabIndex = 7;
             // 
             // DateField
@@ -138,7 +138,7 @@
             this.DateField.Location = new System.Drawing.Point(373, 319);
             this.DateField.Name = "DateField";
             this.DateField.ReadOnly = true;
-            this.DateField.Size = new System.Drawing.Size(300, 31);
+            this.DateField.Size = new System.Drawing.Size(550, 31);
             this.DateField.TabIndex = 8;
             // 
             // SerialNumberField
@@ -149,7 +149,7 @@
             this.SerialNumberField.Location = new System.Drawing.Point(373, 407);
             this.SerialNumberField.Name = "SerialNumberField";
             this.SerialNumberField.ReadOnly = true;
-            this.SerialNumberField.Size = new System.Drawing.Size(300, 31);
+            this.SerialNumberField.Size = new System.Drawing.Size(550, 31);
             this.SerialNumberField.TabIndex = 9;
             // 
             // LosingAccountField
@@ -160,7 +160,7 @@
             this.LosingAccountField.Location = new System.Drawing.Point(373, 492);
             this.LosingAccountField.Name = "LosingAccountField";
             this.LosingAccountField.ReadOnly = true;
-            this.LosingAccountField.Size = new System.Drawing.Size(300, 31);
+            this.LosingAccountField.Size = new System.Drawing.Size(550, 31);
             this.LosingAccountField.TabIndex = 10;
             // 
             // TransferByField
@@ -171,7 +171,7 @@
             this.TransferByField.Location = new System.Drawing.Point(373, 662);
             this.TransferByField.Name = "TransferByField";
             this.TransferByField.ReadOnly = true;
-            this.TransferByField.Size = new System.Drawing.Size(300, 31);
+            this.TransferByField.Size = new System.Drawing.Size(550, 31);
             this.TransferByField.TabIndex = 11;
             // 
             // groupBox1
@@ -194,7 +194,7 @@
             this.groupBox1.Controls.Add(this.DateField);
             this.groupBox1.Location = new System.Drawing.Point(35, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(758, 733);
+            this.groupBox1.Size = new System.Drawing.Size(962, 733);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Transfer Details";
@@ -207,7 +207,7 @@
             this.GainingAccountField.Location = new System.Drawing.Point(373, 575);
             this.GainingAccountField.Name = "GainingAccountField";
             this.GainingAccountField.ReadOnly = true;
-            this.GainingAccountField.Size = new System.Drawing.Size(300, 31);
+            this.GainingAccountField.Size = new System.Drawing.Size(550, 31);
             this.GainingAccountField.TabIndex = 15;
             // 
             // label8
@@ -227,7 +227,7 @@
             this.ItemField.Location = new System.Drawing.Point(373, 59);
             this.ItemField.Name = "ItemField";
             this.ItemField.ReadOnly = true;
-            this.ItemField.Size = new System.Drawing.Size(300, 31);
+            this.ItemField.Size = new System.Drawing.Size(550, 31);
             this.ItemField.TabIndex = 13;
             // 
             // label7
@@ -242,9 +242,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.NotesField);
-            this.groupBox2.Location = new System.Drawing.Point(850, 23);
+            this.groupBox2.Location = new System.Drawing.Point(1017, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(517, 733);
+            this.groupBox2.Size = new System.Drawing.Size(475, 733);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Notes";
@@ -256,7 +256,7 @@
             this.NotesField.Location = new System.Drawing.Point(25, 38);
             this.NotesField.Name = "NotesField";
             this.NotesField.ReadOnly = true;
-            this.NotesField.Size = new System.Drawing.Size(462, 674);
+            this.NotesField.Size = new System.Drawing.Size(435, 674);
             this.NotesField.TabIndex = 0;
             this.NotesField.Text = "";
             // 
@@ -272,7 +272,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(1216, 762);
+            this.CancelButton.Location = new System.Drawing.Point(1341, 763);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(151, 54);
             this.CancelButton.TabIndex = 15;
@@ -284,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1462, 981);
+            this.ClientSize = new System.Drawing.Size(1681, 981);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.RemoveTransferButton);
             this.Controls.Add(this.groupBox2);

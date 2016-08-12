@@ -79,7 +79,7 @@
             // 
             this.ReturnDateField.BackColor = System.Drawing.SystemColors.Control;
             this.ReturnDateField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ReturnDateField.Location = new System.Drawing.Point(849, 385);
+            this.ReturnDateField.Location = new System.Drawing.Point(849, 392);
             this.ReturnDateField.Name = "ReturnDateField";
             this.ReturnDateField.ReadOnly = true;
             this.ReturnDateField.Size = new System.Drawing.Size(300, 31);
@@ -89,7 +89,7 @@
             // 
             this.IssueDateField.BackColor = System.Drawing.SystemColors.Control;
             this.IssueDateField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.IssueDateField.Location = new System.Drawing.Point(849, 319);
+            this.IssueDateField.Location = new System.Drawing.Point(849, 326);
             this.IssueDateField.Name = "IssueDateField";
             this.IssueDateField.ReadOnly = true;
             this.IssueDateField.Size = new System.Drawing.Size(300, 31);
@@ -99,7 +99,7 @@
             // 
             this.FromAccountField.BackColor = System.Drawing.SystemColors.Control;
             this.FromAccountField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FromAccountField.Location = new System.Drawing.Point(849, 248);
+            this.FromAccountField.Location = new System.Drawing.Point(849, 255);
             this.FromAccountField.Name = "FromAccountField";
             this.FromAccountField.ReadOnly = true;
             this.FromAccountField.Size = new System.Drawing.Size(300, 31);
@@ -109,7 +109,7 @@
             // 
             this.IssuedByField.BackColor = System.Drawing.SystemColors.Control;
             this.IssuedByField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.IssuedByField.Location = new System.Drawing.Point(849, 178);
+            this.IssuedByField.Location = new System.Drawing.Point(849, 185);
             this.IssuedByField.Name = "IssuedByField";
             this.IssuedByField.ReadOnly = true;
             this.IssuedByField.Size = new System.Drawing.Size(300, 31);
@@ -119,7 +119,7 @@
             // 
             this.DutyPhoneField.BackColor = System.Drawing.SystemColors.Control;
             this.DutyPhoneField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DutyPhoneField.Location = new System.Drawing.Point(849, 110);
+            this.DutyPhoneField.Location = new System.Drawing.Point(849, 117);
             this.DutyPhoneField.Name = "DutyPhoneField";
             this.DutyPhoneField.ReadOnly = true;
             this.DutyPhoneField.Size = new System.Drawing.Size(300, 31);
@@ -129,7 +129,7 @@
             // 
             this.IssuedToField.BackColor = System.Drawing.SystemColors.Control;
             this.IssuedToField.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.IssuedToField.Location = new System.Drawing.Point(849, 42);
+            this.IssuedToField.Location = new System.Drawing.Point(849, 50);
             this.IssuedToField.Name = "IssuedToField";
             this.IssuedToField.ReadOnly = true;
             this.IssuedToField.Size = new System.Drawing.Size(300, 31);

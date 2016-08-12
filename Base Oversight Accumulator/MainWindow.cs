@@ -398,12 +398,6 @@ namespace Base_Oversight_Accumulator
         {
 
         }
-
-        private void AssetDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void ModifyAssetValueButton_Click(object sender, EventArgs e)
         {
             ModifyAssetValue ModifyAssetValue = new ModifyAssetValue();
@@ -481,5 +475,56 @@ namespace Base_Oversight_Accumulator
             s.Show();
         }
 
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainWindow NewWindow = new MainWindow(BOAUser);
+            NewWindow.Show();
+        }
+
+        private void assetsToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AssetsWindow AssetsWindow = new AssetsWindow();
+            AssetsWindow.UserViewingAssetWindow = BOAUser;
+            AssetsWindow.Show();
+        }
+
+        private void equipmentCustodiansToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CustodianWindow CustodianWindow = new CustodianWindow();
+            CustodianWindow.UserViewingCustodians = BOAUser;
+            CustodianWindow.Show();
+        }
+
+        private void accountsToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AccountWindow AccountWindow = new AccountWindow();
+            AccountWindow.UserViewingAccounts = BOAUser;
+            AccountWindow.Show();
+        }
+
+        private void AccountDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void transfersToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            TransferWindow TransferWindow = new TransferWindow();
+            TransferWindow.UserViewingTransfers = BOAUser;
+            TransferWindow.Show();
+        }
+
+        private void temporarilyIssuedItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IssuedItemsWindow IssuedItemsWindow = new IssuedItemsWindow();
+            IssuedItemsWindow.UserViewingItems = BOAUser;
+            IssuedItemsWindow.Show();
+        }
+
+        private void actionLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActionLogWindow ActionLogWindow = new ActionLogWindow();
+            ActionLogWindow.Show();
+        }
     }
 }

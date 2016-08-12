@@ -51,7 +51,8 @@ namespace Base_Oversight_Accumulator
             }
             mysql.CloseConnection();
 
-           // total assets
+            // total assets
+            mysql.OpenConnection();
             string TotalAssets = mysql.CountQuery("SELECT COUNT(*) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
             TotalAssetsField.Text = TotalAssets;
 
@@ -59,6 +60,8 @@ namespace Base_Oversight_Accumulator
             // total asset value
             string TotalAssetValue = mysql.SumCurrencyQuery("SELECT SUM(value) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
             TotalValueField.Text = TotalAssetValue;
+
+            mysql.CloseConnection();
 
             // equipment custodian
             mysql.OpenConnection();

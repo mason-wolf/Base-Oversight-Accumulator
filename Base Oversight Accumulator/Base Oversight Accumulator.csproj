@@ -50,12 +50,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountWindow.Designer.cs">
+      <DependentUpon>AccountWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionLogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionLogWindow.Designer.cs">
+      <DependentUpon>ActionLogWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssetsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssetsWindow.Designer.cs">
+      <DependentUpon>AssetsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustodianWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustodianWindow.Designer.cs">
+      <DependentUpon>CustodianWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbconnect.cs" />
     <Compile Include="IssuedItemsView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IssuedItemsView.Designer.cs">
       <DependentUpon>IssuedItemsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IssuedItemsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssuedItemsWindow.Designer.cs">
+      <DependentUpon>IssuedItemsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="ModifyAssetValue.cs">
       <SubType>Form</SubType>
@@ -99,14 +129,35 @@
     <Compile Include="TransferDetailView.Designer.cs">
       <DependentUpon>TransferDetailView.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransferWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransferWindow.Designer.cs">
+      <DependentUpon>TransferWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserLogin.Designer.cs">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountWindow.resx">
+      <DependentUpon>AccountWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionLogWindow.resx">
+      <DependentUpon>ActionLogWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssetsWindow.resx">
+      <DependentUpon>AssetsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustodianWindow.resx">
+      <DependentUpon>CustodianWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IssuedItemsView.resx">
       <DependentUpon>IssuedItemsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssuedItemsWindow.resx">
+      <DependentUpon>IssuedItemsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyAssetValue.resx">
       <DependentUpon>ModifyAssetValue.cs</DependentUpon>
@@ -128,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransferDetailView.resx">
       <DependentUpon>TransferDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransferWindow.resx">
+      <DependentUpon>TransferWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>
