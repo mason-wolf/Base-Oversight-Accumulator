@@ -12,8 +12,6 @@ C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.ModifyAssetValue.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewAssetBatch.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.PropertyDisposal.resources
-C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.ROSWindow.resources
-C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.SearchBOA.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.TemporaryItemIssue.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.TransferDetailView.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.UserLogin.resources
@@ -37,3 +35,8 @@ C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.IssuedItemsWindow.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.ActionLogWindow.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.SaveDataGridView.resources
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.SearchWindow.resources
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.TransferSearch.resources
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.IssuedSearch.resources
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.MissingAsset.resources
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.SearchOptions.resources

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Base_Oversight_Accumulator
 {
-    public partial class ROSWindow : Form
+    public partial class MissingAsset : Form
     {
         public string UserCreatingROS { get; set; }
         public bool ROSItemSelected { get; set; }
@@ -19,7 +19,7 @@ namespace Base_Oversight_Accumulator
         public string ItemValue { get; set; }
         public string ItemAccount { get; set; }
 
-        public ROSWindow()
+        public MissingAsset()
         {
             InitializeComponent();
         }

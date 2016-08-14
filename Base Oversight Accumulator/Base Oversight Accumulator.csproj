@@ -87,6 +87,12 @@
     <Compile Include="IssuedItemsWindow.Designer.cs">
       <DependentUpon>IssuedItemsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="IssuedSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssuedSearch.Designer.cs">
+      <DependentUpon>IssuedSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifyAssetValue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,11 +111,11 @@
     <Compile Include="PropertyDisposal.Designer.cs">
       <DependentUpon>PropertyDisposal.cs</DependentUpon>
     </Compile>
-    <Compile Include="ROSWindow.cs">
+    <Compile Include="MissingAsset.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ROSWindow.Designer.cs">
-      <DependentUpon>ROSWindow.cs</DependentUpon>
+    <Compile Include="MissingAsset.Designer.cs">
+      <DependentUpon>MissingAsset.cs</DependentUpon>
     </Compile>
     <Compile Include="SaveDataGridView.cs">
       <SubType>Form</SubType>
@@ -118,11 +124,17 @@
       <DependentUpon>SaveDataGridView.cs</DependentUpon>
     </Compile>
     <Compile Include="SaveFile.cs" />
-    <Compile Include="SearchBOA.cs">
+    <Compile Include="SearchOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchBOA.Designer.cs">
-      <DependentUpon>SearchBOA.cs</DependentUpon>
+    <Compile Include="SearchOptions.Designer.cs">
+      <DependentUpon>SearchOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchWindow.Designer.cs">
+      <DependentUpon>SearchWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="TemporaryItemIssue.cs">
       <SubType>Form</SubType>
@@ -135,6 +147,12 @@
     </Compile>
     <Compile Include="TransferDetailView.Designer.cs">
       <DependentUpon>TransferDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransferSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransferSearch.Designer.cs">
+      <DependentUpon>TransferSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="TransferWindow.cs">
       <SubType>Form</SubType>
@@ -166,6 +184,9 @@
     <EmbeddedResource Include="IssuedItemsWindow.resx">
       <DependentUpon>IssuedItemsWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IssuedSearch.resx">
+      <DependentUpon>IssuedSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModifyAssetValue.resx">
       <DependentUpon>ModifyAssetValue.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,20 +196,26 @@
     <EmbeddedResource Include="PropertyDisposal.resx">
       <DependentUpon>PropertyDisposal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ROSWindow.resx">
-      <DependentUpon>ROSWindow.cs</DependentUpon>
+    <EmbeddedResource Include="MissingAsset.resx">
+      <DependentUpon>MissingAsset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaveDataGridView.resx">
       <DependentUpon>SaveDataGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchBOA.resx">
-      <DependentUpon>SearchBOA.cs</DependentUpon>
+    <EmbeddedResource Include="SearchOptions.resx">
+      <DependentUpon>SearchOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchWindow.resx">
+      <DependentUpon>SearchWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TemporaryItemIssue.resx">
       <DependentUpon>TemporaryItemIssue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransferDetailView.resx">
       <DependentUpon>TransferDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransferSearch.resx">
+      <DependentUpon>TransferSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransferWindow.resx">
       <DependentUpon>TransferWindow.cs</DependentUpon>

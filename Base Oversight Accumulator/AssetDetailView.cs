@@ -179,7 +179,7 @@ namespace Base_Oversight_Accumulator
             string value = ValueField.Text;
             string serialnumber = SerialNumberField.Text;
 
-            ROSWindow ros = new ROSWindow();
+            MissingAsset ros = new MissingAsset();
             ros.UserCreatingROS = UserViewingAsset;
             ros.ItemAccount = account;
             ros.ItemSerialNumber = serialnumber;

@@ -284,11 +284,6 @@ namespace Base_Oversight_Accumulator
             populate();
         }
 
-        private void ToolBar_Click(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void NewAssetButton_Click(object sender, EventArgs e)
         {
             NewAssetWindow NewAsset = new NewAssetWindow();
@@ -460,21 +455,22 @@ namespace Base_Oversight_Accumulator
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            ROSWindow ros = new ROSWindow();
+            MissingAsset ros = new MissingAsset();
             ros.UserCreatingROS = BOAUser;
             ros.Show();
         }
 
         private void initiateReportOfSurveryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ROSWindow ros = new ROSWindow();
+            MissingAsset ros = new MissingAsset();
             ros.UserCreatingROS = BOAUser;
             ros.Show();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            SearchBOA s = new SearchBOA();
+            SearchOptions s = new SearchOptions();
+            s.UserSelectingSearch = BOAUser;
             s.Show();
         }
 
@@ -551,6 +547,87 @@ namespace Base_Oversight_Accumulator
                 this.Close();
             }
         }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataObject dataObj;
+            switch (ActionReportDataView.SelectedIndex)
+            {
+                case 0:
+                    AssetDataView.SelectAll();
+                    dataObj = AssetDataView.GetClipboardContent();
+                    if (dataObj != null)
+                        Clipboard.SetDataObject(dataObj);
+                    AssetDataView.ClearSelection();
+
+                    break;
+                case 1:
+                    ECDataView.SelectAll();
+                    dataObj = ECDataView.GetClipboardContent();
+                    if (dataObj != null)
+                        Clipboard.SetDataObject(dataObj);
+                    ECDataView.ClearSelection();
+
+                    break;
+                case 2:
+                    AccountDataView.SelectAll();
+                    dataObj = AccountDataView.GetClipboardContent();
+                    if (dataObj != null)
+                        Clipboard.SetDataObject(dataObj);
+                    AccountDataView.ClearSelection();
+
+                    break;
+                case 3:
+                    TransferDataView.SelectAll();
+                    dataObj = TransferDataView.GetClipboardContent();
+                    if (dataObj != null)
+                        Clipboard.SetDataObject(dataObj);
+                    TransferDataView.ClearSelection();
+
+                    break;
+                case 4:
+                    IssuedDataView.SelectAll();
+                    dataObj = IssuedDataView.GetClipboardContent();
+                    if (dataObj != null)
+                        Clipboard.SetDataObject(dataObj);
+                    IssuedDataView.ClearSelection();
+                    break;
+                case 5:
+                    ActionLogDataView.SelectAll();
+                    dataObj = ActionLogDataView.GetClipboardContent();
+                    if (dataObj != null)
+                        Clipboard.SetDataObject(dataObj);
+                    ActionLogDataView.ClearSelection();
+                    break;
+            }
+            MessageBox.Show("Dataset copied to clipboard.");
+        }
+
+        private void selectAllToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            switch (ActionReportDataView.SelectedIndex)
+            {
+                case 0:
+                    AssetDataView.SelectAll();
+                    break;
+                case 1:
+                    ECDataView.SelectAll();
+                    break;
+                case 2:
+                    AccountDataView.SelectAll();
+                    break;
+                case 3:
+                    TransferDataView.SelectAll();
+                    break;
+                case 4:
+                    IssuedDataView.SelectAll();
+                    break;
+                case 5:
+                    ActionLogDataView.SelectAll();
+                    break;
+            }
+        }
     }
     }
+    
 
