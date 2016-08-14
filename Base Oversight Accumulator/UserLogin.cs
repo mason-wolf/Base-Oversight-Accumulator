@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace Base_Oversight_Accumulator
 {
@@ -27,36 +28,44 @@ namespace Base_Oversight_Accumulator
 
             dbconnect mysql = new dbconnect();
             mysql.OpenConnection();
-            mysql.SelectQuery("SELECT * FROM users where username='" + username + "'");
-
-            if(mysql.Result.Read() == false)
+            if (mysql.OpenConnection() == false)
             {
-                FailedLoginLabel.Visible = true;
+                MessageBox.Show("Cannot connect to server.");
+                mysql.CloseConnection();
             }
             else
             {
-                mysql.CloseConnection();
-                mysql.OpenConnection();
                 mysql.SelectQuery("SELECT * FROM users where username='" + username + "'");
 
-                while(mysql.Result.Read())
+                if (mysql.Result.Read() == false)
                 {
-                    string userPassword = mysql.Reader("password");
-                    string UserRank = mysql.Reader("rank");
-                    string UserLastName = mysql.Reader("lastname");
-                    string UserFirstNamae = mysql.Reader("firstname");
-                    string BOAUser = UserRank + " " + UserLastName + ", " + UserFirstNamae;
+                    FailedLoginLabel.Visible = true;
+                }
+                else
+                {
+                    mysql.CloseConnection();
+                    mysql.OpenConnection();
+                    mysql.SelectQuery("SELECT * FROM users where username='" + username + "'");
 
-                    if (password != userPassword)
+                    while (mysql.Result.Read())
                     {
-                        FailedLoginLabel.Visible = true;
-                    }
-                    else
-                    {
-                        var t = new Thread(() => Application.Run(new MainWindow(BOAUser.ToUpper())));
-                        t.SetApartmentState(ApartmentState.STA);
-                        t.Start();
-                        this.Close();
+                        string userPassword = mysql.Reader("password");
+                        string UserRank = mysql.Reader("rank");
+                        string UserLastName = mysql.Reader("lastname");
+                        string UserFirstNamae = mysql.Reader("firstname");
+                        string BOAUser = UserRank + " " + UserLastName + ", " + UserFirstNamae;
+
+                        if (password != userPassword)
+                        {
+                            FailedLoginLabel.Visible = true;
+                        }
+                        else
+                        {
+                            var t = new Thread(() => Application.Run(new MainWindow(BOAUser.ToUpper())));
+                            t.SetApartmentState(ApartmentState.STA);
+                            t.Start();
+                            this.Close();
+                        }
                     }
                 }
             }
@@ -64,7 +73,14 @@ namespace Base_Oversight_Accumulator
 
         private void UserLogin_Load(object sender, EventArgs e)
         {
+            ServerAddressField.Text = Properties.Settings.Default.ServerAddress;
+        }
 
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ServerAddress = ServerAddressField.Text;
+            Properties.Settings.Default.Save();
         }
     }
 }

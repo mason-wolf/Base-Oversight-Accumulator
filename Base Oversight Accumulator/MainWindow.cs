@@ -630,7 +630,14 @@ namespace Base_Oversight_Accumulator
                     break;
             }
         }
+
+        private void reportBugToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportBug rb = new ReportBug();
+            rb.UserReportingBug = BOAUser;
+            rb.Show();
         }
+    }
     }
     
     

@@ -49,3 +49,4 @@ C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\de\MigraDoc.Rendering.resources.dll
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\de\MigraDoc.RtfRendering.resources.dll
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.ReportBug.resources

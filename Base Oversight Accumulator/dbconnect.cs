@@ -32,14 +32,15 @@ namespace Base_Oversight_Accumulator
         {
             try
             {
-                ConnectionString = "SERVER=localhost;" + "DATABASE=boa;" + "UID=root;" + "PASSWORD=root;";
+                string server = Properties.Settings.Default.ServerAddress;
+                ConnectionString = "SERVER=" + server + "; DATABASE=boa;" + "UID=root;" + "PASSWORD=root;";
                 Connection = new MySqlConnection(ConnectionString);
                 Connection.Open();
                 return true;
             }
             catch (MySqlException)
             {
-                MessageBox.Show("Failed to connect to database server. Incorrect connection credentials.");
+                Connection.Close();
                 return false;
             }
         }

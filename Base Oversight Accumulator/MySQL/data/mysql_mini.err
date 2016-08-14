@@ -1,0 +1,66 @@
+160803  1:39:29 [Note] \bin\mysqld-opt.exe: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3311  MySQL Community Edition (GPL)
+160803  2:32:16 [Note] \bin\mysqld-opt.exe: Normal shutdown
+
+160803  2:32:16 [Note] \bin\mysqld-opt.exe: Shutdown complete
+
+160803  2:47:19 [Note] \bin\mysqld-opt.exe: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
+Can't start server: Bind on TCP/IP port: Invalid argument
+160807  8:12:32 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+160807  8:12:32 [ERROR] Aborting
+
+160807  8:12:32 [Note] \bin\mysqld-opt.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: Invalid argument
+160808  5:42:13 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+160808  5:42:13 [ERROR] Aborting
+
+160808  5:42:13 [Note] \bin\mysqld-opt.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: Invalid argument
+160808  6:11:59 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+160808  6:11:59 [ERROR] Aborting
+
+160808  6:11:59 [Note] \bin\mysqld-opt.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: Invalid argument
+160808 23:11:34 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+160808 23:11:34 [ERROR] Aborting
+
+160808 23:11:34 [Note] \bin\mysqld-opt.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: Invalid argument
+160809  1:42:47 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+160809  1:42:47 [ERROR] Aborting
+
+160809  1:42:47 [Note] \bin\mysqld-opt.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: Invalid argument
+160809  4:45:41 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+160809  4:45:41 [ERROR] Aborting
+
+160809  4:45:41 [Note] \bin\mysqld-opt.exe: Shutdown complete
+
+Can't start server: Bind on TCP/IP port: Invalid argument
+160809 11:35:54 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+160809 11:35:54 [ERROR] Aborting
+
+160809 11:35:54 [Note] \bin\mysqld-opt.exe: Shutdown complete
+
+160810  2:07:23 [Note] mysqld-opt: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
+160810  2:18:37 [Note] mysqld: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
+160810  2:45:52 [Note] mysqld: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
+160810 23:01:51 [Note] mysqld: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
+160811  8:30:56 [Note] mysqld: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
+160812  0:12:12 [Note] mysqld: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
+160814  0:06:02 [Note] mysqld: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
+160814  3:00:05 [Note] mysqld: ready for connections.
+Version: '5.0.67-community-nt'  socket: ''  port: 3306  MySQL Community Edition (GPL)
