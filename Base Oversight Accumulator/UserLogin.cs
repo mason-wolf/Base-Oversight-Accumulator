@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace Base_Oversight_Accumulator
 {
@@ -27,7 +28,14 @@ namespace Base_Oversight_Accumulator
             string password = PasswordField.Text;
 
             dbconnect mysql = new dbconnect();
-            mysql.OpenConnection();
+            try
+            {
+                mysql.OpenConnection();
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             if (mysql.OpenConnection() == false)
             {
                 MessageBox.Show("Cannot connect to server.");
