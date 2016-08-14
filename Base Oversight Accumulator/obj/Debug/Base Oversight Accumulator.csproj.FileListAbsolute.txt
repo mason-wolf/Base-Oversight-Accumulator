@@ -40,3 +40,12 @@ C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.IssuedSearch.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.MissingAsset.resources
 C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.SearchOptions.resources
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\MigraDoc.DocumentObjectModel.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\MigraDoc.Rendering.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\MigraDoc.RtfRendering.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\PdfSharp.Charting.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\PdfSharp.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\de\MigraDoc.DocumentObjectModel.resources.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\de\MigraDoc.Rendering.resources.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\de\MigraDoc.RtfRendering.resources.dll
+C:\Users\Mason\documents\visual studio 2015\Projects\Base Oversight Accumulator\Base Oversight Accumulator\bin\Debug\de\PdfSharp.resources.dll

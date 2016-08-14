@@ -360,7 +360,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(29, 78);
+            this.button2.Location = new System.Drawing.Point(29, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(630, 77);
             this.button2.TabIndex = 9;
@@ -400,12 +400,13 @@
             // 
             // GenerateReportButton
             // 
-            this.GenerateReportButton.Location = new System.Drawing.Point(29, 215);
+            this.GenerateReportButton.Location = new System.Drawing.Point(29, 91);
             this.GenerateReportButton.Name = "GenerateReportButton";
             this.GenerateReportButton.Size = new System.Drawing.Size(630, 71);
             this.GenerateReportButton.TabIndex = 0;
-            this.GenerateReportButton.Text = "Generate Report";
+            this.GenerateReportButton.Text = "Inventory Report";
             this.GenerateReportButton.UseVisualStyleBackColor = true;
+            this.GenerateReportButton.Click += new System.EventHandler(this.GenerateReportButton_Click);
             // 
             // NoteBox
             // 
@@ -480,8 +481,8 @@
             this.Controls.Add(this.AccountDetailsBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AccountDetailView";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = " Account Details";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AccountDetailView_Load);
             this.AccountDetailsBox.ResumeLayout(false);
             this.AccountDetailsBox.PerformLayout();

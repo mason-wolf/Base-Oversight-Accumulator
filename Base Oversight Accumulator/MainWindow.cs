@@ -11,6 +11,8 @@ using System.Threading;
 using System.Diagnostics;
 using System.IO;
 using System.Globalization;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
 
 namespace Base_Oversight_Accumulator
 {
@@ -20,6 +22,7 @@ namespace Base_Oversight_Accumulator
         public string BOAUser { get; set; }
         public bool FileSaved { get; set; }
         public string FileName { get; set; }
+
         public DataGridView WorkingGrid { get; set; }
 
         public MainWindow(string username)
@@ -33,7 +36,7 @@ namespace Base_Oversight_Accumulator
         {
             try
             {
-              
+
                 AssetDataView.Rows.Clear();
                 AssetDataView.RowTemplate.Height = 20;
 
@@ -76,7 +79,7 @@ namespace Base_Oversight_Accumulator
                     string value = "$" + ValueFromInt.ToString("N0");
                     AssetDataView.Rows.Add(id, item, serialnumber, manufacturer, model, account, organization, ec, building, room, value);
                     assetCount++;
-                    if(assetCount == 1000)
+                    if (assetCount == 1000)
                     {
                         break;
                     }
@@ -84,7 +87,7 @@ namespace Base_Oversight_Accumulator
 
                 //       StatusBar.Text = "Connected: " + server; 
 
-                
+
                 mysql.CloseConnection();
                 /*
                 DataGridViewColumn Tab1ID= AssetDataView.Columns[0];
@@ -117,10 +120,10 @@ namespace Base_Oversight_Accumulator
                     string ECAccount = mysql.Reader("account");
                     string ECLocation = mysql.Reader("location");
 
-                    ECDataView.Rows.Add(ECID ,ECLastName, ECFirstName, ECRank, ECAccount, ECEmail, ECDSN, ECOrg, ECLocation);
+                    ECDataView.Rows.Add(ECID, ECLastName, ECFirstName, ECRank, ECAccount, ECEmail, ECDSN, ECOrg, ECLocation);
                     CustodianCount++;
 
-                    if(CustodianCount == 1000)
+                    if (CustodianCount == 1000)
                     {
                         break;
                     }
@@ -135,8 +138,8 @@ namespace Base_Oversight_Accumulator
                 mysql.SelectQuery("SELECT * FROM itam ORDER BY id DESC");
 
                 int AccountCount = 0;
-            while (mysql.Result.Read())
-            {
+                while (mysql.Result.Read())
+                {
                     string AccountID = mysql.Reader("id");
                     string AccountDRA = mysql.Reader("dra");
                     string AccountOrg = mysql.Reader("org");
@@ -149,11 +152,11 @@ namespace Base_Oversight_Accumulator
 
                     AccountDataView.Rows.Add(AccountID, AccountNumber, AccountEC, AccountDRA, AccountOrg, AccountLastInventoryDate, AccountInventoryDue, AccountNotes, AccountStatus);
                     AccountCount++;
-                    if(AccountCount == 1000)
+                    if (AccountCount == 1000)
                     {
                         break;
                     }
-            }
+                }
 
                 mysql.CloseConnection();
 
@@ -206,7 +209,7 @@ namespace Base_Oversight_Accumulator
                     IssuedDataView.Rows.Add(ItemID, IssuedTo, IssuedBy, Account, dsn, dateofissue, dateofreturn, items, notes);
 
                     ItemCount++;
-                    if (ItemCount== 1000)
+                    if (ItemCount == 1000)
                     {
                         break;
                     }
@@ -218,7 +221,7 @@ namespace Base_Oversight_Accumulator
                 mysql.OpenConnection();
                 mysql.SelectQuery("SELECT * from log ORDER BY id DESC");
                 int LogCount = 0;
-                while(mysql.Result.Read())
+                while (mysql.Result.Read())
                 {
                     string id = mysql.Reader("id");
                     string date = mysql.Reader("date");
@@ -272,7 +275,7 @@ namespace Base_Oversight_Accumulator
             }
         }
 
-  
+
         private void assetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewAssetWindow NewAssetWindow = new NewAssetWindow();
@@ -530,13 +533,13 @@ namespace Base_Oversight_Accumulator
         {
             SaveDataGridView SaveDataGridView = new SaveDataGridView();
             SaveDataGridView.Show();
-            }
+        }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
 
-                SaveDataGridView SaveDataGridView = new SaveDataGridView();
-                SaveDataGridView.Show();
+            SaveDataGridView SaveDataGridView = new SaveDataGridView();
+            SaveDataGridView.Show();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -627,7 +630,8 @@ namespace Base_Oversight_Accumulator
                     break;
             }
         }
+        }
     }
-    }
+    
     
 

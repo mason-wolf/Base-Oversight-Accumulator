@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using System.IO;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+using System.Diagnostics;
 
 namespace Base_Oversight_Accumulator
 {
@@ -18,6 +22,8 @@ namespace Base_Oversight_Accumulator
         public string AccountStatus { get; set; }
         public string AssetEquipmentCustodian { get; set; }
         public string UserViewingAccount { get; set; }
+        public string TotalAssets { get; set; }
+        public string TotalAssetValue { get; set; }
 
         public AccountDetailView()
         {
@@ -53,12 +59,12 @@ namespace Base_Oversight_Accumulator
 
             // total assets
             mysql.OpenConnection();
-            string TotalAssets = mysql.CountQuery("SELECT COUNT(*) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
+            TotalAssets = mysql.CountQuery("SELECT COUNT(*) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
             TotalAssetsField.Text = TotalAssets;
 
 
             // total asset value
-            string TotalAssetValue = mysql.SumCurrencyQuery("SELECT SUM(value) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
+            TotalAssetValue = mysql.SumCurrencyQuery("SELECT SUM(value) FROM assets WHERE accountnumber='" + AssetAccountNumber + "'");
             TotalValueField.Text = TotalAssetValue;
 
             mysql.CloseConnection();
@@ -212,6 +218,96 @@ UserViewingAccount + "','UNFROZE ACCOUNT " + AssetAccountNumber + " " + AccountN
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GenerateReportButton_Click(object sender, EventArgs e)
+        {
+            string ec;
+            string accountnumber;
+            string organization;
+
+            bool folderExists = Directory.Exists("reports");
+            if (!folderExists)
+                Directory.CreateDirectory("reports");
+
+            System.IO.StreamWriter report = new System.IO.StreamWriter("reports\\temp.txt");
+           
+
+            dbconnect mysql = new dbconnect();
+            mysql.SelectQuery("SELECT * FROM assets WHERE accountnumber='" + AccountNumberField.Text + "'");
+
+            while (mysql.Result.Read())
+            {
+                ec = mysql.Reader("ec");
+                accountnumber = mysql.Reader("accountnumber");
+                organization = mysql.Reader("organization");
+                report.WriteLine("");
+                report.WriteLine("UNCLASSIFIED\t\t\t\t\t\t\t\t\t                  BOA INVENTORY\t\t\t\t\t\t\t\t\t");
+                report.WriteLine("Date: " + DateTime.Now.ToString().ToUpper());
+                report.WriteLine("ITEC: " + ec + "\t\tACCT: " + accountnumber + "\t\tASSETS: " + TotalAssets + "\t\tVALUE:" + TotalAssetValue + "\t\tORG:" + organization);
+                break;
+            }
+
+
+            while (mysql.Result.Read())
+            {
+                string id = mysql.Reader("id");
+                string item = mysql.Reader("item").ToUpper();
+                string manufacturer = mysql.Reader("manufacturer").ToUpper();
+                string model = mysql.Reader("model").ToUpper();
+                string serialnumnber = mysql.Reader("serialnumber").ToUpper();
+                string building = mysql.Reader("building").ToUpper();
+                string room = mysql.Reader("room").ToUpper();
+                // calculate value
+                report.WriteLine("______________________________________________________________________________________");
+                report.WriteLine(id + "\t " + item + "\t " + manufacturer + "\t " + model + "\t " + serialnumnber + "\t " + building + "\t " + room);
+            }
+            report.WriteLine("");
+            report.WriteLine("UNCLASSIFIED");
+            report.WriteLine("");
+            report.Close();
+            mysql.CloseConnection();
+            try
+            {
+                string line = null;
+
+                System.IO.TextReader readFile = new StreamReader("reports\\temp.txt");
+                int yPoint = 0;
+
+                PdfDocument pdf = new PdfDocument();
+                pdf.Info.Title = "Inventory";
+                PdfPage pdfPage = pdf.AddPage();
+                XGraphics graph = XGraphics.FromPdfPage(pdfPage);
+                XFont font = new XFont("Courier New", 10, XFontStyle.Regular);
+
+                while (true)
+                {
+                    line = readFile.ReadLine();
+                    if (line == null)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        graph.DrawString(line, font, XBrushes.Black, new XRect(20, yPoint, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
+                        yPoint = yPoint + 20;
+                    }
+                }
+                int y;
+                Random x = new Random();
+                y = x.Next(1, 1000000000);
+
+                string pdfFilename = "reports\\" + y.ToString() + ".pdf";
+                pdf.Save(pdfFilename);
+                readFile.Close();
+                readFile = null;
+                File.Delete("reports\\temp.txt");
+                Process.Start(pdfFilename);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
