@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Base Oversight Accumulator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An unofficial USAF localized asset management system used to track information technology equipment and assets.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("United States Air Force")]
 [assembly: AssemblyProduct("Base Oversight Accumulator")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Staff Sergeant Mason H. Wolf, Client Systems, August 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

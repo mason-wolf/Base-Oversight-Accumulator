@@ -12,6 +12,22 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Mason\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +47,27 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>EDE5EFE18D8E6C71FD9BE2A4BDE4B1B8059C4ECA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Base Oversight Accumulator_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MigraDoc.DocumentObjectModel">
@@ -52,7 +89,9 @@
       <HintPath>..\..\..\..\..\Downloads\PDFsharp-MigraDocFoundation-Assemblies-1_31\GDI+\PdfSharp.Charting.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,272 +104,282 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountWindow.cs">
+    <Compile Include="Launch\ErrorDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountWindow.Designer.cs">
+    <Compile Include="Launch\ErrorDetailView.Designer.cs">
+      <DependentUpon>ErrorDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Undocked\AccountWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Undocked\AccountWindow.Designer.cs">
       <DependentUpon>AccountWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="ActionLogWindow.cs">
+    <Compile Include="Undocked\ActionLogWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActionLogWindow.Designer.cs">
+    <Compile Include="Undocked\ActionLogWindow.Designer.cs">
       <DependentUpon>ActionLogWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="AssetsWindow.cs">
+    <Compile Include="Undocked\AssetsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AssetsWindow.Designer.cs">
+    <Compile Include="Undocked\AssetsWindow.Designer.cs">
       <DependentUpon>AssetsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustodianWindow.cs">
+    <Compile Include="Undocked\CustodianWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustodianWindow.Designer.cs">
+    <Compile Include="Undocked\CustodianWindow.Designer.cs">
       <DependentUpon>CustodianWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="dbconnect.cs" />
-    <Compile Include="IssuedItemsView.cs">
+    <Compile Include="Launch\dbconnect.cs" />
+    <Compile Include="DetailedViews\IssuedItemsDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IssuedItemsView.Designer.cs">
-      <DependentUpon>IssuedItemsView.cs</DependentUpon>
+    <Compile Include="DetailedViews\IssuedItemsDetailView.Designer.cs">
+      <DependentUpon>IssuedItemsDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="IssuedItemsWindow.cs">
+    <Compile Include="Undocked\IssuedItemsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IssuedItemsWindow.Designer.cs">
+    <Compile Include="Undocked\IssuedItemsWindow.Designer.cs">
       <DependentUpon>IssuedItemsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="IssuedSearch.cs">
+    <Compile Include="Search\IssuedItemSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IssuedSearch.Designer.cs">
-      <DependentUpon>IssuedSearch.cs</DependentUpon>
+    <Compile Include="Search\IssuedItemSearch.Designer.cs">
+      <DependentUpon>IssuedItemSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyAssetValue.cs">
+    <Compile Include="NewQueries\NewAssetValueModification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyAssetValue.Designer.cs">
-      <DependentUpon>ModifyAssetValue.cs</DependentUpon>
+    <Compile Include="NewQueries\NewAssetValueModification.Designer.cs">
+      <DependentUpon>NewAssetValueModification.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewAssetBatch.cs">
+    <Compile Include="NewQueries\NewAssetBatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewAssetBatch.Designer.cs">
+    <Compile Include="NewQueries\NewAssetBatch.Designer.cs">
       <DependentUpon>NewAssetBatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="pdf\Info.cs" />
-    <Compile Include="PropertyDisposal.cs">
+    <Compile Include="NewQueries\NewPropertyDisposal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PropertyDisposal.Designer.cs">
-      <DependentUpon>PropertyDisposal.cs</DependentUpon>
+    <Compile Include="NewQueries\NewPropertyDisposal.Designer.cs">
+      <DependentUpon>NewPropertyDisposal.cs</DependentUpon>
     </Compile>
-    <Compile Include="MissingAsset.cs">
+    <Compile Include="NewQueries\NewMissingAsset.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MissingAsset.Designer.cs">
-      <DependentUpon>MissingAsset.cs</DependentUpon>
+    <Compile Include="NewQueries\NewMissingAsset.Designer.cs">
+      <DependentUpon>NewMissingAsset.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportBug.cs">
+    <Compile Include="NewQueries\NewBugReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportBug.Designer.cs">
-      <DependentUpon>ReportBug.cs</DependentUpon>
+    <Compile Include="NewQueries\NewBugReport.Designer.cs">
+      <DependentUpon>NewBugReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaveDataGridView.cs">
+    <Compile Include="LocalStorage\SaveDataGridView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SaveDataGridView.Designer.cs">
+    <Compile Include="LocalStorage\SaveDataGridView.Designer.cs">
       <DependentUpon>SaveDataGridView.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaveFile.cs" />
-    <Compile Include="SearchOptions.cs">
+    <Compile Include="LocalStorage\SaveFile.cs" />
+    <Compile Include="Search\SearchOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchOptions.Designer.cs">
+    <Compile Include="Search\SearchOptions.Designer.cs">
       <DependentUpon>SearchOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchWindow.cs">
+    <Compile Include="Search\SearchWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchWindow.Designer.cs">
+    <Compile Include="Search\SearchWindow.Designer.cs">
       <DependentUpon>SearchWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
-    <Compile Include="TemporaryItemIssue.cs">
+    <Compile Include="Launch\Settings.cs" />
+    <Compile Include="NewQueries\NewTemporaryItemIssue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TemporaryItemIssue.Designer.cs">
-      <DependentUpon>TemporaryItemIssue.cs</DependentUpon>
+    <Compile Include="NewQueries\NewTemporaryItemIssue.Designer.cs">
+      <DependentUpon>NewTemporaryItemIssue.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransferDetailView.cs">
+    <Compile Include="DetailedViews\TransferDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TransferDetailView.Designer.cs">
+    <Compile Include="DetailedViews\TransferDetailView.Designer.cs">
       <DependentUpon>TransferDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransferSearch.cs">
+    <Compile Include="Search\TransferSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TransferSearch.Designer.cs">
+    <Compile Include="Search\TransferSearch.Designer.cs">
       <DependentUpon>TransferSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransferWindow.cs">
+    <Compile Include="Undocked\TransferWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TransferWindow.Designer.cs">
+    <Compile Include="Undocked\TransferWindow.Designer.cs">
       <DependentUpon>TransferWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserLogin.cs">
+    <Compile Include="Launch\UserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserLogin.Designer.cs">
+    <Compile Include="Launch\UserLogin.Designer.cs">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountWindow.resx">
+    <EmbeddedResource Include="Launch\ErrorDetailView.resx">
+      <DependentUpon>ErrorDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Undocked\AccountWindow.resx">
       <DependentUpon>AccountWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ActionLogWindow.resx">
+    <EmbeddedResource Include="Undocked\ActionLogWindow.resx">
       <DependentUpon>ActionLogWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AssetsWindow.resx">
+    <EmbeddedResource Include="Undocked\AssetsWindow.resx">
       <DependentUpon>AssetsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustodianWindow.resx">
+    <EmbeddedResource Include="Undocked\CustodianWindow.resx">
       <DependentUpon>CustodianWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IssuedItemsView.resx">
-      <DependentUpon>IssuedItemsView.cs</DependentUpon>
+    <EmbeddedResource Include="DetailedViews\IssuedItemsDetailView.resx">
+      <DependentUpon>IssuedItemsDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IssuedItemsWindow.resx">
+    <EmbeddedResource Include="Undocked\IssuedItemsWindow.resx">
       <DependentUpon>IssuedItemsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IssuedSearch.resx">
-      <DependentUpon>IssuedSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Search\IssuedItemSearch.resx">
+      <DependentUpon>IssuedItemSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyAssetValue.resx">
-      <DependentUpon>ModifyAssetValue.cs</DependentUpon>
+    <EmbeddedResource Include="NewQueries\NewAssetValueModification.resx">
+      <DependentUpon>NewAssetValueModification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewAssetBatch.resx">
+    <EmbeddedResource Include="NewQueries\NewAssetBatch.resx">
       <DependentUpon>NewAssetBatch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PropertyDisposal.resx">
-      <DependentUpon>PropertyDisposal.cs</DependentUpon>
+    <EmbeddedResource Include="NewQueries\NewPropertyDisposal.resx">
+      <DependentUpon>NewPropertyDisposal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MissingAsset.resx">
-      <DependentUpon>MissingAsset.cs</DependentUpon>
+    <EmbeddedResource Include="NewQueries\NewMissingAsset.resx">
+      <DependentUpon>NewMissingAsset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportBug.resx">
-      <DependentUpon>ReportBug.cs</DependentUpon>
+    <EmbeddedResource Include="NewQueries\NewBugReport.resx">
+      <DependentUpon>NewBugReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveDataGridView.resx">
+    <EmbeddedResource Include="LocalStorage\SaveDataGridView.resx">
       <DependentUpon>SaveDataGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchOptions.resx">
+    <EmbeddedResource Include="Search\SearchOptions.resx">
       <DependentUpon>SearchOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchWindow.resx">
+    <EmbeddedResource Include="Search\SearchWindow.resx">
       <DependentUpon>SearchWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TemporaryItemIssue.resx">
-      <DependentUpon>TemporaryItemIssue.cs</DependentUpon>
+    <EmbeddedResource Include="NewQueries\NewTemporaryItemIssue.resx">
+      <DependentUpon>NewTemporaryItemIssue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TransferDetailView.resx">
+    <EmbeddedResource Include="DetailedViews\TransferDetailView.resx">
       <DependentUpon>TransferDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TransferSearch.resx">
+    <EmbeddedResource Include="Search\TransferSearch.resx">
       <DependentUpon>TransferSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TransferWindow.resx">
+    <EmbeddedResource Include="Undocked\TransferWindow.resx">
       <DependentUpon>TransferWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserLogin.resx">
+    <EmbeddedResource Include="Launch\UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
-    <Compile Include="AccountDetailView.cs">
+    <None Include="app.config" />
+    <None Include="Base Oversight Accumulator_TemporaryKey.pfx" />
+    <None Include="Launch\ClassDiagram1.cd" />
+    <Compile Include="DetailedViews\AccountDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountDetailView.Designer.cs">
+    <Compile Include="DetailedViews\AccountDetailView.Designer.cs">
       <DependentUpon>AccountDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="AssetDetailView.cs">
+    <Compile Include="DetailedViews\AssetDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AssetDetailView.Designer.cs">
+    <Compile Include="DetailedViews\AssetDetailView.Designer.cs">
       <DependentUpon>AssetDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustodianSelection.cs">
+    <Compile Include="Search\CustodianSelectionSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustodianSelection.Designer.cs">
-      <DependentUpon>CustodianSelection.cs</DependentUpon>
+    <Compile Include="Search\CustodianSelectionSearch.Designer.cs">
+      <DependentUpon>CustodianSelectionSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustodianDetailView.cs">
+    <Compile Include="DetailedViews\CustodianDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustodianDetailView.Designer.cs">
+    <Compile Include="DetailedViews\CustodianDetailView.Designer.cs">
       <DependentUpon>CustodianDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transfer.cs">
+    <Compile Include="NewQueries\NewTransfer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transfer.Designer.cs">
-      <DependentUpon>Transfer.cs</DependentUpon>
+    <Compile Include="NewQueries\NewTransfer.Designer.cs">
+      <DependentUpon>NewTransfer.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewAccount.cs">
+    <Compile Include="NewQueries\NewAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewAccount.Designer.cs">
+    <Compile Include="NewQueries\NewAccount.Designer.cs">
       <DependentUpon>NewAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewEquipmentCustodian.cs">
+    <Compile Include="NewQueries\NewEquipmentCustodian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewEquipmentCustodian.Designer.cs">
+    <Compile Include="NewQueries\NewEquipmentCustodian.Designer.cs">
       <DependentUpon>NewEquipmentCustodian.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.cs">
+    <Compile Include="Launch\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
+    <Compile Include="Launch\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewAsset.cs">
+    <Compile Include="NewQueries\NewAsset.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewAsset.Designer.cs">
+    <Compile Include="NewQueries\NewAsset.Designer.cs">
       <DependentUpon>NewAsset.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Launch\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AccountDetailView.resx">
+    <EmbeddedResource Include="DetailedViews\AccountDetailView.resx">
       <DependentUpon>AccountDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AssetDetailView.resx">
+    <EmbeddedResource Include="DetailedViews\AssetDetailView.resx">
       <DependentUpon>AssetDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustodianSelection.resx">
-      <DependentUpon>CustodianSelection.cs</DependentUpon>
+    <EmbeddedResource Include="Search\CustodianSelectionSearch.resx">
+      <DependentUpon>CustodianSelectionSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustodianDetailView.resx">
+    <EmbeddedResource Include="DetailedViews\CustodianDetailView.resx">
       <DependentUpon>CustodianDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transfer.resx">
-      <DependentUpon>Transfer.cs</DependentUpon>
+    <EmbeddedResource Include="NewQueries\NewTransfer.resx">
+      <DependentUpon>NewTransfer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewAccount.resx">
+    <EmbeddedResource Include="NewQueries\NewAccount.resx">
       <DependentUpon>NewAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewEquipmentCustodian.resx">
+    <EmbeddedResource Include="NewQueries\NewEquipmentCustodian.resx">
       <DependentUpon>NewEquipmentCustodian.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
+    <EmbeddedResource Include="Launch\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewAsset.resx">
+    <EmbeddedResource Include="NewQueries\NewAsset.resx">
       <DependentUpon>NewAsset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -342,6 +391,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\Base_Oversight_Accumulator.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\Base_Oversight_Accumulator.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\dbconnect.datasource" />
@@ -359,10 +409,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Launch\App.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
