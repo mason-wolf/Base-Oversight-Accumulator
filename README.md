@@ -1,4 +1,8 @@
-# boa
-Base Oversight Accumulator 
+# BOA
 
-An unofficial, localized asset management suite for tracking and controling informationt technology equipment.
+An unofficial, localized asset management suite for tracking and controlling information technology equipment.
+
+- Compliant with the Air Force Equipment Management System (AFEMS) standard operating procedures.
+- Deploys, sustains an effective, function & secure equipment management system.
+- Track assets, custodians, accounts, transfers, DRMO reports, ROS reports and issued items.
+- Accumulate cost analysis reports of installation IT property.
