@@ -33,13 +33,14 @@ namespace Base_Oversight_Accumulator
             try
             {
                 string server = Properties.Settings.Default.ServerAddress;
-                ConnectionString = "SERVER=" + server + "; DATABASE=boa;" + "UID=root;" + "PASSWORD=root;";
+                ConnectionString = "HOST=" + server + "; DATABASE=boa;" + "user=wolf;" + "PASSWORD=wolf;";
                 Connection = new MySqlConnection(ConnectionString);
                 Connection.Open();
                 return true;
             }
-            catch (MySqlException)
+            catch (MySqlException ex)
             {
+                MessageBox.Show(ex.ToString());
                 Connection.Close();
                 return false;
             }
