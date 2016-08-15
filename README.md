@@ -1,6 +1,6 @@
 # BOA
 
-An unofficial, localized asset management suite for tracking and controlling information technology equipment.
+An unofficial Air Force localized asset management suite for tracking and controlling information technology equipment.
 
 - Compliant with the Air Force Equipment Management System (AFEMS) standard operating procedures.
 - Deploys, sustains an effective, function & secure equipment management system.
