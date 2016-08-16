@@ -483,11 +483,8 @@ namespace Base_Oversight_Accumulator
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 1000; i++)
-            {
                 MainWindow NewWindow = new MainWindow(BOAUser);
                 NewWindow.Show();
-            }
         }
 
         private void assetsToolStripMenuItem2_Click(object sender, EventArgs e)
