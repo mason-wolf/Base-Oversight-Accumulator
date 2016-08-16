@@ -68,7 +68,6 @@
             this.Item.Size = new System.Drawing.Size(77, 32);
             this.Item.TabIndex = 0;
             this.Item.Text = "Item:";
-            this.Item.Click += new System.EventHandler(this.label1_Click);
             // 
             // NewItemType
             // 
@@ -89,7 +88,6 @@
             this.NewItemType.Name = "NewItemType";
             this.NewItemType.Size = new System.Drawing.Size(200, 39);
             this.NewItemType.TabIndex = 1;
-            this.NewItemType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // NewItemManufacturer
             // 
@@ -338,10 +336,10 @@
             this.Controls.Add(this.Item);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "NewAssetWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " New Asset";
-            this.Load += new System.EventHandler(this.NewAssetWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

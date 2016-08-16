@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>Service References\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>EDE5EFE18D8E6C71FD9BE2A4BDE4B1B8059C4ECA</ManifestCertificateThumbprint>
@@ -134,7 +134,7 @@
     <Compile Include="Undocked\CustodianWindow.Designer.cs">
       <DependentUpon>CustodianWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Launch\dbconnect.cs" />
+    <Compile Include="Launch\MySqlConnector.cs" />
     <Compile Include="DetailedViews\IssuedItemsDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,12 +176,6 @@
     </Compile>
     <Compile Include="NewQueries\NewMissingAsset.Designer.cs">
       <DependentUpon>NewMissingAsset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NewQueries\NewBugReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewQueries\NewBugReport.Designer.cs">
-      <DependentUpon>NewBugReport.cs</DependentUpon>
     </Compile>
     <Compile Include="LocalStorage\SaveDataGridView.cs">
       <SubType>Form</SubType>
@@ -269,9 +263,6 @@
     <EmbeddedResource Include="NewQueries\NewMissingAsset.resx">
       <DependentUpon>NewMissingAsset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewQueries\NewBugReport.resx">
-      <DependentUpon>NewBugReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LocalStorage\SaveDataGridView.resx">
       <DependentUpon>SaveDataGridView.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,8 +287,8 @@
     <EmbeddedResource Include="Launch\UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="Base Oversight Accumulator_TemporaryKey.pfx" />
+    <None Include="Service References\app.config" />
+    <None Include="Service References\Base Oversight Accumulator_TemporaryKey.pfx" />
     <None Include="Launch\ClassDiagram1.cd" />
     <Compile Include="DetailedViews\AccountDetailView.cs">
       <SubType>Form</SubType>
@@ -415,7 +406,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.ico" />
+    <Content Include="Service References\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

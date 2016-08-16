@@ -139,6 +139,7 @@
             this.TransferButton = new System.Windows.Forms.ToolStripButton();
             this.TempIssueButton = new System.Windows.Forms.ToolStripButton();
             this.ModifyAssetValueButton = new System.Windows.Forms.ToolStripButton();
+            this.NewSlotNumberButton = new System.Windows.Forms.ToolStripButton();
             this.DRMOButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -827,7 +828,7 @@
             this.helpToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1841, 52);
+            this.menuStrip1.Size = new System.Drawing.Size(1841, 49);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -841,7 +842,7 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 48);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newTabToolStripMenuItem
@@ -931,7 +932,7 @@
             this.copyToolStripMenuItem,
             this.selectAllToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(80, 48);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(80, 45);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // copyToolStripMenuItem
@@ -960,7 +961,7 @@
             this.assetDispositionbToolStripMenuItem,
             this.toolStripSeparator1});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 48);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 45);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // addAssetToolStripMenuItem
@@ -1027,7 +1028,7 @@
             this.dispositionsToolStripMenuItem,
             this.rOSReportsToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 48);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 45);
             this.reportsToolStripMenuItem.Text = "Search";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
@@ -1073,19 +1074,19 @@
             this.aboutToolStripMenuItem,
             this.reportBugToolStripMenuItem});
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 48);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 45);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(327, 46);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(282, 46);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // reportBugToolStripMenuItem
             // 
             this.reportBugToolStripMenuItem.Name = "reportBugToolStripMenuItem";
-            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(327, 46);
+            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(282, 46);
             this.reportBugToolStripMenuItem.Text = "Report Bug";
             this.reportBugToolStripMenuItem.Click += new System.EventHandler(this.reportBugToolStripMenuItem_Click);
             // 
@@ -1100,11 +1101,12 @@
             this.TransferButton,
             this.TempIssueButton,
             this.ModifyAssetValueButton,
+            this.NewSlotNumberButton,
             this.DRMOButton,
             this.toolStripButton1,
             this.toolStripButton2,
             this.RefreshButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 52);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 49);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1841, 39);
             this.toolStrip1.TabIndex = 2;
@@ -1190,6 +1192,17 @@
             this.ModifyAssetValueButton.Text = "Modify cost of assets based on make and model.";
             this.ModifyAssetValueButton.Click += new System.EventHandler(this.ModifyAssetValueButton_Click);
             // 
+            // NewSlotNumberButton
+            // 
+            this.NewSlotNumberButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.NewSlotNumberButton.Image = ((System.Drawing.Image)(resources.GetObject("NewSlotNumberButton.Image")));
+            this.NewSlotNumberButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.NewSlotNumberButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.NewSlotNumberButton.Name = "NewSlotNumberButton";
+            this.NewSlotNumberButton.Size = new System.Drawing.Size(23, 36);
+            this.NewSlotNumberButton.Text = "Create new National Slot Number (NSN) to identify make and model of assets.";
+            this.NewSlotNumberButton.Click += new System.EventHandler(this.NewSlotNumberButton_Click);
+            // 
             // DRMOButton
             // 
             this.DRMOButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1267,6 +1280,7 @@
             this.Controls.Add(this.ActionReportDataView);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = " Base Oversight Accumulator";
@@ -1414,6 +1428,7 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton NewSlotNumberButton;
     }
 }
 

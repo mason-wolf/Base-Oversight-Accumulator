@@ -20,28 +20,16 @@ namespace Base_Oversight_Accumulator
         public NewAssetWindow()
         {
             InitializeComponent();
+            this.KeyDown += new KeyEventHandler(this.QuickAdd);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void QuickAdd(object sender, KeyEventArgs e)
         {
-          
+            if(e.KeyCode == Keys.Enter)
+            {
+                AddAssetButton.PerformClick();
+            }
         }
-
-        private void NewAssetWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
 
         public void button1_Click(object sender, EventArgs e)
         {

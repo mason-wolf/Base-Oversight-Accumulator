@@ -43,9 +43,9 @@ namespace Base_Oversight_Accumulator
             {
                 mysql.OpenConnection();
             }
-            catch(MySqlException ex)
+            catch(MySqlException LoginException)
             {
-            //    MessageBox.Show(ex.ToString());
+                MessageBox.Show(LoginException.ToString());
             }
             if (mysql.OpenConnection() == false)
             {

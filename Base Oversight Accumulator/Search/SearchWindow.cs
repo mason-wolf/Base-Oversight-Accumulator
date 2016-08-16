@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
 namespace Base_Oversight_Accumulator
 {
     public partial class SearchWindow : Form
@@ -18,6 +19,15 @@ namespace Base_Oversight_Accumulator
         public SearchWindow()
         {
             InitializeComponent();
+            this.KeyDown += new KeyEventHandler(this.QuickSearch);
+        }
+
+        public void QuickSearch(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchButton.PerformClick();
+            }
         }
 
         private void SearchWindow_Load(object sender, EventArgs e)
@@ -29,7 +39,6 @@ namespace Base_Oversight_Accumulator
                 Table = "assets";
             }
 
-            // will generate more than one result
             if (SearchItem == "ec")
             {
                 SearchTermLabel.Text = "Last Name: ";

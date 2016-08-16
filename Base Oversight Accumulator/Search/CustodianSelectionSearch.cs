@@ -18,12 +18,47 @@ namespace Base_Oversight_Accumulator
         public CustodianSelectionSearch()
         {
             InitializeComponent();
+            this.KeyDown += new KeyEventHandler(this.QuickSelect);
         }
 
         public void CustodianSelection_Load(object sender, EventArgs e)
         {
         }
         
+        public void QuickSelect(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                int selectedrowindex = ECDataView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = ECDataView.Rows[selectedrowindex];
+                string GridID = Convert.ToString(selectedRow.Cells["ID"].Value);
+                NewAssetWindow NewAssetWindow = new NewAssetWindow();
+
+                dbconnect mysql = new dbconnect();
+                mysql.SelectQuery("SELECT * FROM ec WHERE id=" + GridID);
+
+                DataTable ECDataTable = new DataTable();
+
+                ECDataTable.Columns.Add("Last Name", typeof(String));
+                ECDataTable.Columns.Add("First Name", typeof(String));
+                ECDataTable.Columns.Add("Rank", typeof(String));
+
+                while (mysql.Result.Read())
+                {
+                    string ECLastName = mysql.Reader("lastname");
+                    string ECFirstName = mysql.Reader("firstname");
+                    string ECRank = mysql.Reader("rank");
+                    NewAssetWindow.NewEC.Text = ECLastName.ToUpper() + ", " + ECFirstName.ToUpper() + " " + ECRank.ToUpper();
+                    NewAssetWindow.UserCreatingAsset = UserSelectingCustodian;
+                    NewAssetWindow.Show();
+
+                }
+
+                mysql.CloseConnection();
+
+                this.Close();
+            }
+        }
         private void ECDataView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string GridID = ECDataView.Rows[e.RowIndex].Cells[0].Value.ToString();

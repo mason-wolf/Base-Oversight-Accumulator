@@ -19,18 +19,18 @@ namespace Base_Oversight_Accumulator
 {
     public partial class MainWindow : Form
     {
-
+        /// <summary>
+        /// BOAUser -- Set at user login to identify who is running the application. Used to update Action log 
+        /// showing who does what and when.
+        /// </summary>
         public string BOAUser { get; set; }
-        public bool FileSaved { get; set; }
-        public string FileName { get; set; }
-
-        public DataGridView WorkingGrid { get; set; }
 
         public MainWindow(string username)
         {
             InitializeComponent();
             populate();
             BOAUser = username;
+            this.KeyDown += new KeyEventHandler(this.CTRL_F_Pressed);
         }
 
         public void populate()
@@ -86,22 +86,7 @@ namespace Base_Oversight_Accumulator
                     }
                 }
 
-                //       StatusBar.Text = "Connected: " + server; 
-
-
                 mysql.CloseConnection();
-                /*
-                DataGridViewColumn Tab1ID= AssetDataView.Columns[0];
-                Tab1ID.Width = 20;
-                DataGridViewColumn Tab2ID = ECDataView.Columns[0];
-                Tab2ID.Width = 20;
-                DataGridViewColumn Tab3ID = AccountDataView.Columns[0];
-                Tab3ID.Width = 20;
-                DataGridViewColumn Tab4ID = TransferDataView.Columns[0];
-                Tab4ID.Width = 20;
-                DataGridViewColumn Tab5ID = IssuedDataView.Columns[0];
-                Tab5ID.Width = 20;
-                */
 
                 // populate equipment custodians
                 mysql.OpenConnection();
@@ -610,6 +595,14 @@ namespace Base_Oversight_Accumulator
             MessageBox.Show("Dataset copied to clipboard.");
         }
 
+        public void NewSearchWindow(string searchItem)
+        {
+            SearchWindow SearchWindow = new SearchWindow();
+            SearchWindow.UserPerformingSearch = BOAUser;
+            SearchWindow.SearchItem = searchItem;
+            SearchWindow.Show();
+        }
+
         private void selectAllToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             switch (ActionReportDataView.SelectedIndex)
@@ -635,11 +628,43 @@ namespace Base_Oversight_Accumulator
             }
         }
 
+        public void CTRL_F_Pressed(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F)
+            {
+                switch (ActionReportDataView.SelectedIndex) { 
+                case 0:
+                    NewSearchWindow("assets");
+                break;
+                case 1:
+                    NewSearchWindow("ec");
+                break;
+                case 2:
+                    NewSearchWindow("accounts");
+                break;
+                case 3:
+                    TransferSearch TransferSearch = new TransferSearch();
+                TransferSearch.Show();
+                break;
+                case 4:
+                    IssuedSearch IssuedSearch = new IssuedSearch();
+                IssuedSearch.Show();
+                break;
+                case 5:
+                    ActionLogDataView.SelectAll();
+                break;
+            }
+        }
+        }
+
         private void reportBugToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewBugReport rb = new NewBugReport();
-            rb.UserReportingBug = BOAUser;
-            rb.Show();
+
+        }
+
+        private void NewSlotNumberButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
     }
