@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Z/icHIMg1jFzcGj2a9vKjF8yzajTKcJLPwU0qHzrb2A=</dsig:DigestValue>
+        <dsig:DigestValue>KGTola1V9y/4JgyCxSvKdsTNxFgF26NhF8pYMGPNZmU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -198,13 +198,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Base Oversight Accumulator.exe.config" size="203">
+  <file name="Base Oversight Accumulator.exe.config" size="198">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>b1OCujad/GSvcylH8jYY187tA8b+34zmrIUAc2OBCLw=</dsig:DigestValue>
+      <dsig:DigestValue>Cnuv8HNT8dNRfYcHd1SWmXjXsghYH1xmeXNaDz0dtL8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="icon.ico" size="15086">

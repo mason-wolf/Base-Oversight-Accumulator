@@ -35,7 +35,7 @@ namespace Base_Oversight_Accumulator
             try
             {
                 string server = Properties.Settings.Default.ServerAddress;
-                ConnectionString = "HOST=" + server + "; DATABASE=boa;" + "user=wolf;" + "PASSWORD=wolf;";
+                ConnectionString = "HOST=" + server + "; DATABASE=boa;" + "user=wolf;" + "PASSWORD=wolf; pooling=false;";
                 Connection = new MySqlConnection(ConnectionString);
                 Connection.Open();
                 ExceptionCount++;
@@ -55,8 +55,10 @@ namespace Base_Oversight_Accumulator
         public bool CloseConnection()
         {
 
-                Connection.Close();
-                  return true;
+            Connection.Close();
+            MySqlConnection.ClearAllPools();
+            Connection.Dispose();
+            return true;
 
         }
 
@@ -108,6 +110,7 @@ namespace Base_Oversight_Accumulator
             string FetchedRow = Convert.ToString(Result[row]);
             return FetchedRow;
         }
+
 
     }
     }

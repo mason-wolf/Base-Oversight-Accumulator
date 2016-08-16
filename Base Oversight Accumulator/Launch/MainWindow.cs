@@ -13,6 +13,7 @@ using System.IO;
 using System.Globalization;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
+using MySql.Data.MySqlClient;
 
 namespace Base_Oversight_Accumulator
 {
@@ -187,7 +188,7 @@ namespace Base_Oversight_Accumulator
                         break;
                     }
                 }
-
+                mysql.CloseConnection();
                 // populate temporary issued items
                 mysql.OpenConnection();
                 mysql.SelectQuery("SELECT * FROM issued ORDER BY id DESC");
@@ -236,6 +237,9 @@ namespace Base_Oversight_Accumulator
                     }
                 }
                 mysql.CloseConnection();
+
+                MySqlConnection.ClearAllPools();
+
             }
 
 
@@ -479,8 +483,11 @@ namespace Base_Oversight_Accumulator
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainWindow NewWindow = new MainWindow(BOAUser);
-            NewWindow.Show();
+            for (int i = 0; i < 1000; i++)
+            {
+                MainWindow NewWindow = new MainWindow(BOAUser);
+                NewWindow.Show();
+            }
         }
 
         private void assetsToolStripMenuItem2_Click(object sender, EventArgs e)
