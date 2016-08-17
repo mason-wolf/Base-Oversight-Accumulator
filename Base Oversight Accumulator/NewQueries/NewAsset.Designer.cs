@@ -92,15 +92,15 @@
             // NewItemManufacturer
             // 
             this.NewItemManufacturer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewItemManufacturer.Location = new System.Drawing.Point(274, 465);
+            this.NewItemManufacturer.Location = new System.Drawing.Point(274, 194);
             this.NewItemManufacturer.Name = "NewItemManufacturer";
-            this.NewItemManufacturer.Size = new System.Drawing.Size(250, 38);
+            this.NewItemManufacturer.Size = new System.Drawing.Size(500, 38);
             this.NewItemManufacturer.TabIndex = 7;
             // 
             // Manufacturer
             // 
             this.Manufacturer.AutoSize = true;
-            this.Manufacturer.Location = new System.Drawing.Point(27, 465);
+            this.Manufacturer.Location = new System.Drawing.Point(27, 200);
             this.Manufacturer.Name = "Manufacturer";
             this.Manufacturer.Size = new System.Drawing.Size(190, 32);
             this.Manufacturer.TabIndex = 5;
@@ -135,7 +135,7 @@
             // Model
             // 
             this.Model.AutoSize = true;
-            this.Model.Location = new System.Drawing.Point(116, 200);
+            this.Model.Location = new System.Drawing.Point(116, 465);
             this.Model.Name = "Model";
             this.Model.Size = new System.Drawing.Size(101, 32);
             this.Model.TabIndex = 10;
@@ -144,9 +144,9 @@
             // NewItemModel
             // 
             this.NewItemModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewItemModel.Location = new System.Drawing.Point(274, 194);
+            this.NewItemModel.Location = new System.Drawing.Point(274, 459);
             this.NewItemModel.Name = "NewItemModel";
-            this.NewItemModel.Size = new System.Drawing.Size(250, 38);
+            this.NewItemModel.Size = new System.Drawing.Size(500, 38);
             this.NewItemModel.TabIndex = 3;
             // 
             // Organization
@@ -360,8 +360,6 @@
         private System.Windows.Forms.Label Organization;
         private System.Windows.Forms.Button AddAssetButton;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.TextBox NewItemOwner;
-        private System.Windows.Forms.TextBox NewItemOrganization;
         private System.Windows.Forms.Label EC;
         private System.Windows.Forms.Label Building;
         private System.Windows.Forms.Label Room;
@@ -375,5 +373,7 @@
         private System.Windows.Forms.RichTextBox NewAssetNotes;
         private System.Windows.Forms.Button AddBatchButton;
         private System.Windows.Forms.CheckBox AssetBatchCheckBox;
+        public System.Windows.Forms.TextBox NewItemOwner;
+        public System.Windows.Forms.TextBox NewItemOrganization;
     }
 }

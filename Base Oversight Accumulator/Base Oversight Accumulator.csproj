@@ -104,11 +104,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Launch\ErrorDetailView.cs">
+    <Compile Include="DetailedViews\ErrorDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Launch\ErrorDetailView.Designer.cs">
+    <Compile Include="DetailedViews\ErrorDetailView.Designer.cs">
       <DependentUpon>ErrorDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalStorage\ReportGenerator.cs" />
+    <Compile Include="NewQueries\NewBugReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQueries\NewBugReport.Designer.cs">
+      <DependentUpon>NewBugReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewQueries\NewSlotNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQueries\NewSlotNumber.Designer.cs">
+      <DependentUpon>NewSlotNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\SlotNumberSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\SlotNumberSearch.Designer.cs">
+      <DependentUpon>SlotNumberSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Undocked\AccountWindow.cs">
       <SubType>Form</SubType>
@@ -227,8 +246,17 @@
     <Compile Include="Launch\UserLogin.Designer.cs">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Launch\ErrorDetailView.resx">
+    <EmbeddedResource Include="DetailedViews\ErrorDetailView.resx">
       <DependentUpon>ErrorDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQueries\NewBugReport.resx">
+      <DependentUpon>NewBugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQueries\NewSlotNumber.resx">
+      <DependentUpon>NewSlotNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\SlotNumberSearch.resx">
+      <DependentUpon>SlotNumberSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Undocked\AccountWindow.resx">
       <DependentUpon>AccountWindow.cs</DependentUpon>
@@ -289,7 +317,6 @@
     </EmbeddedResource>
     <None Include="Service References\app.config" />
     <None Include="Service References\Base Oversight Accumulator_TemporaryKey.pfx" />
-    <None Include="Launch\ClassDiagram1.cd" />
     <Compile Include="DetailedViews\AccountDetailView.cs">
       <SubType>Form</SubType>
     </Compile>

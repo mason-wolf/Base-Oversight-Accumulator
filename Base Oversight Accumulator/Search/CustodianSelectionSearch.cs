@@ -48,7 +48,11 @@ namespace Base_Oversight_Accumulator
                     string ECLastName = mysql.Reader("lastname");
                     string ECFirstName = mysql.Reader("firstname");
                     string ECRank = mysql.Reader("rank");
+                    string org = mysql.Reader("org");
+                    string accountnumber = mysql.Reader("account");
                     NewAssetWindow.NewEC.Text = ECLastName.ToUpper() + ", " + ECFirstName.ToUpper() + " " + ECRank.ToUpper();
+                    NewAssetWindow.NewItemOwner.Text = accountnumber;
+                    NewAssetWindow.NewItemOrganization.Text = org;
                     NewAssetWindow.UserCreatingAsset = UserSelectingCustodian;
                     NewAssetWindow.Show();
 

@@ -126,8 +126,7 @@
             this.equipmentCustodiansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transfersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dispositionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rOSReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nationalSlotNumbersNSNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportBugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,7 +176,7 @@
             this.ActionReportDataView.Controls.Add(this.TemporaryIssueDataView);
             this.ActionReportDataView.Controls.Add(this.ActionLogTab);
             this.ActionReportDataView.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.ActionReportDataView.Location = new System.Drawing.Point(12, 149);
+            this.ActionReportDataView.Location = new System.Drawing.Point(12, 162);
             this.ActionReportDataView.Name = "ActionReportDataView";
             this.ActionReportDataView.SelectedIndex = 0;
             this.ActionReportDataView.Size = new System.Drawing.Size(1817, 1381);
@@ -312,7 +311,7 @@
             this.tabPage2.Location = new System.Drawing.Point(10, 48);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1797, 1323);
+            this.tabPage2.Size = new System.Drawing.Size(1797, 1326);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Equipment Custodians";
             // 
@@ -416,7 +415,7 @@
             this.AccountsTab.Location = new System.Drawing.Point(10, 48);
             this.AccountsTab.Name = "AccountsTab";
             this.AccountsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.AccountsTab.Size = new System.Drawing.Size(1797, 1323);
+            this.AccountsTab.Size = new System.Drawing.Size(1797, 1326);
             this.AccountsTab.TabIndex = 2;
             this.AccountsTab.Text = "Accounts";
             this.AccountsTab.UseVisualStyleBackColor = true;
@@ -546,7 +545,7 @@
             this.TransferTab.Location = new System.Drawing.Point(10, 48);
             this.TransferTab.Name = "TransferTab";
             this.TransferTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TransferTab.Size = new System.Drawing.Size(1797, 1323);
+            this.TransferTab.Size = new System.Drawing.Size(1797, 1326);
             this.TransferTab.TabIndex = 3;
             this.TransferTab.Text = "Transfers";
             this.TransferTab.UseVisualStyleBackColor = true;
@@ -660,7 +659,7 @@
             this.TemporaryIssueDataView.Location = new System.Drawing.Point(10, 48);
             this.TemporaryIssueDataView.Name = "TemporaryIssueDataView";
             this.TemporaryIssueDataView.Padding = new System.Windows.Forms.Padding(3);
-            this.TemporaryIssueDataView.Size = new System.Drawing.Size(1797, 1323);
+            this.TemporaryIssueDataView.Size = new System.Drawing.Size(1797, 1326);
             this.TemporaryIssueDataView.TabIndex = 4;
             this.TemporaryIssueDataView.Text = "Issued Items";
             this.TemporaryIssueDataView.UseVisualStyleBackColor = true;
@@ -758,7 +757,7 @@
             this.ActionLogTab.Location = new System.Drawing.Point(10, 48);
             this.ActionLogTab.Name = "ActionLogTab";
             this.ActionLogTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ActionLogTab.Size = new System.Drawing.Size(1797, 1323);
+            this.ActionLogTab.Size = new System.Drawing.Size(1797, 1326);
             this.ActionLogTab.TabIndex = 7;
             this.ActionLogTab.Text = "Action Log";
             this.ActionLogTab.UseVisualStyleBackColor = true;
@@ -1025,8 +1024,7 @@
             this.equipmentCustodiansToolStripMenuItem,
             this.accountsToolStripMenuItem,
             this.transfersToolStripMenuItem,
-            this.dispositionsToolStripMenuItem,
-            this.rOSReportsToolStripMenuItem});
+            this.nationalSlotNumbersNSNToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 45);
             this.reportsToolStripMenuItem.Text = "Search";
@@ -1035,38 +1033,33 @@
             // assetsToolStripMenuItem
             // 
             this.assetsToolStripMenuItem.Name = "assetsToolStripMenuItem";
-            this.assetsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.assetsToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.assetsToolStripMenuItem.Text = "Assets";
             // 
             // equipmentCustodiansToolStripMenuItem
             // 
             this.equipmentCustodiansToolStripMenuItem.Name = "equipmentCustodiansToolStripMenuItem";
-            this.equipmentCustodiansToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.equipmentCustodiansToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.equipmentCustodiansToolStripMenuItem.Text = "Accounts";
             // 
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.accountsToolStripMenuItem.Text = "Equipment Custodians";
             // 
             // transfersToolStripMenuItem
             // 
             this.transfersToolStripMenuItem.Name = "transfersToolStripMenuItem";
-            this.transfersToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
+            this.transfersToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.transfersToolStripMenuItem.Text = "Transfers";
             // 
-            // dispositionsToolStripMenuItem
+            // nationalSlotNumbersNSNToolStripMenuItem
             // 
-            this.dispositionsToolStripMenuItem.Name = "dispositionsToolStripMenuItem";
-            this.dispositionsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
-            this.dispositionsToolStripMenuItem.Text = "DRMO Records";
-            // 
-            // rOSReportsToolStripMenuItem
-            // 
-            this.rOSReportsToolStripMenuItem.Name = "rOSReportsToolStripMenuItem";
-            this.rOSReportsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
-            this.rOSReportsToolStripMenuItem.Text = "ROS Records";
+            this.nationalSlotNumbersNSNToolStripMenuItem.Name = "nationalSlotNumbersNSNToolStripMenuItem";
+            this.nationalSlotNumbersNSNToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
+            this.nationalSlotNumbersNSNToolStripMenuItem.Text = "National Slot Numbers (NSN)";
+            this.nationalSlotNumbersNSNToolStripMenuItem.Click += new System.EventHandler(this.nationalSlotNumbersNSNToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem1
             // 
@@ -1351,8 +1344,6 @@
         private System.Windows.Forms.ToolStripMenuItem equipmentCustodiansToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transfersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dispositionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rOSReportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton TransferButton;
         private System.Windows.Forms.TabPage ActionLogTab;
@@ -1429,6 +1420,7 @@
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton NewSlotNumberButton;
+        private System.Windows.Forms.ToolStripMenuItem nationalSlotNumbersNSNToolStripMenuItem;
     }
 }
 

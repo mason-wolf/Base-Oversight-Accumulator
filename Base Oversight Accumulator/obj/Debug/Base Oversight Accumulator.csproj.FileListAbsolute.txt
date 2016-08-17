@@ -205,3 +205,6 @@ C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base Ov
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base Oversight Accumulator.TrustInfo.xml
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base Oversight Accumulator.exe.manifest
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base Oversight Accumulator.application
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewQueries.NewBugReport.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewQueries.NewSlotNumber.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.Search.SlotNumberSearch.resources

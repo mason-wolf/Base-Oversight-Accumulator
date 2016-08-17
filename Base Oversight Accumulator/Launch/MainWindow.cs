@@ -14,6 +14,8 @@ using System.Globalization;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
 using MySql.Data.MySqlClient;
+using Base_Oversight_Accumulator.NewQueries;
+using Base_Oversight_Accumulator.Search;
 
 namespace Base_Oversight_Accumulator
 {
@@ -659,12 +661,21 @@ namespace Base_Oversight_Accumulator
 
         private void reportBugToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            NewBugReport NewBugReport = new NewBugReport();
+            NewBugReport.UserSubmittingReport = BOAUser;
+            NewBugReport.Show();
         }
 
         private void NewSlotNumberButton_Click(object sender, EventArgs e)
         {
-            
+            NewSlotNumber NewSlotNumber = new NewSlotNumber();
+            NewSlotNumber.Show();
+        }
+
+        private void nationalSlotNumbersNSNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SlotNumberSearch SlotNumberSearch = new SlotNumberSearch();
+            SlotNumberSearch.Show();
         }
     }
     }

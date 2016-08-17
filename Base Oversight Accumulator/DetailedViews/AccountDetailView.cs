@@ -12,6 +12,7 @@ using System.IO;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
 using System.Diagnostics;
+using Base_Oversight_Accumulator.LocalStorage;
 
 namespace Base_Oversight_Accumulator
 {
@@ -241,10 +242,19 @@ UserViewingAccount + "','UNFROZE ACCOUNT " + AssetAccountNumber + " " + AccountN
                 ec = mysql.Reader("ec");
                 accountnumber = mysql.Reader("accountnumber");
                 organization = mysql.Reader("organization");
-                report.WriteLine("");
-                report.WriteLine("UNCLASSIFIED\t\t\t\t\t\t\t\t\t                  BOA INVENTORY\t\t\t\t\t\t\t\t\t");
+                string firstItemId = mysql.Reader("id"); 
+                string firstItem = mysql.Reader("item");
+                string firstItemManufacturer = mysql.Reader("manufacturer");
+                string firstItemModel = mysql.Reader("model");
+                string firstItemSerial = mysql.Reader("serialnumber");
+                string firstItemBuilding = mysql.Reader("building");
+                string firstItemRoom = mysql.Reader("room");
+                report.WriteLine("UNCLASSIFIED\t\t\tBOA INVENTORY\t\t\tUNCLASSIFIED");
                 report.WriteLine("Date: " + DateTime.Now.ToString().ToUpper());
-                report.WriteLine("ITEC: " + ec + "\t\tACCT: " + accountnumber + "\t\tASSETS: " + TotalAssets + "\t\tVALUE:" + TotalAssetValue + "\t\tORG:" + organization);
+                report.WriteLine("\tITEC: " + ec + "\t\tACCT: " + accountnumber);
+                report.WriteLine("ASSETS: " + TotalAssets + "\t\tVALUE:" + TotalAssetValue + "\tORG:" + organization);
+                report.WriteLine("______________________________________________________________________________________");
+                report.WriteLine(firstItemId + " " + firstItem + " " + firstItemManufacturer + " " + firstItemModel + " " + firstItemSerial + " " + firstItemBuilding + " " + firstItemRoom);
                 break;
             }
 
@@ -260,54 +270,17 @@ UserViewingAccount + "','UNFROZE ACCOUNT " + AssetAccountNumber + " " + AccountN
                 string room = mysql.Reader("room").ToUpper();
                 // calculate value
                 report.WriteLine("______________________________________________________________________________________");
-                report.WriteLine(id + "\t " + item + "\t " + manufacturer + "\t " + model + "\t " + serialnumnber + "\t " + building + "\t " + room);
+                report.WriteLine(id + " " + item + " " + manufacturer + " " + model + " " + serialnumnber + " " + building + " " + room);
             }
             report.WriteLine("");
             report.WriteLine("UNCLASSIFIED");
             report.WriteLine("");
             report.Close();
             mysql.CloseConnection();
-            try
-            {
-                string line = null;
 
-                System.IO.TextReader readFile = new StreamReader("reports\\temp.txt");
-                int yPoint = 0;
+            ReportGenerator ReportGenerator = new ReportGenerator();
+            ReportGenerator.GenerateReport();
 
-                PdfDocument pdf = new PdfDocument();
-                pdf.Info.Title = "Inventory";
-                PdfPage pdfPage = pdf.AddPage();
-                XGraphics graph = XGraphics.FromPdfPage(pdfPage);
-                XFont font = new XFont("Courier New", 10, XFontStyle.Regular);
-
-                while (true)
-                {
-                    line = readFile.ReadLine();
-                    if (line == null)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        graph.DrawString(line, font, XBrushes.Black, new XRect(20, yPoint, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopLeft);
-                        yPoint = yPoint + 20;
-                    }
-                }
-                int y;
-                Random x = new Random();
-                y = x.Next(1, 1000000000);
-
-                string pdfFilename = "reports\\" + y.ToString() + ".pdf";
-                pdf.Save(pdfFilename);
-                readFile.Close();
-                readFile = null;
-                File.Delete("reports\\temp.txt");
-                Process.Start(pdfFilename);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
     }
 }
