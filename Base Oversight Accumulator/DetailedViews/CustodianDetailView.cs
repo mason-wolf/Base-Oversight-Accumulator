@@ -158,8 +158,10 @@ namespace Base_Oversight_Accumulator
                     string DeleteEC = "DELETE from ec WHERE id=" + ID;
                     string LogUpdate = "INSERT INTO log (date, who, action) VALUES('" + DateTime.Now.ToString() + "','" + UserViewingCustodian +
     "','DELETED CUSTODIAN " + ec + " MEMBER OF ACCOUNT " + account +"')";
+                    string AccountUpdate = "UPDATE itam set ec='' WHERE account='" + ECAccountField.Text + "'";
                     mysql.InsertQuery(DeleteEC);
                     mysql.InsertQuery(LogUpdate);
+                    mysql.InsertQuery(AccountUpdate);
                     this.Close();
                 }
                 catch

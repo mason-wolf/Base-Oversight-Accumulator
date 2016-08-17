@@ -138,6 +138,7 @@
             this.Controls.Add(this.AccountsButton);
             this.Controls.Add(this.ECButton);
             this.Controls.Add(this.AssetsButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SaveDataGridView";
             this.Text = " Select dataset to save..";

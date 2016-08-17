@@ -95,7 +95,7 @@
             this.NewItemManufacturer.Location = new System.Drawing.Point(274, 194);
             this.NewItemManufacturer.Name = "NewItemManufacturer";
             this.NewItemManufacturer.Size = new System.Drawing.Size(500, 38);
-            this.NewItemManufacturer.TabIndex = 7;
+            this.NewItemManufacturer.TabIndex = 1;
             // 
             // Manufacturer
             // 
@@ -121,7 +121,7 @@
             this.NewItemSerialNumber.Location = new System.Drawing.Point(274, 258);
             this.NewItemSerialNumber.Name = "NewItemSerialNumber";
             this.NewItemSerialNumber.Size = new System.Drawing.Size(275, 38);
-            this.NewItemSerialNumber.TabIndex = 4;
+            this.NewItemSerialNumber.TabIndex = 2;
             // 
             // AccountNumber
             // 
@@ -147,7 +147,7 @@
             this.NewItemModel.Location = new System.Drawing.Point(274, 459);
             this.NewItemModel.Name = "NewItemModel";
             this.NewItemModel.Size = new System.Drawing.Size(500, 38);
-            this.NewItemModel.TabIndex = 3;
+            this.NewItemModel.TabIndex = 5;
             // 
             // Organization
             // 
@@ -163,7 +163,7 @@
             this.AddAssetButton.Location = new System.Drawing.Point(274, 762);
             this.AddAssetButton.Name = "AddAssetButton";
             this.AddAssetButton.Size = new System.Drawing.Size(150, 52);
-            this.AddAssetButton.TabIndex = 15;
+            this.AddAssetButton.TabIndex = 9;
             this.AddAssetButton.Text = "Add";
             this.AddAssetButton.UseVisualStyleBackColor = true;
             this.AddAssetButton.Click += new System.EventHandler(this.button1_Click);
@@ -174,7 +174,7 @@
             this.NewItemOwner.Location = new System.Drawing.Point(274, 322);
             this.NewItemOwner.Name = "NewItemOwner";
             this.NewItemOwner.Size = new System.Drawing.Size(100, 38);
-            this.NewItemOwner.TabIndex = 5;
+            this.NewItemOwner.TabIndex = 3;
             // 
             // NewItemOrganization
             // 
@@ -182,7 +182,7 @@
             this.NewItemOrganization.Location = new System.Drawing.Point(274, 390);
             this.NewItemOrganization.Name = "NewItemOrganization";
             this.NewItemOrganization.Size = new System.Drawing.Size(500, 38);
-            this.NewItemOrganization.TabIndex = 6;
+            this.NewItemOrganization.TabIndex = 4;
             // 
             // EC
             // 
@@ -227,7 +227,7 @@
             this.NewBuilding.Location = new System.Drawing.Point(274, 536);
             this.NewBuilding.Name = "NewBuilding";
             this.NewBuilding.Size = new System.Drawing.Size(100, 38);
-            this.NewBuilding.TabIndex = 8;
+            this.NewBuilding.TabIndex = 6;
             // 
             // NewRoom
             // 
@@ -235,7 +235,7 @@
             this.NewRoom.Location = new System.Drawing.Point(274, 607);
             this.NewRoom.Name = "NewRoom";
             this.NewRoom.Size = new System.Drawing.Size(100, 38);
-            this.NewRoom.TabIndex = 9;
+            this.NewRoom.TabIndex = 7;
             // 
             // EstimatedValue
             // 
@@ -252,7 +252,7 @@
             this.NewEstimatedValue.Location = new System.Drawing.Point(274, 686);
             this.NewEstimatedValue.Name = "NewEstimatedValue";
             this.NewEstimatedValue.Size = new System.Drawing.Size(100, 38);
-            this.NewEstimatedValue.TabIndex = 10;
+            this.NewEstimatedValue.TabIndex = 8;
             // 
             // ECSelectionButton
             // 

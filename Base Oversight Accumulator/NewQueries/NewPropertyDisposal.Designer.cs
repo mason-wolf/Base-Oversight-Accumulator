@@ -147,7 +147,7 @@
             this.AddedItemsField.Size = new System.Drawing.Size(528, 500);
             this.AddedItemsField.TabIndex = 7;
             // 
-            // PropertyDisposal
+            // NewPropertyDisposal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,8 +162,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AssetsField);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "PropertyDisposal";
+            this.Name = "NewPropertyDisposal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  Property Disposal Report";
             this.Load += new System.EventHandler(this.PropertyDisposal_Load);

@@ -80,6 +80,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ErrorDetailsField);
             this.Controls.Add(this.ErrorMessageLable);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ErrorDetailView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

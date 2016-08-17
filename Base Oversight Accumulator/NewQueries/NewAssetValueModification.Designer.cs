@@ -108,7 +108,7 @@
             this.ValueField.Size = new System.Drawing.Size(250, 38);
             this.ValueField.TabIndex = 3;
             // 
-            // ModifyAssetValue
+            // NewAssetValueModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,8 +121,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ModelLabel);
             this.Controls.Add(this.ManufacturerLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ModifyAssetValue";
+            this.Name = "NewAssetValueModification";
             this.Text = " Asset Value";
             this.Load += new System.EventHandler(this.ModifyAssetValue_Load);
             this.ResumeLayout(false);

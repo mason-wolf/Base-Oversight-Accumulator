@@ -340,7 +340,7 @@
             this.TransferNotes.TabIndex = 0;
             this.TransferNotes.Text = "";
             // 
-            // Transfer
+            // NewTransfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,8 +349,9 @@
             this.Controls.Add(this.TransferButton);
             this.Controls.Add(this.TransferDetails);
             this.Controls.Add(this.TransferRequest);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Transfer";
+            this.Name = "NewTransfer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Transfer Asset";
             this.Load += new System.EventHandler(this.Transfer_Load);

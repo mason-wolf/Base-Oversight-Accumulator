@@ -26,8 +26,8 @@ namespace Base_Oversight_Accumulator
 
             dbconnect mysql = new dbconnect();
 
-            string query = "INSERT INTO itam(dra, account, org) VALUES ('" + newAccountDRA + "','" + newAccount +
-                "','" + newAccountOrg + "')";
+            string query = "INSERT INTO itam(dra, account, org, status) VALUES ('" + newAccountDRA + "','" + newAccount +
+                "','" + newAccountOrg + "', 'NORMAL')";
 
             string NewAccountLog = "INSERT INTO log (date, who, action, account) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserCreatingAccount + "', 'CREATED ACCOUNT " + newAccount + "','" + newAccount + "')";
             mysql.InsertQuery(NewAccountLog);

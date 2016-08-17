@@ -69,6 +69,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SubmitButton);
             this.Controls.Add(this.BugReportField);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewBugReport";
             this.Text = " Bug Report";

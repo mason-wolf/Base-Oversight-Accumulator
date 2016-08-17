@@ -259,6 +259,7 @@
             this.Controls.Add(this.ReturnItemsButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IssuedItemsView";
             this.Text = "IssuedItemsView";

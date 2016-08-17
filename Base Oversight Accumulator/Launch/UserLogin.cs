@@ -15,17 +15,43 @@ namespace Base_Oversight_Accumulator
 {
     public partial class UserLogin : Form
     {
-
+        public bool PasswordFocused;
         public UserLogin()
         {
             InitializeComponent();
 
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            PasswordField.GotFocus += PasswordFieldFocus;
+            PasswordField.MouseUp += PasswordFieldMouseUp;
+            PasswordField.Leave += PasswordFieldLeave;
+        }
+
+        void PasswordFieldFocus(object sender, EventArgs e)
+        {
+            if (MouseButtons == MouseButtons.None)
+            {
+                PasswordField.SelectAll();
+                PasswordFocused = true;
+            }
+        }
+
+        void PasswordFieldMouseUp(object sender, MouseEventArgs e)
+        {
+            if (!PasswordFocused && PasswordField.SelectionLength == 0)
+            {
+                PasswordFocused = true;
+                PasswordField.SelectAll();
+            }
+        }
+
+        void PasswordFieldLeave(object sender, EventArgs e)
+        {
+            PasswordFocused = false;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
             if (e.KeyCode == Keys.Enter)
             {
                 LoginButton.PerformClick();

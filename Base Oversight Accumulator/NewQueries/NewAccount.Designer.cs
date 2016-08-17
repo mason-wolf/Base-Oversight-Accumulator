@@ -111,6 +111,7 @@
             this.Controls.Add(this.AccountNumberLabel);
             this.Controls.Add(this.DRAField);
             this.Controls.Add(this.DRALabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -182,7 +182,7 @@
             this.IssueButton.UseVisualStyleBackColor = true;
             this.IssueButton.Click += new System.EventHandler(this.IssueButton_Click);
             // 
-            // TemporaryItemIssue
+            // NewTemporaryItemIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,8 +203,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.IssuedToField);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "TemporaryItemIssue";
+            this.Name = "NewTemporaryItemIssue";
             this.Text = " Temporarily Issue Item(s)";
             this.Load += new System.EventHandler(this.TemporaryItemIssue_Load);
             this.ResumeLayout(false);

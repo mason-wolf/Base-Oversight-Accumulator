@@ -70,6 +70,7 @@
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AddBatchButton);
             this.Controls.Add(this.AssetBatchInput);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewAssetBatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

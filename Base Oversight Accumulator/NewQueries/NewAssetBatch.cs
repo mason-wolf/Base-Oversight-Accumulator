@@ -34,9 +34,11 @@ namespace Base_Oversight_Accumulator
         {
 
             String s = String.Empty;
+            int ItemCount = 0;
             foreach (string str in AssetBatchInput.Lines)
             {
                 s = str;
+                ItemCount++;
                 string batch = RemoveSpecialCharacters(s).ToUpper();
                 //  MessageBox.Show(result);
 
@@ -47,7 +49,8 @@ namespace Base_Oversight_Accumulator
                 mysql.InsertQuery(BatchAssets);
                 this.Close();
             }
-            string NewAssetLog = "INSERT INTO log (date, who, action) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserAddingAssetBatch + "','CREATED NEW ASSETS FOR ACCOUNT " + owner + " ASSIGNED TO " + ec + "')";
+            string LogItem = item + " " + manufacturer + " " + model;
+            string NewAssetLog = "INSERT INTO log (date, who, action) VALUES ('" + DateTime.Now.ToString() + "','" + this.UserAddingAssetBatch + "','CREATED " + ItemCount + " NEW ASSETS (" + LogItem.ToUpper() + ") FOR ACCOUNT " + owner + " ASSIGNED TO " + ec + "')";
             mysql.InsertQuery(NewAssetLog);
         }
 
