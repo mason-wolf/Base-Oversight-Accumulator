@@ -16,6 +16,7 @@ using PdfSharp.Drawing;
 using MySql.Data.MySqlClient;
 using Base_Oversight_Accumulator.NewQueries;
 using Base_Oversight_Accumulator.Search;
+using Base_Oversight_Accumulator.Utilities;
 
 namespace Base_Oversight_Accumulator
 {
@@ -235,7 +236,6 @@ namespace Base_Oversight_Accumulator
                 MessageBox.Show(ex.Message);
                 MessageBox.Show("Unable to contact database server.", "Connection Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                StatusBar.Text = "Not Connected";
             }
         }
 
@@ -676,6 +676,12 @@ namespace Base_Oversight_Accumulator
         {
             SlotNumberSearch SlotNumberSearch = new SlotNumberSearch();
             SlotNumberSearch.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DueDateAlerter DueDateAlerter = new DueDateAlerter();
+            DueDateAlerter.Show();
         }
     }
     }

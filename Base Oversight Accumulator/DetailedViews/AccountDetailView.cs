@@ -190,6 +190,9 @@ namespace Base_Oversight_Accumulator
                 mysql.InsertQuery(FreezeAccountLog);
                 UnfreezeAccountButton.Visible = true;
                 FreezeAccountButton.Enabled = false;
+                AccountStatusField.Text = "FROZEN";
+                AccountStatusField.BackColor = Color.Red;
+                AccountStatusField.ForeColor = Color.White;
             }
         }
 

@@ -246,6 +246,12 @@
     <Compile Include="Launch\UserLogin.Designer.cs">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\DueDateAlerter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\DueDateAlerter.Designer.cs">
+      <DependentUpon>DueDateAlerter.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DetailedViews\ErrorDetailView.resx">
       <DependentUpon>ErrorDetailView.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Launch\UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\DueDateAlerter.resx">
+      <DependentUpon>DueDateAlerter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Service References\app.config" />
     <None Include="Service References\Base Oversight Accumulator_TemporaryKey.pfx" />
@@ -447,6 +456,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
