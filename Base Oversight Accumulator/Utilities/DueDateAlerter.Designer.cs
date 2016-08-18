@@ -36,20 +36,17 @@
             // notifyIcon1
             // 
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon1.BalloonTipText = "sdsd";
-            this.notifyIcon1.BalloonTipTitle = "sdsdsd";
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Tag = "sdsdsds";
-            this.notifyIcon1.Text = "sdsdsd";
+            this.notifyIcon1.Tag = "";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // DueDateAlerter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 724);
+            this.ClientSize = new System.Drawing.Size(666, 438);
             this.Name = "DueDateAlerter";
+            this.ShowInTaskbar = false;
             this.Text = "DueDateAlerter";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.DueDateAlerter_Load);

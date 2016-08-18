@@ -146,7 +146,7 @@
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StatusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
-            this.button1 = new System.Windows.Forms.Button();
+            this.checkAccountsDueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ActionReportDataView.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
@@ -828,7 +828,7 @@
             this.helpToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1841, 49);
+            this.menuStrip1.Size = new System.Drawing.Size(1841, 52);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -842,7 +842,7 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 48);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newTabToolStripMenuItem
@@ -932,7 +932,7 @@
             this.copyToolStripMenuItem,
             this.selectAllToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(80, 45);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(80, 48);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // copyToolStripMenuItem
@@ -959,9 +959,10 @@
             this.toolStripMenuItem1,
             this.initiateReportOfSurveryToolStripMenuItem,
             this.assetDispositionbToolStripMenuItem,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.checkAccountsDueToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 45);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 48);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // addAssetToolStripMenuItem
@@ -1027,7 +1028,7 @@
             this.transfersToolStripMenuItem,
             this.nationalSlotNumbersNSNToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 45);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 48);
             this.reportsToolStripMenuItem.Text = "Search";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
@@ -1068,7 +1069,7 @@
             this.aboutToolStripMenuItem,
             this.reportBugToolStripMenuItem});
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 45);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 48);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // aboutToolStripMenuItem
@@ -1100,9 +1101,9 @@
             this.toolStripButton1,
             this.toolStripButton2,
             this.RefreshButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 49);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 52);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1841, 48);
+            this.toolStrip1.Size = new System.Drawing.Size(1841, 39);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1113,7 +1114,7 @@
             this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 36);
             this.toolStripButton3.Text = "Save data set.";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -1124,7 +1125,7 @@
             this.NewAssetButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewAssetButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewAssetButton.Name = "NewAssetButton";
-            this.NewAssetButton.Size = new System.Drawing.Size(23, 45);
+            this.NewAssetButton.Size = new System.Drawing.Size(23, 36);
             this.NewAssetButton.Text = "NewAssetButton";
             this.NewAssetButton.ToolTipText = "Add a new asset.\r\n";
             this.NewAssetButton.Click += new System.EventHandler(this.NewAssetButton_Click);
@@ -1136,7 +1137,7 @@
             this.NewECButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewECButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewECButton.Name = "NewECButton";
-            this.NewECButton.Size = new System.Drawing.Size(36, 45);
+            this.NewECButton.Size = new System.Drawing.Size(36, 36);
             this.NewECButton.ToolTipText = "Add a new equipment custodian.\r\n";
             this.NewECButton.Click += new System.EventHandler(this.NewECButton_Click);
             // 
@@ -1147,7 +1148,7 @@
             this.NewAccountButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewAccountButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewAccountButton.Name = "NewAccountButton";
-            this.NewAccountButton.Size = new System.Drawing.Size(23, 45);
+            this.NewAccountButton.Size = new System.Drawing.Size(23, 36);
             this.NewAccountButton.ToolTipText = "Create a new ITAM account.\r\n";
             this.NewAccountButton.Click += new System.EventHandler(this.NewAccountButton_Click);
             // 
@@ -1158,7 +1159,7 @@
             this.TransferButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TransferButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TransferButton.Name = "TransferButton";
-            this.TransferButton.Size = new System.Drawing.Size(23, 45);
+            this.TransferButton.Size = new System.Drawing.Size(23, 36);
             this.TransferButton.Text = "Transfer";
             this.TransferButton.ToolTipText = "Transfer asset from one account to another.\r\n\r\n";
             this.TransferButton.Click += new System.EventHandler(this.TransferButton_Click);
@@ -1170,7 +1171,7 @@
             this.TempIssueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TempIssueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TempIssueButton.Name = "TempIssueButton";
-            this.TempIssueButton.Size = new System.Drawing.Size(23, 45);
+            this.TempIssueButton.Size = new System.Drawing.Size(23, 36);
             this.TempIssueButton.Text = "TempIssueButton";
             this.TempIssueButton.ToolTipText = "Temporarily issue item.\r\n";
             this.TempIssueButton.Click += new System.EventHandler(this.TempIssueButton_Click);
@@ -1182,7 +1183,7 @@
             this.ModifyAssetValueButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ModifyAssetValueButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ModifyAssetValueButton.Name = "ModifyAssetValueButton";
-            this.ModifyAssetValueButton.Size = new System.Drawing.Size(36, 45);
+            this.ModifyAssetValueButton.Size = new System.Drawing.Size(36, 36);
             this.ModifyAssetValueButton.Text = "Modify cost of assets based on make and model.";
             this.ModifyAssetValueButton.Click += new System.EventHandler(this.ModifyAssetValueButton_Click);
             // 
@@ -1193,7 +1194,7 @@
             this.NewSlotNumberButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewSlotNumberButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewSlotNumberButton.Name = "NewSlotNumberButton";
-            this.NewSlotNumberButton.Size = new System.Drawing.Size(23, 45);
+            this.NewSlotNumberButton.Size = new System.Drawing.Size(23, 36);
             this.NewSlotNumberButton.Text = "Create new National Slot Number (NSN) to identify make and model of assets.";
             this.NewSlotNumberButton.Click += new System.EventHandler(this.NewSlotNumberButton_Click);
             // 
@@ -1204,7 +1205,7 @@
             this.DRMOButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.DRMOButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DRMOButton.Name = "DRMOButton";
-            this.DRMOButton.Size = new System.Drawing.Size(23, 45);
+            this.DRMOButton.Size = new System.Drawing.Size(23, 36);
             this.DRMOButton.Text = "Initiate asset disposition or disposal for Defense Reutilization and Marketing Of" +
     "fice Reports.";
             this.DRMOButton.Click += new System.EventHandler(this.DRMOButton_Click);
@@ -1216,7 +1217,7 @@
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 36);
             this.toolStripButton1.Text = "Initiate Report of Survey for missing assets.";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -1227,7 +1228,7 @@
             this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 36);
             this.toolStripButton2.Text = "Search";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -1238,7 +1239,7 @@
             this.RefreshButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(23, 45);
+            this.RefreshButton.Size = new System.Drawing.Size(23, 36);
             this.RefreshButton.Text = "RefreshButton";
             this.RefreshButton.ToolTipText = "Refresh";
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
@@ -1264,22 +1265,18 @@
             this.StatusStrip.TabIndex = 3;
             this.StatusStrip.Text = "StatusStrip";
             // 
-            // button1
+            // checkAccountsDueToolStripMenuItem
             // 
-            this.button1.Location = new System.Drawing.Point(1182, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 49);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.checkAccountsDueToolStripMenuItem.Name = "checkAccountsDueToolStripMenuItem";
+            this.checkAccountsDueToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
+            this.checkAccountsDueToolStripMenuItem.Text = "Accounts Pending Review";
+            this.checkAccountsDueToolStripMenuItem.Click += new System.EventHandler(this.checkAccountsDueToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1841, 1555);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ActionReportDataView);
@@ -1433,7 +1430,7 @@
         private System.Windows.Forms.ToolStripMenuItem nationalSlotNumbersNSNToolStripMenuItem;
         public System.Windows.Forms.ToolStripStatusLabel StatusBar;
         public System.Windows.Forms.StatusStrip StatusStrip;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem checkAccountsDueToolStripMenuItem;
     }
 }
 

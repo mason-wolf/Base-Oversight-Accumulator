@@ -678,7 +678,7 @@ namespace Base_Oversight_Accumulator
             SlotNumberSearch.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void checkAccountsDueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DueDateAlerter DueDateAlerter = new DueDateAlerter();
             DueDateAlerter.Show();

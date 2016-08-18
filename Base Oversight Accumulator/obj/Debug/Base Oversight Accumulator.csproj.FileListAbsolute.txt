@@ -209,3 +209,4 @@ C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Ov
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewQueries.NewSlotNumber.resources
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.Search.SlotNumberSearch.resources
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.Utilities.DueDateAlerter.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.DetailedViews.DueItemsDetailView.resources

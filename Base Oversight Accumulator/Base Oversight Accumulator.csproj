@@ -104,6 +104,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetailedViews\DueItemsDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailedViews\DueItemsDetailView.Designer.cs">
+      <DependentUpon>DueItemsDetailView.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetailedViews\ErrorDetailView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     <Compile Include="Utilities\DueDateAlerter.Designer.cs">
       <DependentUpon>DueDateAlerter.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DetailedViews\DueItemsDetailView.resx">
+      <DependentUpon>DueItemsDetailView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailedViews\ErrorDetailView.resx">
       <DependentUpon>ErrorDetailView.cs</DependentUpon>
     </EmbeddedResource>
