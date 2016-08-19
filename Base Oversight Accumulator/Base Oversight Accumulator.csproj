@@ -123,11 +123,41 @@
     <Compile Include="NewQueries\NewBugReport.Designer.cs">
       <DependentUpon>NewBugReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewQueries\NewItemModification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQueries\NewItemModification.Designer.cs">
+      <DependentUpon>NewItemModification.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewQueries\NewSlotNumber.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewQueries\NewSlotNumber.Designer.cs">
       <DependentUpon>NewSlotNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewQueries\UpdateItemLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQueries\UpdateItemLocation.Designer.cs">
+      <DependentUpon>UpdateItemLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewQueries\UpdateItemManufacturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQueries\UpdateItemManufacturer.Designer.cs">
+      <DependentUpon>UpdateItemManufacturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewQueries\UpdateItemModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQueries\UpdateItemModel.Designer.cs">
+      <DependentUpon>UpdateItemModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewQueries\UpdateItemType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQueries\UpdateItemType.Designer.cs">
+      <DependentUpon>UpdateItemType.cs</DependentUpon>
     </Compile>
     <Compile Include="Search\SlotNumberSearch.cs">
       <SubType>Form</SubType>
@@ -267,8 +297,23 @@
     <EmbeddedResource Include="NewQueries\NewBugReport.resx">
       <DependentUpon>NewBugReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewQueries\NewItemModification.resx">
+      <DependentUpon>NewItemModification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewQueries\NewSlotNumber.resx">
       <DependentUpon>NewSlotNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQueries\UpdateItemLocation.resx">
+      <DependentUpon>UpdateItemLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQueries\UpdateItemManufacturer.resx">
+      <DependentUpon>UpdateItemManufacturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQueries\UpdateItemModel.resx">
+      <DependentUpon>UpdateItemModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQueries\UpdateItemType.resx">
+      <DependentUpon>UpdateItemType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search\SlotNumberSearch.resx">
       <DependentUpon>SlotNumberSearch.cs</DependentUpon>

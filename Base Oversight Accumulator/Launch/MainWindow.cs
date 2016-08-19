@@ -683,6 +683,12 @@ namespace Base_Oversight_Accumulator
             DueDateAlerter DueDateAlerter = new DueDateAlerter();
             DueDateAlerter.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NewItemModification NewItemModification = new NewItemModification();
+            NewItemModification.Show();
+        }
     }
     }
     

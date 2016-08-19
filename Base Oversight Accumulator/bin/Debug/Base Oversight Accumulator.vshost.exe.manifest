@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Base Oversight Accumulator.exe" size="738304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Base Oversight Accumulator.exe" size="826880">
       <assemblyIdentity name="Base Oversight Accumulator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>X3EW0iMzXnUHxJzkzAgWbT/Tp/WsNKJWkuHfPBDb0YA=</dsig:DigestValue>
+        <dsig:DigestValue>ohxqbj+0zZHr/NgLhWq0lh3SEhXggzTHqqxMj6E+Zr4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
