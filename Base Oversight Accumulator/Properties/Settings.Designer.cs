@@ -34,5 +34,41 @@ namespace Base_Oversight_Accumulator.Properties {
                 this["ServerAddress"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string WorkingCustodian {
+            get {
+                return ((string)(this["WorkingCustodian"]));
+            }
+            set {
+                this["WorkingCustodian"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string WorkingOrganization {
+            get {
+                return ((string)(this["WorkingOrganization"]));
+            }
+            set {
+                this["WorkingOrganization"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string WorkingAccount {
+            get {
+                return ((string)(this["WorkingAccount"]));
+            }
+            set {
+                this["WorkingAccount"] = value;
+            }
+        }
     }
 }

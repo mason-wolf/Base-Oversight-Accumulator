@@ -53,26 +53,25 @@ namespace Base_Oversight_Accumulator.NewQueries
             mysql.CloseConnection();
         }
 
-
         private void ChangeItemButton_Click(object sender, EventArgs e)
         {
-            UpdateItemType UpdateItems = new UpdateItemType();
+            UpdateItemType UpdateItemType = new UpdateItemType();
 
-            foreach (DataGridViewCell cell in AssetDataView.SelectedCells)
+            foreach (DataGridViewRow row in AssetDataView.SelectedRows)
             {
-                UpdateItems.ItemsToUpdate.Add(cell.Value.ToString());
+                UpdateItemType.ItemsToUpdate.Add(row.Cells[0].Value.ToString());
             }
 
-            UpdateItems.Show();
+            UpdateItemType.Show();
         }
 
         private void ChangeManufacturerButton_Click(object sender, EventArgs e)
         {
             UpdateItemManufacturer UpdateItemManufacturer = new UpdateItemManufacturer();
 
-            foreach (DataGridViewCell cell in AssetDataView.SelectedCells)
+            foreach (DataGridViewRow row in AssetDataView.SelectedRows)
             {
-                UpdateItemManufacturer.ItemsToUpdate.Add(cell.Value.ToString());
+                UpdateItemManufacturer.ItemsToUpdate.Add(row.Cells[0].Value.ToString());
             }
 
             UpdateItemManufacturer.Show();
@@ -82,9 +81,9 @@ namespace Base_Oversight_Accumulator.NewQueries
         {
             UpdateItemModel UpdateItemModel = new UpdateItemModel();
 
-            foreach (DataGridViewCell cell in AssetDataView.SelectedCells)
+            foreach (DataGridViewRow row in AssetDataView.SelectedRows)
             {
-                UpdateItemModel.ItemsToUpdate.Add(cell.Value.ToString());
+                UpdateItemModel.ItemsToUpdate.Add(row.Cells[0].Value.ToString());
             }
 
             UpdateItemModel.Show();
@@ -94,9 +93,9 @@ namespace Base_Oversight_Accumulator.NewQueries
         {
             UpdateItemLocation UpdateItemLocation = new UpdateItemLocation();
 
-            foreach (DataGridViewCell cell in AssetDataView.SelectedCells)
+            foreach (DataGridViewRow row in AssetDataView.SelectedRows)
             {
-                UpdateItemLocation.ItemsToUpdate.Add(cell.Value.ToString());
+                UpdateItemLocation.ItemsToUpdate.Add(row.Cells[0].Value.ToString());
             }
 
             UpdateItemLocation.Show();

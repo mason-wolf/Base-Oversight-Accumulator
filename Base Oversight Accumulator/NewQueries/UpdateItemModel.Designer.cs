@@ -45,6 +45,7 @@
             // 
             // ModelField
             // 
+            this.ModelField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ModelField.Location = new System.Drawing.Point(235, 125);
             this.ModelField.Name = "ModelField";
             this.ModelField.Size = new System.Drawing.Size(300, 38);

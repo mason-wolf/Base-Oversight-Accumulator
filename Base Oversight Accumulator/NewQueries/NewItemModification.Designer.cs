@@ -79,6 +79,7 @@
             this.AssetDataView.RowHeadersVisible = false;
             this.AssetDataView.RowHeadersWidth = 100;
             this.AssetDataView.RowTemplate.Height = 40;
+            this.AssetDataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.AssetDataView.Size = new System.Drawing.Size(2269, 1463);
             this.AssetDataView.TabIndex = 3;
             // 
@@ -201,12 +202,11 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 22);
+            this.label1.Location = new System.Drawing.Point(38, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(852, 64);
+            this.label1.Size = new System.Drawing.Size(576, 50);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Select the items you wish to modify. This action cannot be undone.\r\n\r\n";
+            this.label1.Text = "Select the ID of the items you wish to modify.\r\n\r\n\r\n";
             // 
             // NewItemModification
             // 
@@ -226,7 +226,6 @@
             this.Load += new System.EventHandler(this.NewItemModification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

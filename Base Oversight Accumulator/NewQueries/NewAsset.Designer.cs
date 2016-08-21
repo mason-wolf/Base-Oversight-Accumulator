@@ -79,6 +79,7 @@
             "Scanner",
             "Projector",
             "VOIP",
+            "VTC",
             "Phone",
             "LMR",
             "Switch",

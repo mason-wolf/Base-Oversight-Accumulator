@@ -45,6 +45,7 @@
             // 
             // ManufacturerField
             // 
+            this.ManufacturerField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ManufacturerField.Location = new System.Drawing.Point(329, 124);
             this.ManufacturerField.Name = "ManufacturerField";
             this.ManufacturerField.Size = new System.Drawing.Size(300, 38);

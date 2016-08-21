@@ -686,8 +686,43 @@ namespace Base_Oversight_Accumulator
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
             NewItemModification NewItemModification = new NewItemModification();
             NewItemModification.Show();
+        }
+
+        private void assetsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchWindow SearchItem = new SearchWindow();
+            SearchItem.UserPerformingSearch = BOAUser;
+            SearchItem.SearchItem = "assets";
+            SearchItem.Show();
+        }
+
+        private void equipmentCustodiansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchWindow SearchItem = new SearchWindow();
+            SearchItem.UserPerformingSearch = BOAUser;
+            SearchItem.SearchItem = "accounts";
+            SearchItem.Show();
+        }
+
+        private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchWindow SearchItem = new SearchWindow();
+            SearchItem.UserPerformingSearch = BOAUser;
+            SearchItem.SearchItem = "ec";
+            SearchItem.Show();
+        }
+
+        private void transfersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransferSearch TransferSearch = new TransferSearch();
+            TransferSearch.Show();
         }
     }
     }

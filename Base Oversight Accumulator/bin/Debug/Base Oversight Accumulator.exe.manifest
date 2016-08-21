@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Base Oversight Accumulator.exe" size="826880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Base Oversight Accumulator.exe" size="828416">
       <assemblyIdentity name="Base Oversight Accumulator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ohxqbj+0zZHr/NgLhWq0lh3SEhXggzTHqqxMj6E+Zr4=</dsig:DigestValue>
+        <dsig:DigestValue>HkxUl+fsHSf2W6Ff2JWaC2hzPmyOXRRhC18agHtLPBc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -198,13 +198,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Base Oversight Accumulator.exe.config" size="953">
+  <file name="Base Oversight Accumulator.exe.config" size="1215">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ADyhRFX9ez3kp7gF+ArxfNazzW+XtQ1MbV8NgunZJME=</dsig:DigestValue>
+      <dsig:DigestValue>LLKfwO9s+DEcpm0el4Vgl7E/sF7ipt80ia77VeRJT8s=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Service References\icon.ico" size="15086">

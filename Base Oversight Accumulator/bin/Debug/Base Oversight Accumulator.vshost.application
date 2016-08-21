@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Base Oversight Accumulator.exe.manifest" size="13531">
+    <dependentAssembly dependencyType="install" codebase="Base Oversight Accumulator.exe.manifest" size="13532">
       <assemblyIdentity name="Base Oversight Accumulator.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tRay0gPzmCQmuNIV5hWoJKWp8KJ8fx3RMY6pmuOWNb4=</dsig:DigestValue>
+        <dsig:DigestValue>DEQkpb5ntnr0dsSTqhuIqwq6wBg71Wq4vk5zVwRehyw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Base_Oversight_Accumulator.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,12 @@ namespace Base_Oversight_Accumulator
         {
             InitializeComponent();
             this.KeyDown += new KeyEventHandler(this.QuickAdd);
+            if (Settings.Default.WorkingCustodian != null)
+            {
+                NewEC.Text = Settings.Default.WorkingCustodian;
+                NewItemOrganization.Text = Settings.Default.WorkingOrganization;
+                NewItemOwner.Text = Settings.Default.WorkingAccount;
+            }
         }
 
         public void QuickAdd(object sender, KeyEventArgs e)
@@ -60,12 +67,15 @@ namespace Base_Oversight_Accumulator
             else {
 
                 string NewAssetQuery = "INSERT INTO assets(item, manufacturer, model, serialnumber, accountnumber, organization, ec, building, room, value, notes) VALUES ('" +
-                                item + "','" + manufacturer + "','" +
+                                item.ToUpper() + "','" + manufacturer + "','" +
                                 model + "','" + serialnumber + "','" + owner + "','" + organization + "','" +
                                 ec + "','" + building + "','" + room + "','" + value + "','" + notes + "')";
 
                 mysql.InsertQuery(NewAssetQuery);
-               
+                Settings.Default.WorkingCustodian = ec;
+                Settings.Default.WorkingOrganization = organization;
+                Settings.Default.WorkingAccount = owner;
+                Settings.Default.Save();
                 this.Close();
                 
             }

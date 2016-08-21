@@ -378,6 +378,7 @@
     <EmbeddedResource Include="Utilities\DueDateAlerter.resx">
       <DependentUpon>DueDateAlerter.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Service References\app.config" />
     <None Include="Service References\Base Oversight Accumulator_TemporaryKey.pfx" />
     <Compile Include="DetailedViews\AccountDetailView.cs">

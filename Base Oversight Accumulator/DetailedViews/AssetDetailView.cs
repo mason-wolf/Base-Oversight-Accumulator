@@ -123,7 +123,7 @@ namespace Base_Oversight_Accumulator
             string Notes = AssetNotes.Text;
             string ID = AssetID.Text;
 
-                string UpdateAssets = "UPDATE assets SET item='" + AssetType + "', serialnumber='" + SerialNumber + "', manufacturer='" +
+                string UpdateAssets = "UPDATE assets SET item='" + AssetType.ToUpper() + "', serialnumber='" + SerialNumber + "', manufacturer='" +
                     Manufacturer + "', model='" + Model + "', accountnumber='" + AccountNumber + "', organization='" + Organization +
                     "', building='" + Building + "', room='" + Room + "',value='" + Value + "', notes='" + Notes + "' where id='" + ID + "'";
             mysql.InsertQuery(UpdateAssets);
