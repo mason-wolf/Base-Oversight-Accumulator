@@ -30,7 +30,7 @@ namespace Base_Oversight_Accumulator.LocalStorage
 
             paragraph.Format.Font.Color = Colors.Black;
 
-            System.IO.TextReader readFile = new StreamReader("reports\\temp.txt");
+            System.IO.TextReader readFile = new StreamReader("C:\\USERS\\PUBLIC\\temp.txt");
 
 
             while (true)
@@ -46,6 +46,7 @@ namespace Base_Oversight_Accumulator.LocalStorage
 
                 }
             }
+            readFile.Close();
 
             return document;
         }
@@ -69,14 +70,20 @@ namespace Base_Oversight_Accumulator.LocalStorage
             Random x = new Random();
 
             RandomFileName = x.Next(1, 1000000000);
+            try
+            {
+                string filename = "C:\\USERS\\PUBLIC\\" + RandomFileName.ToString() + ".pdf";
 
-            string filename = "reports\\" + RandomFileName.ToString() + ".pdf";
+                pdfRenderer.PdfDocument.Save(filename);
 
-            pdfRenderer.PdfDocument.Save(filename);
+                File.Delete("C:\\USERS\\PUBLIC\\temp.txt");
 
-            File.Delete("reports\\temp.txt");
-
-            Process.Start(filename);
+                Process.Start(filename);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
     }
 }

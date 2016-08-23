@@ -234,7 +234,7 @@ UserViewingAccount + "','UNFROZE ACCOUNT " + AssetAccountNumber + " " + AccountN
             if (!folderExists)
                 Directory.CreateDirectory("reports");
 
-            System.IO.StreamWriter report = new System.IO.StreamWriter("reports\\temp.txt");
+            System.IO.StreamWriter report = new System.IO.StreamWriter("C:\\USERS\\PUBLIC\\temp.txt");
            
 
             dbconnect mysql = new dbconnect();
