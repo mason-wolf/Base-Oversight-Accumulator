@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Base Oversight Accumulator")]
 [assembly: AssemblyDescription("An unofficial USAF localized asset management system used to track information technology equipment and assets.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("United States Air Force")]
+[assembly: AssemblyCompany("USAF")]
 [assembly: AssemblyProduct("Base Oversight Accumulator")]
 [assembly: AssemblyCopyright("Staff Sergeant Mason H. Wolf, Client Systems, August 2016")]
 [assembly: AssemblyTrademark("")]
@@ -32,5 +32,4 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.1")]

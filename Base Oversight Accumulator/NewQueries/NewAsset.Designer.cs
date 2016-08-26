@@ -83,7 +83,6 @@
             "Phone",
             "LMR",
             "Switch",
-            "KVM Switch",
             "Other"});
             this.NewItemType.Location = new System.Drawing.Point(274, 128);
             this.NewItemType.Name = "NewItemType";

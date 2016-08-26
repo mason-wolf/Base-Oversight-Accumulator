@@ -17,6 +17,7 @@ using MySql.Data.MySqlClient;
 using Base_Oversight_Accumulator.NewQueries;
 using Base_Oversight_Accumulator.Search;
 using Base_Oversight_Accumulator.Utilities;
+using System.Text.RegularExpressions;
 
 namespace Base_Oversight_Accumulator
 {
@@ -27,6 +28,9 @@ namespace Base_Oversight_Accumulator
         /// showing who does what and when.
         /// </summary>
         public string BOAUser { get; set; }
+        public string QuickViewAccount { get; set; }
+        public string QuickViewItem { get; set; }
+        public string QuickViewSerialNumber { get; set; }
 
         public MainWindow(string username)
         {
@@ -58,6 +62,12 @@ namespace Base_Oversight_Accumulator
 
                 ActionLogDataView.Rows.Clear();
                 ActionLogDataView.RowTemplate.Height = 20;
+
+                Overview.Rows.Clear();
+                Overview.RowTemplate.Height = 20;
+
+                Overview.DefaultCellStyle.BackColor = Color.Transparent;
+                Overview.DefaultCellStyle.SelectionBackColor = Color.Transparent;
 
                 dbconnect mysql = new dbconnect();
                 mysql.OpenConnection();
@@ -224,12 +234,59 @@ namespace Base_Oversight_Accumulator
                         break;
                     }
                 }
-                mysql.CloseConnection();
 
+                mysql.CloseConnection();
                 MySqlConnection.ClearAllPools();
 
-            }
+                // populate detail view 
 
+                string[] totals = new string[]
+                {
+                    "Desktop",
+                    "Laptop",
+                    "Printer",
+                    "Scanner",
+                    "Projector",
+                    "VOIP",
+                    "VTC",
+                    "Phone",
+                    "LMR",
+                    "Switch",
+                    "Other"
+                };
+
+                Overview.ColumnHeadersVisible = false;
+                Overview.Rows.Add("");
+                mysql.OpenConnection();
+                string TotalAssets = OverviewCount("ASSETS");
+                string TotalValue = mysql.SumCurrencyQuery("SELECT SUM(value) FROM ASSETS");
+                string TotalCustodians = OverviewCount("ec");
+                string TotalAccounts = OverviewCount("itam");
+                string TotalTransfers = OverviewCount("transfers");
+                string TotalIssuances = OverviewCount("issued");
+                string TotalActions = OverviewCount("log");
+                Overview.Rows.Add("Total Assets    ", TotalAssets, TotalValue);
+                Overview.Rows.Add("Custodians", TotalCustodians);
+                Overview.Rows.Add("Accounts", TotalAccounts);
+                Overview.Rows.Add("Transfers", TotalTransfers);
+                Overview.Rows.Add("Issuances", TotalIssuances);
+                Overview.Rows.Add("Actions", TotalActions);
+                foreach (string asset in totals)
+                {
+                    string count = AssetCount(asset);
+                    string value = AssetValue(asset);
+                    Overview.Rows.Add(asset, count + "    ", value);
+                    Overview.DefaultCellStyle.BackColor = Color.FromKnownColor(KnownColor.Control);
+                    Overview.DefaultCellStyle.SelectionBackColor = Color.FromKnownColor(KnownColor.Control);
+                    foreach (DataGridViewColumn c in Overview.Columns)
+                    {
+                        c.DefaultCellStyle.Font = new Font("Courier New", 8F);
+                    }
+                }
+                mysql.CloseConnection();
+                MySqlConnection.ClearAllPools();
+                ConnectionStatus.Text = "Connected to: " + Properties.Settings.Default.ServerAddress;
+            }
 
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
@@ -239,15 +296,39 @@ namespace Base_Oversight_Accumulator
             }
         }
 
+        public string OverviewCount(string table)
+        {
+            dbconnect mysql = new dbconnect();
+            mysql.OpenConnection();
+            string count = mysql.CountQuery("SELECT COUNT(*) FROM " + table);
+            mysql.CloseConnection();
+            MySqlConnection.ClearAllPools();
+            return count;
+        }
+        public string AssetCount(string whichAsset)
+        {
+            dbconnect mysql = new dbconnect();
+            mysql.OpenConnection();
+            string count = mysql.CountQuery("SELECT COUNT(*) FROM ASSETS WHERE item='" + whichAsset + "'");
+            mysql.CloseConnection();
+            MySqlConnection.ClearAllPools();
+            return count;
+        }
+
+        public string AssetValue(string whichAsset)
+        {
+            dbconnect mysql = new dbconnect();
+            mysql.OpenConnection();
+            string value = mysql.SumCurrencyQuery("SELECT SUM(value) FROM assets WHERE item='" + whichAsset + "'");
+            mysql.CloseConnection();
+            MySqlConnection.ClearAllPools();
+            return value;
+
+        }
         private void newEquipmentCustodianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewECWindow NewECWindow = new NewECWindow();
             NewECWindow.Show();
-        }
-
-        private void addOrganizationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void AssetDataView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -292,11 +373,6 @@ namespace Base_Oversight_Accumulator
             NewECWindow.Show();
         }
 
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void NewECButton_Click(object sender, EventArgs e)
         {
             NewECWindow NewECWindow = new NewECWindow();
@@ -329,11 +405,6 @@ namespace Base_Oversight_Accumulator
                 CustodianDetailView.Show();
             }
             catch { }
-        }
-
-        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void addAssetToolStripMenuItem_Click(object sender, EventArgs e)
@@ -381,15 +452,6 @@ namespace Base_Oversight_Accumulator
             Transfer.Show();
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
         private void ModifyAssetValueButton_Click(object sender, EventArgs e)
         {
             NewAssetValueModification ModifyAssetValue = new NewAssetValueModification();
@@ -470,8 +532,8 @@ namespace Base_Oversight_Accumulator
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                MainWindow NewWindow = new MainWindow(BOAUser);
-                NewWindow.Show();
+            MainWindow NewWindow = new MainWindow(BOAUser);
+            NewWindow.Show();
         }
 
         private void assetsToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -493,11 +555,6 @@ namespace Base_Oversight_Accumulator
             AccountWindow AccountWindow = new AccountWindow();
             AccountWindow.UserViewingAccounts = BOAUser;
             AccountWindow.Show();
-        }
-
-        private void AccountDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void transfersToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -634,29 +691,29 @@ namespace Base_Oversight_Accumulator
         {
             if (e.KeyCode == Keys.F)
             {
-                switch (ActionReportDataView.SelectedIndex) { 
-                case 0:
-                    NewSearchWindow("assets");
-                break;
-                case 1:
-                    NewSearchWindow("ec");
-                break;
-                case 2:
-                    NewSearchWindow("accounts");
-                break;
-                case 3:
-                    TransferSearch TransferSearch = new TransferSearch();
-                TransferSearch.Show();
-                break;
-                case 4:
-                    IssuedSearch IssuedSearch = new IssuedSearch();
-                IssuedSearch.Show();
-                break;
-                case 5:
-                    ActionLogDataView.SelectAll();
-                break;
+                switch (ActionReportDataView.SelectedIndex) {
+                    case 0:
+                        NewSearchWindow("assets");
+                        break;
+                    case 1:
+                        NewSearchWindow("ec");
+                        break;
+                    case 2:
+                        NewSearchWindow("accounts");
+                        break;
+                    case 3:
+                        TransferSearch TransferSearch = new TransferSearch();
+                        TransferSearch.Show();
+                        break;
+                    case 4:
+                        IssuedSearch IssuedSearch = new IssuedSearch();
+                        IssuedSearch.Show();
+                        break;
+                    case 5:
+                        ActionLogDataView.SelectAll();
+                        break;
+                }
             }
-        }
         }
 
         private void reportBugToolStripMenuItem_Click(object sender, EventArgs e)
@@ -682,11 +739,6 @@ namespace Base_Oversight_Accumulator
         {
             DueDateAlerter DueDateAlerter = new DueDateAlerter();
             DueDateAlerter.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -724,8 +776,66 @@ namespace Base_Oversight_Accumulator
             TransferSearch TransferSearch = new TransferSearch();
             TransferSearch.Show();
         }
+
+        private void AssetDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string AssetID = AssetDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            QuickViewItem = AssetID;
+            DetailViewBox.Visible = false;
+            AssetDetailBox.Visible = true;
+            AssetDetail.Clear();
+            dbconnect mysql = new dbconnect();
+            mysql.OpenConnection();
+            mysql.SelectQuery("SELECT * from assets where id='" + AssetID + "'");
+            while (mysql.Result.Read())
+            {
+                string manufacturer = mysql.Reader("manufacturer");
+                string model = mysql.Reader("model");
+                QuickViewSerialNumber = mysql.Reader("serialnumber");
+                QuickViewAccount = mysql.Reader("accountnumber");
+
+                AssetDetailBox.Text = QuickViewSerialNumber;
+                AssetDetail.AppendText(manufacturer + " " + model + "\n\n");
+            }
+            mysql.SelectQuery("SELECT * from log where action LIKE '%" + QuickViewSerialNumber + "%' ORDER BY ID desc");
+
+            while (mysql.Result.Read())
+            {
+                string date = mysql.Reader("date");
+                date = date.Remove(date.Length - 11);
+                string action = mysql.Reader("action");
+                AssetDetail.AppendText(date + " " + action + "\n\n");
+            }
+
+    //        HighlightText(AssetDetail, QuickViewSerialNumber, Color.Green);
+
+            mysql.CloseConnection();
+        }
+        private void HighlightText(RichTextBox myRtb, string word, Color color)
+        {
+
+            if (word == "")
+            {
+                return;
+            }
+
+            int s_start = myRtb.SelectionStart, startIndex = 0, index;
+
+            while ((index = myRtb.Text.IndexOf(word, startIndex)) != -1)
+            {
+                myRtb.Select(index, word.Length);
+                myRtb.SelectionColor = color;
+
+                startIndex = index + word.Length;
+            }
+
+            myRtb.SelectionStart = s_start;
+            myRtb.SelectionLength = 0;
+            myRtb.SelectionColor = Color.Black;
+        }
+    } 
     }
-    }
+    
     
     
 

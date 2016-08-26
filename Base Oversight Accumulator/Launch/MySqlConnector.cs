@@ -112,7 +112,6 @@ namespace Base_Oversight_Accumulator
             int c;
             MySqlCommand CountQuery = new MySqlCommand(query, Connection);
             c = int.Parse(CountQuery.ExecuteScalar().ToString());
-            Connection.Close();
             return c.ToString();
         }
 
@@ -124,15 +123,26 @@ namespace Base_Oversight_Accumulator
         /// <returns></returns>
         public string SumCurrencyQuery(string query)
         {
-            Connection.Open();
 
             try
             {
                 MySqlCommand SumQuery = new MySqlCommand(query, Connection);
-                CurrencySum = "$" + double.Parse(SumQuery.ExecuteScalar().ToString()).ToString("N0");
+                try
+                {
+                    CurrencySum = "$" + double.Parse(SumQuery.ExecuteScalar().ToString()).ToString("N0");
+                }
+                catch
+                {
+                    if(string.IsNullOrEmpty(CurrencySum))
+                    {
+                        CurrencySum = "$0";
+                        return CurrencySum;
+                    }
+                }
             }
-            catch { }
-            Connection.Close();
+            catch 
+            {
+            }
             return CurrencySum;
         }
 

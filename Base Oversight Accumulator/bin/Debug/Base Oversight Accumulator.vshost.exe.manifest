@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Service References\icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Base Oversight Accumulator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Base Oversight Accumulator" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Base Oversight Accumulator.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Base Oversight Accumulator.exe" size="828416">
-      <assemblyIdentity name="Base Oversight Accumulator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Base Oversight Accumulator.exe" size="833536">
+      <assemblyIdentity name="Base Oversight Accumulator" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NvjdruV+QgXL96TUB8b80/yssqwbslBBmC0fwccadSc=</dsig:DigestValue>
+        <dsig:DigestValue>UWu3gaBPjIOavRN3s/kkV2vAtUFjVy9bybXA7mdalEM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -198,13 +198,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Base Oversight Accumulator.exe.config" size="1215">
+  <file name="Base Oversight Accumulator.exe.config" size="1192">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>LLKfwO9s+DEcpm0el4Vgl7E/sF7ipt80ia77VeRJT8s=</dsig:DigestValue>
+      <dsig:DigestValue>gjZUWO1tKAnjnhEFczNTEsMLLgAGo82Y0zUV5HYn+Lk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Service References\icon.ico" size="15086">

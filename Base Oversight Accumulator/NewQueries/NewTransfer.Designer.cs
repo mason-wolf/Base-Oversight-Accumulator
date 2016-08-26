@@ -37,6 +37,8 @@
             this.SerialNumberField = new System.Windows.Forms.TextBox();
             this.SearchAssetButton = new System.Windows.Forms.Button();
             this.TransferRequest = new System.Windows.Forms.GroupBox();
+            this.TransferNotesField = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.TransferDetails = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SerialNumberDetail = new System.Windows.Forms.TextBox();
@@ -55,11 +57,8 @@
             this.LosingAccountDetail = new System.Windows.Forms.TextBox();
             this.LosingAccountLabel = new System.Windows.Forms.Label();
             this.TransferButton = new System.Windows.Forms.Button();
-            this.Notes = new System.Windows.Forms.GroupBox();
-            this.TransferNotes = new System.Windows.Forms.RichTextBox();
             this.TransferRequest.SuspendLayout();
             this.TransferDetails.SuspendLayout();
-            this.Notes.SuspendLayout();
             this.SuspendLayout();
             // 
             // LosingAccount
@@ -115,7 +114,7 @@
             // 
             // SearchAssetButton
             // 
-            this.SearchAssetButton.Location = new System.Drawing.Point(175, 275);
+            this.SearchAssetButton.Location = new System.Drawing.Point(328, 265);
             this.SearchAssetButton.Name = "SearchAssetButton";
             this.SearchAssetButton.Size = new System.Drawing.Size(250, 50);
             this.SearchAssetButton.TabIndex = 10;
@@ -125,6 +124,8 @@
             // 
             // TransferRequest
             // 
+            this.TransferRequest.Controls.Add(this.TransferNotesField);
+            this.TransferRequest.Controls.Add(this.label5);
             this.TransferRequest.Controls.Add(this.LosingAccount);
             this.TransferRequest.Controls.Add(this.SearchAssetButton);
             this.TransferRequest.Controls.Add(this.LosingAccountField);
@@ -134,10 +135,27 @@
             this.TransferRequest.Controls.Add(this.GainingAccountField);
             this.TransferRequest.Location = new System.Drawing.Point(33, 42);
             this.TransferRequest.Name = "TransferRequest";
-            this.TransferRequest.Size = new System.Drawing.Size(709, 414);
+            this.TransferRequest.Size = new System.Drawing.Size(709, 667);
             this.TransferRequest.TabIndex = 11;
             this.TransferRequest.TabStop = false;
             this.TransferRequest.Text = "Transfer Request";
+            // 
+            // TransferNotesField
+            // 
+            this.TransferNotesField.Location = new System.Drawing.Point(33, 437);
+            this.TransferNotesField.Name = "TransferNotesField";
+            this.TransferNotesField.Size = new System.Drawing.Size(650, 210);
+            this.TransferNotesField.TabIndex = 12;
+            this.TransferNotesField.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 392);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 32);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Notes:";
             // 
             // TransferDetails
             // 
@@ -322,30 +340,11 @@
             this.TransferButton.UseVisualStyleBackColor = true;
             this.TransferButton.Click += new System.EventHandler(this.TransferButton_Click);
             // 
-            // Notes
-            // 
-            this.Notes.Controls.Add(this.TransferNotes);
-            this.Notes.Location = new System.Drawing.Point(33, 486);
-            this.Notes.Name = "Notes";
-            this.Notes.Size = new System.Drawing.Size(709, 223);
-            this.Notes.TabIndex = 14;
-            this.Notes.TabStop = false;
-            this.Notes.Text = "Notes";
-            // 
-            // TransferNotes
-            // 
-            this.TransferNotes.Location = new System.Drawing.Point(7, 38);
-            this.TransferNotes.Name = "TransferNotes";
-            this.TransferNotes.Size = new System.Drawing.Size(696, 170);
-            this.TransferNotes.TabIndex = 0;
-            this.TransferNotes.Text = "";
-            // 
             // NewTransfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1605, 856);
-            this.Controls.Add(this.Notes);
             this.Controls.Add(this.TransferButton);
             this.Controls.Add(this.TransferDetails);
             this.Controls.Add(this.TransferRequest);
@@ -359,7 +358,6 @@
             this.TransferRequest.PerformLayout();
             this.TransferDetails.ResumeLayout(false);
             this.TransferDetails.PerformLayout();
-            this.Notes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -374,7 +372,6 @@
         private System.Windows.Forms.GroupBox TransferRequest;
         private System.Windows.Forms.GroupBox TransferDetails;
         private System.Windows.Forms.Button TransferButton;
-        private System.Windows.Forms.GroupBox Notes;
         private System.Windows.Forms.TextBox LosingECDetail;
         private System.Windows.Forms.TextBox LosingOrgDetail;
         private System.Windows.Forms.Label LosingEC;
@@ -391,8 +388,9 @@
         private System.Windows.Forms.TextBox SerialNumberDetail;
         private System.Windows.Forms.TextBox AssetDetail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox TransferNotes;
         public System.Windows.Forms.TextBox LosingAccountField;
         public System.Windows.Forms.TextBox SerialNumberField;
+        private System.Windows.Forms.RichTextBox TransferNotesField;
+        private System.Windows.Forms.Label label5;
     }
 }

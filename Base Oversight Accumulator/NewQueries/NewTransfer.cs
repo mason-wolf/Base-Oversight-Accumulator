@@ -100,15 +100,16 @@ namespace Base_Oversight_Accumulator
 
         private void TransferButton_Click(object sender, EventArgs e)
         {
-            string notes = TransferNotes.Text;
+            string notes = TransferNotesField.Text;
 
             if (MessageBox.Show("Are you sure you want to transfer this asset from " + LosingAccountField.Text.ToUpper() + " to " + GainingAccountField.Text.ToUpper() + "?",
 "Confirm Transfer", MessageBoxButtons.YesNo) == DialogResult.Yes)
 
             {
                    dbconnect mysql = new dbconnect();
+
                 string TransferQuery = "UPDATE assets SET accountnumber='" + GainingAccountField.Text.ToUpper() + 
-                    "', ec='" + GainingECDetail.Text.ToUpper() +"', notes='" + notes + "' WHERE serialnumber='" + SerialNumberDetail.Text.ToUpper() + "'";
+                "', ec='" + GainingECDetail.Text.ToUpper() +"', notes='" + notes + "' WHERE serialnumber='" + SerialNumberDetail.Text.ToUpper() + "'";
                 mysql.InsertQuery(TransferQuery);
 
                 string item = AssetDetail.Text;
@@ -120,12 +121,14 @@ namespace Base_Oversight_Accumulator
                 string gainingaccount = GainingAccountField.Text;
 
                 string TransferHistory = "INSERT INTO transfers (item, transferto, transferfrom, transferdate, serialnumber, losingaccount, gainingaccount, transferby, notes) VALUES ('" +
-                    item + "','" + transferto + "','" + transferfrom + "','" + transferdate + "','" + serialnumber + "','" +
-                    losingaccount + "','" + gainingaccount + "','" + TransferedBy+ "','" + notes + "')";
-               string TransferLog = "INSERT INTO log (date, who, action, account) VALUES('" + DateTime.Now.ToString() + "','" + this.TransferedBy + "','TRANSFERED " + item + " " + serialnumber + " FROM " + transferfrom + " TO " + transferto + "','" + gainingaccount + "')";
+                item + "','" + transferto + "','" + transferfrom + "','" + transferdate + "','" + serialnumber + "','" +
+                losingaccount + "','" + gainingaccount + "','" + TransferedBy+ "','" + notes + "')";
+
+                string TransferLog = "INSERT INTO log (date, who, action, account) VALUES('" + DateTime.Now.ToString() + "','" + this.TransferedBy + "','TRANSFERED " + item + " " + serialnumber + " FROM " + transferfrom + " TO " + transferto + "','" + gainingaccount + "')";
 
                 mysql.InsertQuery(TransferHistory);
                 mysql.InsertQuery(TransferLog);
+
                 this.Close();
             }
         }

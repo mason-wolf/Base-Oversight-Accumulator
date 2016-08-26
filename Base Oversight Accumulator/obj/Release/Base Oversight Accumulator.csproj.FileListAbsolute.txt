@@ -1,0 +1,55 @@
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\bin\Release\Base Oversight Accumulator.exe.config
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.DetailedViews.DueItemsDetailView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.Launch.ErrorDetailView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewQueries.NewBugReport.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewQueries.NewItemModification.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewQueries.NewSlotNumber.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewQueries.UpdateItemLocation.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewQueries.UpdateItemManufacturer.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewQueries.UpdateItemModel.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewQueries.UpdateItemType.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.Search.SlotNumberSearch.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.AccountWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.ActionLogWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.AssetsWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.CustodianWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.IssuedItemsView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.IssuedItemsWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.IssuedSearch.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewAssetValueModification.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewAssetBatch.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewPropertyDisposal.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewMissingAsset.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.SaveDataGridView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.SearchOptions.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.SearchWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewTemporaryItemIssue.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.TransferDetailView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.TransferSearch.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.TransferWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.UserLogin.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.Utilities.DueDateAlerter.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.AccountDetailView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.AssetDetailView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.CustodianSelectionSearch.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.CustodianDetailView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewTransfer.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewAccount.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewECWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.MainWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.NewAssetWindow.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base_Oversight_Accumulator.Properties.Resources.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base Oversight Accumulator.csproj.GenerateResource.Cache
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base Oversight Accumulator.csprojResolveAssemblyReference.cache
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\bin\Release\Base Oversight Accumulator.exe.manifest
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\bin\Release\Base Oversight Accumulator.application
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\bin\Release\Base Oversight Accumulator.exe
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\bin\Release\Base Oversight Accumulator.pdb
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\bin\Release\MySql.Data.dll
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\bin\Release\MySql.Data.Entity.dll
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\bin\Release\MySql.Web.dll
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base Oversight Accumulator.TrustInfo.xml
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base Oversight Accumulator.exe.manifest
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base Oversight Accumulator.application
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base Oversight Accumulator.exe
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Release\Base Oversight Accumulator.pdb

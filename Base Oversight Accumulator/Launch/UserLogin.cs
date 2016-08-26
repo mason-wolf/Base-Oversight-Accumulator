@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.IO;
 using MySql.Data.MySqlClient;
+using System.Reflection;
 
 namespace Base_Oversight_Accumulator
 {
@@ -18,6 +19,8 @@ namespace Base_Oversight_Accumulator
         public bool PasswordFocused;
         public UserLogin()
         {
+
+
             InitializeComponent();
 
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -60,7 +63,7 @@ namespace Base_Oversight_Accumulator
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default.ServerAddress = ServerAddressField.Text;
             string username = UsernameField.Text;
             string password = PasswordField.Text;
 
@@ -118,6 +121,10 @@ namespace Base_Oversight_Accumulator
         private void UserLogin_Load(object sender, EventArgs e)
         {
             ServerAddressField.Text = Properties.Settings.Default.ServerAddress;
+            Version version = Assembly.GetExecutingAssembly().GetName().Version;
+
+            this.Text = string.Format(" Boa - Version {0}.{1}.{2}",
+            version.Major, version.Minor, version.Build, version.Revision);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
