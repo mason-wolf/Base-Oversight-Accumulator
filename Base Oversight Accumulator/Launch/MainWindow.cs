@@ -23,14 +23,16 @@ namespace Base_Oversight_Accumulator
 {
     public partial class MainWindow : Form
     {
-        /// <summary>
-        /// BOAUser -- Set at user login to identify who is running the application. Used to update Action log 
-        /// showing who does what and when.
-        /// </summary>
+        // set user profile
         public string BOAUser { get; set; }
+
+        // accessors for overview section to use for quick views
         public string QuickViewAccount { get; set; }
         public string QuickViewItem { get; set; }
         public string QuickViewSerialNumber { get; set; }
+        public List<string> BackwardPages = new List<string>();
+        public List<string> ForwardPages = new List<string>();
+        public bool SearchEnabled;
 
         public MainWindow(string username)
         {
@@ -779,38 +781,46 @@ namespace Base_Oversight_Accumulator
 
         private void AssetDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string AssetID = AssetDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            QuickViewItem = AssetID;
-            DetailViewBox.Visible = false;
-            AssetDetailBox.Visible = true;
-            AssetDetail.Clear();
-            dbconnect mysql = new dbconnect();
-            mysql.OpenConnection();
-            mysql.SelectQuery("SELECT * from assets where id='" + AssetID + "'");
-            while (mysql.Result.Read())
+            try
             {
-                string manufacturer = mysql.Reader("manufacturer");
-                string model = mysql.Reader("model");
-                QuickViewSerialNumber = mysql.Reader("serialnumber");
-                QuickViewAccount = mysql.Reader("accountnumber");
+                string AssetID = AssetDataView.Rows[e.RowIndex].Cells[0].Value.ToString();
+                QuickViewItem = AssetID;
+                DetailViewBox.Visible = false;
+                AssetDetailBox.Visible = true;
+                AssetDetail.Clear();
+                dbconnect mysql = new dbconnect();
+                mysql.OpenConnection();
+                mysql.SelectQuery("SELECT * from assets where id='" + AssetID + "'");
+                while (mysql.Result.Read())
+                {
+                    string manufacturer = mysql.Reader("manufacturer");
+                    string model = mysql.Reader("model");
+                    QuickViewSerialNumber = mysql.Reader("serialnumber");
+                    QuickViewAccount = mysql.Reader("accountnumber");
 
-                AssetDetailBox.Text = QuickViewSerialNumber;
-                AssetDetail.AppendText(manufacturer + " " + model + "\n\n");
+             //       AssetDetailBox.Text = QuickViewSerialNumber;
+                    AssetDetail.AppendText(manufacturer + " " + model + " " + QuickViewSerialNumber + "\n\n");
+                }
+                mysql.SelectQuery("SELECT * from log where action LIKE '%" + QuickViewSerialNumber + "%' ORDER BY ID desc");
+
+                while (mysql.Result.Read())
+                {
+                    string date = mysql.Reader("date");
+                    date = date.Remove(date.Length - 11);
+                    string action = mysql.Reader("action");
+                    AssetDetail.AppendText(date + " " + action + "\n\n");
+                }
+
+                //        HighlightText(AssetDetail, QuickViewSerialNumber, Color.Green);
+                string PageContent = AssetDetail.Text;
+                BackwardPages.Add(PageContent);
+                BackButton.Enabled = true;
+                ForwardButton.Enabled = true;
+                mysql.CloseConnection();
             }
-            mysql.SelectQuery("SELECT * from log where action LIKE '%" + QuickViewSerialNumber + "%' ORDER BY ID desc");
-
-            while (mysql.Result.Read())
-            {
-                string date = mysql.Reader("date");
-                date = date.Remove(date.Length - 11);
-                string action = mysql.Reader("action");
-                AssetDetail.AppendText(date + " " + action + "\n\n");
-            }
-
-    //        HighlightText(AssetDetail, QuickViewSerialNumber, Color.Green);
-
-            mysql.CloseConnection();
+            catch { }
         }
+
         private void HighlightText(RichTextBox myRtb, string word, Color color)
         {
 
@@ -832,6 +842,62 @@ namespace Base_Oversight_Accumulator
             myRtb.SelectionStart = s_start;
             myRtb.SelectionLength = 0;
             myRtb.SelectionColor = Color.Black;
+        }
+
+        private void MainOverviewButton_Click(object sender, EventArgs e)
+        {
+            AssetDetailBox.Visible = false;
+            DetailViewBox.Visible = true;
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string PageContent = AssetDetail.Text;
+                ForwardPages.Add(PageContent);
+                var LastPage = BackwardPages[BackwardPages.Count - 2];
+                AssetDetail.Text = LastPage;
+                BackButton.Enabled = false;
+                ForwardButton.Enabled = true;
+            }
+            catch
+            {
+            }
+        }
+
+        private void ForwardButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var FirstPage = ForwardPages.Last();
+                AssetDetail.Text = FirstPage;
+                BackButton.Enabled = true;
+                ForwardButton.Enabled = false;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void OverviewSearch_TextChanged(object sender, EventArgs e)
+        {
+                    HighlightText(AssetDetail, OverviewSearch.Text, Color.Green);
+        }
+
+        private void SearchOverviewButton_Click(object sender, EventArgs e)
+        {
+            if(SearchEnabled == false)
+            {
+                OverviewSearch.Visible = true;
+                SearchEnabled = true;
+            }
+            else
+            {
+                OverviewSearch.Visible = false;
+                SearchEnabled = false;
+            }
         }
     } 
     }

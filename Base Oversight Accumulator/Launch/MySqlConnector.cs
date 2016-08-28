@@ -151,7 +151,5 @@ namespace Base_Oversight_Accumulator
             string FetchedRow = Convert.ToString(Result[row]);
             return FetchedRow;
         }
-
-
     }
-    }
+}

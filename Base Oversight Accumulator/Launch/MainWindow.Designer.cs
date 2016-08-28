@@ -147,14 +147,23 @@
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DetailViewBox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.Overview = new System.Windows.Forms.DataGridView();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssetDetailBox = new System.Windows.Forms.GroupBox();
+            this.OverviewSearch = new System.Windows.Forms.TextBox();
+            this.SearchOverviewButton = new System.Windows.Forms.Button();
+            this.ForwardButton = new System.Windows.Forms.Button();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.MainOverviewButton = new System.Windows.Forms.Button();
             this.AssetDetail = new System.Windows.Forms.RichTextBox();
             this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.ConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button4 = new System.Windows.Forms.Button();
             this.ActionReportDataView.SuspendLayout();
             this.Assets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
@@ -191,7 +200,7 @@
             this.ActionReportDataView.Location = new System.Drawing.Point(12, 162);
             this.ActionReportDataView.Name = "ActionReportDataView";
             this.ActionReportDataView.SelectedIndex = 0;
-            this.ActionReportDataView.Size = new System.Drawing.Size(1792, 1381);
+            this.ActionReportDataView.Size = new System.Drawing.Size(1792, 1330);
             this.ActionReportDataView.TabIndex = 0;
             // 
             // Assets
@@ -200,7 +209,7 @@
             this.Assets.Location = new System.Drawing.Point(10, 48);
             this.Assets.Name = "Assets";
             this.Assets.Padding = new System.Windows.Forms.Padding(3);
-            this.Assets.Size = new System.Drawing.Size(1772, 1323);
+            this.Assets.Size = new System.Drawing.Size(1772, 1272);
             this.Assets.TabIndex = 0;
             this.Assets.Text = "Assets";
             this.Assets.UseVisualStyleBackColor = true;
@@ -235,7 +244,7 @@
             this.AssetDataView.RowHeadersVisible = false;
             this.AssetDataView.RowHeadersWidth = 100;
             this.AssetDataView.RowTemplate.Height = 40;
-            this.AssetDataView.Size = new System.Drawing.Size(1782, 1381);
+            this.AssetDataView.Size = new System.Drawing.Size(1782, 1330);
             this.AssetDataView.TabIndex = 1;
             this.AssetDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDataView_CellContentClick);
             this.AssetDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDataView_CellDoubleClick);
@@ -324,7 +333,7 @@
             this.Custodians.Location = new System.Drawing.Point(10, 48);
             this.Custodians.Name = "Custodians";
             this.Custodians.Padding = new System.Windows.Forms.Padding(3);
-            this.Custodians.Size = new System.Drawing.Size(1772, 1323);
+            this.Custodians.Size = new System.Drawing.Size(1772, 1286);
             this.Custodians.TabIndex = 1;
             this.Custodians.Text = "Equipment Custodians";
             // 
@@ -428,7 +437,7 @@
             this.Accounts.Location = new System.Drawing.Point(10, 48);
             this.Accounts.Name = "Accounts";
             this.Accounts.Padding = new System.Windows.Forms.Padding(3);
-            this.Accounts.Size = new System.Drawing.Size(1772, 1323);
+            this.Accounts.Size = new System.Drawing.Size(1772, 1286);
             this.Accounts.TabIndex = 2;
             this.Accounts.Text = "Accounts";
             this.Accounts.UseVisualStyleBackColor = true;
@@ -557,7 +566,7 @@
             this.Transfers.Location = new System.Drawing.Point(10, 48);
             this.Transfers.Name = "Transfers";
             this.Transfers.Padding = new System.Windows.Forms.Padding(3);
-            this.Transfers.Size = new System.Drawing.Size(1772, 1323);
+            this.Transfers.Size = new System.Drawing.Size(1772, 1286);
             this.Transfers.TabIndex = 3;
             this.Transfers.Text = "Transfers";
             this.Transfers.UseVisualStyleBackColor = true;
@@ -671,7 +680,7 @@
             this.Issuances.Location = new System.Drawing.Point(10, 48);
             this.Issuances.Name = "Issuances";
             this.Issuances.Padding = new System.Windows.Forms.Padding(3);
-            this.Issuances.Size = new System.Drawing.Size(1772, 1323);
+            this.Issuances.Size = new System.Drawing.Size(1772, 1286);
             this.Issuances.TabIndex = 4;
             this.Issuances.Text = "Issued Items";
             this.Issuances.UseVisualStyleBackColor = true;
@@ -769,7 +778,7 @@
             this.Actions.Location = new System.Drawing.Point(10, 48);
             this.Actions.Name = "Actions";
             this.Actions.Padding = new System.Windows.Forms.Padding(3);
-            this.Actions.Size = new System.Drawing.Size(1772, 1323);
+            this.Actions.Size = new System.Drawing.Size(1772, 1286);
             this.Actions.TabIndex = 7;
             this.Actions.Text = "Action Log";
             this.Actions.UseVisualStyleBackColor = true;
@@ -1281,14 +1290,47 @@
             // 
             this.DetailViewBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DetailViewBox.Controls.Add(this.button1);
+            this.DetailViewBox.Controls.Add(this.button2);
+            this.DetailViewBox.Controls.Add(this.button3);
             this.DetailViewBox.Controls.Add(this.Overview);
             this.DetailViewBox.Font = new System.Drawing.Font("Courier New", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetailViewBox.Location = new System.Drawing.Point(1839, 210);
             this.DetailViewBox.Name = "DetailViewBox";
-            this.DetailViewBox.Size = new System.Drawing.Size(982, 1333);
+            this.DetailViewBox.Size = new System.Drawing.Size(982, 1272);
             this.DetailViewBox.TabIndex = 3;
             this.DetailViewBox.TabStop = false;
             this.DetailViewBox.Text = "Overview";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(160, 37);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 49);
+            this.button1.TabIndex = 6;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(91, 37);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(63, 49);
+            this.button2.TabIndex = 5;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(22, 37);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(63, 49);
+            this.button3.TabIndex = 4;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Overview
             // 
@@ -1307,7 +1349,7 @@
             this.Value});
             this.Overview.Enabled = false;
             this.Overview.GridColor = System.Drawing.SystemColors.Control;
-            this.Overview.Location = new System.Drawing.Point(21, 28);
+            this.Overview.Location = new System.Drawing.Point(16, 88);
             this.Overview.Name = "Overview";
             this.Overview.ReadOnly = true;
             this.Overview.RowHeadersVisible = false;
@@ -1345,26 +1387,86 @@
             // 
             this.AssetDetailBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.AssetDetailBox.Controls.Add(this.button4);
+            this.AssetDetailBox.Controls.Add(this.OverviewSearch);
+            this.AssetDetailBox.Controls.Add(this.SearchOverviewButton);
+            this.AssetDetailBox.Controls.Add(this.ForwardButton);
+            this.AssetDetailBox.Controls.Add(this.BackButton);
+            this.AssetDetailBox.Controls.Add(this.MainOverviewButton);
             this.AssetDetailBox.Controls.Add(this.AssetDetail);
             this.AssetDetailBox.Font = new System.Drawing.Font("Courier New", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AssetDetailBox.Location = new System.Drawing.Point(1839, 210);
             this.AssetDetailBox.Name = "AssetDetailBox";
-            this.AssetDetailBox.Size = new System.Drawing.Size(982, 1333);
+            this.AssetDetailBox.Size = new System.Drawing.Size(982, 1282);
             this.AssetDetailBox.TabIndex = 4;
             this.AssetDetailBox.TabStop = false;
-            this.AssetDetailBox.Text = " ";
+            this.AssetDetailBox.Text = "Overview";
             this.AssetDetailBox.Visible = false;
+            // 
+            // OverviewSearch
+            // 
+            this.OverviewSearch.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.OverviewSearch.Location = new System.Drawing.Point(367, 37);
+            this.OverviewSearch.Name = "OverviewSearch";
+            this.OverviewSearch.Size = new System.Drawing.Size(500, 38);
+            this.OverviewSearch.TabIndex = 5;
+            this.OverviewSearch.Visible = false;
+            this.OverviewSearch.TextChanged += new System.EventHandler(this.OverviewSearch_TextChanged);
+            // 
+            // SearchOverviewButton
+            // 
+            this.SearchOverviewButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SearchOverviewButton.BackgroundImage")));
+            this.SearchOverviewButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SearchOverviewButton.Location = new System.Drawing.Point(298, 37);
+            this.SearchOverviewButton.Name = "SearchOverviewButton";
+            this.SearchOverviewButton.Size = new System.Drawing.Size(63, 49);
+            this.SearchOverviewButton.TabIndex = 4;
+            this.SearchOverviewButton.UseVisualStyleBackColor = true;
+            this.SearchOverviewButton.Click += new System.EventHandler(this.SearchOverviewButton_Click);
+            // 
+            // ForwardButton
+            // 
+            this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
+            this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ForwardButton.Location = new System.Drawing.Point(160, 37);
+            this.ForwardButton.Name = "ForwardButton";
+            this.ForwardButton.Size = new System.Drawing.Size(63, 49);
+            this.ForwardButton.TabIndex = 3;
+            this.ForwardButton.UseVisualStyleBackColor = true;
+            this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
+            // 
+            // BackButton
+            // 
+            this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
+            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackButton.Location = new System.Drawing.Point(91, 37);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(63, 49);
+            this.BackButton.TabIndex = 2;
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // MainOverviewButton
+            // 
+            this.MainOverviewButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainOverviewButton.BackgroundImage")));
+            this.MainOverviewButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MainOverviewButton.Location = new System.Drawing.Point(22, 37);
+            this.MainOverviewButton.Name = "MainOverviewButton";
+            this.MainOverviewButton.Size = new System.Drawing.Size(63, 49);
+            this.MainOverviewButton.TabIndex = 1;
+            this.MainOverviewButton.UseVisualStyleBackColor = true;
+            this.MainOverviewButton.Click += new System.EventHandler(this.MainOverviewButton_Click);
             // 
             // AssetDetail
             // 
             this.AssetDetail.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.AssetDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AssetDetail.Font = new System.Drawing.Font("Courier New", 6.1F);
-            this.AssetDetail.Location = new System.Drawing.Point(22, 38);
+            this.AssetDetail.Location = new System.Drawing.Point(22, 101);
             this.AssetDetail.Name = "AssetDetail";
             this.AssetDetail.ReadOnly = true;
             this.AssetDetail.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.AssetDetail.Size = new System.Drawing.Size(918, 1258);
+            this.AssetDetail.Size = new System.Drawing.Size(918, 1142);
             this.AssetDetail.TabIndex = 0;
             this.AssetDetail.Text = "";
             // 
@@ -1386,6 +1488,16 @@
             this.ConnectionStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ConnectionStatus.Size = new System.Drawing.Size(251, 41);
             this.ConnectionStatus.Text = "ConnectionStatus";
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(229, 37);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(63, 49);
+            this.button4.TabIndex = 7;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
@@ -1425,6 +1537,7 @@
             this.DetailViewBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Overview)).EndInit();
             this.AssetDetailBox.ResumeLayout(false);
+            this.AssetDetailBox.PerformLayout();
             this.StatusBar.ResumeLayout(false);
             this.StatusBar.PerformLayout();
             this.ResumeLayout(false);
@@ -1559,6 +1672,15 @@
         private System.Windows.Forms.RichTextBox AssetDetail;
         private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.ToolStripStatusLabel ConnectionStatus;
+        private System.Windows.Forms.Button MainOverviewButton;
+        private System.Windows.Forms.Button ForwardButton;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox OverviewSearch;
+        private System.Windows.Forms.Button SearchOverviewButton;
+        private System.Windows.Forms.Button button4;
     }
 }
 
