@@ -65,19 +65,28 @@ namespace Base_Oversight_Accumulator
       MessageBoxDefaultButton.Button1);
             }
             else {
+                // first check to see if the item already exists
+                mysql.SelectQuery("SELECT * from assets where serialnumber='" + serialnumber + "'");
+                if (!mysql.Result.Read())
+                {
+                    string NewAssetQuery = "INSERT INTO assets(item, manufacturer, model, serialnumber, accountnumber, organization, ec, building, room, value, notes) VALUES ('" +
+                                    item.ToUpper() + "','" + manufacturer + "','" +
+                                    model + "','" + serialnumber + "','" + owner + "','" + organization + "','" +
+                                    ec + "','" + building + "','" + room + "','" + value + "','" + notes + "')";
 
-                string NewAssetQuery = "INSERT INTO assets(item, manufacturer, model, serialnumber, accountnumber, organization, ec, building, room, value, notes) VALUES ('" +
-                                item.ToUpper() + "','" + manufacturer + "','" +
-                                model + "','" + serialnumber + "','" + owner + "','" + organization + "','" +
-                                ec + "','" + building + "','" + room + "','" + value + "','" + notes + "')";
+                    mysql.InsertQuery(NewAssetQuery);
+                    Settings.Default.WorkingCustodian = ec;
+                    Settings.Default.WorkingOrganization = organization;
+                    Settings.Default.WorkingAccount = owner;
+                    Settings.Default.Save();
+                    this.Close();
+                    mysql.CloseConnection();
+                }
+                else
+                {
+                    MessageBox.Show("Asset already exists.");
+                }
 
-                mysql.InsertQuery(NewAssetQuery);
-                Settings.Default.WorkingCustodian = ec;
-                Settings.Default.WorkingOrganization = organization;
-                Settings.Default.WorkingAccount = owner;
-                Settings.Default.Save();
-                this.Close();
-                
             }
           
         }

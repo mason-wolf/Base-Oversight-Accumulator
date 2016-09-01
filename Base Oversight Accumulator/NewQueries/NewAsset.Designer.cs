@@ -63,9 +63,10 @@
             // Item
             // 
             this.Item.AutoSize = true;
-            this.Item.Location = new System.Drawing.Point(140, 128);
+            this.Item.Location = new System.Drawing.Point(105, 103);
+            this.Item.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Item.Name = "Item";
-            this.Item.Size = new System.Drawing.Size(77, 32);
+            this.Item.Size = new System.Drawing.Size(58, 25);
             this.Item.TabIndex = 0;
             this.Item.Text = "Item:";
             // 
@@ -83,86 +84,98 @@
             "Phone",
             "LMR",
             "Switch",
+            "Server",
+            "TV",
             "Other"});
-            this.NewItemType.Location = new System.Drawing.Point(274, 128);
+            this.NewItemType.Location = new System.Drawing.Point(206, 103);
+            this.NewItemType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewItemType.Name = "NewItemType";
-            this.NewItemType.Size = new System.Drawing.Size(200, 39);
+            this.NewItemType.Size = new System.Drawing.Size(151, 33);
             this.NewItemType.TabIndex = 1;
             // 
             // NewItemManufacturer
             // 
             this.NewItemManufacturer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewItemManufacturer.Location = new System.Drawing.Point(274, 194);
+            this.NewItemManufacturer.Location = new System.Drawing.Point(206, 156);
+            this.NewItemManufacturer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewItemManufacturer.Name = "NewItemManufacturer";
-            this.NewItemManufacturer.Size = new System.Drawing.Size(500, 38);
+            this.NewItemManufacturer.Size = new System.Drawing.Size(376, 31);
             this.NewItemManufacturer.TabIndex = 2;
             // 
             // Manufacturer
             // 
             this.Manufacturer.AutoSize = true;
-            this.Manufacturer.Location = new System.Drawing.Point(27, 200);
+            this.Manufacturer.Location = new System.Drawing.Point(20, 161);
+            this.Manufacturer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Manufacturer.Name = "Manufacturer";
-            this.Manufacturer.Size = new System.Drawing.Size(190, 32);
+            this.Manufacturer.Size = new System.Drawing.Size(145, 25);
             this.Manufacturer.TabIndex = 5;
             this.Manufacturer.Text = "Manufacturer:";
             // 
             // SerialNumber
             // 
             this.SerialNumber.AutoSize = true;
-            this.SerialNumber.Location = new System.Drawing.Point(13, 258);
+            this.SerialNumber.Location = new System.Drawing.Point(10, 208);
+            this.SerialNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SerialNumber.Name = "SerialNumber";
-            this.SerialNumber.Size = new System.Drawing.Size(204, 32);
+            this.SerialNumber.Size = new System.Drawing.Size(154, 25);
             this.SerialNumber.TabIndex = 6;
             this.SerialNumber.Text = "Serial Number:";
             // 
             // NewItemSerialNumber
             // 
             this.NewItemSerialNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewItemSerialNumber.Location = new System.Drawing.Point(274, 258);
+            this.NewItemSerialNumber.Location = new System.Drawing.Point(206, 208);
+            this.NewItemSerialNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewItemSerialNumber.Name = "NewItemSerialNumber";
-            this.NewItemSerialNumber.Size = new System.Drawing.Size(275, 38);
+            this.NewItemSerialNumber.Size = new System.Drawing.Size(207, 31);
             this.NewItemSerialNumber.TabIndex = 3;
             // 
             // AccountNumber
             // 
             this.AccountNumber.AutoSize = true;
-            this.AccountNumber.Location = new System.Drawing.Point(111, 322);
+            this.AccountNumber.Location = new System.Drawing.Point(83, 260);
+            this.AccountNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AccountNumber.Name = "AccountNumber";
-            this.AccountNumber.Size = new System.Drawing.Size(94, 32);
+            this.AccountNumber.Size = new System.Drawing.Size(72, 25);
             this.AccountNumber.TabIndex = 8;
             this.AccountNumber.Text = "Acct#:";
             // 
             // Model
             // 
             this.Model.AutoSize = true;
-            this.Model.Location = new System.Drawing.Point(116, 465);
+            this.Model.Location = new System.Drawing.Point(87, 375);
+            this.Model.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Model.Name = "Model";
-            this.Model.Size = new System.Drawing.Size(101, 32);
+            this.Model.Size = new System.Drawing.Size(77, 25);
             this.Model.TabIndex = 10;
             this.Model.Text = "Model:";
             // 
             // NewItemModel
             // 
             this.NewItemModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewItemModel.Location = new System.Drawing.Point(274, 459);
+            this.NewItemModel.Location = new System.Drawing.Point(206, 370);
+            this.NewItemModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewItemModel.Name = "NewItemModel";
-            this.NewItemModel.Size = new System.Drawing.Size(500, 38);
+            this.NewItemModel.Size = new System.Drawing.Size(376, 31);
             this.NewItemModel.TabIndex = 6;
             // 
             // Organization
             // 
             this.Organization.AutoSize = true;
-            this.Organization.Location = new System.Drawing.Point(24, 390);
+            this.Organization.Location = new System.Drawing.Point(18, 315);
+            this.Organization.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Organization.Name = "Organization";
-            this.Organization.Size = new System.Drawing.Size(193, 32);
+            this.Organization.Size = new System.Drawing.Size(145, 25);
             this.Organization.TabIndex = 14;
             this.Organization.Text = "Organiziation:";
             // 
             // AddAssetButton
             // 
-            this.AddAssetButton.Location = new System.Drawing.Point(274, 762);
+            this.AddAssetButton.Location = new System.Drawing.Point(206, 615);
+            this.AddAssetButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddAssetButton.Name = "AddAssetButton";
-            this.AddAssetButton.Size = new System.Drawing.Size(150, 52);
+            this.AddAssetButton.Size = new System.Drawing.Size(112, 42);
             this.AddAssetButton.TabIndex = 10;
             this.AddAssetButton.Text = "Add";
             this.AddAssetButton.UseVisualStyleBackColor = true;
@@ -171,25 +184,28 @@
             // NewItemOwner
             // 
             this.NewItemOwner.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewItemOwner.Location = new System.Drawing.Point(274, 322);
+            this.NewItemOwner.Location = new System.Drawing.Point(206, 260);
+            this.NewItemOwner.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewItemOwner.Name = "NewItemOwner";
-            this.NewItemOwner.Size = new System.Drawing.Size(100, 38);
+            this.NewItemOwner.Size = new System.Drawing.Size(76, 31);
             this.NewItemOwner.TabIndex = 4;
             // 
             // NewItemOrganization
             // 
             this.NewItemOrganization.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewItemOrganization.Location = new System.Drawing.Point(274, 390);
+            this.NewItemOrganization.Location = new System.Drawing.Point(206, 315);
+            this.NewItemOrganization.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewItemOrganization.Name = "NewItemOrganization";
-            this.NewItemOrganization.Size = new System.Drawing.Size(500, 38);
+            this.NewItemOrganization.Size = new System.Drawing.Size(376, 31);
             this.NewItemOrganization.TabIndex = 5;
             // 
             // EC
             // 
             this.EC.AutoSize = true;
-            this.EC.Location = new System.Drawing.Point(155, 74);
+            this.EC.Location = new System.Drawing.Point(116, 60);
+            this.EC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EC.Name = "EC";
-            this.EC.Size = new System.Drawing.Size(62, 32);
+            this.EC.Size = new System.Drawing.Size(47, 25);
             this.EC.TabIndex = 19;
             this.EC.Text = "EC:";
             // 
@@ -197,68 +213,76 @@
             // 
             this.NewEC.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NewEC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewEC.Location = new System.Drawing.Point(274, 68);
+            this.NewEC.Location = new System.Drawing.Point(206, 55);
+            this.NewEC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewEC.Name = "NewEC";
             this.NewEC.ReadOnly = true;
-            this.NewEC.Size = new System.Drawing.Size(350, 38);
+            this.NewEC.Size = new System.Drawing.Size(264, 31);
             this.NewEC.TabIndex = 0;
             // 
             // Building
             // 
             this.Building.AutoSize = true;
-            this.Building.Location = new System.Drawing.Point(90, 543);
+            this.Building.Location = new System.Drawing.Point(68, 438);
+            this.Building.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Building.Name = "Building";
-            this.Building.Size = new System.Drawing.Size(127, 32);
+            this.Building.Size = new System.Drawing.Size(95, 25);
             this.Building.TabIndex = 21;
             this.Building.Text = "Building:";
             // 
             // Room
             // 
             this.Room.AutoSize = true;
-            this.Room.Location = new System.Drawing.Point(119, 614);
+            this.Room.Location = new System.Drawing.Point(89, 495);
+            this.Room.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Room.Name = "Room";
-            this.Room.Size = new System.Drawing.Size(98, 32);
+            this.Room.Size = new System.Drawing.Size(74, 25);
             this.Room.TabIndex = 22;
             this.Room.Text = "Room:";
             // 
             // NewBuilding
             // 
             this.NewBuilding.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewBuilding.Location = new System.Drawing.Point(274, 536);
+            this.NewBuilding.Location = new System.Drawing.Point(206, 432);
+            this.NewBuilding.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewBuilding.Name = "NewBuilding";
-            this.NewBuilding.Size = new System.Drawing.Size(100, 38);
+            this.NewBuilding.Size = new System.Drawing.Size(76, 31);
             this.NewBuilding.TabIndex = 7;
             // 
             // NewRoom
             // 
             this.NewRoom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewRoom.Location = new System.Drawing.Point(274, 607);
+            this.NewRoom.Location = new System.Drawing.Point(206, 490);
+            this.NewRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewRoom.Name = "NewRoom";
-            this.NewRoom.Size = new System.Drawing.Size(100, 38);
+            this.NewRoom.Size = new System.Drawing.Size(76, 31);
             this.NewRoom.TabIndex = 8;
             // 
             // EstimatedValue
             // 
             this.EstimatedValue.AutoSize = true;
-            this.EstimatedValue.Location = new System.Drawing.Point(64, 686);
+            this.EstimatedValue.Location = new System.Drawing.Point(48, 553);
+            this.EstimatedValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EstimatedValue.Name = "EstimatedValue";
-            this.EstimatedValue.Size = new System.Drawing.Size(153, 32);
+            this.EstimatedValue.Size = new System.Drawing.Size(116, 25);
             this.EstimatedValue.TabIndex = 25;
             this.EstimatedValue.Text = "Est. Value:";
             // 
             // NewEstimatedValue
             // 
             this.NewEstimatedValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.NewEstimatedValue.Location = new System.Drawing.Point(274, 686);
+            this.NewEstimatedValue.Location = new System.Drawing.Point(206, 553);
+            this.NewEstimatedValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewEstimatedValue.Name = "NewEstimatedValue";
-            this.NewEstimatedValue.Size = new System.Drawing.Size(100, 38);
+            this.NewEstimatedValue.Size = new System.Drawing.Size(76, 31);
             this.NewEstimatedValue.TabIndex = 9;
             // 
             // ECSelectionButton
             // 
-            this.ECSelectionButton.Location = new System.Drawing.Point(640, 68);
+            this.ECSelectionButton.Location = new System.Drawing.Point(480, 55);
+            this.ECSelectionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ECSelectionButton.Name = "ECSelectionButton";
-            this.ECSelectionButton.Size = new System.Drawing.Size(150, 52);
+            this.ECSelectionButton.Size = new System.Drawing.Size(112, 42);
             this.ECSelectionButton.TabIndex = 1;
             this.ECSelectionButton.Text = "Select";
             this.ECSelectionButton.UseVisualStyleBackColor = true;
@@ -267,26 +291,29 @@
             // NotesLabel
             // 
             this.NotesLabel.AutoSize = true;
-            this.NotesLabel.Location = new System.Drawing.Point(865, 49);
+            this.NotesLabel.Location = new System.Drawing.Point(649, 40);
+            this.NotesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NotesLabel.Name = "NotesLabel";
-            this.NotesLabel.Size = new System.Drawing.Size(97, 32);
+            this.NotesLabel.Size = new System.Drawing.Size(74, 25);
             this.NotesLabel.TabIndex = 28;
             this.NotesLabel.Text = "Notes:";
             // 
             // NewAssetNotes
             // 
-            this.NewAssetNotes.Location = new System.Drawing.Point(871, 99);
+            this.NewAssetNotes.Location = new System.Drawing.Point(653, 80);
+            this.NewAssetNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewAssetNotes.Name = "NewAssetNotes";
-            this.NewAssetNotes.Size = new System.Drawing.Size(539, 698);
+            this.NewAssetNotes.Size = new System.Drawing.Size(405, 564);
             this.NewAssetNotes.TabIndex = 29;
             this.NewAssetNotes.Text = "";
             // 
             // AddBatchButton
             // 
             this.AddBatchButton.Enabled = false;
-            this.AddBatchButton.Location = new System.Drawing.Point(457, 762);
+            this.AddBatchButton.Location = new System.Drawing.Point(343, 615);
+            this.AddBatchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddBatchButton.Name = "AddBatchButton";
-            this.AddBatchButton.Size = new System.Drawing.Size(213, 52);
+            this.AddBatchButton.Size = new System.Drawing.Size(160, 42);
             this.AddBatchButton.TabIndex = 30;
             this.AddBatchButton.Text = "Add Batch";
             this.AddBatchButton.UseVisualStyleBackColor = true;
@@ -295,9 +322,10 @@
             // AssetBatchCheckBox
             // 
             this.AssetBatchCheckBox.AutoSize = true;
-            this.AssetBatchCheckBox.Location = new System.Drawing.Point(573, 260);
+            this.AssetBatchCheckBox.Location = new System.Drawing.Point(430, 210);
+            this.AssetBatchCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AssetBatchCheckBox.Name = "AssetBatchCheckBox";
-            this.AssetBatchCheckBox.Size = new System.Drawing.Size(183, 36);
+            this.AssetBatchCheckBox.Size = new System.Drawing.Size(143, 29);
             this.AssetBatchCheckBox.TabIndex = 31;
             this.AssetBatchCheckBox.Text = "Use Batch";
             this.AssetBatchCheckBox.UseVisualStyleBackColor = true;
@@ -305,9 +333,9 @@
             // 
             // NewAssetWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 902);
+            this.ClientSize = new System.Drawing.Size(1124, 727);
             this.Controls.Add(this.AssetBatchCheckBox);
             this.Controls.Add(this.AddBatchButton);
             this.Controls.Add(this.NewAssetNotes);
@@ -337,6 +365,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NewAssetWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " New Asset";

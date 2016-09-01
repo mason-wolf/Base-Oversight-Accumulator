@@ -58,7 +58,7 @@ namespace Base_Oversight_Accumulator
 
                 TransferDataView.Rows.Clear();
                 TransferDataView.RowTemplate.Height = 20;
-
+ 
                 IssuedDataView.Rows.Clear();
                 IssuedDataView.RowTemplate.Height = 20;
 
@@ -898,6 +898,11 @@ namespace Base_Oversight_Accumulator
                 OverviewSearch.Visible = false;
                 SearchEnabled = false;
             }
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
         }
     } 
     }

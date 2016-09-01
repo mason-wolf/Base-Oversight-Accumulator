@@ -108,10 +108,10 @@ namespace Base_Oversight_Accumulator
             ECDataTable.Columns.Add("Last Name", typeof(String));
             ECDataTable.Columns.Add("First Name", typeof(String));
             ECDataTable.Columns.Add("Rank", typeof(String));
-            ECDataTable.Columns.Add("Org", typeof(String));
+            ECDataTable.Columns.Add("Acct#", typeof(String));
             ECDataTable.Columns.Add("Email", typeof(String));
             ECDataTable.Columns.Add("DSN", typeof(String));
-            ECDataTable.Columns.Add("Acct#", typeof(String));
+            ECDataTable.Columns.Add("Org", typeof(String));
 
             while (mysql.Result.Read())
             {
@@ -126,7 +126,7 @@ namespace Base_Oversight_Accumulator
                 string ECLocation = mysql.Reader("location");
 
 
-                ECDataTable.Rows.Add(ECID, ECLastName, ECFirstName, ECRank, ECOrg, ECEmail, ECDSN, ECAccount);
+                ECDataTable.Rows.Add(ECID, ECLastName, ECFirstName, ECRank, ECAccount, ECEmail, ECDSN, ECOrg);
                 
             }
             ECDataView.DataSource = ECDataTable;

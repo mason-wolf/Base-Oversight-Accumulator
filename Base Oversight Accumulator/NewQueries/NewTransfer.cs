@@ -28,22 +28,35 @@ namespace Base_Oversight_Accumulator
             // retrieve losing account details
 
             string LosingAccount = LosingAccountField.Text;
+            string SerialNumber = SerialNumberField.Text;
 
             dbconnect mysql = new dbconnect();
-            mysql.SelectQuery("SELECT * FROM itam where account='" + LosingAccount + "'");
 
+            // search for item on the account, if it's not found prevent the user from transfering
 
-                while (mysql.Result.Read())
+            mysql.SelectQuery("SELECT * from assets where serialnumber='" + SerialNumber + "'");
+                if (!mysql.Result.Read())
                 {
-                string account = mysql.Reader("account");
-                string org = mysql.Reader("org");
-                string ec = mysql.Reader("ec");
+                    MessageBox.Show("Unable to find asset '" + SerialNumber + "' on account '" + LosingAccount + "'");
+                }
+                else
+                {
+                    mysql.CloseConnection();
+                    mysql.SelectQuery("SELECT * FROM itam where account='" + LosingAccount + "'");
 
-                    LosingAccountDetail.Text = account.ToUpper();
-                    LosingOrgDetail.Text = org.ToUpper();
-                    LosingECDetail.Text = ec.ToUpper();
-            }
-            mysql.CloseConnection();
+                    while (mysql.Result.Read())
+                    {
+                        string account = mysql.Reader("account");
+                        string org = mysql.Reader("org");
+                        string ec = mysql.Reader("ec");
+
+                        LosingAccountDetail.Text = account.ToUpper();
+                        LosingOrgDetail.Text = org.ToUpper();
+                        LosingECDetail.Text = ec.ToUpper();
+                    }
+                    mysql.CloseConnection();
+                }
+
 
             // gaining account details
             string GainingAccount = GainingAccountField.Text;
@@ -124,7 +137,7 @@ namespace Base_Oversight_Accumulator
                 item + "','" + transferto + "','" + transferfrom + "','" + transferdate + "','" + serialnumber + "','" +
                 losingaccount + "','" + gainingaccount + "','" + TransferedBy+ "','" + notes + "')";
 
-                string TransferLog = "INSERT INTO log (date, who, action, account) VALUES('" + DateTime.Now.ToString() + "','" + this.TransferedBy + "','TRANSFERED " + item + " " + serialnumber + " FROM " + transferfrom + " TO " + transferto + "','" + gainingaccount + "')";
+                string TransferLog = "INSERT INTO log (date, who, action, account) VALUES('" + DateTime.Now.ToString() + "','" + this.TransferedBy + "','TRANSFERED " + item + " " + serialnumber + " FROM " + losingaccount + " TO " + gainingaccount + "','" + gainingaccount + "')";
 
                 mysql.InsertQuery(TransferHistory);
                 mysql.InsertQuery(TransferLog);
