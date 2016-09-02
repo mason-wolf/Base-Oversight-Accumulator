@@ -89,11 +89,9 @@ namespace Base_Oversight_Accumulator
                     string account = mysql.Reader("accountnumber");
                     string organization = mysql.Reader("organization");
                     string ec = mysql.Reader("ec");
-                    string building = mysql.Reader("building");
-                    string room = mysql.Reader("room");
                     int ValueFromInt = Int32.Parse(Convert.ToString(mysql.Reader("value")));
                     string value = "$" + ValueFromInt.ToString("N0");
-                    AssetDataView.Rows.Add(id, item, serialnumber, manufacturer, model, account, organization, ec, building, room, value);
+                    AssetDataView.Rows.Add(id, item, serialnumber, manufacturer, model, account, organization, ec, value);
                     assetCount++;
                     if (assetCount == 1000)
                     {
@@ -284,6 +282,16 @@ namespace Base_Oversight_Accumulator
                     {
                         c.DefaultCellStyle.Font = new Font("Courier New", 8F);
                     }
+                }
+
+                // populate action log 
+                QuickLogView.Clear();
+                mysql.SelectQuery("SELECT * from log order by id desc");
+                while(mysql.Result.Read())
+                {
+                    string who = mysql.Reader("who");
+                    string action = mysql.Reader("action");
+                    QuickLogView.AppendText(who + " " + action + "\n\n");
                 }
                 mysql.CloseConnection();
                 MySqlConnection.ClearAllPools();

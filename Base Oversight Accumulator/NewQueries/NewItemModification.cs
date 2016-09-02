@@ -100,6 +100,18 @@ namespace Base_Oversight_Accumulator.NewQueries
 
             UpdateItemLocation.Show();
         }
+
+        private void ChangeOrgButton_Click(object sender, EventArgs e)
+        {
+            UpdateItemOrganization UpdateItemOrganization = new UpdateItemOrganization();
+
+            foreach (DataGridViewRow row in AssetDataView.SelectedRows)
+            {
+                UpdateItemOrganization.ItemsToUpdate.Add(row.Cells[0].Value.ToString());
+            }
+
+            UpdateItemOrganization.Show();
+        }
     }
 }
 

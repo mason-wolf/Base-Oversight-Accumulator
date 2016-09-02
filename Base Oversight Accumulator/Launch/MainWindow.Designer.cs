@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ActionReportDataView = new System.Windows.Forms.TabControl();
             this.Assets = new System.Windows.Forms.TabPage();
             this.AssetDataView = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AssetType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AccountNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Organization = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstimatedValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Custodians = new System.Windows.Forms.TabPage();
             this.ECDataView = new System.Windows.Forms.DataGridView();
             this.EquipmentCustodianID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +59,16 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Transfers = new System.Windows.Forms.TabPage();
             this.TransferDataView = new System.Windows.Forms.DataGridView();
+            this.TransferID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransferItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransferedTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransferedFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransferDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransferSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LosingAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GainingAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransferedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Issuances = new System.Windows.Forms.TabPage();
             this.IssuedDataView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +136,7 @@
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DetailViewBox = new System.Windows.Forms.GroupBox();
+            this.QuickLogView = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -154,16 +154,15 @@
             this.AssetDetail = new System.Windows.Forms.RichTextBox();
             this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.ConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransferedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GainingAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LosingAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransferSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransferDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransferedFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransferedTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransferItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransferID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssetType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccountNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Organization = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstimatedValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActionReportDataView.SuspendLayout();
             this.Assets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
@@ -197,21 +196,21 @@
             this.ActionReportDataView.Controls.Add(this.Issuances);
             this.ActionReportDataView.Controls.Add(this.Actions);
             this.ActionReportDataView.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.ActionReportDataView.Location = new System.Drawing.Point(9, 131);
-            this.ActionReportDataView.Margin = new System.Windows.Forms.Padding(2);
+            this.ActionReportDataView.Location = new System.Drawing.Point(12, 162);
+            this.ActionReportDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ActionReportDataView.Name = "ActionReportDataView";
             this.ActionReportDataView.SelectedIndex = 0;
-            this.ActionReportDataView.Size = new System.Drawing.Size(1344, 1084);
+            this.ActionReportDataView.Size = new System.Drawing.Size(1792, 2158);
             this.ActionReportDataView.TabIndex = 0;
             // 
             // Assets
             // 
             this.Assets.Controls.Add(this.AssetDataView);
-            this.Assets.Location = new System.Drawing.Point(8, 39);
-            this.Assets.Margin = new System.Windows.Forms.Padding(2);
+            this.Assets.Location = new System.Drawing.Point(10, 48);
+            this.Assets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Assets.Name = "Assets";
-            this.Assets.Padding = new System.Windows.Forms.Padding(2);
-            this.Assets.Size = new System.Drawing.Size(1328, 1037);
+            this.Assets.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Assets.Size = new System.Drawing.Size(1772, 2100);
             this.Assets.TabIndex = 0;
             this.Assets.Text = "Assets";
             this.Assets.UseVisualStyleBackColor = true;
@@ -236,108 +235,29 @@
             this.AccountNumber,
             this.Organization,
             this.EC,
-            this.Building,
-            this.Room,
             this.EstimatedValue});
             this.AssetDataView.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.AssetDataView.Location = new System.Drawing.Point(-8, 0);
-            this.AssetDataView.Margin = new System.Windows.Forms.Padding(2);
+            this.AssetDataView.Location = new System.Drawing.Point(-11, 0);
+            this.AssetDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AssetDataView.Name = "AssetDataView";
             this.AssetDataView.ReadOnly = true;
             this.AssetDataView.RowHeadersVisible = false;
             this.AssetDataView.RowHeadersWidth = 100;
             this.AssetDataView.RowTemplate.Height = 40;
-            this.AssetDataView.Size = new System.Drawing.Size(1336, 1037);
+            this.AssetDataView.Size = new System.Drawing.Size(1781, 1813);
             this.AssetDataView.TabIndex = 1;
             this.AssetDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDataView_CellContentClick);
             this.AssetDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssetDataView_CellDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 77;
-            // 
-            // AssetType
-            // 
-            this.AssetType.HeaderText = "Item";
-            this.AssetType.Name = "AssetType";
-            this.AssetType.ReadOnly = true;
-            this.AssetType.Width = 97;
-            // 
-            // SerialNumber
-            // 
-            this.SerialNumber.HeaderText = "Serial #";
-            this.SerialNumber.Name = "SerialNumber";
-            this.SerialNumber.ReadOnly = true;
-            this.SerialNumber.Width = 130;
-            // 
-            // Manufacturer
-            // 
-            this.Manufacturer.HeaderText = "Manufacturer";
-            this.Manufacturer.Name = "Manufacturer";
-            this.Manufacturer.ReadOnly = true;
-            this.Manufacturer.Width = 184;
-            // 
-            // Model
-            // 
-            this.Model.HeaderText = "Model";
-            this.Model.Name = "Model";
-            this.Model.ReadOnly = true;
-            this.Model.Width = 116;
-            // 
-            // AccountNumber
-            // 
-            this.AccountNumber.HeaderText = "Acct#";
-            this.AccountNumber.Name = "AccountNumber";
-            this.AccountNumber.ReadOnly = true;
-            this.AccountNumber.Width = 111;
-            // 
-            // Organization
-            // 
-            this.Organization.HeaderText = "Org";
-            this.Organization.Name = "Organization";
-            this.Organization.ReadOnly = true;
-            this.Organization.Width = 92;
-            // 
-            // EC
-            // 
-            this.EC.HeaderText = "ITEC";
-            this.EC.Name = "EC";
-            this.EC.ReadOnly = true;
-            this.EC.Width = 104;
-            // 
-            // Building
-            // 
-            this.Building.HeaderText = "BLDG";
-            this.Building.Name = "Building";
-            this.Building.ReadOnly = true;
-            this.Building.Width = 114;
-            // 
-            // Room
-            // 
-            this.Room.HeaderText = "RM";
-            this.Room.Name = "Room";
-            this.Room.ReadOnly = true;
-            this.Room.Width = 90;
-            // 
-            // EstimatedValue
-            // 
-            this.EstimatedValue.HeaderText = "Est. Value";
-            this.EstimatedValue.Name = "EstimatedValue";
-            this.EstimatedValue.ReadOnly = true;
-            this.EstimatedValue.Width = 155;
             // 
             // Custodians
             // 
             this.Custodians.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Custodians.Controls.Add(this.ECDataView);
-            this.Custodians.Location = new System.Drawing.Point(8, 39);
-            this.Custodians.Margin = new System.Windows.Forms.Padding(2);
+            this.Custodians.Location = new System.Drawing.Point(10, 48);
+            this.Custodians.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Custodians.Name = "Custodians";
-            this.Custodians.Padding = new System.Windows.Forms.Padding(2);
-            this.Custodians.Size = new System.Drawing.Size(1328, 1037);
+            this.Custodians.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Custodians.Size = new System.Drawing.Size(1772, 2100);
             this.Custodians.TabIndex = 1;
             this.Custodians.Text = "Equipment Custodians";
             // 
@@ -362,14 +282,14 @@
             this.ECDSN,
             this.ECOrg,
             this.ECLocation});
-            this.ECDataView.Location = new System.Drawing.Point(-8, 0);
-            this.ECDataView.Margin = new System.Windows.Forms.Padding(2);
+            this.ECDataView.Location = new System.Drawing.Point(-11, 0);
+            this.ECDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ECDataView.Name = "ECDataView";
             this.ECDataView.ReadOnly = true;
             this.ECDataView.RowHeadersVisible = false;
             this.ECDataView.RowHeadersWidth = 100;
             this.ECDataView.RowTemplate.Height = 40;
-            this.ECDataView.Size = new System.Drawing.Size(1336, 1037);
+            this.ECDataView.Size = new System.Drawing.Size(1781, 1813);
             this.ECDataView.TabIndex = 2;
             this.ECDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ECDataView_CellDoubleClick);
             // 
@@ -378,72 +298,72 @@
             this.EquipmentCustodianID.HeaderText = "ID";
             this.EquipmentCustodianID.Name = "EquipmentCustodianID";
             this.EquipmentCustodianID.ReadOnly = true;
-            this.EquipmentCustodianID.Width = 77;
+            this.EquipmentCustodianID.Width = 96;
             // 
             // ECLastName
             // 
             this.ECLastName.HeaderText = "Last Name";
             this.ECLastName.Name = "ECLastName";
             this.ECLastName.ReadOnly = true;
-            this.ECLastName.Width = 160;
+            this.ECLastName.Width = 205;
             // 
             // ECFirstName
             // 
             this.ECFirstName.HeaderText = "First Name";
             this.ECFirstName.Name = "ECFirstName";
             this.ECFirstName.ReadOnly = true;
-            this.ECFirstName.Width = 161;
+            this.ECFirstName.Width = 206;
             // 
             // ECRank
             // 
             this.ECRank.HeaderText = "Rank";
             this.ECRank.Name = "ECRank";
             this.ECRank.ReadOnly = true;
-            this.ECRank.Width = 107;
+            this.ECRank.Width = 135;
             // 
             // ECAccountNum
             // 
             this.ECAccountNum.HeaderText = "Acct#";
             this.ECAccountNum.Name = "ECAccountNum";
             this.ECAccountNum.ReadOnly = true;
-            this.ECAccountNum.Width = 111;
+            this.ECAccountNum.Width = 140;
             // 
             // ECEmail
             // 
             this.ECEmail.HeaderText = "Email";
             this.ECEmail.Name = "ECEmail";
             this.ECEmail.ReadOnly = true;
-            this.ECEmail.Width = 110;
+            this.ECEmail.Width = 141;
             // 
             // ECDSN
             // 
             this.ECDSN.HeaderText = "DSN";
             this.ECDSN.Name = "ECDSN";
             this.ECDSN.ReadOnly = true;
-            this.ECDSN.Width = 101;
+            this.ECDSN.Width = 128;
             // 
             // ECOrg
             // 
             this.ECOrg.HeaderText = "Org";
             this.ECOrg.Name = "ECOrg";
             this.ECOrg.ReadOnly = true;
-            this.ECOrg.Width = 92;
+            this.ECOrg.Width = 116;
             // 
             // ECLocation
             // 
             this.ECLocation.HeaderText = "Location";
             this.ECLocation.Name = "ECLocation";
             this.ECLocation.ReadOnly = true;
-            this.ECLocation.Width = 139;
+            this.ECLocation.Width = 178;
             // 
             // Accounts
             // 
             this.Accounts.Controls.Add(this.AccountDataView);
-            this.Accounts.Location = new System.Drawing.Point(8, 39);
-            this.Accounts.Margin = new System.Windows.Forms.Padding(2);
+            this.Accounts.Location = new System.Drawing.Point(10, 48);
+            this.Accounts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Accounts.Name = "Accounts";
-            this.Accounts.Padding = new System.Windows.Forms.Padding(2);
-            this.Accounts.Size = new System.Drawing.Size(1328, 1037);
+            this.Accounts.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Accounts.Size = new System.Drawing.Size(1772, 2100);
             this.Accounts.TabIndex = 2;
             this.Accounts.Text = "Accounts";
             this.Accounts.UseVisualStyleBackColor = true;
@@ -458,14 +378,14 @@
             this.AccountDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.AccountDataView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.AccountDataView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.AccountDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccountDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AccountID,
@@ -477,30 +397,30 @@
             this.InventoryDue,
             this.Location,
             this.Column9});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle8;
-            this.AccountDataView.Location = new System.Drawing.Point(-8, 0);
-            this.AccountDataView.Margin = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AccountDataView.DefaultCellStyle = dataGridViewCellStyle5;
+            this.AccountDataView.Location = new System.Drawing.Point(-11, 0);
+            this.AccountDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AccountDataView.Name = "AccountDataView";
             this.AccountDataView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccountDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.AccountDataView.RowHeadersVisible = false;
             this.AccountDataView.RowHeadersWidth = 100;
             this.AccountDataView.RowTemplate.Height = 40;
-            this.AccountDataView.Size = new System.Drawing.Size(1336, 1037);
+            this.AccountDataView.Size = new System.Drawing.Size(1781, 1813);
             this.AccountDataView.TabIndex = 3;
             this.AccountDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountDataView_CellDoubleClick);
             // 
@@ -509,72 +429,72 @@
             this.AccountID.HeaderText = "ID";
             this.AccountID.Name = "AccountID";
             this.AccountID.ReadOnly = true;
-            this.AccountID.Width = 79;
+            this.AccountID.Width = 96;
             // 
             // Account
             // 
             this.Account.HeaderText = "Acct#";
             this.Account.Name = "Account";
             this.Account.ReadOnly = true;
-            this.Account.Width = 112;
+            this.Account.Width = 140;
             // 
             // AssignedEC
             // 
             this.AssignedEC.HeaderText = "Equipment Custodian";
             this.AssignedEC.Name = "AssignedEC";
             this.AssignedEC.ReadOnly = true;
-            this.AssignedEC.Width = 243;
+            this.AssignedEC.Width = 313;
             // 
             // dra
             // 
             this.dra.HeaderText = "DRA";
             this.dra.Name = "dra";
             this.dra.ReadOnly = true;
-            this.dra.Width = 104;
+            this.dra.Width = 128;
             // 
             // Org
             // 
             this.Org.HeaderText = "Org";
             this.Org.Name = "Org";
             this.Org.ReadOnly = true;
-            this.Org.Width = 93;
+            this.Org.Width = 116;
             // 
             // LastInventory
             // 
             this.LastInventory.HeaderText = "Last Inventory";
             this.LastInventory.Name = "LastInventory";
             this.LastInventory.ReadOnly = true;
-            this.LastInventory.Width = 178;
+            this.LastInventory.Width = 226;
             // 
             // InventoryDue
             // 
             this.InventoryDue.HeaderText = "Inventory Due";
             this.InventoryDue.Name = "InventoryDue";
             this.InventoryDue.ReadOnly = true;
-            this.InventoryDue.Width = 177;
+            this.InventoryDue.Width = 224;
             // 
             // Location
             // 
             this.Location.HeaderText = "Notes";
             this.Location.Name = "Location";
             this.Location.ReadOnly = true;
-            this.Location.Width = 114;
+            this.Location.Width = 143;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Status";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Width = 119;
+            this.Column9.Width = 150;
             // 
             // Transfers
             // 
             this.Transfers.Controls.Add(this.TransferDataView);
-            this.Transfers.Location = new System.Drawing.Point(8, 39);
-            this.Transfers.Margin = new System.Windows.Forms.Padding(2);
+            this.Transfers.Location = new System.Drawing.Point(10, 48);
+            this.Transfers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Transfers.Name = "Transfers";
-            this.Transfers.Padding = new System.Windows.Forms.Padding(2);
-            this.Transfers.Size = new System.Drawing.Size(1328, 1037);
+            this.Transfers.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Transfers.Size = new System.Drawing.Size(1772, 2100);
             this.Transfers.TabIndex = 3;
             this.Transfers.Text = "Transfers";
             this.Transfers.UseVisualStyleBackColor = true;
@@ -602,25 +522,95 @@
             this.TransferedBy,
             this.Notes});
             this.TransferDataView.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.TransferDataView.Location = new System.Drawing.Point(-8, 0);
-            this.TransferDataView.Margin = new System.Windows.Forms.Padding(2);
+            this.TransferDataView.Location = new System.Drawing.Point(-11, 0);
+            this.TransferDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TransferDataView.Name = "TransferDataView";
             this.TransferDataView.ReadOnly = true;
             this.TransferDataView.RowHeadersVisible = false;
             this.TransferDataView.RowHeadersWidth = 100;
-            this.TransferDataView.RowTemplate.Height = 10;
-            this.TransferDataView.Size = new System.Drawing.Size(1336, 1037);
+            this.TransferDataView.RowTemplate.Height = 20;
+            this.TransferDataView.Size = new System.Drawing.Size(1781, 1813);
             this.TransferDataView.TabIndex = 4;
             this.TransferDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TransferDataView_CellDoubleClick);
+            // 
+            // TransferID
+            // 
+            this.TransferID.HeaderText = "ID";
+            this.TransferID.Name = "TransferID";
+            this.TransferID.ReadOnly = true;
+            this.TransferID.Width = 96;
+            // 
+            // TransferItem
+            // 
+            this.TransferItem.HeaderText = "Item";
+            this.TransferItem.Name = "TransferItem";
+            this.TransferItem.ReadOnly = true;
+            this.TransferItem.Width = 123;
+            // 
+            // TransferedTo
+            // 
+            this.TransferedTo.HeaderText = "Transfered To";
+            this.TransferedTo.Name = "TransferedTo";
+            this.TransferedTo.ReadOnly = true;
+            this.TransferedTo.Width = 226;
+            // 
+            // TransferedFrom
+            // 
+            this.TransferedFrom.HeaderText = "Transfered From";
+            this.TransferedFrom.Name = "TransferedFrom";
+            this.TransferedFrom.ReadOnly = true;
+            this.TransferedFrom.Width = 255;
+            // 
+            // TransferDate
+            // 
+            this.TransferDate.HeaderText = "Date";
+            this.TransferDate.Name = "TransferDate";
+            this.TransferDate.ReadOnly = true;
+            this.TransferDate.Width = 129;
+            // 
+            // TransferSN
+            // 
+            this.TransferSN.HeaderText = "SN";
+            this.TransferSN.Name = "TransferSN";
+            this.TransferSN.ReadOnly = true;
+            this.TransferSN.Width = 108;
+            // 
+            // LosingAccount
+            // 
+            this.LosingAccount.HeaderText = "Losing Acct";
+            this.LosingAccount.Name = "LosingAccount";
+            this.LosingAccount.ReadOnly = true;
+            this.LosingAccount.Width = 199;
+            // 
+            // GainingAccount
+            // 
+            this.GainingAccount.HeaderText = "Gaining Acct";
+            this.GainingAccount.Name = "GainingAccount";
+            this.GainingAccount.ReadOnly = true;
+            this.GainingAccount.Width = 213;
+            // 
+            // TransferedBy
+            // 
+            this.TransferedBy.HeaderText = "Transfered By";
+            this.TransferedBy.Name = "TransferedBy";
+            this.TransferedBy.ReadOnly = true;
+            this.TransferedBy.Width = 226;
+            // 
+            // Notes
+            // 
+            this.Notes.HeaderText = "Notes";
+            this.Notes.Name = "Notes";
+            this.Notes.ReadOnly = true;
+            this.Notes.Width = 143;
             // 
             // Issuances
             // 
             this.Issuances.Controls.Add(this.IssuedDataView);
-            this.Issuances.Location = new System.Drawing.Point(8, 39);
-            this.Issuances.Margin = new System.Windows.Forms.Padding(2);
+            this.Issuances.Location = new System.Drawing.Point(10, 48);
+            this.Issuances.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Issuances.Name = "Issuances";
-            this.Issuances.Padding = new System.Windows.Forms.Padding(2);
-            this.Issuances.Size = new System.Drawing.Size(1328, 1037);
+            this.Issuances.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Issuances.Size = new System.Drawing.Size(1772, 2100);
             this.Issuances.TabIndex = 4;
             this.Issuances.Text = "Issued Items";
             this.Issuances.UseVisualStyleBackColor = true;
@@ -646,14 +636,14 @@
             this.Column7,
             this.Column8});
             this.IssuedDataView.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.IssuedDataView.Location = new System.Drawing.Point(-8, 0);
-            this.IssuedDataView.Margin = new System.Windows.Forms.Padding(2);
+            this.IssuedDataView.Location = new System.Drawing.Point(-11, 0);
+            this.IssuedDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IssuedDataView.Name = "IssuedDataView";
             this.IssuedDataView.ReadOnly = true;
             this.IssuedDataView.RowHeadersVisible = false;
             this.IssuedDataView.RowHeadersWidth = 100;
             this.IssuedDataView.RowTemplate.Height = 40;
-            this.IssuedDataView.Size = new System.Drawing.Size(1336, 1037);
+            this.IssuedDataView.Size = new System.Drawing.Size(1781, 1813);
             this.IssuedDataView.TabIndex = 5;
             this.IssuedDataView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.IssuedDataView_CellDoubleClick);
             // 
@@ -662,65 +652,65 @@
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 77;
+            this.Column1.Width = 96;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Issued To";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 140;
+            this.Column2.Width = 178;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Issued By";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 140;
+            this.Column3.Width = 178;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Acct#";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 111;
+            this.Column4.Width = 140;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Duty Phone";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 156;
+            this.Column5.Width = 200;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Date of Issue";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 169;
+            this.Column6.Width = 215;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Date of Return";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 180;
+            this.Column7.Width = 232;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Items";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 108;
+            this.Column8.Width = 137;
             // 
             // Actions
             // 
             this.Actions.Controls.Add(this.ActionLogDataView);
-            this.Actions.Location = new System.Drawing.Point(8, 39);
-            this.Actions.Margin = new System.Windows.Forms.Padding(2);
+            this.Actions.Location = new System.Drawing.Point(10, 48);
+            this.Actions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Actions.Name = "Actions";
-            this.Actions.Padding = new System.Windows.Forms.Padding(2);
-            this.Actions.Size = new System.Drawing.Size(1328, 1037);
+            this.Actions.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Actions.Size = new System.Drawing.Size(1772, 2100);
             this.Actions.TabIndex = 7;
             this.Actions.Text = "Action Log";
             this.Actions.UseVisualStyleBackColor = true;
@@ -742,14 +732,14 @@
             this.ECLog,
             this.Action});
             this.ActionLogDataView.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.ActionLogDataView.Location = new System.Drawing.Point(-8, 0);
-            this.ActionLogDataView.Margin = new System.Windows.Forms.Padding(2);
+            this.ActionLogDataView.Location = new System.Drawing.Point(-11, 0);
+            this.ActionLogDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ActionLogDataView.Name = "ActionLogDataView";
             this.ActionLogDataView.ReadOnly = true;
             this.ActionLogDataView.RowHeadersVisible = false;
             this.ActionLogDataView.RowHeadersWidth = 100;
             this.ActionLogDataView.RowTemplate.Height = 40;
-            this.ActionLogDataView.Size = new System.Drawing.Size(1336, 1037);
+            this.ActionLogDataView.Size = new System.Drawing.Size(1781, 1813);
             this.ActionLogDataView.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
@@ -757,28 +747,28 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 77;
+            this.dataGridViewTextBoxColumn1.Width = 96;
             // 
             // Date
             // 
             this.Date.HeaderText = "Date";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
-            this.Date.Width = 102;
+            this.Date.Width = 129;
             // 
             // ECLog
             // 
             this.ECLog.HeaderText = "EC";
             this.ECLog.Name = "ECLog";
             this.ECLog.ReadOnly = true;
-            this.ECLog.Width = 86;
+            this.ECLog.Width = 108;
             // 
             // Action
             // 
             this.Action.HeaderText = "Action";
             this.Action.Name = "Action";
             this.Action.ReadOnly = true;
-            this.Action.Width = 117;
+            this.Action.Width = 149;
             // 
             // MenuBar
             // 
@@ -791,8 +781,8 @@
             this.helpToolStripMenuItem1});
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.MenuBar.Size = new System.Drawing.Size(2166, 40);
+            this.MenuBar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.MenuBar.Size = new System.Drawing.Size(2888, 49);
             this.MenuBar.TabIndex = 1;
             this.MenuBar.Text = "menuStrip1";
             // 
@@ -805,13 +795,13 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 36);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newTabToolStripMenuItem
             // 
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(382, 38);
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(465, 46);
             this.newTabToolStripMenuItem.Text = "New Window";
             this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click);
             // 
@@ -825,67 +815,67 @@
             this.temporarilyIssuedItemsToolStripMenuItem,
             this.actionLogToolStripMenuItem});
             this.openTabInNewWindowToolStripMenuItem.Name = "openTabInNewWindowToolStripMenuItem";
-            this.openTabInNewWindowToolStripMenuItem.Size = new System.Drawing.Size(382, 38);
+            this.openTabInNewWindowToolStripMenuItem.Size = new System.Drawing.Size(465, 46);
             this.openTabInNewWindowToolStripMenuItem.Text = "Open tab in new window";
             // 
             // assetsToolStripMenuItem2
             // 
             this.assetsToolStripMenuItem2.Name = "assetsToolStripMenuItem2";
-            this.assetsToolStripMenuItem2.Size = new System.Drawing.Size(355, 38);
+            this.assetsToolStripMenuItem2.Size = new System.Drawing.Size(432, 46);
             this.assetsToolStripMenuItem2.Text = "Assets";
             this.assetsToolStripMenuItem2.Click += new System.EventHandler(this.assetsToolStripMenuItem2_Click);
             // 
             // equipmentCustodiansToolStripMenuItem2
             // 
             this.equipmentCustodiansToolStripMenuItem2.Name = "equipmentCustodiansToolStripMenuItem2";
-            this.equipmentCustodiansToolStripMenuItem2.Size = new System.Drawing.Size(355, 38);
+            this.equipmentCustodiansToolStripMenuItem2.Size = new System.Drawing.Size(432, 46);
             this.equipmentCustodiansToolStripMenuItem2.Text = "Equipment Custodians";
             this.equipmentCustodiansToolStripMenuItem2.Click += new System.EventHandler(this.equipmentCustodiansToolStripMenuItem2_Click);
             // 
             // accountsToolStripMenuItem2
             // 
             this.accountsToolStripMenuItem2.Name = "accountsToolStripMenuItem2";
-            this.accountsToolStripMenuItem2.Size = new System.Drawing.Size(355, 38);
+            this.accountsToolStripMenuItem2.Size = new System.Drawing.Size(432, 46);
             this.accountsToolStripMenuItem2.Text = "Accounts";
             this.accountsToolStripMenuItem2.Click += new System.EventHandler(this.accountsToolStripMenuItem2_Click);
             // 
             // transfersToolStripMenuItem2
             // 
             this.transfersToolStripMenuItem2.Name = "transfersToolStripMenuItem2";
-            this.transfersToolStripMenuItem2.Size = new System.Drawing.Size(355, 38);
+            this.transfersToolStripMenuItem2.Size = new System.Drawing.Size(432, 46);
             this.transfersToolStripMenuItem2.Text = "Transfers";
             this.transfersToolStripMenuItem2.Click += new System.EventHandler(this.transfersToolStripMenuItem2_Click);
             // 
             // temporarilyIssuedItemsToolStripMenuItem
             // 
             this.temporarilyIssuedItemsToolStripMenuItem.Name = "temporarilyIssuedItemsToolStripMenuItem";
-            this.temporarilyIssuedItemsToolStripMenuItem.Size = new System.Drawing.Size(355, 38);
+            this.temporarilyIssuedItemsToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
             this.temporarilyIssuedItemsToolStripMenuItem.Text = "Issued Items";
             this.temporarilyIssuedItemsToolStripMenuItem.Click += new System.EventHandler(this.temporarilyIssuedItemsToolStripMenuItem_Click);
             // 
             // actionLogToolStripMenuItem
             // 
             this.actionLogToolStripMenuItem.Name = "actionLogToolStripMenuItem";
-            this.actionLogToolStripMenuItem.Size = new System.Drawing.Size(355, 38);
+            this.actionLogToolStripMenuItem.Size = new System.Drawing.Size(432, 46);
             this.actionLogToolStripMenuItem.Text = "Action Log";
             this.actionLogToolStripMenuItem.Click += new System.EventHandler(this.actionLogToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(382, 38);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(465, 46);
             this.saveToolStripMenuItem.Text = "Save data set";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(379, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(462, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(382, 38);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(465, 46);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -895,20 +885,20 @@
             this.copyToolStripMenuItem,
             this.selectAllToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(67, 36);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(80, 45);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(213, 38);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(253, 46);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(213, 38);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(253, 46);
             this.selectAllToolStripMenuItem.Text = "Select All";
             this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click_1);
             // 
@@ -926,74 +916,74 @@
             this.toolStripSeparator1,
             this.checkAccountsDueToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(82, 36);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(99, 45);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // addAssetToolStripMenuItem
             // 
             this.addAssetToolStripMenuItem.Name = "addAssetToolStripMenuItem";
-            this.addAssetToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
+            this.addAssetToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.addAssetToolStripMenuItem.Text = "Add Asset";
             this.addAssetToolStripMenuItem.Click += new System.EventHandler(this.addAssetToolStripMenuItem_Click);
             // 
             // addEquipmentCustodianToolStripMenuItem
             // 
             this.addEquipmentCustodianToolStripMenuItem.Name = "addEquipmentCustodianToolStripMenuItem";
-            this.addEquipmentCustodianToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
+            this.addEquipmentCustodianToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.addEquipmentCustodianToolStripMenuItem.Text = "Add Equipment Custodian";
             this.addEquipmentCustodianToolStripMenuItem.Click += new System.EventHandler(this.addEquipmentCustodianToolStripMenuItem_Click);
             // 
             // addITAMAccountToolStripMenuItem
             // 
             this.addITAMAccountToolStripMenuItem.Name = "addITAMAccountToolStripMenuItem";
-            this.addITAMAccountToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
+            this.addITAMAccountToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.addITAMAccountToolStripMenuItem.Text = "Add ITAM Account";
             this.addITAMAccountToolStripMenuItem.Click += new System.EventHandler(this.addITAMAccountToolStripMenuItem_Click);
             // 
             // transferAssetToolStripMenuItem
             // 
             this.transferAssetToolStripMenuItem.Name = "transferAssetToolStripMenuItem";
-            this.transferAssetToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
+            this.transferAssetToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.transferAssetToolStripMenuItem.Text = "Transfer Asset";
             this.transferAssetToolStripMenuItem.Click += new System.EventHandler(this.transferAssetToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(395, 38);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(482, 46);
             this.toolStripMenuItem1.Text = "Modify Costs";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(395, 38);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(482, 46);
             this.toolStripMenuItem2.Text = "Modify Items";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // initiateReportOfSurveryToolStripMenuItem
             // 
             this.initiateReportOfSurveryToolStripMenuItem.Name = "initiateReportOfSurveryToolStripMenuItem";
-            this.initiateReportOfSurveryToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
+            this.initiateReportOfSurveryToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.initiateReportOfSurveryToolStripMenuItem.Text = "Report of Survey";
             this.initiateReportOfSurveryToolStripMenuItem.Click += new System.EventHandler(this.initiateReportOfSurveryToolStripMenuItem_Click);
             // 
             // assetDispositionbToolStripMenuItem
             // 
             this.assetDispositionbToolStripMenuItem.Name = "assetDispositionbToolStripMenuItem";
-            this.assetDispositionbToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
+            this.assetDispositionbToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.assetDispositionbToolStripMenuItem.Text = "Asset Disposition";
             this.assetDispositionbToolStripMenuItem.Click += new System.EventHandler(this.assetDispositionbToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(392, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(479, 6);
             // 
             // checkAccountsDueToolStripMenuItem
             // 
             this.checkAccountsDueToolStripMenuItem.Name = "checkAccountsDueToolStripMenuItem";
-            this.checkAccountsDueToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
+            this.checkAccountsDueToolStripMenuItem.Size = new System.Drawing.Size(482, 46);
             this.checkAccountsDueToolStripMenuItem.Text = "Accounts Pending Review";
             this.checkAccountsDueToolStripMenuItem.Click += new System.EventHandler(this.checkAccountsDueToolStripMenuItem_Click);
             // 
@@ -1006,41 +996,41 @@
             this.transfersToolStripMenuItem,
             this.nationalSlotNumbersNSNToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(98, 36);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(118, 45);
             this.reportsToolStripMenuItem.Text = "Search";
             // 
             // assetsToolStripMenuItem
             // 
             this.assetsToolStripMenuItem.Name = "assetsToolStripMenuItem";
-            this.assetsToolStripMenuItem.Size = new System.Drawing.Size(428, 38);
+            this.assetsToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.assetsToolStripMenuItem.Text = "Assets";
             this.assetsToolStripMenuItem.Click += new System.EventHandler(this.assetsToolStripMenuItem_Click);
             // 
             // equipmentCustodiansToolStripMenuItem
             // 
             this.equipmentCustodiansToolStripMenuItem.Name = "equipmentCustodiansToolStripMenuItem";
-            this.equipmentCustodiansToolStripMenuItem.Size = new System.Drawing.Size(428, 38);
+            this.equipmentCustodiansToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.equipmentCustodiansToolStripMenuItem.Text = "Accounts";
             this.equipmentCustodiansToolStripMenuItem.Click += new System.EventHandler(this.equipmentCustodiansToolStripMenuItem_Click);
             // 
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(428, 38);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.accountsToolStripMenuItem.Text = "Equipment Custodians";
             this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
             // transfersToolStripMenuItem
             // 
             this.transfersToolStripMenuItem.Name = "transfersToolStripMenuItem";
-            this.transfersToolStripMenuItem.Size = new System.Drawing.Size(428, 38);
+            this.transfersToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.transfersToolStripMenuItem.Text = "Transfers";
             this.transfersToolStripMenuItem.Click += new System.EventHandler(this.transfersToolStripMenuItem_Click);
             // 
             // nationalSlotNumbersNSNToolStripMenuItem
             // 
             this.nationalSlotNumbersNSNToolStripMenuItem.Name = "nationalSlotNumbersNSNToolStripMenuItem";
-            this.nationalSlotNumbersNSNToolStripMenuItem.Size = new System.Drawing.Size(428, 38);
+            this.nationalSlotNumbersNSNToolStripMenuItem.Size = new System.Drawing.Size(519, 46);
             this.nationalSlotNumbersNSNToolStripMenuItem.Text = "National Slot Numbers (NSN)";
             this.nationalSlotNumbersNSNToolStripMenuItem.Click += new System.EventHandler(this.nationalSlotNumbersNSNToolStripMenuItem_Click);
             // 
@@ -1050,19 +1040,19 @@
             this.aboutToolStripMenuItem,
             this.reportBugToolStripMenuItem});
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(77, 36);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(92, 45);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(234, 38);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(282, 46);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // reportBugToolStripMenuItem
             // 
             this.reportBugToolStripMenuItem.Name = "reportBugToolStripMenuItem";
-            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(234, 38);
+            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(282, 46);
             this.reportBugToolStripMenuItem.Text = "Report Bug";
             this.reportBugToolStripMenuItem.Click += new System.EventHandler(this.reportBugToolStripMenuItem_Click);
             // 
@@ -1082,9 +1072,9 @@
             this.toolStripButton1,
             this.toolStripButton2,
             this.RefreshButton});
-            this.ToolBar.Location = new System.Drawing.Point(0, 40);
+            this.ToolBar.Location = new System.Drawing.Point(0, 49);
             this.ToolBar.Name = "ToolBar";
-            this.ToolBar.Size = new System.Drawing.Size(2166, 39);
+            this.ToolBar.Size = new System.Drawing.Size(2888, 39);
             this.ToolBar.TabIndex = 2;
             this.ToolBar.Text = "toolStrip1";
             // 
@@ -1234,28 +1224,43 @@
             // 
             this.DetailViewBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DetailViewBox.Controls.Add(this.QuickLogView);
             this.DetailViewBox.Controls.Add(this.button1);
             this.DetailViewBox.Controls.Add(this.button2);
             this.DetailViewBox.Controls.Add(this.button3);
             this.DetailViewBox.Controls.Add(this.Overview);
             this.DetailViewBox.Font = new System.Drawing.Font("Courier New", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailViewBox.Location = new System.Drawing.Point(1379, 169);
-            this.DetailViewBox.Margin = new System.Windows.Forms.Padding(2);
+            this.DetailViewBox.Location = new System.Drawing.Point(1839, 210);
+            this.DetailViewBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DetailViewBox.Name = "DetailViewBox";
-            this.DetailViewBox.Padding = new System.Windows.Forms.Padding(2);
-            this.DetailViewBox.Size = new System.Drawing.Size(736, 1026);
+            this.DetailViewBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DetailViewBox.Size = new System.Drawing.Size(981, 1779);
             this.DetailViewBox.TabIndex = 3;
             this.DetailViewBox.TabStop = false;
             this.DetailViewBox.Text = "Overview";
+            // 
+            // QuickLogView
+            // 
+            this.QuickLogView.BackColor = System.Drawing.SystemColors.Control;
+            this.QuickLogView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.QuickLogView.Font = new System.Drawing.Font("Courier New", 6.1F);
+            this.QuickLogView.Location = new System.Drawing.Point(21, 1004);
+            this.QuickLogView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.QuickLogView.Name = "QuickLogView";
+            this.QuickLogView.ReadOnly = true;
+            this.QuickLogView.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.QuickLogView.Size = new System.Drawing.Size(955, 598);
+            this.QuickLogView.TabIndex = 8;
+            this.QuickLogView.Text = "";
             // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(120, 30);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(160, 37);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 40);
+            this.button1.Size = new System.Drawing.Size(63, 50);
             this.button1.TabIndex = 6;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -1263,10 +1268,10 @@
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(68, 30);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(91, 37);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(47, 40);
+            this.button2.Size = new System.Drawing.Size(63, 50);
             this.button2.TabIndex = 5;
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -1274,10 +1279,10 @@
             // 
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(16, 30);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Location = new System.Drawing.Point(21, 37);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(47, 40);
+            this.button3.Size = new System.Drawing.Size(63, 50);
             this.button3.TabIndex = 4;
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -1298,15 +1303,15 @@
             this.Value});
             this.Overview.Enabled = false;
             this.Overview.GridColor = System.Drawing.SystemColors.Control;
-            this.Overview.Location = new System.Drawing.Point(12, 71);
-            this.Overview.Margin = new System.Windows.Forms.Padding(2);
+            this.Overview.Location = new System.Drawing.Point(16, 88);
+            this.Overview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Overview.Name = "Overview";
             this.Overview.ReadOnly = true;
             this.Overview.RowHeadersVisible = false;
             this.Overview.RowTemplate.Height = 10;
             this.Overview.RowTemplate.ReadOnly = true;
             this.Overview.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Overview.Size = new System.Drawing.Size(689, 1044);
+            this.Overview.Size = new System.Drawing.Size(919, 856);
             this.Overview.TabIndex = 0;
             // 
             // Type
@@ -1315,7 +1320,7 @@
             this.Type.Name = "Type";
             this.Type.ReadOnly = true;
             this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Type.Width = 107;
+            this.Type.Width = 136;
             // 
             // Total
             // 
@@ -1323,7 +1328,7 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Total.Width = 120;
+            this.Total.Width = 153;
             // 
             // Value
             // 
@@ -1331,7 +1336,7 @@
             this.Value.Name = "Value";
             this.Value.ReadOnly = true;
             this.Value.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Value.Width = 120;
+            this.Value.Width = 153;
             // 
             // AssetDetailBox
             // 
@@ -1345,11 +1350,11 @@
             this.AssetDetailBox.Controls.Add(this.MainOverviewButton);
             this.AssetDetailBox.Controls.Add(this.AssetDetail);
             this.AssetDetailBox.Font = new System.Drawing.Font("Courier New", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AssetDetailBox.Location = new System.Drawing.Point(1379, 169);
-            this.AssetDetailBox.Margin = new System.Windows.Forms.Padding(2);
+            this.AssetDetailBox.Location = new System.Drawing.Point(1833, 211);
+            this.AssetDetailBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AssetDetailBox.Name = "AssetDetailBox";
-            this.AssetDetailBox.Padding = new System.Windows.Forms.Padding(2);
-            this.AssetDetailBox.Size = new System.Drawing.Size(736, 1034);
+            this.AssetDetailBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AssetDetailBox.Size = new System.Drawing.Size(981, 1750);
             this.AssetDetailBox.TabIndex = 4;
             this.AssetDetailBox.TabStop = false;
             this.AssetDetailBox.Text = "Overview";
@@ -1359,20 +1364,21 @@
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(172, 30);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Location = new System.Drawing.Point(229, 37);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(47, 40);
+            this.button4.Size = new System.Drawing.Size(63, 50);
             this.button4.TabIndex = 7;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // OverviewSearch
             // 
+            this.OverviewSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.OverviewSearch.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.OverviewSearch.Location = new System.Drawing.Point(275, 30);
-            this.OverviewSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.OverviewSearch.Location = new System.Drawing.Point(367, 37);
+            this.OverviewSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OverviewSearch.Name = "OverviewSearch";
-            this.OverviewSearch.Size = new System.Drawing.Size(376, 32);
+            this.OverviewSearch.Size = new System.Drawing.Size(500, 38);
             this.OverviewSearch.TabIndex = 5;
             this.OverviewSearch.Visible = false;
             this.OverviewSearch.TextChanged += new System.EventHandler(this.OverviewSearch_TextChanged);
@@ -1381,10 +1387,10 @@
             // 
             this.SearchOverviewButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SearchOverviewButton.BackgroundImage")));
             this.SearchOverviewButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SearchOverviewButton.Location = new System.Drawing.Point(224, 30);
-            this.SearchOverviewButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchOverviewButton.Location = new System.Drawing.Point(299, 37);
+            this.SearchOverviewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchOverviewButton.Name = "SearchOverviewButton";
-            this.SearchOverviewButton.Size = new System.Drawing.Size(47, 40);
+            this.SearchOverviewButton.Size = new System.Drawing.Size(63, 50);
             this.SearchOverviewButton.TabIndex = 4;
             this.SearchOverviewButton.UseVisualStyleBackColor = true;
             this.SearchOverviewButton.Click += new System.EventHandler(this.SearchOverviewButton_Click);
@@ -1393,10 +1399,10 @@
             // 
             this.ForwardButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForwardButton.BackgroundImage")));
             this.ForwardButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ForwardButton.Location = new System.Drawing.Point(120, 30);
-            this.ForwardButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ForwardButton.Location = new System.Drawing.Point(160, 37);
+            this.ForwardButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ForwardButton.Name = "ForwardButton";
-            this.ForwardButton.Size = new System.Drawing.Size(47, 40);
+            this.ForwardButton.Size = new System.Drawing.Size(63, 50);
             this.ForwardButton.TabIndex = 3;
             this.ForwardButton.UseVisualStyleBackColor = true;
             this.ForwardButton.Click += new System.EventHandler(this.ForwardButton_Click);
@@ -1405,10 +1411,10 @@
             // 
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BackButton.Location = new System.Drawing.Point(68, 30);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
+            this.BackButton.Location = new System.Drawing.Point(91, 37);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(47, 40);
+            this.BackButton.Size = new System.Drawing.Size(63, 50);
             this.BackButton.TabIndex = 2;
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -1417,10 +1423,10 @@
             // 
             this.MainOverviewButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainOverviewButton.BackgroundImage")));
             this.MainOverviewButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MainOverviewButton.Location = new System.Drawing.Point(16, 30);
-            this.MainOverviewButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MainOverviewButton.Location = new System.Drawing.Point(21, 37);
+            this.MainOverviewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainOverviewButton.Name = "MainOverviewButton";
-            this.MainOverviewButton.Size = new System.Drawing.Size(47, 40);
+            this.MainOverviewButton.Size = new System.Drawing.Size(63, 50);
             this.MainOverviewButton.TabIndex = 1;
             this.MainOverviewButton.UseVisualStyleBackColor = true;
             this.MainOverviewButton.Click += new System.EventHandler(this.MainOverviewButton_Click);
@@ -1430,12 +1436,12 @@
             this.AssetDetail.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.AssetDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AssetDetail.Font = new System.Drawing.Font("Courier New", 6.1F);
-            this.AssetDetail.Location = new System.Drawing.Point(16, 81);
-            this.AssetDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.AssetDetail.Location = new System.Drawing.Point(21, 100);
+            this.AssetDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AssetDetail.Name = "AssetDetail";
             this.AssetDetail.ReadOnly = true;
             this.AssetDetail.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.AssetDetail.Size = new System.Drawing.Size(688, 921);
+            this.AssetDetail.Size = new System.Drawing.Size(917, 671);
             this.AssetDetail.TabIndex = 0;
             this.AssetDetail.Text = "";
             // 
@@ -1444,11 +1450,11 @@
             this.StatusBar.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ConnectionStatus});
-            this.StatusBar.Location = new System.Drawing.Point(0, 1217);
+            this.StatusBar.Location = new System.Drawing.Point(0, 2026);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Padding = new System.Windows.Forms.Padding(10, 0, 1, 0);
+            this.StatusBar.Padding = new System.Windows.Forms.Padding(13, 0, 1, 0);
             this.StatusBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.StatusBar.Size = new System.Drawing.Size(2166, 37);
+            this.StatusBar.Size = new System.Drawing.Size(2888, 46);
             this.StatusBar.TabIndex = 5;
             this.StatusBar.Text = "statusStrip1";
             // 
@@ -1456,84 +1462,77 @@
             // 
             this.ConnectionStatus.Name = "ConnectionStatus";
             this.ConnectionStatus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ConnectionStatus.Size = new System.Drawing.Size(202, 32);
+            this.ConnectionStatus.Size = new System.Drawing.Size(251, 41);
             this.ConnectionStatus.Text = "ConnectionStatus";
             // 
-            // Notes
+            // ID
             // 
-            this.Notes.HeaderText = "Notes";
-            this.Notes.Name = "Notes";
-            this.Notes.ReadOnly = true;
-            this.Notes.Width = 113;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 96;
             // 
-            // TransferedBy
+            // AssetType
             // 
-            this.TransferedBy.HeaderText = "Transfered By";
-            this.TransferedBy.Name = "TransferedBy";
-            this.TransferedBy.ReadOnly = true;
-            this.TransferedBy.Width = 177;
+            this.AssetType.HeaderText = "Item";
+            this.AssetType.Name = "AssetType";
+            this.AssetType.ReadOnly = true;
+            this.AssetType.Width = 123;
             // 
-            // GainingAccount
+            // SerialNumber
             // 
-            this.GainingAccount.HeaderText = "Gaining Acct";
-            this.GainingAccount.Name = "GainingAccount";
-            this.GainingAccount.ReadOnly = true;
-            this.GainingAccount.Width = 165;
+            this.SerialNumber.HeaderText = "Serial #";
+            this.SerialNumber.Name = "SerialNumber";
+            this.SerialNumber.ReadOnly = true;
+            this.SerialNumber.Width = 166;
             // 
-            // LosingAccount
+            // Manufacturer
             // 
-            this.LosingAccount.HeaderText = "Losing Acct";
-            this.LosingAccount.Name = "LosingAccount";
-            this.LosingAccount.ReadOnly = true;
-            this.LosingAccount.Width = 156;
+            this.Manufacturer.HeaderText = "Manufacturer";
+            this.Manufacturer.Name = "Manufacturer";
+            this.Manufacturer.ReadOnly = true;
+            this.Manufacturer.Width = 236;
             // 
-            // TransferSN
+            // Model
             // 
-            this.TransferSN.HeaderText = "SN";
-            this.TransferSN.Name = "TransferSN";
-            this.TransferSN.ReadOnly = true;
-            this.TransferSN.Width = 86;
+            this.Model.HeaderText = "Model";
+            this.Model.Name = "Model";
+            this.Model.ReadOnly = true;
+            this.Model.Width = 147;
             // 
-            // TransferDate
+            // AccountNumber
             // 
-            this.TransferDate.HeaderText = "Date";
-            this.TransferDate.Name = "TransferDate";
-            this.TransferDate.ReadOnly = true;
-            this.TransferDate.Width = 102;
+            this.AccountNumber.HeaderText = "Acct#";
+            this.AccountNumber.Name = "AccountNumber";
+            this.AccountNumber.ReadOnly = true;
+            this.AccountNumber.Width = 140;
             // 
-            // TransferedFrom
+            // Organization
             // 
-            this.TransferedFrom.HeaderText = "Transfered From";
-            this.TransferedFrom.Name = "TransferedFrom";
-            this.TransferedFrom.ReadOnly = true;
-            this.TransferedFrom.Width = 198;
+            this.Organization.HeaderText = "Org";
+            this.Organization.Name = "Organization";
+            this.Organization.ReadOnly = true;
+            this.Organization.Width = 116;
             // 
-            // TransferedTo
+            // EC
             // 
-            this.TransferedTo.HeaderText = "Transfered To";
-            this.TransferedTo.Name = "TransferedTo";
-            this.TransferedTo.ReadOnly = true;
-            this.TransferedTo.Width = 192;
+            this.EC.HeaderText = "ITEC";
+            this.EC.Name = "EC";
+            this.EC.ReadOnly = true;
+            this.EC.Width = 132;
             // 
-            // TransferItem
+            // EstimatedValue
             // 
-            this.TransferItem.HeaderText = "Item";
-            this.TransferItem.Name = "TransferItem";
-            this.TransferItem.ReadOnly = true;
-            this.TransferItem.Width = 97;
-            // 
-            // TransferID
-            // 
-            this.TransferID.HeaderText = "ID";
-            this.TransferID.Name = "TransferID";
-            this.TransferID.ReadOnly = true;
-            this.TransferID.Width = 77;
+            this.EstimatedValue.HeaderText = "Est. Value";
+            this.EstimatedValue.Name = "EstimatedValue";
+            this.EstimatedValue.ReadOnly = true;
+            this.EstimatedValue.Width = 199;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2166, 1254);
+            this.ClientSize = new System.Drawing.Size(2888, 2072);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.AssetDetailBox);
             this.Controls.Add(this.DetailViewBox);
@@ -1543,7 +1542,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.MenuBar;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainWindow";
             this.Text = " Base Oversight Accumulator";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1594,17 +1593,6 @@
         private System.Windows.Forms.ToolStripButton RefreshButton;
         private System.Windows.Forms.ToolStripButton NewAssetButton;
         private System.Windows.Forms.ToolStripButton NewECButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AssetType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Manufacturer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Model;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AccountNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Organization;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Building;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Room;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstimatedValue;
         private System.Windows.Forms.ToolStripButton NewAccountButton;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addAssetToolStripMenuItem;
@@ -1712,6 +1700,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GainingAccount;
         private System.Windows.Forms.DataGridViewTextBoxColumn TransferedBy;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notes;
+        private System.Windows.Forms.RichTextBox QuickLogView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssetType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Manufacturer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Model;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccountNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Organization;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstimatedValue;
     }
 }
 

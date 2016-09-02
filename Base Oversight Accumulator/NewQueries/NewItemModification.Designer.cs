@@ -46,6 +46,7 @@
             this.ChangeModelButton = new System.Windows.Forms.Button();
             this.ChangeLocationButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ChangeOrgButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AssetDataView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,11 +209,22 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Select the ID of the items you wish to modify.\r\n\r\n\r\n";
             // 
+            // ChangeOrgButton
+            // 
+            this.ChangeOrgButton.Location = new System.Drawing.Point(1709, 89);
+            this.ChangeOrgButton.Name = "ChangeOrgButton";
+            this.ChangeOrgButton.Size = new System.Drawing.Size(375, 50);
+            this.ChangeOrgButton.TabIndex = 9;
+            this.ChangeOrgButton.Text = "Change Organization";
+            this.ChangeOrgButton.UseVisualStyleBackColor = true;
+            this.ChangeOrgButton.Click += new System.EventHandler(this.ChangeOrgButton_Click);
+            // 
             // NewItemModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2263, 1468);
+            this.Controls.Add(this.ChangeOrgButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ChangeLocationButton);
             this.Controls.Add(this.ChangeModelButton);
@@ -248,5 +260,6 @@
         private System.Windows.Forms.Button ChangeModelButton;
         private System.Windows.Forms.Button ChangeLocationButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ChangeOrgButton;
     }
 }

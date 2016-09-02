@@ -55,7 +55,7 @@ namespace Base_Oversight_Accumulator
                 ECField.Text = ec.ToUpper();
                 BuildingField.Text = building.ToUpper();
                 RoomField.Text = room.ToUpper();
-                ValueField.Text = value.ToUpper();
+                ValueField.Text = "$ " + value.ToUpper();
                 AssetNotes.Text = notes;
                 AssetID.Text = id;
             }

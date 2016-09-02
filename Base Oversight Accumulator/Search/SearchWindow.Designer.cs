@@ -46,6 +46,7 @@
             // 
             // SearchTerms
             // 
+            this.SearchTerms.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.SearchTerms.Location = new System.Drawing.Point(206, 134);
             this.SearchTerms.Name = "SearchTerms";
             this.SearchTerms.Size = new System.Drawing.Size(500, 38);
