@@ -28,19 +28,19 @@ namespace Base_Oversight_Accumulator
         {
             string doc = DocNumberField.Text;
             string poc = POCField.Text;
-            string description = DescriptionField.Text;
+            string serialnumber = SerialNumberField.Text;
             string value = ValueField.Text;
             string account = AccountField.Text;
             string surveyofficer = SurveyOfficerField.Text;
             string remarks = RemarksField.Text;
 
             dbconnect mysql = new dbconnect();
-            mysql.InsertQuery("INSERT into ros (doc, poc, description, value, account, surveyofficer, remarks, date) VALUES('" +
-                doc.ToUpper() + "','" + poc.ToUpper() + "','" + description.ToUpper() + "','" + value.ToUpper() + "','" + account.ToUpper() + "','" + surveyofficer.ToUpper() + "','" + remarks.ToUpper() + "','" + DateTime.Now.ToString() + "')");
+            mysql.InsertQuery("INSERT into ros (doc, poc, serialnumber, value, account, surveyofficer, remarks, date) VALUES('" +
+                doc.ToUpper() + "','" + poc.ToUpper() + "','" + serialnumber.ToUpper() + "','" + value.ToUpper() + "','" + account.ToUpper() + "','" + surveyofficer.ToUpper() + "','" + remarks.ToUpper() + "','" + DateTime.Now.ToString() + "')");
             MessageBox.Show("Report of Survey created for: " + account);
 
             mysql.InsertQuery("INSERT INTO log (date, who, action, account) VALUES('" + DateTime.Now.ToString() + "','" + UserCreatingROS +
-                "','INITIATED ROS FOR ACCOUNT " + account.ToUpper() + "','" + account.ToUpper() + "')");
+                "','INITIATED ROS ON ACCOUNT " + account.ToUpper() + " FOR ITEM " + serialnumber + "','" + account.ToUpper() + "')");
 
             this.Close();
         }
@@ -50,7 +50,7 @@ namespace Base_Oversight_Accumulator
 
             if (ROSItemSelected == true)
             {
-                DescriptionField.Text = ItemDescription + " " + ItemSerialNumber;
+                SerialNumberField.Text = ItemSerialNumber;
                 ValueField.Text = ItemValue;
                 AccountField.Text = ItemAccount;
 

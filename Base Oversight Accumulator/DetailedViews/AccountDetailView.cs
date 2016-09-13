@@ -13,6 +13,7 @@ using PdfSharp.Pdf;
 using PdfSharp.Drawing;
 using System.Diagnostics;
 using Base_Oversight_Accumulator.LocalStorage;
+using Base_Oversight_Accumulator.DetailedViews;
 
 namespace Base_Oversight_Accumulator
 {
@@ -93,10 +94,10 @@ namespace Base_Oversight_Accumulator
             mysql.SelectQuery("SELECT * from assets where accountnumber='" + AssetAccountNumber + "'");
             while (mysql.Result.Read())
             {
-                string manufacturer = mysql.Reader("manufacturer");
-                string model = mysql.Reader("model");
+       //       string manufacturer = mysql.Reader("manufacturer");
+       //       string model = mysql.Reader("model");
                 string serial = mysql.Reader("serialnumber");
-                AccountAssets.Items.Add(manufacturer + " " + model + " " + serial);
+                AccountAssets.Items.Add(serial);
             }
             mysql.CloseConnection();
 
@@ -119,9 +120,8 @@ namespace Base_Oversight_Accumulator
             mysql.SelectQuery("SELECT * from ros where account='" + AssetAccountNumber + "'");
             while (mysql.Result.Read())
             {
-                string item = mysql.Reader("description");
-                string date = mysql.Reader("date");
-                AccountROS.Items.Add("#" + date + " " + item);
+                string item = mysql.Reader("serialnumber");
+                AccountROS.Items.Add(item);
             }
             int rosCount = AccountROS.Items.Count;
             NumROSItems.Text = rosCount.ToString();
@@ -130,7 +130,7 @@ namespace Base_Oversight_Accumulator
 
             // action log
             mysql.OpenConnection();
-            mysql.SelectQuery("SELECT * from log where account='" + AssetAccountNumber + "'");
+            mysql.SelectQuery("SELECT * from log where account='" + AssetAccountNumber + "' ORDER BY id DESC");
             while (mysql.Result.Read())
             {
                 string date = mysql.Reader("date");
@@ -141,9 +141,17 @@ namespace Base_Oversight_Accumulator
             mysql.CloseConnection();
 
         }
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-
+            try
+            {
+                string SerialNumber = AccountROS.SelectedItem.ToString();
+                ROSDetailView ROSDetailView = new ROSDetailView();
+                ROSDetailView.SerialNumber = SerialNumber;
+                ROSDetailView.UserViewingROS = UserViewingAccount;
+                ROSDetailView.Show();
+            }
+            catch { }
         }
 
         private void DeleteAccountButton_Click(object sender, EventArgs e)
@@ -284,6 +292,28 @@ UserViewingAccount + "','UNFROZE ACCOUNT " + AssetAccountNumber + " " + AccountN
             ReportGenerator ReportGenerator = new ReportGenerator();
             ReportGenerator.GenerateReport();
 
+        }
+
+        private void AccountAssets_DoubleClick(object sender, EventArgs e)
+        {
+            string SerialNumber = AccountAssets.SelectedItem.ToString();
+            dbconnect mysql = new dbconnect();
+            mysql.SelectQuery("select * from assets where serialnumber='" + SerialNumber + "'");
+            while (mysql.Result.Read()) {
+                AssetDetailView AssetDetailView = new AssetDetailView();
+                AssetDetailView.UserViewingAsset = UserViewingAccount;
+                AssetDetailView.selectedID = mysql.Reader("id");
+                AssetDetailView.Show();
+                    }
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AccountDetailView AccountDetailView = new AccountDetailView();
+            AccountDetailView.gridid = gridid;
+            AccountDetailView.UserViewingAccount = UserViewingAccount;
+            AccountDetailView.Show();
         }
     }
 }

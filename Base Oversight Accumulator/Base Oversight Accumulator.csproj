@@ -119,6 +119,18 @@
     <Compile Include="DetailedViews\ErrorDetailView.Designer.cs">
       <DependentUpon>ErrorDetailView.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailedViews\ItemHistoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailedViews\ItemHistoryView.Designer.cs">
+      <DependentUpon>ItemHistoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailedViews\ROSDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailedViews\ROSDetailView.Designer.cs">
+      <DependentUpon>ROSDetailView.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocalStorage\ReportGenerator.cs" />
     <Compile Include="NewQueries\NewBugReport.cs">
       <SubType>Form</SubType>
@@ -302,6 +314,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetailedViews\ErrorDetailView.resx">
       <DependentUpon>ErrorDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailedViews\ItemHistoryView.resx">
+      <DependentUpon>ItemHistoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailedViews\ROSDetailView.resx">
+      <DependentUpon>ROSDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewQueries\NewBugReport.resx">
       <DependentUpon>NewBugReport.cs</DependentUpon>

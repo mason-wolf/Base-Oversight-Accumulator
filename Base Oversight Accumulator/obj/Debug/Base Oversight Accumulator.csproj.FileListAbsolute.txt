@@ -216,3 +216,5 @@ C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Ov
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewQueries.UpdateItemModel.resources
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewQueries.NewItemModification.resources
 C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.NewQueries.UpdateItemOrganization.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.DetailedViews.ROSDetailView.resources
+C:\Users\Mason\Documents\GitHub\boa\Base Oversight Accumulator\obj\Debug\Base_Oversight_Accumulator.DetailedViews.ItemHistoryView.resources

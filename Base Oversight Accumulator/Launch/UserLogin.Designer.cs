@@ -42,42 +42,47 @@
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(121, 206);
+            this.UsernameLabel.Location = new System.Drawing.Point(91, 166);
+            this.UsernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(153, 32);
+            this.UsernameLabel.Size = new System.Drawing.Size(116, 25);
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username:";
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(127, 277);
+            this.PasswordLabel.Location = new System.Drawing.Point(95, 223);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(147, 32);
+            this.PasswordLabel.Size = new System.Drawing.Size(112, 25);
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password:";
             // 
             // UsernameField
             // 
-            this.UsernameField.Location = new System.Drawing.Point(327, 200);
+            this.UsernameField.Location = new System.Drawing.Point(245, 161);
+            this.UsernameField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UsernameField.Name = "UsernameField";
-            this.UsernameField.Size = new System.Drawing.Size(500, 38);
+            this.UsernameField.Size = new System.Drawing.Size(376, 31);
             this.UsernameField.TabIndex = 2;
             // 
             // PasswordField
             // 
-            this.PasswordField.Location = new System.Drawing.Point(327, 271);
+            this.PasswordField.Location = new System.Drawing.Point(245, 219);
+            this.PasswordField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PasswordField.Name = "PasswordField";
-            this.PasswordField.Size = new System.Drawing.Size(500, 38);
+            this.PasswordField.Size = new System.Drawing.Size(376, 31);
             this.PasswordField.TabIndex = 3;
             this.PasswordField.UseSystemPasswordChar = true;
             this.PasswordField.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.PasswordField_MaskInputRejected);
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(677, 391);
+            this.LoginButton.Location = new System.Drawing.Point(508, 315);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(150, 50);
+            this.LoginButton.Size = new System.Drawing.Size(112, 40);
             this.LoginButton.TabIndex = 4;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -87,9 +92,10 @@
             // 
             this.FailedLoginLabel.AutoSize = true;
             this.FailedLoginLabel.ForeColor = System.Drawing.Color.Red;
-            this.FailedLoginLabel.Location = new System.Drawing.Point(333, 326);
+            this.FailedLoginLabel.Location = new System.Drawing.Point(250, 263);
+            this.FailedLoginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FailedLoginLabel.Name = "FailedLoginLabel";
-            this.FailedLoginLabel.Size = new System.Drawing.Size(425, 32);
+            this.FailedLoginLabel.Size = new System.Drawing.Size(325, 25);
             this.FailedLoginLabel.TabIndex = 5;
             this.FailedLoginLabel.Text = "Incorrect username or password.";
             this.FailedLoginLabel.Visible = false;
@@ -97,25 +103,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(168, 138);
+            this.label1.Location = new System.Drawing.Point(126, 111);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 32);
+            this.label1.Size = new System.Drawing.Size(81, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Server:";
             // 
             // ServerAddressField
             // 
-            this.ServerAddressField.Location = new System.Drawing.Point(327, 132);
+            this.ServerAddressField.Location = new System.Drawing.Point(245, 106);
+            this.ServerAddressField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ServerAddressField.Name = "ServerAddressField";
-            this.ServerAddressField.Size = new System.Drawing.Size(250, 38);
+            this.ServerAddressField.Size = new System.Drawing.Size(188, 31);
             this.ServerAddressField.TabIndex = 7;
             this.ServerAddressField.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // UserLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 494);
+            this.ClientSize = new System.Drawing.Size(716, 398);
             this.Controls.Add(this.ServerAddressField);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FailedLoginLabel);
@@ -124,8 +132,10 @@
             this.Controls.Add(this.UsernameField);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " BOA Version 0.4 Beta";
