@@ -1,4 +1,4 @@
-# BOA
+# Base Oversight Accumulator
 
 A localized asset management suite for tracking and controlling information technology equipment.
 
