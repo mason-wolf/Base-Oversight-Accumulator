@@ -6,4 +6,4 @@ A localized asset management suite for tracking and controlling information tech
 - Track assets, custodians, accounts, transfers, DRMO reports, ROS reports, issued items and more.
 - Accumulate cost analysis reports of installation IT property.
 
-![alt text](https://github.com/mason-wolf/csims/blob/master/images/screenshot_1.png)
+![alt text](https://github.com/mason-wolf/boa/blob/master/Base%20Oversight%20Accumulator/Screenshots/screenshot1.png)
